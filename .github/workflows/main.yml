@@ -6,21 +6,9 @@ on:
       - main
 
 jobs:
-  build:
-    name: build docker
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: build image
-        run: docker build -t quademar .
-
   deploy:
     name: deploy
     runs-on: ubuntu-latest
-    needs: build
 
     steps:
       - name: install ssh keys
@@ -32,24 +20,11 @@ jobs:
       - name: deploy to server
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
-            echo "Connected to server"
-            whoami
-            pwd
-
-            echo "Checking project folder"
-            ls -la /var/www
-            ls -la /var/www/Quademar
-
             cd /var/www/Quademar
-
-            echo "Git status:"
-            git status
-
-            echo "Pull latest code"
             git pull origin main
-
-            echo "Restart docker containers"
-            docker compose up -d --build
+            cd site
+            npm ci
+            npm run build
           '
 
       - name: cleanup
