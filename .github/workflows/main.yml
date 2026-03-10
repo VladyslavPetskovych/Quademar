@@ -20,58 +20,30 @@ jobs:
       - name: deploy to server
         run: |
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
-            set -x
+            set -e
 
-            echo "=== USER ==="
+            echo "=== WHOAMI ==="
             whoami
-            id
 
-            echo "=== HOME ==="
-            echo "$HOME"
-
-            echo "=== CURRENT DIR ==="
+            echo "=== PROJECT DIR ==="
+            cd /root/var/www/Quademar
             pwd
-
-            echo "=== ROOT LS ==="
-            ls -la /
-            echo "=== /var ==="
-            ls -la /var || true
-            echo "=== /var/www ==="
-            ls -la /var/www || true
-            echo "=== /var/www/Quademar ==="
-            ls -la /var/www/Quademar || true
-            echo "=== /var/www/Quademar/.git ==="
-            ls -la /var/www/Quademar/.git || true
-
-            echo "=== TRY CD ==="
-            cd /var/www/Quademar || exit 1
-            pwd
-
-            echo "=== GIT CHECK ==="
-            git rev-parse --show-toplevel || true
-            git status || true
-            git branch || true
-            git remote -v || true
-
-            echo "=== NODE CHECK ==="
-            which node || true
-            which npm || true
-            node -v || true
-            npm -v || true
-
-            echo "=== PATH ==="
-            echo "$PATH"
-
-            echo "=== SITE DIR ==="
-            ls -la /var/www/Quademar/site || true
+            ls -la
+            git status
 
             echo "=== PULL ==="
-            git pull origin main || exit 1
+            git pull origin main
+
+            echo "=== NODE/NPM ==="
+            node -v
+            npm -v
 
             echo "=== BUILD ==="
-            cd /var/www/Quademar/site || exit 1
-            npm ci || exit 1
-            npm run build || exit 1
+            cd site
+            npm ci
+            npm run build
+
+            echo "=== DONE ==="
           '
 
       - name: cleanup
