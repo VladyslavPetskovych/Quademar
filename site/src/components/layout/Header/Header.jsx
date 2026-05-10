@@ -42,7 +42,7 @@ export default function Header({ isOverVideo = true }) {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 ${
           isOverVideo
             ? 'bg-transparent'
             : 'bg-[#f3efe6] border-b border-[#2c2b28]/30'
