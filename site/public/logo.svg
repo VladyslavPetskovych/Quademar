@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" fill="none">
+  <!-- Sun - semi-circle rising over waves -->
+  <path d="M100 4C100 4 55 26 55 50C55 74 100 96 100 96C100 96 145 74 145 50C145 26 100 4 100 4Z" fill="currentColor"/>
+  <!-- Wave 1 -->
+  <path d="M15 78C38 66 62 78 85 66C108 78 132 66 155 78C178 66 185 70 185 70" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Wave 2 -->
+  <path d="M15 90C38 78 62 90 85 78C108 90 132 78 155 90C178 78 185 82 185 82" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- Wave 3 -->
+  <path d="M15 102C38 90 62 102 85 90C108 102 132 90 155 102C178 90 185 94 185 94" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+  <!-- GUARDAMAR -->
+  <text x="100" y="118" font-family="Cormorant Garamond, serif" font-size="26" font-weight="600" fill="currentColor" text-anchor="middle" letter-spacing="0.08em">GUARDAMAR</text>
+  <!-- HOTEL & SPA -->
+  <text x="100" y="136" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="currentColor" text-anchor="middle" letter-spacing="0.25em">HOTEL &amp; SPA</text>
+</svg>
