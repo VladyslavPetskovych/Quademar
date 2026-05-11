@@ -2,7 +2,17 @@
 export default {
   seo: {
     description:
-      'Boutique hotel & spa in Guardamar del Segura, Alicante — Mediterranean hospitality, elegant suites, spa and dining on Costa Blanca.',
+      'Boutique hotel & spa in Guardamar del Segura, Alicante — your Mediterranean sanctuary on Costa Blanca. Elegant suites, spa, dining, and authentic Spanish hospitality.',
+    descriptionContacts:
+      'Contact Hotel Guardamar, Guardamar del Segura — reservations, special requests, and questions about suites, spa, or dining on the Costa Blanca.',
+    descriptionSuites:
+      'Suites and rooms at Hotel Guardamar, Guardamar del Segura — 48 accommodations from premium suites to comfortable doubles, Mediterranean calm on the Costa Blanca.',
+    descriptionRestaurant:
+      'Restaurant Arsito and terrace at Hotel Guardamar — Mediterranean cuisine, garden atmosphere, and seasonal dining in Guardamar del Segura, Costa Blanca.',
+    descriptionSpa:
+      'Spa and wellness at Hotel Guardamar, Guardamar del Segura — tailored rituals, relaxation, and restorative moments by the Mediterranean.',
+    descriptionMoments:
+      'Offers, events, and Costa Blanca inspiration at Hotel Guardamar — curated experiences and local highlights from Guardamar del Segura.',
     titleDefault: 'Hotel Guardamar — Mediterranean sanctuary on Costa Blanca',
     titleContacts: 'Contacts — Hotel Guardamar',
     titleSuites: 'Suites & Rooms — Hotel Guardamar',

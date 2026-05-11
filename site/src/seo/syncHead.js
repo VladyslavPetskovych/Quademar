@@ -40,6 +40,9 @@ export function syncDocumentMeta({
   keywords,
   canonicalUrl,
   ogImageUrl,
+  ogImageAlt,
+  ogImageWidth = '1200',
+  ogImageHeight = '630',
   locale,
   siteName = 'Hotel Guardamar',
 }) {
@@ -54,6 +57,9 @@ export function syncDocumentMeta({
   upsertMetaByProperty('og:description', description)
   upsertMetaByProperty('og:url', canonicalUrl)
   upsertMetaByProperty('og:image', ogImageUrl)
+  upsertMetaByProperty('og:image:width', ogImageWidth)
+  upsertMetaByProperty('og:image:height', ogImageHeight)
+  upsertMetaByProperty('og:image:alt', ogImageAlt || title)
   upsertMetaByProperty('og:locale', locale === 'es' ? 'es_ES' : 'en_GB')
   upsertMetaByProperty('og:locale:alternate', locale === 'es' ? 'en_GB' : 'es_ES')
 

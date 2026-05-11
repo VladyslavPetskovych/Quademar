@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "generate-icons": "node scripts/generate-brand-icons.mjs",
-    "build": "npm run generate-icons && vite build",
+    "build": "npm run generate-icons && node scripts/generate-sitemap.mjs && vite build",
     "preview": "vite preview"
   },
   "dependencies": {

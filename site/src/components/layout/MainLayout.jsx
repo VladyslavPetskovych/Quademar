@@ -51,6 +51,7 @@ export default function MainLayout() {
       keywords,
       canonicalUrl: absoluteUrl(path),
       ogImageUrl: absoluteUrl('/og-image.jpg'),
+      ogImageAlt: title,
       locale,
       siteName: CONTACT.hotelName,
     })

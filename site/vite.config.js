@@ -2,8 +2,9 @@ import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { CONTACT, SEO, SITE_ORIGIN_DEFAULT } from "./src/config/site.js";
+import { buildIndexJsonLdGraph } from "./src/seo/structuredData.js";
 
-function seoHtmlTransform(origin) {
+function seoHtmlTransform(origin, googleSiteVerification) {
   return {
     name: "seo-html-transform",
     transformIndexHtml(html) {
@@ -11,32 +12,21 @@ function seoHtmlTransform(origin) {
       const canonical = origin ? `${origin}/` : "/";
       const ogUrl = canonical;
 
-      const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "Hotel",
-        "@id": origin ? `${origin}/#hotel` : undefined,
-        name: CONTACT.hotelName,
-        description: SEO.description,
-        image: ogImage,
-        telephone: CONTACT.phoneHref.replace(/^tel:/i, ""),
-        email: CONTACT.email,
-        url: origin ? `${origin}/` : undefined,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: "Puerto Rico, 11",
-          addressLocality: "Guardamar del Segura",
-          postalCode: "03140",
-          addressRegion: "Alicante",
-          addressCountry: "ES",
-        },
-        sameAs: [CONTACT.instagramHref],
-      };
+      const jsonLd =
+        origin ? buildIndexJsonLdGraph({ origin, contact: CONTACT, seo: SEO }) : null;
+      const ldScript = jsonLd
+        ? `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`
+        : "";
 
-      Object.keys(jsonLd).forEach((k) => jsonLd[k] === undefined && delete jsonLd[k]);
-
-      const ldScript = `<script type="application/ld+json">${JSON.stringify(jsonLd)}</script>`;
+      const verificationMeta = googleSiteVerification
+        ? `<meta name="google-site-verification" content="${googleSiteVerification}" />`
+        : "";
 
       return html
+        .replace(
+          "\n\n    __GSC_VERIFICATION__\n",
+          verificationMeta ? `\n\n    ${verificationMeta}\n` : "\n",
+        )
         .replace("__SEO_LD_JSON__", ldScript)
         .replaceAll("__OG_IMAGE__", ogImage)
         .replaceAll("__TWITTER_IMAGE__", ogImage)
@@ -54,8 +44,9 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
   const origin =
     (env.VITE_SITE_ORIGIN || (mode === "production" ? SITE_ORIGIN_DEFAULT : "")).replace(/\/+$/, "");
+  const googleSiteVerification = (env.VITE_GOOGLE_SITE_VERIFICATION || "").trim();
 
   return {
-    plugins: [react(), tailwindcss(), seoHtmlTransform(origin)],
+    plugins: [react(), tailwindcss(), seoHtmlTransform(origin, googleSiteVerification)],
   };
 });

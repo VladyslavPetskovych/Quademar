@@ -7,6 +7,7 @@
  * Landing-only deploy: Home + Contacts stay navigable; other routes remain in the
  * bundle but direct URLs redirect to `/` and header/menu/footer links are inactive.
  * Set to `false` when publishing the full site.
+ * `npm run build` regenerates `public/sitemap.xml` from this flag (see `scripts/generate-sitemap.mjs`).
  */
 export const LANDING_ONLY_NAV = true
 
@@ -36,7 +37,7 @@ export const SITE = {
 export const SEO = {
   title: 'Hotel Guardamar — Mediterranean sanctuary on Costa Blanca',
   description:
-    'Boutique hotel & spa in Guardamar del Segura, Alicante — Mediterranean hospitality, elegant suites, spa and dining on Costa Blanca.',
+    'Boutique hotel & spa in Guardamar del Segura, Alicante — your Mediterranean sanctuary on Costa Blanca. Elegant suites, spa, dining, and authentic Spanish hospitality.',
   keywords:
     'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
 }
