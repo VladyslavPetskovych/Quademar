@@ -1,2 +1,5 @@
 node_modules
 
+# Built by `npm run build` on CI/server — do not commit (avoids git pull conflicts on VPS).
+dist
+
