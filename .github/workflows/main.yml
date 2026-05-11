@@ -31,8 +31,9 @@ jobs:
             ls -la
             git status
 
-            echo "=== PULL ==="
-            git pull origin main
+            echo "=== SYNC REPO (discard local build edits under site/dist) ==="
+            git fetch origin main
+            git reset --hard origin/main
 
             echo "=== NODE/NPM ==="
             node -v
