@@ -5,7 +5,7 @@ on:
     branches:
       - main
 
-# One deploy at a time; new pushes wait instead of stacking broken partial deploys.
+# One deploy at a time; new pushes wait instead of stacking partial deploys.
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: false
@@ -26,19 +26,49 @@ jobs:
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: Pull and build on server
+      # Path is passed as $1 to the remote script (safe for spaces/special chars).
+      - name: Pull, Docker build, and restart
         env:
           SSH_DEPLOY_PATH: ${{ secrets.SSH_DEPLOY_PATH }}
         run: |
           set -euo pipefail
           TARGET="${SSH_DEPLOY_PATH:-/root/var/www/Quademar}"
-          REMOTE_CD="$(printf '%q' "$TARGET")"
 
           ssh -i ~/.ssh/deploy_key \
             -o IdentitiesOnly=yes \
             -o StrictHostKeyChecking=yes \
             "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
-            "set -euo pipefail; cd ${REMOTE_CD}; echo '=== Deploy path ==='; pwd; echo '=== Git sync ==='; git fetch origin main; git checkout main; git pull --ff-only origin main; echo '=== Docker ==='; docker compose version; docker compose up -d --build --remove-orphans; echo '=== Done ==='"
+            bash -s -- "$TARGET" << 'REMOTE_SCRIPT'
+          set -euo pipefail
+
+          cd "$1"
+          echo "=== Deploy path ==="
+          pwd
+
+          echo "=== Git sync ==="
+          git fetch origin main
+          git checkout main
+          git pull --ff-only origin main
+
+          echo "=== Compose CLI ==="
+          if docker compose version >/dev/null 2>&1; then
+            DC=(docker compose)
+          elif command -v docker-compose >/dev/null 2>&1; then
+            DC=(docker-compose)
+          else
+            echo "ERROR: Install Docker Compose v2 (docker compose) or v1 (docker-compose)." >&2
+            exit 1
+          fi
+          "${DC[@]}" version
+
+          echo "=== Docker build ==="
+          DOCKER_BUILDKIT=1 "${DC[@]}" build --progress=plain
+
+          echo "=== Containers up ==="
+          "${DC[@]}" up -d --remove-orphans
+
+          echo "=== Done ==="
+          REMOTE_SCRIPT
 
       - name: Remove SSH key
         if: always()
