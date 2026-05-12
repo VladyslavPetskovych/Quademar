@@ -79,8 +79,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  /* Same as body so any sub-pixel band in embedded WebViews matches page bg */
-  background-color: #f6f4ef;
+  /* Matches header cream — fills rare gaps above content (Telegram / iOS in-app). Body keeps page beige. */
+  background-color: #f3efe6;
 }
 
 body {

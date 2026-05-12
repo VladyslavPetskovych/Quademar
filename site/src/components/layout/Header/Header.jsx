@@ -19,7 +19,8 @@ export default function Header({ isOverVideo = true }) {
   const navLabel = (linkId, shortRestaurant = false) =>
     shortRestaurant && linkId === 'restaurant-bar' ? t('nav.restaurantShort') : t(navLabelKey(linkId))
 
-  const navColor = isOverVideo ? 'text-white' : 'text-[#252422]'
+  /** On small screens over the hero, header is solid cream (Telegram / safe-area); use dark chrome. */
+  const navColor = isOverVideo ? 'text-white max-md:text-[#252422]' : 'text-[#252422]'
   const lockedBtnExtra =
     'cursor-pointer border-0 bg-transparent p-0 opacity-55 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a3f35]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent'
 
@@ -44,19 +45,23 @@ export default function Header({ isOverVideo = true }) {
       <header
         className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 ${
           isOverVideo
-            ? 'bg-transparent'
+            ? 'bg-transparent max-md:bg-[#f3efe6] max-md:border-b max-md:border-[#2c2b28]/30'
             : 'bg-[#f3efe6] border-b border-[#2c2b28]/30'
         } w-full max-w-full overflow-x-hidden`}
       >
         <div className="w-full px-0 lg:mx-auto lg:max-w-[1320px] lg:px-6">
           <div
-            className={`grid grid-cols-3 items-center gap-2 px-2.5 py-2.5 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-0 lg:py-3.5 ${isOverVideo ? 'border-b border-white/35' : 'border-b border-[#2c2b28]/30'}`}
+            className={`grid grid-cols-3 items-center gap-2 px-2.5 py-2.5 lg:grid-cols-[1fr_auto_1fr] lg:gap-4 lg:px-0 lg:py-3.5 ${
+              isOverVideo ? 'border-b border-white/35 max-md:border-[#2c2b28]/30' : 'border-b border-[#2c2b28]/30'
+            }`}
           >
             <div className="flex items-center gap-2 justify-self-start">
               <BurgerButton
                 isOpen={menuOpen}
                 onClick={() => setMenuOpen((o) => !o)}
-                className={`${navColor} ${isOverVideo ? 'hover:bg-white/10' : 'hover:bg-stone-200/50'}`}
+                className={`${navColor} ${
+                  isOverVideo ? 'hover:bg-white/10 max-md:hover:bg-stone-200/50' : 'hover:bg-stone-200/50'
+                }`}
               />
               <span className={`hidden lg:inline font-sans text-sm font-normal tracking-[0.04em] ${navColor}`}>
                 {t('header.menu')}
@@ -65,11 +70,27 @@ export default function Header({ isOverVideo = true }) {
 
             <div className="flex items-center justify-center min-w-0">
               <Link to="/" className="flex items-center justify-center">
-                <img
-                  src={headerLogo}
-                  alt={t('header.logoAlt')}
-                  className="h-[47px] w-[104px] object-contain lg:h-12 lg:w-auto transition-all duration-300"
-                />
+                {isOverVideo ? (
+                  <>
+                    <img
+                      src={logoDark}
+                      alt={t('header.logoAlt')}
+                      className="h-[47px] w-[104px] object-contain md:hidden lg:h-12 lg:w-auto transition-all duration-300"
+                    />
+                    <img
+                      src={logoWhite}
+                      alt=""
+                      aria-hidden
+                      className="hidden h-[47px] w-[104px] object-contain md:block lg:h-12 lg:w-auto transition-all duration-300"
+                    />
+                  </>
+                ) : (
+                  <img
+                    src={headerLogo}
+                    alt={t('header.logoAlt')}
+                    className="h-[47px] w-[104px] object-contain lg:h-12 lg:w-auto transition-all duration-300"
+                  />
+                )}
               </Link>
             </div>
 
@@ -91,7 +112,7 @@ export default function Header({ isOverVideo = true }) {
                 to="/"
                 className={`flex items-center gap-1.5 px-[10px] py-[6px] sm:gap-2 sm:px-5 sm:py-2.5 transition-colors ${
                   isOverVideo
-                    ? 'bg-white text-stone-900 hover:bg-stone-100'
+                    ? 'bg-white text-stone-900 hover:bg-stone-100 max-md:bg-[#003d35] max-md:text-white max-md:hover:bg-[#0b4a41]'
                     : 'bg-[#003d35] text-white hover:bg-[#0b4a41]'
                 }`}
                 aria-label={t('header.bookNow')}
