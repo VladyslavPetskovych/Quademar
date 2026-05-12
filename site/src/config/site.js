@@ -4,7 +4,7 @@
  */
 
 /**
- * Landing-only deploy: Home + Contacts stay navigable; other routes remain in the
+ * Landing-only deploy: Home, Contacts, and Moments stay navigable; other routes remain in the
  * bundle but direct URLs redirect to `/` and header/menu/footer links are inactive.
  * Set to `false` when publishing the full site.
  * `npm run build` regenerates `public/sitemap.xml` from this flag (see `scripts/generate-sitemap.mjs`).
@@ -12,7 +12,7 @@
 export const LANDING_ONLY_NAV = true
 
 /** Paths users may open when `LANDING_ONLY_NAV` is on (leading slash, no trailing slash). */
-const LANDING_ALLOWED = new Set(['/', '/contacts'])
+const LANDING_ALLOWED = new Set(['/', '/contacts', '/moments'])
 
 /** Whether `pathname` may render (otherwise caller should redirect to `/`). */
 export function isPathAllowedInLandingMode(pathname) {
