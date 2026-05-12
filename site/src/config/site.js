@@ -52,7 +52,7 @@ export const NAV_LINKS = [
 ]
 
 export const HERO = {
-  subtitle: 'Guardamar — your Mediterranean sanctuary on Costa Blanca.',
+  subtitle: 'Guardamar — 4 star hotel on the Costa Blanca.',
   kicker: 'Experience the light, sea breeze, and calm rhythm of Guardamar del Segura.',
 }
 

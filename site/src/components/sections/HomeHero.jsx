@@ -6,6 +6,35 @@ import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_INTRO_SECTION_ID, scrollToHomeIntro } from './homeSectionCta'
 import { HOME_SCROLL_EASE } from './homeMotion'
 
+/** Hand-tuned placement so rating stars feel natural vs the serif headline. */
+const HERO_STAR_STYLE = [
+  { rotate: '-7deg', y: '-0.02em', scale: 1.04 },
+  { rotate: '6deg', y: '0.03em', scale: 0.95 },
+  { rotate: '-5deg', y: '-0.02em', scale: 1 },
+  { rotate: '7deg', y: '0.02em', scale: 0.96 },
+]
+
+function HeroRatingStars() {
+  return (
+    <span
+      className="mt-3 inline-flex flex-row items-center justify-center gap-[0.06em] font-sans not-italic leading-none tracking-[0.02em] sm:mt-4 md:mt-5"
+      aria-hidden="true"
+    >
+      {HERO_STAR_STYLE.map((s, i) => (
+        <span
+          key={i}
+          className="inline-block bg-linear-to-br from-amber-50 via-amber-200 to-amber-600 bg-clip-text text-[0.48em] text-transparent sm:text-[0.46em] md:text-[0.44em] filter-[drop-shadow(0_1px_6px_rgba(251,191,36,0.45))]"
+          style={{
+            transform: `rotate(${s.rotate}) translateY(${s.y}) scale(${s.scale})`,
+          }}
+        >
+          ★
+        </span>
+      ))}
+    </span>
+  )
+}
+
 export default function HomeHero() {
   const { t } = useLanguage()
   const lenis = useLenis()
@@ -55,12 +84,14 @@ export default function HomeHero() {
         transition={{ duration: lightMotion ? 0.35 : 0.9, ease: HOME_SCROLL_EASE }}
       >
         <motion.h1
-          className="mx-auto max-w-88 sm:max-w-160 lg:max-w-none font-cormorant text-white font-bold leading-[1.05] text-[40px] sm:text-[3.3rem] md:text-[4.1rem] lg:text-[74px] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
+          className="mx-auto flex max-w-88 flex-col items-center sm:max-w-160 lg:max-w-none font-cormorant text-white font-bold leading-[1.05] text-[40px] sm:text-[3.3rem] md:text-[4.1rem] lg:text-[74px] [text-shadow:0_4px_24px_rgba(0,0,0,0.5)]"
           initial={{ y: lightMotion ? 0 : 24, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: lightMotion ? 0.35 : 0.9, delay: lightMotion ? 0 : 0.2, ease: HOME_SCROLL_EASE }}
+          aria-label={t('home.hero.h1Aria')}
         >
-          {t('home.hero.h1')}
+          <span className="block text-balance">{t('home.hero.h1Title')}</span>
+          <HeroRatingStars />
         </motion.h1>
         <motion.p
           className="mx-auto mt-3 max-w-84 sm:max-w-140 text-white/90 font-sans text-[18px] sm:text-[1.4rem] md:text-[31px] font-normal leading-[1.15] [text-shadow:0_3px_18px_rgba(0,0,0,0.5)]"

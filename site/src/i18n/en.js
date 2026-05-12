@@ -128,7 +128,8 @@ export default {
 
   home: {
     hero: {
-      h1: 'Guardamar - your Mediterranean sanctuary on Costa Blanca.',
+      h1Title: 'Guardamar — 4 star hotel on the Costa Blanca.',
+      h1Aria: 'Guardamar — 4 star hotel on the Costa Blanca.',
       lead: 'Experience the light, sea breeze, and calm rhythm of Guardamar del Segura.',
       learnMore: 'Learn more',
       learnMoreAria: 'Learn more — scroll to next section',
@@ -203,6 +204,8 @@ export default {
     kicker: 'Contact',
     breadcrumbContact: 'CONTACT',
     h2: 'Write to us',
+    hotelRatingInfo:
+      'We are a 4-star hotel on the Costa Blanca — boutique rooms & suites, spa, and Mediterranean hospitality in Guardamar del Segura.',
     intro:
       'Reservations, questions, or special requests — we will get back to you as soon as we can.',
     thankYou: 'Thank you — we have received your message and will reply shortly.',

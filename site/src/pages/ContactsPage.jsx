@@ -21,6 +21,31 @@ const inView = { once: true, amount: 0.25 }
 const fieldClass =
   'w-full border-0 border-b border-[#171412]/18 bg-transparent px-0 py-3 font-sans text-[16px] font-[250] text-[#171412] placeholder:text-[#9a948e] outline-none transition-colors focus:border-[#6e361b] focus:ring-0'
 
+const CONTACT_STAR_MARKERS = [
+  { rotate: '-7deg', y: '-1px', scale: 1.04 },
+  { rotate: '5deg', y: '2px', scale: 0.96 },
+  { rotate: '-4deg', y: '-1px', scale: 1 },
+  { rotate: '6deg', y: '2px', scale: 0.97 },
+]
+
+function ContactRatingStars() {
+  return (
+    <span className="inline-flex shrink-0 items-center gap-[3px] leading-none" aria-hidden="true">
+      {CONTACT_STAR_MARKERS.map((s, i) => (
+        <span
+          key={i}
+          className="inline-block bg-linear-to-br from-amber-100 via-amber-300 to-amber-600 bg-clip-text text-[15px] text-transparent filter-[drop-shadow(0_1px_4px_rgba(251,191,36,0.35))] sm:text-[16px]"
+          style={{
+            transform: `rotate(${s.rotate}) translateY(${s.y}) scale(${s.scale})`,
+          }}
+        >
+          ★
+        </span>
+      ))}
+    </span>
+  )
+}
+
 export default function ContactsPage() {
   const { t } = useLanguage()
   const [sent, setSent] = useState(false)
@@ -67,13 +92,28 @@ export default function ContactsPage() {
               >
                 {CONTACT.hotelName}
               </motion.h1>
+              <motion.div
+                className="mt-6 max-w-md rounded-sm border border-white/18 bg-white/6 px-4 py-3.5 backdrop-blur-[2px]"
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={inView}
+                custom={2}
+              >
+                <div className="flex gap-3.5">
+                  <ContactRatingStars />
+                  <p className="font-sans text-[14px] font-[250] leading-snug text-[#f3eee6]/92 sm:text-[15px]">
+                    {t('contacts.hotelRatingInfo')}
+                  </p>
+                </div>
+              </motion.div>
               <motion.address
                 className="mt-8 not-italic font-sans text-[15px] font-[250] leading-relaxed text-[#f3eee6]/88"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={inView}
-                custom={2}
+                custom={3}
               >
                 {CONTACT.addressLines.map((line) => (
                   <span key={line} className="block">
@@ -87,7 +127,7 @@ export default function ContactsPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={inView}
-                custom={3}
+                custom={4}
               >
                 <a href={CONTACT.phoneHref} className="block transition-opacity hover:opacity-80">
                   {CONTACT.phoneDisplay}
