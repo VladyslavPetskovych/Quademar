@@ -14,8 +14,29 @@ permissions:
   contents: read
 
 jobs:
+  # Builds the exact commit that triggered the workflow (visible logs on GitHub).
+  build_site:
+    name: Build site (Vite)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: Install and build
+        run: |
+          set -euo pipefail
+          cd site
+          npm ci
+          npm run build
+
   deploy:
     name: Deploy to server
+    needs: build_site
     runs-on: ubuntu-latest
 
     steps:
@@ -50,6 +71,10 @@ jobs:
           git checkout main
           git pull --ff-only origin main
 
+          export CACHEBUST="$(git rev-parse HEAD)"
+          echo "=== Commit for image build ==="
+          echo "$CACHEBUST"
+
           echo "=== Compose CLI ==="
           if docker compose version >/dev/null 2>&1; then
             DC=(docker compose)
@@ -62,7 +87,7 @@ jobs:
           "${DC[@]}" version
 
           echo "=== Docker build ==="
-          DOCKER_BUILDKIT=1 "${DC[@]}" build --progress=plain
+          DOCKER_BUILDKIT=1 "${DC[@]}" --progress=plain build --pull
 
           echo "=== Containers up ==="
           "${DC[@]}" up -d --remove-orphans

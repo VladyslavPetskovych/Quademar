@@ -14,7 +14,9 @@ RUN npm ci
 
 COPY site/ ./
 ENV NODE_ENV=production
-RUN npm run build
+# Changes every deploy commit so `npm run build` is not skipped by stale layer cache.
+ARG CACHEBUST=local
+RUN echo "CACHEBUST=${CACHEBUST}" && npm run build
 
 # --- run: static files only ---
 FROM nginx:1.27-alpine AS runtime
