@@ -3,6 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <!-- iOS Telegram / in-app browsers: stabilize visible height so content fills the viewport (no top gap). -->
+    <script>
+      ;(function () {
+        function setAppVh() {
+          var h = window.visualViewport ? window.visualViewport.height : window.innerHeight
+          document.documentElement.style.setProperty('--app-vh', h * 0.01 + 'px')
+        }
+        setAppVh()
+        window.addEventListener('resize', setAppVh)
+        if (window.visualViewport) {
+          window.visualViewport.addEventListener('resize', setAppVh)
+          window.visualViewport.addEventListener('scroll', setAppVh)
+        }
+      })()
+    </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#264d43" />
     <meta name="color-scheme" content="light" />

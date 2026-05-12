@@ -79,6 +79,8 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  /* Same as body so any sub-pixel band in embedded WebViews matches page bg */
+  background-color: #f6f4ef;
 }
 
 body {
@@ -86,10 +88,22 @@ body {
   background: #f6f4ef;
   color: rgb(28 25 23); /* stone-900 */
   overflow-x: hidden;
+  /* Fallbacks + --app-vh from index.html (Telegram / iOS in-app browsers often misreport vh/dvh) */
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: calc(var(--app-vh, 1vh) * 100);
 }
 
 #root {
   overflow-x: hidden;
+  min-height: calc(var(--app-vh, 1vh) * 100);
+}
+
+/** Shell height: use with MainLayout root */
+.min-h-app {
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-height: calc(var(--app-vh, 1vh) * 100);
 }
 
 .animate-fade-up {

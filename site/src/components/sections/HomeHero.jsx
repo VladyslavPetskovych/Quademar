@@ -64,7 +64,7 @@ export default function HomeHero() {
     : { duration: 1.8, ease: HOME_SCROLL_EASE }
 
   return (
-    <section className="relative isolate min-h-dvh w-full overflow-hidden bg-stone-900 max-md:min-h-[min(92dvh,780px)] md:min-h-screen">
+    <section className="relative isolate min-h-app w-full overflow-hidden bg-stone-900 max-md:min-h-[min(calc(var(--app-vh,1vh)*92),780px)]">
       <motion.img
         src={heroImage}
         alt={t('home.hero.imageAlt')}

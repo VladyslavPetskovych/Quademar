@@ -59,7 +59,7 @@ export default function MainLayout() {
 
   return (
     <ComingSoonModalProvider>
-      <div className="min-h-screen">
+      <div className="min-h-app">
         <Header isOverVideo={isOverVideo} />
         <main className={isHome ? '' : 'pt-[140px] md:pt-[160px]'}>
           <Outlet />
