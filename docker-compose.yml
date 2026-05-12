@@ -1,6 +1,13 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        VITE_SITE_ORIGIN: ${VITE_SITE_ORIGIN:-}
+        VITE_GOOGLE_SITE_VERIFICATION: ${VITE_GOOGLE_SITE_VERIFICATION:-}
+    image: quademar-site:latest
+    # When another stack already uses :80/:443, set e.g. WEB_PUBLISH=127.0.0.1:8085:80
     ports:
-      - "80:80"
+      - "${WEB_PUBLISH:-80:80}"
     restart: unless-stopped

@@ -1,14 +1,27 @@
-# Build stage
+# --- build: Vite static site ---
 FROM node:20-alpine AS build
 WORKDIR /app
+
+# Optional: override at build time (`docker compose build --build-arg ...` or CI).
+# Falls back to defaults in `site/src/config/site.js` / Vite `loadEnv`.
+ARG VITE_SITE_ORIGIN
+ARG VITE_GOOGLE_SITE_VERIFICATION
+ENV VITE_SITE_ORIGIN=${VITE_SITE_ORIGIN}
+ENV VITE_GOOGLE_SITE_VERIFICATION=${VITE_GOOGLE_SITE_VERIFICATION}
+
 COPY site/package*.json ./
 RUN npm ci
+
 COPY site/ ./
+ENV NODE_ENV=production
 RUN npm run build
 
-# Serve stage
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
+# --- run: static files only ---
+FROM nginx:1.27-alpine AS runtime
+RUN apk add --no-cache curl
 COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD curl -fsS http://127.0.0.1/health >/dev/null || exit 1
 CMD ["nginx", "-g", "daemon off;"]

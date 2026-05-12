@@ -5,47 +5,41 @@ on:
     branches:
       - main
 
+# One deploy at a time; new pushes wait instead of stacking broken partial deploys.
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
 jobs:
   deploy:
-    name: deploy
+    name: Deploy to server
     runs-on: ubuntu-latest
 
     steps:
-      - name: install ssh keys
+      - name: Install SSH key
         run: |
-          install -m 600 -D /dev/null ~/.ssh/id_rsa
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          mkdir -p -m 700 ~/.ssh
+          install -m 600 /dev/null ~/.ssh/deploy_key
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
+          ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: deploy to server
+      - name: Pull and build on server
+        env:
+          SSH_DEPLOY_PATH: ${{ secrets.SSH_DEPLOY_PATH }}
         run: |
-          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} '
-            set -e
+          set -euo pipefail
+          TARGET="${SSH_DEPLOY_PATH:-/root/var/www/Quademar}"
+          REMOTE_CD="$(printf '%q' "$TARGET")"
 
-            echo "=== WHOAMI ==="
-            whoami
+          ssh -i ~/.ssh/deploy_key \
+            -o IdentitiesOnly=yes \
+            -o StrictHostKeyChecking=yes \
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
+            "set -euo pipefail; cd ${REMOTE_CD}; echo '=== Deploy path ==='; pwd; echo '=== Git sync ==='; git fetch origin main; git checkout main; git pull --ff-only origin main; echo '=== Docker ==='; docker compose version; docker compose up -d --build --remove-orphans; echo '=== Done ==='"
 
-            echo "=== PROJECT DIR ==="
-            cd /root/var/www/Quademar
-            pwd
-            ls -la
-            git status
-
-            echo "=== SYNC REPO (discard local build edits under site/dist) ==="
-            git fetch origin main
-            git reset --hard origin/main
-
-            echo "=== NODE/NPM ==="
-            node -v
-            npm -v
-
-            echo "=== BUILD ==="
-            cd site
-            npm ci
-            npm run build
-
-            echo "=== DONE ==="
-          '
-
-      - name: cleanup
+      - name: Remove SSH key
+        if: always()
         run: rm -rf ~/.ssh
