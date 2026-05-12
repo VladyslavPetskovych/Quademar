@@ -1,6 +1,7 @@
 import { AnimatePresence, motion, useReducedMotion } from 'framer-motion'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useLanguage } from '../../i18n/LanguageContext'
 
 /** Image zoom on hover (same scale/timing as discovery cards, without vertical lift). */
 const ROOM_IMAGE_HOVER = { scale: 1.05 }
@@ -58,6 +59,7 @@ export default function RoomCategorySection({
   classNames = {},
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
+  const { tf } = useLanguage()
   const safeImages = Array.isArray(images) ? images.filter((item) => item?.src) : []
   const lastIndex = Math.max(0, safeImages.length - 1)
   const displayIndex = Math.min(activeIndex, lastIndex)
@@ -162,13 +164,16 @@ export default function RoomCategorySection({
                     <div className="h-full w-full overflow-hidden">
                       <motion.img
                         src={img.src}
-                        alt=""
+                        alt={
+                          img.alt
+                            ? `${img.alt} (${tf('roomsCommon.thumbnailLabel')})`
+                            : tf('roomsCommon.thumbnailAlt', { title, n: index + 1 })
+                        }
                         className="h-full w-full object-cover"
                         whileHover={reduceMotion ? undefined : ROOM_IMAGE_HOVER}
                         transition={ROOM_IMAGE_HOVER_TRANSITION}
                       />
                     </div>
-                    <span className="sr-only">{img.alt || `Photo ${index + 1}`}</span>
                   </button>
                 ))}
               </div>

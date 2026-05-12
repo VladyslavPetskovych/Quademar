@@ -31,6 +31,7 @@ export default function HomeIntroSection() {
         src={plantImage}
         alt=""
         aria-hidden="true"
+        role="presentation"
         className="pointer-events-none absolute right-[-80px] top-[120px] hidden w-[310px] opacity-28 lg:block -scale-x-100"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 0.28, x: 0 }}

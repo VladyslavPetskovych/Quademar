@@ -44,7 +44,7 @@ function ChevronRight({ className }) {
 export default function RoomDetailPage() {
   const { roomSlug } = useParams()
   const room = roomSlug ? getRoomBySlug(roomSlug) : null
-  const { locale, t } = useLanguage()
+  const { locale, t, tf } = useLanguage()
   const localizedRoom = useMemo(() => (room ? localizeRoom(room, locale) : null), [room, locale])
 
   const carouselSlides = useMemo(() => {
@@ -211,7 +211,7 @@ export default function RoomDetailPage() {
       {localizedRoom.detailSection ? (
         <RoomDetailsSection
           detailSection={localizedRoom.detailSection}
-          detailsHeading={t('roomsCommon.detailsHeading')}
+          detailsHeading={tf('roomsCommon.detailsForRoom', { room: localizedRoom.title })}
         />
       ) : null}
     </section>

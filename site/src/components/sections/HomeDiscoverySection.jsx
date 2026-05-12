@@ -63,6 +63,7 @@ export default function HomeDiscoverySection() {
         src={plantImage}
         alt=""
         aria-hidden="true"
+        role="presentation"
         className="pointer-events-none absolute left-[-60px] top-0 hidden w-[420px] opacity-15 lg:block"
         initial={{ opacity: 0, x: -40 }}
         whileInView={{ opacity: 0.15, x: 0 }}

@@ -37,7 +37,7 @@ export const SITE = {
 export const SEO = {
   title: 'Hotel Guardamar — Mediterranean sanctuary on Costa Blanca',
   description:
-    'Boutique hotel & spa in Guardamar del Segura, Alicante — your Mediterranean sanctuary on Costa Blanca. Elegant suites, spa, dining, and authentic Spanish hospitality.',
+    'Four-star boutique hotel and spa in Guardamar del Segura, Alicante. Sea-near suites, garden dining, and a calm Costa Blanca base between Alicante and the Mediterranean — book your stay.',
   keywords:
     'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
 }

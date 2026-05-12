@@ -62,9 +62,8 @@ export default function ContactsPage() {
         <div className="relative min-h-[min(52vh,420px)] lg:min-h-[calc(100dvh-140px)]">
           <img
             src={heroImage}
-            alt=""
+            alt={t('contacts.heroImageAlt')}
             className="absolute inset-0 h-full w-full object-cover"
-            aria-hidden="true"
           />
           <div
             className="absolute inset-0 bg-linear-to-t from-[#062c26] via-[#062c26]/82 to-[#062c26]/55"

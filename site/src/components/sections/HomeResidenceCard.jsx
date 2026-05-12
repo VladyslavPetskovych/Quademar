@@ -16,9 +16,9 @@ export default function HomeResidenceCard({ image, imageAlt, title, imageClassNa
         whileHover={{ scale: 1.04 }}
         transition={{ duration: 0.45, ease: 'easeOut' }}
       />
-      <h3 className="absolute left-6 top-4 font-cormorant text-[40px] font-normal leading-none tracking-normal text-[#efe6d8]">
+      <p className="absolute left-6 top-4 font-cormorant text-[40px] font-normal leading-none tracking-normal text-[#efe6d8]">
         {title}
-      </h3>
+      </p>
     </motion.article>
   )
 }

@@ -79,8 +79,7 @@ export default function Header({ isOverVideo = true }) {
                     />
                     <img
                       src={logoWhite}
-                      alt=""
-                      aria-hidden
+                      alt={t('header.logoAlt')}
                       className="hidden h-[47px] w-[104px] object-contain md:block lg:h-12 lg:w-auto transition-all duration-300"
                     />
                   </>

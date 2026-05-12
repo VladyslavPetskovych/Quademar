@@ -34,6 +34,7 @@ export default function SuitesRoomsPage() {
         src={plantImage}
         alt=""
         aria-hidden="true"
+        role="presentation"
         className="pointer-events-none absolute right-[-28px] top-[168px] hidden w-[220px] opacity-22 lg:block"
       />
 
