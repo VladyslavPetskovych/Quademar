@@ -2,6 +2,8 @@
  * JSON-LD for the homepage HTML shell (crawlers). SPA navigation updates meta via `syncHead`.
  */
 
+import { SEO_OG_IMAGE } from '../config/site.js'
+
 const MAPS_QUERY = 'Puerto Rico, 11, 03140 Guardamar del Segura, Spain'
 
 /** Approximate coordinates for the hotel address (Guardamar del Segura). */
@@ -10,7 +12,7 @@ const HOTEL_GEO = { latitude: 38.0893, longitude: -0.6545 }
 export function buildIndexJsonLdGraph({ origin, contact, seo }) {
   const hotelId = `${origin}/#hotel`
   const websiteId = `${origin}/#website`
-  const ogImage = `${origin}/og-image.jpg`
+  const ogImage = `${origin}${SEO_OG_IMAGE.path}`
   const logoUrl = `${origin}/logo.png`
   const homeUrl = `${origin}/`
 

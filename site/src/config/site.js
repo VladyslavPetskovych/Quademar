@@ -42,6 +42,17 @@ export const SEO = {
     'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
 }
 
+/**
+ * Open Graph / Twitter SERP preview image (`public/og-image.png`).
+ * If you replace the file, update `width` / `height` to match its pixel dimensions.
+ */
+export const SEO_OG_IMAGE = {
+  path: '/og-image.png',
+  width: 451,
+  height: 399,
+  alt: 'Hotel Guardamar — minimalist white sun and waves on a deep forest-green background.',
+}
+
 export const NAV_LINKS = [
   { id: 'about', path: '/' },
   { id: 'suites-rooms', path: '/suites-rooms' },

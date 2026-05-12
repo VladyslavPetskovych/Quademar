@@ -1,5 +1,6 @@
 /**
- * Builds favicons, PWA icons, OG image, and favicon.svg from public/brand/logo-mark-source.png.
+ * Builds favicons, PWA icons, and favicon.svg from public/brand/logo-mark-source.png.
+ * SERP / Open Graph preview uses the hand-maintained asset `public/og-image.png` (see `SEO_OG_IMAGE` in `src/config/site.js`).
  * Used for SEO / meta / bookmarks only — in-app header & menu use SVG wordmarks from src/assets.
  *
  * Run: npm run generate-icons
@@ -17,7 +18,6 @@ const publicDir = path.join(root, 'public')
 
 const SOURCE = path.join(brandDir, 'logo-mark-source.png')
 const DISPLAY_GREEN = '#264d43'
-const DISPLAY_GREEN_DARK = '#1a332d'
 
 function avgRgb(samples) {
   let r = 0
@@ -84,16 +84,6 @@ async function compositeOnSquare(transparentPath, size, outPath, bgHex) {
     .toFile(outPath)
 }
 
-async function writeOgImage(transparentPath, outPath) {
-  const logoBuf = await sharp(transparentPath).resize(460).png().toBuffer()
-  await sharp({
-    create: { width: 1200, height: 630, channels: 3, background: DISPLAY_GREEN_DARK },
-  })
-    .composite([{ input: logoBuf, gravity: 'center' }])
-    .jpeg({ quality: 88, mozjpeg: true })
-    .toFile(outPath)
-}
-
 async function writeDataSvgFromSquarePng(squarePngPath, outSvgPath) {
   const b64 = fs.readFileSync(squarePngPath).toString('base64')
   const svg = `<?xml version="1.0" encoding="UTF-8"?>
@@ -136,7 +126,6 @@ async function main() {
   const icoBuf = await pngToIco([fav16, fav32])
   fs.writeFileSync(path.join(publicDir, 'favicon.ico'), icoBuf)
 
-  await writeOgImage(transparentPath, path.join(publicDir, 'og-image.jpg'))
   await writeDataSvgFromSquarePng(fav32, path.join(publicDir, 'favicon.svg'))
 
   const splashSrc = path.join(publicDir, 'splash-brand.png')

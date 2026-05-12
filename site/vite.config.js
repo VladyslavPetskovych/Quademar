@@ -1,14 +1,14 @@
 import { defineConfig, loadEnv } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { CONTACT, SEO, SITE_ORIGIN_DEFAULT } from "./src/config/site.js";
+import { CONTACT, SEO, SEO_OG_IMAGE, SITE_ORIGIN_DEFAULT } from "./src/config/site.js";
 import { buildIndexJsonLdGraph } from "./src/seo/structuredData.js";
 
 function seoHtmlTransform(origin, googleSiteVerification) {
   return {
     name: "seo-html-transform",
     transformIndexHtml(html) {
-      const ogImage = origin ? `${origin}/og-image.jpg` : "/og-image.jpg";
+      const ogImage = origin ? `${origin}${SEO_OG_IMAGE.path}` : SEO_OG_IMAGE.path;
       const canonical = origin ? `${origin}/` : "/";
       const ogUrl = canonical;
 
@@ -30,6 +30,9 @@ function seoHtmlTransform(origin, googleSiteVerification) {
         .replace("__SEO_LD_JSON__", ldScript)
         .replaceAll("__OG_IMAGE__", ogImage)
         .replaceAll("__TWITTER_IMAGE__", ogImage)
+        .replaceAll("__OG_IMAGE_WIDTH__", String(SEO_OG_IMAGE.width))
+        .replaceAll("__OG_IMAGE_HEIGHT__", String(SEO_OG_IMAGE.height))
+        .replaceAll("__OG_IMAGE_ALT__", SEO_OG_IMAGE.alt)
         .replaceAll("__CANONICAL_URL__", canonical)
         .replaceAll("__OG_URL__", ogUrl)
         .replaceAll("__OG_SITE_NAME__", CONTACT.hotelName)

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Outlet, useLocation, useNavigate } from 'react-router-dom'
-import { CONTACT, isPathAllowedInLandingMode } from '../../config/site'
+import { CONTACT, isPathAllowedInLandingMode, SEO_OG_IMAGE } from '../../config/site'
 import { ComingSoonModalProvider } from '../../context/ComingSoonModalContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { resolvePageSeo } from '../../seo/resolvePageSeo'
@@ -50,8 +50,10 @@ export default function MainLayout() {
       description,
       keywords,
       canonicalUrl: absoluteUrl(path),
-      ogImageUrl: absoluteUrl('/og-image.jpg'),
-      ogImageAlt: title,
+      ogImageUrl: absoluteUrl(SEO_OG_IMAGE.path),
+      ogImageAlt: SEO_OG_IMAGE.alt,
+      ogImageWidth: String(SEO_OG_IMAGE.width),
+      ogImageHeight: String(SEO_OG_IMAGE.height),
       locale,
       siteName: CONTACT.hotelName,
     })
