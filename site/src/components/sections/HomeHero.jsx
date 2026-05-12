@@ -64,7 +64,7 @@ export default function HomeHero() {
     : { duration: 1.8, ease: HOME_SCROLL_EASE }
 
   return (
-    <section className="relative isolate min-h-dvh w-full overflow-hidden bg-stone-900 max-md:min-h-[min(78dvh,640px)] md:min-h-screen">
+    <section className="relative isolate min-h-dvh w-full overflow-hidden bg-stone-900 max-md:min-h-[min(92dvh,780px)] md:min-h-screen">
       <motion.img
         src={heroImage}
         alt={t('home.hero.imageAlt')}
@@ -78,7 +78,7 @@ export default function HomeHero() {
       <div className="absolute inset-0 bg-black/72" />
 
       <motion.div
-        className="absolute z-10 left-1/2 w-full max-w-[1400px] -translate-x-1/2 px-4 text-center top-1/2 -translate-y-1/2 max-md:top-[max(5.5rem,calc(env(safe-area-inset-top,0px)+4.75rem))] max-md:translate-y-0 md:top-1/2 md:-translate-y-1/2"
+        className="absolute z-10 left-1/2 top-1/2 w-full max-w-[1400px] -translate-x-1/2 -translate-y-1/2 px-4 text-center"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: lightMotion ? 0.35 : 0.9, ease: HOME_SCROLL_EASE }}
