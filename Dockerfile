@@ -12,10 +12,12 @@ ENV VITE_GOOGLE_SITE_VERIFICATION=${VITE_GOOGLE_SITE_VERIFICATION}
 COPY site/package*.json ./
 RUN npm ci
 
+# Full site tree (same as repo `site/`). Build step must stay in sync with local: `cd site && npm run build`.
 COPY site/ ./
 ENV NODE_ENV=production
 # Changes every deploy commit so `npm run build` is not skipped by stale layer cache.
 ARG CACHEBUST=local
+# Explicit: runs package.json "build" (generate-icons, sitemap, vite build).
 RUN echo "CACHEBUST=${CACHEBUST}" && npm run build
 
 # --- run: static files only ---

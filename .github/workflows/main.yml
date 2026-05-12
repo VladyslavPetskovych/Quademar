@@ -1,9 +1,8 @@
 name: Deploy Quademar
 
-# Порядок на сервері: спочатку git pull у SSH_DEPLOY_PATH, потім docker compose build
-# (Vite збірка всередині образа) і up. Push на main лише запускає цей сценарій.
-#
-# Server order: git pull in deploy dir → Docker image build (includes npm run build) → compose up.
+# Two builds on every push to main:
+# 1) CI: `cd site && npm run build` — same as local, fails deploy if broken.
+# 2) Server after `git pull`: Docker image runs `npm run build` again (Dockerfile) → nginx serves dist.
 
 on:
   push:
@@ -17,9 +16,33 @@ concurrency:
 permissions:
   contents: read
 
+# Run official Actions on Node 24 (see GitHub Actions Node 20 deprecation).
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
+  build_site:
+    name: "site/: npm ci && npm run build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+
+      - name: npm run build (must match site/package.json "build")
+        run: |
+          set -euo pipefail
+          cd site
+          npm ci
+          npm run build
+
   deploy:
     name: Deploy to server
+    needs: build_site
     runs-on: ubuntu-latest
 
     steps:
@@ -30,7 +53,7 @@ jobs:
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: "On server: git pull → Docker build → up"
+      - name: "On server: git pull → Docker (npm run build in image) → up"
         env:
           SSH_DEPLOY_PATH: ${{ secrets.SSH_DEPLOY_PATH }}
         run: |
@@ -68,7 +91,7 @@ jobs:
           fi
           "${DC[@]}" version
 
-          echo "=== 3) Docker build (runs npm run build in Dockerfile) ==="
+          echo "=== 3) Docker build (Dockerfile RUN npm run build = site/package.json build) ==="
           DOCKER_BUILDKIT=1 "${DC[@]}" --progress=plain build --pull
 
           echo "=== 4) Containers up ==="
