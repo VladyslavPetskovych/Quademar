@@ -1,11 +1,15 @@
 name: Deploy Quademar
 
+# Порядок на сервері: спочатку git pull у SSH_DEPLOY_PATH, потім docker compose build
+# (Vite збірка всередині образа) і up. Push на main лише запускає цей сценарій.
+#
+# Server order: git pull in deploy dir → Docker image build (includes npm run build) → compose up.
+
 on:
   push:
     branches:
       - main
 
-# One deploy at a time; new pushes wait instead of stacking partial deploys.
 concurrency:
   group: deploy-${{ github.ref }}
   cancel-in-progress: false
@@ -14,29 +18,8 @@ permissions:
   contents: read
 
 jobs:
-  # Builds the exact commit that triggered the workflow (visible logs on GitHub).
-  build_site:
-    name: Build site (Vite)
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: npm
-          cache-dependency-path: site/package-lock.json
-
-      - name: Install and build
-        run: |
-          set -euo pipefail
-          cd site
-          npm ci
-          npm run build
-
   deploy:
     name: Deploy to server
-    needs: build_site
     runs-on: ubuntu-latest
 
     steps:
@@ -47,8 +30,7 @@ jobs:
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      # Path is passed as $1 to the remote script (safe for spaces/special chars).
-      - name: Pull, Docker build, and restart
+      - name: "On server: git pull → Docker build → up"
         env:
           SSH_DEPLOY_PATH: ${{ secrets.SSH_DEPLOY_PATH }}
         run: |
@@ -66,13 +48,13 @@ jobs:
           echo "=== Deploy path ==="
           pwd
 
-          echo "=== Git sync ==="
+          echo "=== 1) Git sync (pull latest main) ==="
           git fetch origin main
           git checkout main
           git pull --ff-only origin main
 
           export CACHEBUST="$(git rev-parse HEAD)"
-          echo "=== Commit for image build ==="
+          echo "=== 2) Image build for commit ==="
           echo "$CACHEBUST"
 
           echo "=== Compose CLI ==="
@@ -86,10 +68,10 @@ jobs:
           fi
           "${DC[@]}" version
 
-          echo "=== Docker build ==="
+          echo "=== 3) Docker build (runs npm run build in Dockerfile) ==="
           DOCKER_BUILDKIT=1 "${DC[@]}" --progress=plain build --pull
 
-          echo "=== Containers up ==="
+          echo "=== 4) Containers up ==="
           "${DC[@]}" up -d --remove-orphans
 
           echo "=== Done ==="
