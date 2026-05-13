@@ -4,21 +4,26 @@
  */
 
 /**
- * Landing-only deploy: Home, Contacts, and Moments stay navigable; other routes remain in the
- * bundle but direct URLs redirect to `/` and header/menu/footer links are inactive.
- * Set to `false` when publishing the full site.
+ * Landing-only deploy: Home, Contacts, Moments, and Suites & Rooms (listing + room pages)
+ * stay navigable; other routes remain in the bundle but redirect to `/` and locked nav links
+ * open the coming-soon pattern. Set to `false` when publishing the full site.
  * `npm run build` regenerates `public/sitemap.xml` from this flag (see `scripts/generate-sitemap.mjs`).
  */
 export const LANDING_ONLY_NAV = true
 
-/** Paths users may open when `LANDING_ONLY_NAV` is on (leading slash, no trailing slash). */
-const LANDING_ALLOWED = new Set(['/', '/contacts', '/moments'])
+/** Exact paths allowed in landing mode (no trailing slash). */
+const LANDING_ALLOWED = new Set(['/', '/contacts', '/moments', '/suites-rooms'])
+
+/** Nav link ids that stay real links in landing mode (matches `NAV_LINKS` ids). */
+export const LANDING_UNLOCKED_NAV_IDS = new Set(['about', 'contacts', 'moments', 'suites-rooms'])
 
 /** Whether `pathname` may render (otherwise caller should redirect to `/`). */
 export function isPathAllowedInLandingMode(pathname) {
   if (!LANDING_ONLY_NAV) return true
   const p = pathname.replace(/\/+$/, '') || '/'
-  return LANDING_ALLOWED.has(p)
+  if (LANDING_ALLOWED.has(p)) return true
+  if (p.startsWith('/suites-rooms/')) return true
+  return false
 }
 
 /** Canonical live site (HTTPS, no trailing slash). Override with `VITE_SITE_ORIGIN` if needed. */

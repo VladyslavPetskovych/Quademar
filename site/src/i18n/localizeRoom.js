@@ -49,5 +49,12 @@ export function localizeRoom(room, locale) {
     }
   }
 
+  if (patch.galleryNarrative) {
+    next.galleryNarrative = {
+      headline: patch.galleryNarrative.headline ?? room.galleryNarrative?.headline ?? '',
+      body: patch.galleryNarrative.body ?? room.galleryNarrative?.body ?? '',
+    }
+  }
+
   return next
 }

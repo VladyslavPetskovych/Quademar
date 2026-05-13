@@ -1,8 +1,7 @@
 name: Deploy Quademar
 
-# Two builds on every push to main:
-# 1) CI: `cd site && npm run build` — same as local, fails deploy if broken.
-# 2) Server after `git pull`: Docker image runs `npm run build` again (Dockerfile) → nginx serves dist.
+# Server flow after push: git pull → `cd site && npm ci && npm run build` → Docker nginx reloads
+# static files from ./site/dist (bind mount). Same as your manual deploy.
 
 on:
   push:
@@ -16,7 +15,6 @@ concurrency:
 permissions:
   contents: read
 
-# Run official Actions on Node 24 (see GitHub Actions Node 20 deprecation).
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -33,7 +31,7 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
 
-      - name: npm run build (must match site/package.json "build")
+      - name: npm run build (same as on VPS)
         run: |
           set -euo pipefail
           cd site
@@ -53,7 +51,7 @@ jobs:
           printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/deploy_key
           ssh-keyscan -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
 
-      - name: "On server: git pull → Docker (npm run build in image) → up"
+      - name: "On server: git pull → site npm run build → Docker up"
         env:
           SSH_DEPLOY_PATH: ${{ secrets.SSH_DEPLOY_PATH }}
         run: |
@@ -71,31 +69,29 @@ jobs:
           echo "=== Deploy path ==="
           pwd
 
-          echo "=== 1) Git sync (pull latest main) ==="
+          echo "=== 1) Git sync ==="
           git fetch origin main
           git checkout main
           git pull --ff-only origin main
 
-          export CACHEBUST="$(git rev-parse HEAD)"
-          echo "=== 2) Image build for commit ==="
-          echo "$CACHEBUST"
+          echo "=== 2) site/: npm ci && npm run build (writes ./site/dist for nginx volume) ==="
+          cd site
+          npm ci
+          npm run build
+          cd ..
 
-          echo "=== Compose CLI ==="
+          echo "=== 3) Docker (nginx + bind mount ./site/dist) ==="
           if docker compose version >/dev/null 2>&1; then
             DC=(docker compose)
           elif command -v docker-compose >/dev/null 2>&1; then
             DC=(docker-compose)
           else
-            echo "ERROR: Install Docker Compose v2 (docker compose) or v1 (docker-compose)." >&2
+            echo "ERROR: Install Docker Compose v2 or v1." >&2
             exit 1
           fi
           "${DC[@]}" version
-
-          echo "=== 3) Docker build (Dockerfile RUN npm run build = site/package.json build) ==="
           DOCKER_BUILDKIT=1 "${DC[@]}" --progress=plain build --pull
-
-          echo "=== 4) Containers up ==="
-          "${DC[@]}" up -d --remove-orphans
+          "${DC[@]}" up -d --remove-orphans --force-recreate
 
           echo "=== Done ==="
           REMOTE_SCRIPT

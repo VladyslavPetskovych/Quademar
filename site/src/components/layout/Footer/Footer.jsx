@@ -2,12 +2,13 @@ import { useMemo } from 'react'
 import logoVertical from '../../../assets/footer/Guardamar_Vertical logotype.svg'
 import footerTexture from '../../../assets/footer/footer_texture.jpg'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { CONTACT, LANDING_ONLY_NAV, SITE } from '../../../config/site'
+import { CONTACT, LANDING_ONLY_NAV, SITE, isPathAllowedInLandingMode } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'
 
 function FooterColumnLink({ href, label, className }) {
   const { openComingSoonModal } = useComingSoonModal()
-  const locked = LANDING_ONLY_NAV && href.startsWith('/') && href !== '/contacts'
+  const locked =
+    LANDING_ONLY_NAV && href.startsWith('/') && !isPathAllowedInLandingMode(href.split('#')[0])
   if (locked) {
     return (
       <button

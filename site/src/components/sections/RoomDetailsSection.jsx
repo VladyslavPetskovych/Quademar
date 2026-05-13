@@ -15,23 +15,24 @@ const headerLine = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.68, ease: easeSmooth } },
 }
 
-const columnReveal = {
-  hidden: (dir) => ({ opacity: 0, x: dir * 28 }),
-  visible: {
-    opacity: 1,
-    x: 0,
-    transition: { duration: 0.75, ease: easeSmooth, staggerChildren: 0.1, delayChildren: 0.05 },
-  },
-}
-
 const rowReveal = {
   hidden: { opacity: 0, y: 14 },
   visible: { opacity: 1, y: 0, transition: { duration: 0.52, ease: easeSmooth } },
 }
 
+const rowsBlock = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.08, delayChildren: 0.04 },
+  },
+}
+
+const iconClass = 'h-6 w-6 shrink-0 text-[#141414]'
+
 function IconBed() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="4" y="10" width="16" height="8" rx="1.2" />
       <path d="M4 13h16M8 10V8a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" strokeLinecap="round" />
     </svg>
@@ -40,7 +41,7 @@ function IconBed() {
 
 function IconSize() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" stroke="currentColor" strokeWidth="2">
       <path d="M12 3.7 19.3 8v8L12 20.3 4.7 16V8L12 3.7Z" strokeLinejoin="round" />
       <path d="M4.7 8 12 12.4 19.3 8M12 12.4v8" strokeLinejoin="round" />
     </svg>
@@ -49,36 +50,62 @@ function IconSize() {
 
 function IconView() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M2 12s4-6 10-6 10 6 10 6-4 6-10 6S2 12 2 12Z" strokeLinejoin="round" />
-      <circle cx="12" cy="12" r="3" />
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" strokeLinejoin="round" />
+      <circle cx="12" cy="10" r="2.5" />
     </svg>
   )
 }
 
 function IconGuests() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <circle cx="8.6" cy="8.1" r="2.8" />
-      <circle cx="15.9" cy="7.7" r="2.5" />
-      <path d="M3.8 18.3a4.8 4.8 0 0 1 9.6 0M12.4 18.3a4.1 4.1 0 0 1 8.2 0" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path
+        d="M9.16006 10.87C9.06006 10.86 8.94006 10.86 8.83006 10.87C6.45006 10.79 4.56006 8.84 4.56006 6.44C4.56006 3.99 6.54006 2 9.00006 2C11.4501 2 13.4401 3.99 13.4401 6.44C13.4301 8.84 11.5401 10.79 9.16006 10.87Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M16.4098 4C18.3498 4 19.9098 5.57 19.9098 7.5C19.9098 9.39 18.4098 10.93 16.5398 11C16.4598 10.99 16.3698 10.99 16.2798 11"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M4.16021 14.56C1.74021 16.18 1.74021 18.82 4.16021 20.43C6.91021 22.27 11.4202 22.27 14.1702 20.43C16.5902 18.81 16.5902 16.17 14.1702 14.56C11.4302 12.73 6.92021 12.73 4.16021 14.56Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M18.3398 20C19.0598 19.85 19.7398 19.56 20.2998 19.13C21.8598 17.96 21.8598 16.03 20.2998 14.86C19.7498 14.44 19.0798 14.16 18.3698 14"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
     </svg>
   )
 }
 
 function IconBathroom() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M5 14h14l-1.2 6H6.2L5 14Z" strokeLinejoin="round" />
-      <path d="M8 14V9a1 1 0 0 1 1-1h1.5a3 3 0 0 1 3 3v3M5 10h2" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M6 18h12M7 14V9a2 2 0 0 1 2-2h1.5M17 14V9a2 2 0 0 0-2-2h-1.5" strokeLinecap="round" />
+      <path d="M5 10h2M17 10h2M8 18v2M16 18v2" strokeLinecap="round" />
+      <path d="M9 14h6l-1 4H10l-1-4Z" strokeLinejoin="round" />
     </svg>
   )
 }
 
 function IconFeatures() {
   return (
-    <svg viewBox="0 0 24 24" className="h-6 w-6 shrink-0 text-[#0a3f35]" fill="none" stroke="currentColor" strokeWidth="1.5">
-      <path d="M12 3v3M12 18v3M4.2 7.8l2.1 2.1M17.7 14.1l2.1 2.1M3 12h3M18 12h3M4.2 16.2l2.1-2.1M17.7 9.9l2.1-2.1" strokeLinecap="round" />
+    <svg viewBox="0 0 24 24" className={iconClass} fill="none" stroke="currentColor" strokeWidth="2">
+      <path d="M12 22V12M12 10V2M4.2 7.8l2.1 2.1M17.7 14.1l2.1 2.1M2 12h4M18 12h4M4.2 16.2l2.1-2.1M17.7 9.9l2.1-2.1" strokeLinecap="round" />
       <circle cx="12" cy="12" r="2.5" />
     </svg>
   )
@@ -93,33 +120,49 @@ const ICONS = {
   features: IconFeatures,
 }
 
-function DetailRow({ row }) {
+function pairRows(left, right) {
+  const max = Math.max(left.length, right.length)
+  return Array.from({ length: max }, (_, i) => [left[i] ?? null, right[i] ?? null])
+}
+
+function DetailCell({ row, bordered }) {
+  if (!row) {
+    return <div className="hidden w-full lg:block lg:w-[421px]" aria-hidden="true" />
+  }
+
   const Icon = ICONS[row.icon] ?? IconFeatures
+
   return (
-    <div className="flex gap-4 py-7 first:pt-0 md:py-2">
-      <motion.div className="pt-0.5" whileHover={{ scale: 1.06 }} transition={{ type: 'spring', stiffness: 400, damping: 22 }}>
+    <div
+      className={`flex w-full flex-col items-start gap-2 lg:w-[421px] ${
+        bordered ? 'border-b border-[rgba(13,13,13,0.88)] pb-4' : ''
+      }`}
+    >
+      <div className="flex items-center gap-2">
         <Icon />
-      </motion.div>
-      <div className="min-w-0 flex-1">
-        <h4 className="font-sans text-[11px] font-medium uppercase tracking-widest text-[#6f6a65]">{row.label}</h4>
-        {row.text ? (
-          <p className="mt-3 font-sans text-[15px] font-[250] leading-relaxed text-[#171412]">{row.text}</p>
-        ) : null}
-        {row.lines?.length ? (
-          <div className="mt-3 space-y-1.5 font-sans text-[15px] font-[250] leading-relaxed text-[#171412]">
-            {row.lines.map((line) => (
-              <p key={line}>{line}</p>
-            ))}
-          </div>
-        ) : null}
-        {row.bullets?.length ? (
-          <ul className="mt-3 list-disc space-y-1.5 pl-5 font-sans text-[15px] font-[250] leading-relaxed text-[#171412]">
-            {row.bullets.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-        ) : null}
+        <h4 className="font-sans text-[16px] font-medium leading-[19px] uppercase text-[#141414]">
+          {row.label}
+        </h4>
       </div>
+      {row.text ? (
+        <p className="font-sans text-[16px] font-[250] leading-[19px] text-[rgba(13,13,13,0.88)]">
+          {row.text}
+        </p>
+      ) : null}
+      {row.lines?.length ? (
+        <div className="font-sans text-[16px] font-[250] leading-[19px] text-[rgba(13,13,13,0.88)]">
+          {row.lines.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
+      ) : null}
+      {row.bullets?.length ? (
+        <div className="font-sans text-[16px] font-[250] leading-[19px] text-[rgba(13,13,13,0.88)]">
+          {row.bullets.map((item) => (
+            <p key={item}>{item}</p>
+          ))}
+        </div>
+      ) : null}
     </div>
   )
 }
@@ -138,74 +181,77 @@ export default function RoomDetailsSection({ detailSection, detailsHeading = 'De
     })
   const leftRows = withoutUnits(left)
   const rightRows = withoutUnits(right)
+  const rowPairs = pairRows(leftRows, rightRows)
 
   return (
     <motion.div
-      className="border-t border-[#171412]/10 bg-[#f3eee6]"
+      className="bg-[#FAF3E8]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.12 }}
       transition={{ duration: 0.6, ease: easeSmooth }}
     >
-      <div className="mx-auto max-w-[960px] px-6 py-7 md:px-8 md:py-5 lg:py-6">
+      <motion.div className="mx-auto flex w-full max-w-[1320px] flex-col items-start gap-11 bg-[#FAF3E8] px-5 pb-10 pt-4 md:px-[60px] md:pb-[60px] md:pt-6 lg:px-0">
         <motion.div
-          className="text-center"
+          className="mx-auto flex w-full max-w-[880px] flex-col items-center gap-4 px-4 py-6 md:px-10 md:py-8"
           variants={headerBlock}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.35 }}
         >
           <motion.h2
-            className="font-cormorant text-[32px] font-normal leading-none tracking-[0] text-[#171412] md:text-[38px] lg:text-[40px]"
+            className="w-full text-center font-cormorant text-[32px] font-normal leading-[38px] tracking-[0] text-[#141414] lg:text-[40px] lg:leading-[48px]"
             variants={headerLine}
           >
             {headline}
           </motion.h2>
           <motion.p
-            className="mx-auto mt-6 max-w-[640px] font-sans text-[16px] font-[250] leading-relaxed tracking-[0] text-[#57524e] md:mt-8"
+            className="max-w-[800px] whitespace-pre-line text-center font-sans text-[16px] font-[250] leading-[19px] tracking-[0] text-[rgba(13,13,13,0.88)]"
             variants={headerLine}
           >
             {intro}
           </motion.p>
+        </motion.div>
+
+        <motion.div
+          className="flex w-full flex-col items-center gap-4 p-0"
+          variants={headerBlock}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <motion.h3
-            className="mt-14 font-cormorant text-[26px] font-normal leading-none tracking-[0] text-[#171412] md:mt-16 md:text-[28px]"
+            className="w-full text-center font-cormorant text-[28px] font-normal leading-[34px] tracking-[0] text-[#141414] lg:text-[32px] lg:leading-[38px]"
             variants={headerLine}
           >
             {detailsHeading}
           </motion.h3>
-        </motion.div>
 
-        <div className="mt-10 grid gap-10 md:mt-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-16">
           <motion.div
-            className="divide-y divide-[#171412]/12"
-            variants={columnReveal}
-            custom={-1}
+            className="flex w-full max-w-[1022px] flex-col items-start gap-4"
+            variants={rowsBlock}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.15, margin: '0px 0px -6% 0px' }}
           >
-            {leftRows.map((row, i) => (
-              <motion.div key={`${row.label}-${i}`} variants={rowReveal}>
-                <DetailRow row={row} />
-              </motion.div>
-            ))}
+            {rowPairs.map(([leftRow, rightRow], i) => {
+              const isLast = i === rowPairs.length - 1
+              return (
+                <motion.div
+                  key={`detail-row-${i}`}
+                  className={`flex w-full flex-col gap-8 lg:flex-row lg:items-start lg:gap-[180px] ${
+                    i > 0 ? 'pt-8' : ''
+                  }`}
+                  variants={rowReveal}
+                >
+                  <DetailCell row={leftRow} bordered={!isLast} />
+                  <DetailCell row={rightRow} bordered={!isLast} />
+                </motion.div>
+              )
+            })}
           </motion.div>
-          <motion.div
-            className="divide-y divide-[#171412]/12"
-            variants={columnReveal}
-            custom={1}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.15, margin: '0px 0px -6% 0px' }}
-          >
-            {rightRows.map((row, i) => (
-              <motion.div key={`${row.label}-${i}`} variants={rowReveal}>
-                <DetailRow row={row} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </motion.div>
   )
 }

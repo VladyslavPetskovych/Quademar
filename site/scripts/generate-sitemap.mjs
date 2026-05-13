@@ -26,7 +26,15 @@ const FULL_PATHS = [
   '/moments',
 ]
 
-const paths = LANDING_ONLY_NAV ? ['/', '/contacts', '/moments'] : FULL_PATHS
+const LANDING_PATHS = FULL_PATHS.filter(
+  (path) =>
+    path === '/' ||
+    path === '/contacts' ||
+    path === '/moments' ||
+    path.startsWith('/suites-rooms'),
+)
+
+const paths = LANDING_ONLY_NAV ? LANDING_PATHS : FULL_PATHS
 const lastmod = new Date().toISOString().slice(0, 10)
 
 function priority(path) {

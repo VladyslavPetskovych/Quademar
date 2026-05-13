@@ -29,7 +29,7 @@ const DISCOVERY_META = [
   },
 ]
 
-export default function HomeDiscoverySection() {
+export default function HomeDiscoverySection({ variant = 'default' }) {
   const { t } = useLanguage()
 
   const textReveal = {
@@ -53,7 +53,11 @@ export default function HomeDiscoverySection() {
 
   return (
     <motion.section
-      className="relative overflow-hidden bg-[#f3eee6] py-12 md:py-5"
+      className={
+        variant === 'room'
+          ? 'relative overflow-hidden bg-[#FAF3E8] py-12 md:py-5'
+          : 'relative overflow-hidden bg-[#f3eee6] py-12 md:py-5'
+      }
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={HOME_SECTION_VIEWPORT}
@@ -64,14 +68,14 @@ export default function HomeDiscoverySection() {
         alt=""
         aria-hidden="true"
         role="presentation"
-        className="pointer-events-none absolute left-[-60px] top-0 hidden w-[420px] opacity-15 lg:block"
-        initial={{ opacity: 0, x: -40 }}
+        className="pointer-events-none absolute right-[-60px] top-[-48px] hidden w-[420px] -scale-x-100 opacity-15 lg:block"
+        initial={{ opacity: 0, x: 40 }}
         whileInView={{ opacity: 0.15, x: 0 }}
         viewport={{ once: true, amount: 0.1 }}
         transition={{ duration: 0.88, ease: HOME_SCROLL_EASE }}
       />
 
-      <div className="mx-auto max-w-[1440px] px-4 md:px-6">
+      <motion.div className="mx-auto max-w-[1440px] px-4 md:px-6">
         <motion.div
           className="mx-auto max-w-[860px] text-center"
           initial={{ y: 24, opacity: 0 }}
@@ -80,7 +84,7 @@ export default function HomeDiscoverySection() {
           transition={{ duration: 0.82, ease: HOME_SCROLL_EASE }}
         >
           <motion.h2
-            className="font-cormorant text-[40px] mb-5 font-normal leading-none tracking-normal text-center text-[#181614]"
+            className="mb-5 text-center font-cormorant text-[40px] font-normal leading-none tracking-normal text-[#181614]"
             variants={textReveal}
             initial="hidden"
             whileInView="visible"
@@ -90,7 +94,7 @@ export default function HomeDiscoverySection() {
             {t('home.discovery.h2')}
           </motion.h2>
           <motion.p
-            className="mx-auto mb-32 max-w-[820px] m-5 font-sans text-[16px] font-[250] leading-none tracking-normal text-center text-[#56524f]"
+            className="m-5 mx-auto mb-32 max-w-[820px] text-center font-sans text-[16px] font-[250] leading-none tracking-normal text-[#56524f]"
             variants={textReveal}
             initial="hidden"
             whileInView="visible"
@@ -129,7 +133,7 @@ export default function HomeDiscoverySection() {
             )
           })}
         </motion.div>
-      </div>
+      </motion.div>
     </motion.section>
   )
 }

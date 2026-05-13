@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { CONTACT, LANDING_ONLY_NAV, NAV_LINKS, SITE } from '../../../config/site'
+import { CONTACT, LANDING_ONLY_NAV, LANDING_UNLOCKED_NAV_IDS, NAV_LINKS, SITE } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'
 import { navLabelKey } from '../../../i18n/navLabels'
 import logoDark from '../../../assets/logo/dark/Guardamar_logotype Vertical Version + Descriptor.svg'
@@ -84,7 +84,7 @@ export default function MenuOverlay({ isOpen, onClose }) {
 
   const handleLinkClick = () => onClose()
 
-  const navLocked = (linkId) => LANDING_ONLY_NAV && linkId !== 'about' && linkId !== 'contacts'
+  const navLocked = (linkId) => LANDING_ONLY_NAV && !LANDING_UNLOCKED_NAV_IDS.has(linkId)
 
   const primaryClass =
     'block w-full py-4 font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#171412] transition-colors active:bg-[#171412]/5 hover:text-[#0a3f35] max-lg:touch-manipulation lg:py-4 lg:text-[13px] lg:font-semibold'

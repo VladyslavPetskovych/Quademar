@@ -2,31 +2,46 @@
 export const roomsEs = {
   presidential: {
     title: 'Suite Presidencial',
-    images: [{ alt: 'Interior dormitorio Suite Presidencial' }],
+    images: [
+      { alt: 'Terraza privada de la suite presidencial con hidromasaje y vistas al mar Mediterráneo' },
+      { alt: 'Terraza con hidromasaje, champán y rosas' },
+      { alt: 'Baño con bañera exenta y pared de madera natural' },
+      { alt: 'Ducha a ras de suelo con grifería negra mate' },
+    ],
     features: [
       { label: '4 unidades', icon: 'units' },
       { label: '4 huéspedes', icon: 'guests' },
       { label: '40 m²', icon: 'size' },
     ],
     description:
-      'Amplia y elegante suite con cama doble, sofá lounge, jacuzzi, bañera y ducha. Incluye dos balcones privados; ideal para estancias premium en Guardamar.',
+      'Nuestra suite más exclusiva para hasta cuatro huéspedes: terraza amplia con bañera de hidromasaje privada y vistas al mar, texturas naturales refinadas, cama doble y sofá cama, y un baño de lujo con bañera y ducha a ras de suelo.',
     ctaLabel: 'Ver habitación',
+    galleryNarrative: {
+      headline: 'Un lugar donde el mundo se detiene para ti',
+      body:
+        'Sumérgete en una atmósfera de tranquilidad absoluta, donde cada detalle del interior susurra armonía. Nuestra Suite Presidencial combina texturas naturales, luz suave y un estilo español refinado. Aquí el tiempo se frena, para disfrutar de las vistas al mar Mediterráneo rodeado de confort y materiales nobles. Un lugar donde el lujo se vuelve natural.',
+    },
     detailSection: {
-      headline: 'Confort presidencial en Guardamar',
+      headline: 'Nuestra suite más exclusiva',
       intro:
-        'Una categoría premium pensada para quienes buscan espacio, intimidad y un nivel superior de confort en la Costa Blanca.',
+        'Nuestra suite más exclusiva, pensada para hasta 4 huéspedes, ofrece un confort excepcional, intimidad y una atmósfera mediterránea espectacular. La amplia terraza cuenta con una bañera de hidromasaje privada, perfecta para momentos de relax con vistas al mar.\n\nElegante, con texturas naturales refinadas y acabados premium, incluye una cama doble y un cómodo sofá cama. El baño de lujo dispone de bañera y ducha a ras de suelo.\n\nLos huéspedes disfrutan de amenities premium Lalique, albornoces y zapatillas de la casa, minibar, rincón de té, caja fuerte en la habitación, acceso a la piscina climatizada y al restaurante del hotel con desayunos y comidas refinados.',
       left: [
-        { label: 'Unidades disponibles', icon: 'features', text: '4 suites' },
-        { label: 'Capacidad', icon: 'guests', text: 'Hasta 4 huéspedes' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble y sofá cama' },
         { label: 'Superficie', icon: 'size', text: '40 m²' },
+        { label: 'Vista', icon: 'view', text: 'Terraza privada con hidromasaje y vistas al mar Mediterráneo' },
       ],
       right: [
-        { label: 'Distribución del descanso', icon: 'bed', text: 'Cama doble + sofá cama' },
-        { label: 'Baño', icon: 'bathroom', text: 'Bañera y ducha' },
+        { label: 'Ocupación', icon: 'guests', text: 'Hasta 4 huéspedes' },
+        { label: 'Baño', icon: 'bathroom', text: 'Bañera exenta y ducha a ras de suelo' },
         {
-          label: 'Destacados',
+          label: 'Características',
           icon: 'features',
-          bullets: ['Jacuzzi privado', 'Dos balcones', 'Zona de estar con sofá'],
+          bullets: [
+            'Amenities premium Lalique, albornoces y zapatillas',
+            'Minibar, rincón de té y caja fuerte',
+            'Piscina climatizada y restaurante del hotel',
+            'Texturas naturales refinadas e interiores de estilo español',
+          ],
         },
       ],
     },
@@ -34,34 +49,45 @@ export const roomsEs = {
 
   family: {
     title: 'Suite Familiar',
-    images: [{ alt: 'Suite familiar luminosa con ventanal y banco de madera' }],
+    images: [
+      { alt: 'Baño de la suite familiar con espejo retroiluminado, lavabo y pared terracota' },
+      { alt: 'Lavabo blanco con grifo negro y toallas Guardamar en la suite familiar' },
+      { alt: 'Toallas Guardamar Hotel & Spa dobladas en el baño de la suite familiar' },
+      { alt: 'Detalle del baño de la suite familiar con azulejos terracota y acabados premium' },
+      { alt: 'Vista amplia del baño de la suite familiar con espejo retroiluminado y amenities' },
+    ],
     features: [
       { label: '4 unidades', icon: 'units' },
       { label: '4 huéspedes', icon: 'guests' },
       { label: '20 m²', icon: 'size' },
     ],
     description:
-      'Suite equilibrada para familias o grupos pequeños, con cama doble, sofá cama y baño con ducha.',
+      'Suite amplia y cuidadosamente diseñada para hasta 4 huéspedes, con cama doble y cómodo sofá cama. Pensada para estancias familiares relajadas, combina espacio generoso, texturas mediterráneas naturales y confort elegante.',
     ctaLabel: 'Ver habitación',
+    galleryNarrative: {
+      body:
+        'Suite amplia y cuidadosamente diseñada para hasta 4 huéspedes, con cama doble y cómodo sofá cama. Pensada para estancias familiares relajadas, combina espacio generoso, texturas mediterráneas naturales y confort elegante.',
+    },
     detailSection: {
-      headline: 'Práctica y familiar',
+      headline: 'Confort familiar con espacio',
       intro:
-        'Distribución cómoda para familias y acompañantes que buscan una base elegante y funcional cerca de las playas y del centro de Guardamar.',
+        'Los huéspedes pueden disfrutar de balcón privado, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación. La suite también incluye acceso a la piscina climatizada y al restaurante del hotel con desayunos y almuerzos refinados.',
       left: [
-        { label: 'Unidades disponibles', icon: 'features', text: '4 suites' },
-        { label: 'Capacidad', icon: 'guests', text: 'Hasta 4 huéspedes' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble y sofá cama' },
         { label: 'Superficie', icon: 'size', text: '20 m²' },
+        { label: 'Vista', icon: 'view', text: 'Balcón privado' },
       ],
       right: [
-        { label: 'Distribución del descanso', icon: 'bed', text: 'Cama doble + sofá cama' },
-        { label: 'Baño', icon: 'bathroom', text: 'Ducha' },
+        { label: 'Ocupación', icon: 'guests', text: 'Hasta 4 huéspedes' },
+        { label: 'Baño', icon: 'bathroom', text: 'Baño amplio con ducha' },
         {
-          label: 'Destacados',
+          label: 'Características',
           icon: 'features',
           bullets: [
-            'Distribución orientada a familias',
-            'Plaza extra en sofá cama',
-            'Baño funcional',
+            'Amenities Lalique premium',
+            'Albornoces y zapatillas de la casa',
+            'Minibar, rincón de té y caja fuerte',
+            'Piscina climatizada y restaurante del hotel',
           ],
         },
       ],
@@ -70,34 +96,44 @@ export const roomsEs = {
 
   junior: {
     title: 'Junior Suite',
-    images: [{ alt: 'Junior Suite moderna con butacas y lámpara colgante' }],
+    images: [
+      { alt: 'Baño de la Junior Suite con espejo retroiluminado, azulejos cobrizos y lavabo' },
+      { alt: 'Lavabo blanco con grifo negro y toallas Guardamar en la Junior Suite' },
+      { alt: 'Toallas Guardamar Hotel & Spa dobladas en el baño de la Junior Suite' },
+      { alt: 'Vista amplia del baño de la Junior Suite con pared cobriza y espejo retroiluminado' },
+    ],
     features: [
       { label: '4 unidades', icon: 'units' },
       { label: '3 huéspedes', icon: 'guests' },
       { label: '20 m²', icon: 'size' },
     ],
     description:
-      'Suite elegante con cama doble, butaca y baño con ducha. Una opción refinada para parejas o grupos reducidos.',
+      'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con cama doble y elegante butaca convertible en cama. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
     ctaLabel: 'Ver habitación',
+    galleryNarrative: {
+      body:
+        'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con cama doble y elegante butaca convertible en cama. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
+    },
     detailSection: {
-      headline: 'Suite compacta con estilo',
+      headline: 'Confort junior con elegancia',
       intro:
-        'Una categoría contemporánea que equilibra confort y uso inteligente del espacio para unas vacaciones relajadas en Guardamar.',
+        'Los huéspedes pueden disfrutar de balcón privado, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación. También incluye acceso a la piscina climatizada y al restaurante del hotel con desayunos y almuerzos refinados.',
       left: [
-        { label: 'Unidades disponibles', icon: 'features', text: '4 suites' },
-        { label: 'Capacidad', icon: 'guests', text: 'Hasta 3 huéspedes' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble y butaca convertible' },
         { label: 'Superficie', icon: 'size', text: '20 m²' },
+        { label: 'Vista', icon: 'view', text: 'Balcón privado' },
       ],
       right: [
-        { label: 'Distribución del descanso', icon: 'bed', text: 'Cama doble + butaca' },
-        { label: 'Baño', icon: 'bathroom', text: 'Ducha' },
+        { label: 'Ocupación', icon: 'guests', text: 'Hasta 3 huéspedes' },
+        { label: 'Baño', icon: 'bathroom', text: 'Baño amplio con ducha' },
         {
-          label: 'Destacados',
+          label: 'Características',
           icon: 'features',
           bullets: [
-            'Plan moderno y compacto',
-            'Baño fácil de mantener',
-            'Toque lounge confortable',
+            'Amenities Lalique premium',
+            'Albornoces y zapatillas de la casa',
+            'Minibar, rincón de té y caja fuerte',
+            'Piscina climatizada y restaurante del hotel',
           ],
         },
       ],
@@ -105,71 +141,94 @@ export const roomsEs = {
   },
 
   'standard-view-double': {
-    title: 'Doble con vistas',
-    images: [{ alt: 'Habitación estándar con vistas y cama doble' }],
+    title: 'Habitación estándar con vistas',
+    images: [
+      { alt: 'Baño de la habitación estándar con vistas, ducha de cristal, azulejos verdes y espejo retroiluminado' },
+      { alt: 'Toallas Guardamar Hotel & Spa en el baño de la habitación estándar con vistas' },
+      { alt: 'Lavabo con espejo retroiluminado y secador de pared en la habitación estándar con vistas' },
+      { alt: 'Toallas Guardamar dobladas junto a la ducha en la habitación estándar con vistas' },
+      { alt: 'Secador Valera de pared en el baño de la habitación estándar con vistas' },
+    ],
     features: [
       { label: '31 unidades', icon: 'units' },
       { label: '2 huéspedes', icon: 'guests' },
       { label: '18 m²', icon: 'size' },
     ],
     description:
-      'La categoría más solicitada, con vistas exteriores. Incluye una cama doble (160×200) y baño con ducha.',
+      'Suite elegante y espaciosa para hasta 2 huéspedes, disponible con cama doble o dos camas individuales bajo petición. Cuenta con balcón privado con impresionantes vistas al mar, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación.',
     ctaLabel: 'Ver habitación',
+    galleryNarrative: {
+      body:
+        'Suite elegante y espaciosa para hasta 2 huéspedes, disponible con cama doble o dos camas individuales bajo petición. Cuenta con balcón privado con impresionantes vistas al mar, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación.',
+    },
     detailSection: {
-      headline: 'Estándar con vistas abiertas',
+      headline: 'Confort refinado con vistas al mar',
       intro:
-        'Habitación luminosa y práctica para parejas que prefieren una sola cama grande y acceso sencillo a todas las instalaciones del hotel.',
+        'Diseñada con una estética mediterránea refinada y texturas naturales relajantes, la suite ofrece un ambiente de confort y descanso. Los huéspedes también disfrutan de acceso a la piscina climatizada y al restaurante del hotel con desayunos y almuerzos refinados.',
       left: [
-        { label: 'Unidades disponibles', icon: 'features', text: '31 habitaciones' },
-        { label: 'Capacidad', icon: 'guests', text: 'Hasta 2 huéspedes' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble o camas individuales bajo petición' },
         { label: 'Superficie', icon: 'size', text: '18 m²' },
+        { label: 'Vista', icon: 'view', text: 'Balcón privado con vistas al mar' },
       ],
       right: [
+        { label: 'Ocupación', icon: 'guests', text: 'Hasta 2 huéspedes' },
+        { label: 'Baño', icon: 'bathroom', text: 'Baño amplio con ducha' },
         {
-          label: 'Distribución del descanso',
-          icon: 'bed',
-          text: 'Una cama doble (160×200)',
-        },
-        { label: 'Baño', icon: 'bathroom', text: 'Ducha' },
-        {
-          label: 'Destacados',
+          label: 'Características',
           icon: 'features',
-          bullets: ['Categoría con vistas exteriores', 'Distribución eficiente', 'Ideal para parejas'],
+          bullets: [
+            'Decoración mediterránea refinada',
+            'Amenities Lalique premium',
+            'Albornoces y zapatillas de la casa',
+            'Minibar, rincón de té y caja fuerte',
+            'Piscina climatizada y restaurante del hotel',
+          ],
         },
       ],
     },
   },
 
   'standard-partial-double': {
-    title: 'Doble con vistas parciales',
-    images: [{ alt: 'Habitación estándar con vistas parciales y cama doble' }],
+    title: 'Habitación estándar con vistas parciales',
+    images: [
+      { alt: 'Baño de la habitación estándar con vistas parciales, espejo retroiluminado y lavabo' },
+      { alt: 'Ducha con azulejos verdes verticales y grifería negra en la habitación con vistas parciales' },
+      { alt: 'Vista amplia del baño con ducha de cristal y espejo retroiluminado en la habitación con vistas parciales' },
+      { alt: 'Toallas Guardamar Hotel & Spa junto a la ducha en la habitación con vistas parciales' },
+    ],
     features: [
       { label: '5 unidades', icon: 'units' },
       { label: '2 huéspedes', icon: 'guests' },
       { label: '15 m²', icon: 'size' },
     ],
     description:
-      'Habitación compacta con cama doble y vistas parciales. Baño práctico con ducha.',
+      'Habitación elegante y relajante para hasta 2 huéspedes, disponible con cama doble o dos camas individuales bajo petición. Cuenta con balcón privado con vistas parciales al mar, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación.',
     ctaLabel: 'Ver habitación',
+    galleryNarrative: {
+      body:
+        'Habitación elegante y relajante para hasta 2 huéspedes, disponible con cama doble o dos camas individuales bajo petición. Cuenta con balcón privado con vistas parciales al mar, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación.',
+    },
     detailSection: {
-      headline: 'Doble compacta con vistas parciales',
+      headline: 'Confort relajado con vistas parciales al mar',
       intro:
-        'Una categoría inteligente para quienes valoran ubicación y confort con una huella más reducida.',
+        'Inspirada en la calma mediterránea y las texturas naturales, la habitación ofrece acceso a la piscina climatizada y al restaurante del hotel con desayunos y almuerzos refinados.',
       left: [
-        { label: 'Unidades disponibles', icon: 'features', text: '5 habitaciones' },
-        { label: 'Capacidad', icon: 'guests', text: 'Hasta 2 huéspedes' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble o camas individuales bajo petición' },
         { label: 'Superficie', icon: 'size', text: '15 m²' },
+        { label: 'Vista', icon: 'view', text: 'Balcón privado con vistas parciales al mar' },
       ],
       right: [
-        { label: 'Distribución del descanso', icon: 'bed', text: 'Una cama doble' },
-        { label: 'Baño', icon: 'bathroom', text: 'Ducha' },
+        { label: 'Ocupación', icon: 'guests', text: 'Hasta 2 huéspedes' },
+        { label: 'Baño', icon: 'bathroom', text: 'Baño amplio con ducha' },
         {
-          label: 'Destacados',
+          label: 'Características',
           icon: 'features',
           bullets: [
-            'Categoría con vistas parciales',
-            'Plano de habitación eficiente',
-            'Ideal para estancias cortas ciudad-playa',
+            'Decoración de inspiración mediterránea',
+            'Amenities Lalique premium',
+            'Albornoces y zapatillas de la casa',
+            'Minibar, rincón de té y caja fuerte',
+            'Piscina climatizada y restaurante del hotel',
           ],
         },
       ],

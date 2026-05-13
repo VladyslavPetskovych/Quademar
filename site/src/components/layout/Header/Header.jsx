@@ -3,18 +3,18 @@ import { Link, NavLink } from 'react-router-dom'
 import BurgerButton from '../../ui/BurgerButton'
 import MenuOverlay from '../MenuOverlay'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { LANDING_ONLY_NAV, NAV_LINKS } from '../../../config/site'
+import { LANDING_ONLY_NAV, LANDING_UNLOCKED_NAV_IDS, NAV_LINKS } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'
 import { navLabelKey } from '../../../i18n/navLabels'
 import logoWhite from '../../../assets/logo/white/Guardamar_logotype Vertical Version + Descriptor_header.svg'
 import logoDark from '../../../assets/logo/dark/Guardamar_logotype Vertical Version + Descriptor.svg'
 
-export default function Header({ isOverVideo = true }) {
+export default function Header({ isOverVideo = true, variant = 'default' }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const { openComingSoonModal } = useComingSoonModal()
   const { locale, toggleLocale, t } = useLanguage()
 
-  const navLocked = (linkId) => LANDING_ONLY_NAV && linkId !== 'about' && linkId !== 'contacts'
+  const navLocked = (linkId) => LANDING_ONLY_NAV && !LANDING_UNLOCKED_NAV_IDS.has(linkId)
 
   const navLabel = (linkId, shortRestaurant = false) =>
     shortRestaurant && linkId === 'restaurant-bar' ? t('nav.restaurantShort') : t(navLabelKey(linkId))
@@ -40,14 +40,19 @@ export default function Header({ isOverVideo = true }) {
   const headerNavLinks = NAV_LINKS.filter((link) => link.id !== 'about')
   const headerLogo = isOverVideo ? logoWhite : logoDark
 
+  const headerSurface =
+    variant === 'room'
+      ? isOverVideo
+        ? 'bg-transparent max-md:bg-[#FAF3E8] max-md:border-b max-md:border-[#2c2b28]/30'
+        : 'bg-[#FAF3E8] border-b border-[#2c2b28]/30'
+      : isOverVideo
+        ? 'bg-transparent max-md:bg-[#f3efe6] max-md:border-b max-md:border-[#2c2b28]/30'
+        : 'bg-[#f3efe6] border-b border-[#2c2b28]/30'
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 ${
-          isOverVideo
-            ? 'bg-transparent max-md:bg-[#f3efe6] max-md:border-b max-md:border-[#2c2b28]/30'
-            : 'bg-[#f3efe6] border-b border-[#2c2b28]/30'
-        } w-full max-w-full overflow-x-hidden`}
+        className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top,0px)] transition-all duration-300 ${headerSurface} w-full max-w-full overflow-x-hidden`}
       >
         <div className="w-full px-0 lg:mx-auto lg:max-w-[1320px] lg:px-6">
           <div

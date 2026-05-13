@@ -3,13 +3,11 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      args:
-        VITE_SITE_ORIGIN: ${VITE_SITE_ORIGIN:-}
-        VITE_GOOGLE_SITE_VERIFICATION: ${VITE_GOOGLE_SITE_VERIFICATION:-}
-        CACHEBUST: ${CACHEBUST:-local}
     image: quademar-site:latest
-    # Default avoids binding host :80 (often used by another reverse proxy). Point edge nginx at 127.0.0.1:8085.
-    # Override if this port is taken: WEB_PUBLISH=127.0.0.1:8090:80
+    # Always the freshly built tree from the repo (same as manual `cd site && npm run build`).
+    volumes:
+      - ./site/dist:/usr/share/nginx/html:ro
+    # Default avoids binding host :80 (often used by another reverse proxy).
     ports:
       - "${WEB_PUBLISH:-127.0.0.1:8085:80}"
     restart: unless-stopped

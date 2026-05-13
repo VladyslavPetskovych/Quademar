@@ -14,6 +14,7 @@ export default function MainLayout() {
   const location = useLocation()
   const navigate = useNavigate()
   const isHome = location.pathname === '/'
+  const isRoomDetail = /^\/suites-rooms\/[^/]+$/.test(location.pathname)
 
   useEffect(() => {
     if (!isPathAllowedInLandingMode(location.pathname)) {
@@ -62,8 +63,8 @@ export default function MainLayout() {
   return (
     <ComingSoonModalProvider>
       <div className="min-h-app">
-        <Header isOverVideo={isOverVideo} />
-        <main className={isHome ? '' : 'pt-[140px] md:pt-[160px]'}>
+        <Header isOverVideo={isOverVideo} variant={isRoomDetail ? 'room' : 'default'} />
+        <main className={isHome ? '' : 'pt-[100px] md:pt-[110px]'}>
           <Outlet />
         </main>
         <Footer />
