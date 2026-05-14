@@ -7,19 +7,26 @@ import familyBathroomSink from './src/assets/suites/family/bathroom-vanity-sink.
 import familyBathroomTowels from './src/assets/suites/family/bathroom-vanity-towels.png'
 import familyBathroomDetail from './src/assets/suites/family/bathroom-vanity-detail.png'
 import familyBathroomWide from './src/assets/suites/family/bathroom-vanity-wide.png'
-import juniorBathroomMirror from './src/assets/suites/junior/bathroom-vanity-copper-mirror.png'
-import juniorBathroomSink from './src/assets/suites/junior/bathroom-vanity-copper-sink.png'
-import juniorBathroomTowels from './src/assets/suites/junior/bathroom-vanity-copper-towels.png'
-import juniorBathroomWide from './src/assets/suites/junior/bathroom-vanity-copper-wide.png'
+import juniorRoomFromEntrance from './src/assets/suites/junior-partial-view/room-from-entrance.png'
+import juniorBedroomWide from './src/assets/suites/junior-partial-view/bedroom-wide-rattan-lights.png'
+import juniorBalconyDoorOpen from './src/assets/suites/junior-partial-view/balcony-door-open-sea-view.png'
+import juniorBalconyChairs from './src/assets/suites/junior-partial-view/balcony-chairs-partial-sea-view.png'
+import juniorClosetBalcony from './src/assets/suites/junior-partial-view/closet-balcony-partial-sea-view.png'
+import juniorBedroomFull from './src/assets/suites/junior-partial-view/bedroom-full-rattan-pendants.png'
+import juniorBedWide from './src/assets/suites/junior-partial-view/bed-wide-orange-headboard.png'
+import juniorBedSeashellArt from './src/assets/suites/junior-partial-view/bed-seashell-wall-art.png'
+import juniorBedShellCloseUp from './src/assets/suites/junior-partial-view/bed-shell-art-close-up.png'
+import juniorBedGreenPillows from './src/assets/suites/junior-partial-view/bed-green-pillows-detail.png'
+import juniorBedNightstandLight from './src/assets/suites/junior-partial-view/bed-nightstand-rattan-light.png'
+import juniorBedNightstandGlasses from './src/assets/suites/junior-partial-view/bed-nightstand-wine-glasses.png'
+import juniorWallTv from './src/assets/suites/junior-partial-view/wall-mounted-tv.png'
+import juniorClosetSeaView from './src/assets/suites/junior-partial-view/closet-balcony-sea-view.png'
+import juniorEntranceHallway from './src/assets/suites/junior-partial-view/entrance-hallway.png'
 import standardViewShower from './src/assets/suites/standard-view-double/bathroom-shower-green-tiles.png'
 import standardViewTowelsStacked from './src/assets/suites/standard-view-double/branded-towels-stacked.png'
 import standardViewVanity from './src/assets/suites/standard-view-double/bathroom-vanity-mirror-hairdryer.png'
 import standardViewTowelsShower from './src/assets/suites/standard-view-double/branded-towels-shower.png'
 import standardViewHairdryer from './src/assets/suites/standard-view-double/wall-mounted-hairdryer.png'
-import partialViewVanity from './src/assets/suites/standard-partial-double/bathroom-vanity-mirror.png'
-import partialViewShower from './src/assets/suites/standard-partial-double/bathroom-shower-green-tiles.png'
-import partialViewShowerWide from './src/assets/suites/standard-partial-double/bathroom-shower-wide.png'
-import partialViewTowels from './src/assets/suites/standard-partial-double/branded-towels-shower.png'
 
 /**
  * Suite / room listings in page order. Alternating layout: `reverse: false` = photo left,
@@ -205,20 +212,64 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorBathroomMirror,
-        alt: 'Junior Suite bathroom with backlit circular mirror, copper-toned tiles and vessel sink',
+        src: juniorRoomFromEntrance,
+        alt: 'Junior Suite bedroom viewed from the entrance hallway with balcony and natural light',
       },
       {
-        src: juniorBathroomSink,
-        alt: 'Junior Suite bathroom vanity with white sink, black faucet and Guardamar branded towels',
+        src: juniorBedroomWide,
+        alt: 'Junior Suite bedroom with terracotta headboard, green accents and woven rattan pendant lights',
       },
       {
-        src: juniorBathroomTowels,
-        alt: 'Folded Guardamar Hotel & Spa towels on the Junior Suite bathroom countertop',
+        src: juniorBalconyDoorOpen,
+        alt: 'Junior Suite balcony doors open to a private terrace with partial sea views',
       },
       {
-        src: juniorBathroomWide,
-        alt: 'Junior Suite bathroom wide view with copper wall tiles and backlit mirror',
+        src: juniorBalconyChairs,
+        alt: 'Junior Suite private balcony with woven chairs, table and partial Mediterranean sea view',
+      },
+      {
+        src: juniorClosetBalcony,
+        alt: 'Junior Suite with louvered closet and balcony overlooking the sea',
+      },
+      {
+        src: juniorBedroomFull,
+        alt: 'Junior Suite full bedroom view with Guardamar branded linens and coastal décor',
+      },
+      {
+        src: juniorBedWide,
+        alt: 'Junior Suite double bed with orange upholstered headboard and seashell wall art',
+      },
+      {
+        src: juniorBedSeashellArt,
+        alt: 'Junior Suite bed with green velvet pillows and framed seashell artwork above the headboard',
+      },
+      {
+        src: juniorBedShellCloseUp,
+        alt: 'Close-up of the Junior Suite bed with Guardamar embroidered green accent pillows',
+      },
+      {
+        src: juniorBedGreenPillows,
+        alt: 'Junior Suite bedding detail with green runner and branded velvet accent pillows',
+      },
+      {
+        src: juniorBedNightstandLight,
+        alt: 'Junior Suite bedside area with woven rattan pendant light and cane-front nightstand',
+      },
+      {
+        src: juniorBedNightstandGlasses,
+        alt: 'Junior Suite nightstand with wine glasses beneath a fringed rattan pendant lamp',
+      },
+      {
+        src: juniorWallTv,
+        alt: 'Junior Suite wall-mounted flat-screen TV above the bed with green runner linens',
+      },
+      {
+        src: juniorClosetSeaView,
+        alt: 'Junior Suite closet and open balcony door with bright sea views',
+      },
+      {
+        src: juniorEntranceHallway,
+        alt: 'Junior Suite private entrance hallway with warm textured walls and wood flooring',
       },
     ],
     title: 'Junior Suite',
@@ -378,20 +429,64 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: partialViewVanity,
-        alt: 'Standard room partial view bathroom with backlit mirror, vessel sink and wall-mounted hairdryer',
+        src: juniorRoomFromEntrance,
+        alt: 'Standard room partial view bedroom seen from the entrance hallway with balcony light',
       },
       {
-        src: partialViewShower,
-        alt: 'Standard room partial view shower with green vertical tiles and matte black fixtures',
+        src: juniorBedroomWide,
+        alt: 'Standard room partial view with terracotta headboard, green accents and rattan pendant lights',
       },
       {
-        src: partialViewShowerWide,
-        alt: 'Standard room partial view bathroom wide view with glass shower and backlit mirror',
+        src: juniorBalconyDoorOpen,
+        alt: 'Standard room partial view balcony doors open to a terrace with partial sea views',
       },
       {
-        src: partialViewTowels,
-        alt: 'Guardamar Hotel & Spa branded towels beside the shower in the Standard room partial view',
+        src: juniorBalconyChairs,
+        alt: 'Standard room partial view private balcony with woven chairs and partial Mediterranean sea view',
+      },
+      {
+        src: juniorClosetBalcony,
+        alt: 'Standard room partial view with louvered closet and balcony overlooking the sea',
+      },
+      {
+        src: juniorBedroomFull,
+        alt: 'Standard room partial view full bedroom with Guardamar branded linens and coastal décor',
+      },
+      {
+        src: juniorBedWide,
+        alt: 'Standard room partial view double bed with orange upholstered headboard and seashell wall art',
+      },
+      {
+        src: juniorBedSeashellArt,
+        alt: 'Standard room partial view bed with green velvet pillows and framed seashell artwork',
+      },
+      {
+        src: juniorBedShellCloseUp,
+        alt: 'Close-up of the Standard room partial view bed with Guardamar embroidered green accent pillows',
+      },
+      {
+        src: juniorBedGreenPillows,
+        alt: 'Standard room partial view bedding detail with green runner and branded velvet accent pillows',
+      },
+      {
+        src: juniorBedNightstandLight,
+        alt: 'Standard room partial view bedside area with woven rattan pendant light and cane-front nightstand',
+      },
+      {
+        src: juniorBedNightstandGlasses,
+        alt: 'Standard room partial view nightstand with wine glasses beneath a fringed rattan pendant lamp',
+      },
+      {
+        src: juniorWallTv,
+        alt: 'Standard room partial view wall-mounted flat-screen TV above the bed with green runner linens',
+      },
+      {
+        src: juniorClosetSeaView,
+        alt: 'Standard room partial view closet and open balcony door with bright sea views',
+      },
+      {
+        src: juniorEntranceHallway,
+        alt: 'Standard room partial view private entrance hallway with warm textured walls and wood flooring',
       },
     ],
     title: 'Standard room partial view',
