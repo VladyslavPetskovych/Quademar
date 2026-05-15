@@ -40,6 +40,8 @@ export function buildIndexJsonLdGraph({ origin, contact, seo }) {
         logo: {
           '@type': 'ImageObject',
           url: logoUrl,
+          width: 512,
+          height: 512,
         },
         telephone: contact.phoneHref.replace(/^tel:/i, ''),
         email: contact.email,

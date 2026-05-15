@@ -74,7 +74,8 @@ async function chromakeyApproxGreen(inputPath, outputPath, rgb, tolerance = 52) 
 }
 
 async function compositeOnSquare(transparentPath, size, outPath, bgHex) {
-  const inner = Math.round(size * 0.62)
+  // Larger mark so sun/waves stay legible at 16–48px (avoids a “Q”-like blob in SERP).
+  const inner = Math.round(size * 0.78)
   const buf = await sharp(transparentPath).resize(inner, inner, { fit: 'inside' }).png().toBuffer()
   await sharp({
     create: { width: size, height: size, channels: 3, background: bgHex },

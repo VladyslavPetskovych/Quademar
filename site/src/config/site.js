@@ -53,9 +53,9 @@ export const SEO = {
  */
 export const SEO_OG_IMAGE = {
   path: '/og-image.png',
-  width: 451,
-  height: 399,
-  alt: 'Hotel Guardamar — minimalist white sun and waves on a deep forest-green background.',
+  width: 1200,
+  height: 630,
+  alt: 'Balcony view from Hotel Guardamar over Guardamar del Segura and the Mediterranean on the Costa Blanca.',
 }
 
 export const NAV_LINKS = [
