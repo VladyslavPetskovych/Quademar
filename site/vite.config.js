@@ -51,5 +51,9 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), tailwindcss(), seoHtmlTransform(origin, googleSiteVerification)],
+    build: {
+      // Keep imported photos as separate files; Vite does not recompress PNG/JPEG assets.
+      assetsInlineLimit: 4096,
+    },
   };
 });

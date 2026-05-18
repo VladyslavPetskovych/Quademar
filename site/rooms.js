@@ -1,7 +1,19 @@
-import presidentialBathroomTub from './src/assets/suites/presidential/bathroom-freestanding-tub.png'
+import presidentialBedroomWide from './src/assets/suites/presidential/bedroom-wide-rattan-pendants.png'
+import presidentialBedroomCentered from './src/assets/suites/presidential/bedroom-centered-green-accents.png'
+import presidentialBedroomVanityCorner from './src/assets/suites/presidential/bedroom-vanity-nook-corner.png'
+import presidentialClosetVanity from './src/assets/suites/presidential/closet-vanity-dressing-area.png'
+import presidentialBalconyView from './src/assets/suites/presidential/bedroom-balcony-hydromassage-view.png'
+import presidentialBedGreenPillows from './src/assets/suites/presidential/bed-green-pillows-branding.png'
+import presidentialBedNightstand from './src/assets/suites/presidential/bed-nightstand-buddha-rattan-light.png'
+import presidentialBedroomLedAccent from './src/assets/suites/presidential/bedroom-led-accent-palm-arch.png'
+import presidentialBedroomRattanDetail from './src/assets/suites/presidential/bedroom-rattan-pendants-detail.png'
+import presidentialBathroomVanity from './src/assets/suites/presidential/bathroom-double-vanity-mirrors.png'
+import presidentialBathroomTubTowel from './src/assets/suites/presidential/bathroom-freestanding-tub-towel.png'
+import presidentialBathroomTubRoses from './src/assets/suites/presidential/bathroom-freestanding-tub-roses.png'
 import presidentialBathroomShower from './src/assets/suites/presidential/bathroom-walk-in-shower.png'
-import presidentialTerraceSea from './src/assets/suites/presidential/terrace-hydromassage-sea-view.png'
-import presidentialTerraceRelax from './src/assets/suites/presidential/terrace-hydromassage-relax.png'
+import presidentialBathroomToilet from './src/assets/suites/presidential/bathroom-toilet-area.png'
+import presidentialBathroomWetRoom from './src/assets/suites/presidential/bathroom-wet-room-glass.png'
+import presidentialBathroomVanityTowel from './src/assets/suites/presidential/bathroom-vanity-towel-ring.png'
 import familyBathroomMirror from './src/assets/suites/family/bathroom-vanity-backlit-mirror.png'
 import familyBathroomSink from './src/assets/suites/family/bathroom-vanity-sink.png'
 import familyBathroomTowels from './src/assets/suites/family/bathroom-vanity-towels.png'
@@ -39,20 +51,68 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: presidentialTerraceSea,
-        alt: 'Presidential suite private terrace with hydromassage bathtub and Mediterranean sea view',
+        src: presidentialBedroomWide,
+        alt: 'Presidential suite bedroom with terracotta headboard, green accents, and woven rattan pendant lights',
       },
       {
-        src: presidentialTerraceRelax,
-        alt: 'Presidential suite terrace hydromassage tub with champagne and roses',
+        src: presidentialBedroomCentered,
+        alt: 'Presidential suite bed with Guardamar branding, palm tree wallpaper, and cane-front nightstands',
       },
       {
-        src: presidentialBathroomTub,
-        alt: 'Presidential suite bathroom with freestanding bathtub and natural wood wall',
+        src: presidentialBedroomVanityCorner,
+        alt: 'Presidential suite bedroom with terracotta headboard, vanity nook, and palm tree mural',
+      },
+      {
+        src: presidentialClosetVanity,
+        alt: 'Presidential suite dressing area with louvered wardrobe, vanity desk, and palm tree wallpaper',
+      },
+      {
+        src: presidentialBalconyView,
+        alt: 'Presidential suite bedroom view toward balcony with private hydromassage tub beyond sheer curtains',
+      },
+      {
+        src: presidentialBedGreenPillows,
+        alt: 'Presidential suite bed close-up with green velvet pillows, Guardamar embroidery, and tropical palm wallpaper',
+      },
+      {
+        src: presidentialBedNightstand,
+        alt: 'Presidential suite bedside with cane-front nightstand, Buddha figurine, and woven rattan pendant light',
+      },
+      {
+        src: presidentialBedroomLedAccent,
+        alt: 'Presidential suite bedroom with arched alcove, palm wallpaper, LED accent lighting, and rattan pendants',
+      },
+      {
+        src: presidentialBedroomRattanDetail,
+        alt: 'Presidential suite bed with woven rattan pendant lights, palm tree mural, and Buddha nightstand',
+      },
+      {
+        src: presidentialBathroomVanity,
+        alt: 'Presidential suite bathroom with double vanity, backlit round mirrors, and olive fluted tile wall',
+      },
+      {
+        src: presidentialBathroomTubRoses,
+        alt: 'Presidential suite bathroom with freestanding tub, wood-paneled wall, and rose petals on the floor',
+      },
+      {
+        src: presidentialBathroomTubTowel,
+        alt: 'Presidential suite freestanding bathtub with rose petals, fairy lights, and Guardamar branded towel',
       },
       {
         src: presidentialBathroomShower,
-        alt: 'Presidential suite walk-in rain shower with matte black fittings',
+        alt: 'Presidential suite walk-in rain shower with matte black fixtures and beige stone tiles',
+      },
+      {
+        src: presidentialBathroomToilet,
+        alt: 'Presidential suite bathroom with wall-hung toilet, backlit mirror, and beige stone finishes',
+      },
+      {
+        src: presidentialBathroomWetRoom,
+        alt: 'Presidential suite glass wet room with freestanding tub, rain shower, and rose petals',
+      },
+      {
+        src: presidentialBathroomVanityTowel,
+        alt: 'Presidential suite double vanity with backlit mirrors and Guardamar hand towel',
       },
     ],
     title: 'Presidential Suite',

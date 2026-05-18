@@ -155,6 +155,8 @@ export default function RoomCategorySection({
           >
             <motion.div
               className={cx(roomImageFrameClass, "bg-white", classNames.imageFrame)}
+              whileHover={reduceMotion ? undefined : ROOM_IMAGE_HOVER}
+              transition={{ scale: ROOM_IMAGE_HOVER_TRANSITION }}
             >
               <motion.img
                 src={primaryImage.src}
@@ -163,11 +165,7 @@ export default function RoomCategorySection({
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
-                whileHover={reduceMotion ? undefined : ROOM_IMAGE_HOVER}
-                transition={{
-                  opacity: { duration: 0.55, ease: easeSmooth },
-                  scale: ROOM_IMAGE_HOVER_TRANSITION,
-                }}
+                transition={{ opacity: { duration: 0.55, ease: easeSmooth } }}
               />
             </motion.div>
           </Link>
