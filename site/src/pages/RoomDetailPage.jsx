@@ -162,21 +162,23 @@ export default function RoomDetailPage() {
                 className={`${roomImageFrameClass} group w-full max-w-[1092px] cursor-zoom-in bg-[#FAF3E8] text-left lg:h-[661px] lg:w-[1092px] lg:max-w-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#773A1B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF3E8]`}
               >
                 <div className="absolute inset-0 overflow-hidden">
-                  <AnimatePresence initial={false}>
-                    <motion.img
-                      key={`${roomSlug}-${safeIndex}`}
-                      src={slide.src}
-                      alt={slide.alt ?? localizedRoom.title}
-                      className={`${roomImageClass} absolute inset-0 transition-[transform,filter] duration-500 group-hover:scale-[1.02] group-hover:brightness-[1.02]`}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5, ease: easeSmooth }}
-                    />
-                  </AnimatePresence>
+                  <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.015]">
+                    <AnimatePresence initial={false}>
+                      <motion.img
+                        key={`${roomSlug}-${safeIndex}`}
+                        src={slide.src}
+                        alt={slide.alt ?? localizedRoom.title}
+                        className={`${roomImageClass} absolute inset-0`}
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.5, ease: easeSmooth }}
+                      />
+                    </AnimatePresence>
+                  </div>
                 </div>
                 <span
-                  className="pointer-events-none absolute inset-0 z-[1] bg-[#141414]/0 transition-colors duration-300 group-hover:bg-[#141414]/6"
+                  className="pointer-events-none absolute inset-0 z-[1] bg-[#141414]/0 transition-[background-color] duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:bg-[#141414]/5"
                   aria-hidden="true"
                 />
               </button>
