@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
@@ -55,6 +55,7 @@ export default function RoomGalleryLightbox({
   imageKeyPrefix = 'lightbox',
 }) {
   const closeRef = useRef(null)
+  const [portalRoot, setPortalRoot] = useState(null)
   const total = images.length
   const safeIndex = total ? ((index % total) + total) % total : 0
   const slide = images[safeIndex]
@@ -69,6 +70,10 @@ export default function RoomGalleryLightbox({
     if (total <= 1) return
     onIndexChange((safeIndex + 1) % total)
   }, [onIndexChange, safeIndex, total])
+
+  useEffect(() => {
+    setPortalRoot(document.body)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -107,7 +112,7 @@ export default function RoomGalleryLightbox({
     preload((safeIndex - 1 + total) % total)
   }, [open, images, safeIndex, total])
 
-  if (typeof document === 'undefined') return null
+  if (!portalRoot) return null
 
   return createPortal(
     <AnimatePresence>
@@ -121,12 +126,18 @@ export default function RoomGalleryLightbox({
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.32, ease: easeSmooth }}
-          className="fixed inset-0 z-[10060] flex flex-col bg-[#0a0c0b]/94 backdrop-blur-xl"
-          onClick={onClose}
+          className="fixed inset-0 z-[10060] isolate"
         >
-          <motion.div className="relative flex min-h-0 flex-1 flex-col px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] md:px-8">
+          <button
+            type="button"
+            aria-label={labels.close}
+            className="absolute inset-0 z-0 h-full w-full cursor-default border-0 bg-[#0a0c0b]/94 backdrop-blur-xl"
+            onClick={onClose}
+          />
+
+          <div className="pointer-events-none relative z-10 flex h-full min-h-0 flex-col px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[max(1rem,env(safe-area-inset-top))] md:px-8">
             <motion.div
-              className="flex shrink-0 items-center justify-between gap-4"
+              className="pointer-events-auto flex shrink-0 items-center justify-between gap-4"
               initial={{ opacity: 0, y: -12 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -8 }}
@@ -138,10 +149,7 @@ export default function RoomGalleryLightbox({
               <button
                 ref={closeRef}
                 type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onClose()
-                }}
+                onClick={onClose}
                 aria-label={labels.close}
                 className={`${navBtnClass} h-11 w-11 md:h-12 md:w-12`}
               >
@@ -149,11 +157,17 @@ export default function RoomGalleryLightbox({
               </button>
             </motion.div>
 
-            <motion.div className="relative flex min-h-0 flex-1 items-center justify-center py-4 md:py-8">
-              <figure className="relative mx-auto h-[min(78vh,900px)] w-full max-w-[min(1200px,96vw)] px-12 md:px-20">
+            <motion.div
+              className="relative flex min-h-0 flex-1 items-center justify-center py-4 md:py-8"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.42, ease: easeSmooth, delay: 0.06 }}
+            >
+              <figure className="pointer-events-none relative mx-auto h-[min(78vh,900px)] w-full max-w-[min(1200px,96vw)] px-12 md:px-20">
                 <motion.div
-                  className="relative h-full w-full overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
-                  onClick={(e) => e.stopPropagation()}
+                  className="pointer-events-auto relative h-full w-full overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+                  onPointerDown={(e) => e.stopPropagation()}
                 >
                   <AnimatePresence initial={false}>
                     <motion.img
@@ -174,23 +188,17 @@ export default function RoomGalleryLightbox({
                   <>
                     <button
                       type="button"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        goPrev()
-                      }}
+                      onClick={goPrev}
                       aria-label={labels.prev}
-                      className={`${navBtnClass} absolute left-0 top-1/2 z-20 -translate-y-1/2 md:-left-18`}
+                      className={`${navBtnClass} pointer-events-auto absolute left-0 top-1/2 z-20 -translate-y-1/2 md:left-[-4.5rem]`}
                     >
                       <ChevronLeft className="h-6 w-6 md:h-7 md:w-7" />
                     </button>
                     <button
                       type="button"
-                      onClick={(e) => {
-                        e.stopPropagation()
-                        goNext()
-                      }}
+                      onClick={goNext}
                       aria-label={labels.next}
-                      className={`${navBtnClass} absolute right-0 top-1/2 z-20 -translate-y-1/2 md:-right-18`}
+                      className={`${navBtnClass} pointer-events-auto absolute right-0 top-1/2 z-20 -translate-y-1/2 md:right-[-4.5rem]`}
                     >
                       <ChevronRight className="h-6 w-6 md:h-7 md:w-7" />
                     </button>
@@ -207,10 +215,10 @@ export default function RoomGalleryLightbox({
                 {String(safeIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
               </p>
             ) : null}
-          </motion.div>
+          </div>
         </motion.div>
       ) : null}
     </AnimatePresence>,
-    document.body,
+    portalRoot,
   )
 }

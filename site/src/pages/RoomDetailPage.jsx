@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import plantImage from '../assets/home/plant.png'
 import RoomGalleryLightbox from '../components/RoomGalleryLightbox'
@@ -46,6 +46,14 @@ export default function RoomDetailPage() {
 
   const [slideIndex, setSlideIndex] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
+
+  const handleSlideIndexChange = useCallback((nextIndex) => {
+    setSlideIndex(nextIndex)
+  }, [])
+
+  const closeLightbox = useCallback(() => {
+    setLightboxOpen(false)
+  }, [])
 
   useEffect(() => {
     setSlideIndex(0)
@@ -218,10 +226,10 @@ export default function RoomDetailPage() {
 
       <RoomGalleryLightbox
         open={lightboxOpen}
-        onClose={() => setLightboxOpen(false)}
+        onClose={closeLightbox}
         images={images}
         index={safeIndex}
-        onIndexChange={setSlideIndex}
+        onIndexChange={handleSlideIndexChange}
         title={localizedRoom.title}
         imageKeyPrefix={roomSlug}
         labels={{
