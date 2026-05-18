@@ -1,116 +1,264 @@
-import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
-import { SITE } from '../config/site'
-import { useLanguage } from '../i18n/LanguageContext'
-
-const TAB = {
-  offers: 'offers',
-  costaBlanca: 'costa-blanca',
-}
-
-const btnBase =
-  'min-h-[48px] px-6 py-3 font-sans text-[12px] font-medium uppercase tracking-[0.14em] transition-colors sm:min-w-[160px] sm:text-[13px]'
-
-function TabButton({ id, label, selected, onSelect }) {
-  return (
-    <button
-      type="button"
-      role="tab"
-      aria-selected={selected}
-      id={`moments-tab-${id}`}
-      onClick={() => onSelect(id)}
-      className={
-        selected
-          ? `${btnBase} bg-[#0a3f35] text-white`
-          : `${btnBase} bg-transparent text-[#6f6a65] hover:bg-[#171412]/5 hover:text-[#171412]`
-      }
-    >
-      {label}
-    </button>
-  )
-}
-
-export default function MomentsPage() {
-  const [tab, setTab] = useState(TAB.offers)
-  const { tf } = useLanguage()
-
-  return (
-    <section className="relative -mt-16 bg-[#f9f7f2] pb-20 pt-16 md:pb-28 md:pt-24">
-      <div className="mx-auto max-w-[860px] px-6 text-center md:px-8">
-        <h1 className="font-cormorant text-[40px] font-normal leading-none tracking-[0] text-[#171412] md:text-[48px] lg:text-[52px]">
-          {tf('moments.titleInHeart', { name: SITE.name })}
-        </h1>
-        <p className="mx-auto mt-6 max-w-[760px] font-sans text-[16px] font-[250] leading-relaxed tracking-[0] text-[#57524e] md:mt-8">
-          {tf('moments.intro', { fullName: SITE.fullName })}
-        </p>
-
-        <div
-          className="mt-10 flex flex-col items-stretch justify-center gap-2 sm:mt-12 sm:inline-flex sm:flex-row sm:items-center sm:gap-0"
-          role="tablist"
-          aria-label={tf('moments.tablistAria')}
-        >
-          <TabButton id={TAB.offers} label={tf('moments.tabOffers')} selected={tab === TAB.offers} onSelect={setTab} />
-          <span
-            className="hidden shrink-0 select-none px-1 font-sans text-[11px] font-medium uppercase tracking-[0.35em] text-[#c4bfb7] sm:inline sm:self-center sm:px-2"
-            aria-hidden="true"
-          >
-            ////
-          </span>
-          <TabButton id={TAB.costaBlanca} label={tf('moments.tabCosta')} selected={tab === TAB.costaBlanca} onSelect={setTab} />
-        </div>
-      </div>
-
-      <div className="mx-auto mt-14 max-w-[960px] border-t border-[#171412]/10 px-6 pt-12 md:mt-16 md:px-8 md:pt-14">
-        <AnimatePresence mode="wait">
-          {tab === TAB.offers ? (
-            <motion.div
-              key="offers"
-              role="tabpanel"
-              aria-labelledby="moments-tab-offers"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="text-center"
-            >
-              <h2 className="font-cormorant text-[28px] font-normal leading-none text-[#171412] md:text-[32px]">
-                {tf('moments.offersTitle')}
-              </h2>
-              <p className="mx-auto mt-5 max-w-[640px] font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
-                {tf('moments.offersLead')}
-              </p>
-              <ul className="mx-auto mt-8 max-w-[520px] space-y-3 text-left font-sans text-[15px] font-[250] leading-relaxed text-[#4f4a45]">
-                <li className="border-b border-[#171412]/10 pb-3">{tf('moments.offersLi1')}</li>
-                <li className="border-b border-[#171412]/10 pb-3">{tf('moments.offersLi2')}</li>
-                <li>{tf('moments.offersLi3')}</li>
-              </ul>
-            </motion.div>
-          ) : (
-            <motion.div
-              key="costa-blanca"
-              role="tabpanel"
-              aria-labelledby="moments-tab-costa-blanca"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -8 }}
-              transition={{ duration: 0.35, ease: 'easeOut' }}
-              className="text-center"
-            >
-              <h2 className="font-cormorant text-[28px] font-normal leading-none text-[#171412] md:text-[32px]">
-                {tf('moments.costaTitle')}
-              </h2>
-              <p className="mx-auto mt-5 max-w-[640px] font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
-                {tf('moments.costaLead')}
-              </p>
-              <ul className="mx-auto mt-8 max-w-[520px] space-y-3 text-left font-sans text-[15px] font-[250] leading-relaxed text-[#4f4a45]">
-                <li className="border-b border-[#171412]/10 pb-3">{tf('moments.costaLi1')}</li>
-                <li className="border-b border-[#171412]/10 pb-3">{tf('moments.costaLi2')}</li>
-                <li>{tf('moments.costaLi3')}</li>
-              </ul>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-    </section>
-  )
-}
+import { AnimatePresence, motion } from 'framer-motion'
+import { useState } from 'react'
+import beachImage from '../assets/home/beach.png'
+import beach2Image from '../assets/home/beach2.png'
+import beach3Image from '../assets/home/beach3.png'
+import nightImage from '../assets/home/discover/night.png'
+import spaImage from '../assets/home/discover/spa.png'
+import heroImage from '../assets/home/hero.png'
+import plantImage from '../assets/home/plant.png'
+import toursImage from '../assets/home/residence/tours.png'
+import { SITE } from '../config/site'
+import { useLanguage } from '../i18n/LanguageContext'
+
+const TAB = {
+  offers: 'offers',
+  costaBlanca: 'costa-blanca',
+}
+
+const easeSmooth = [0.4, 0, 0.2, 1]
+
+const panelMotion = {
+  initial: { opacity: 0, y: 16 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: -10 },
+  transition: { duration: 0.4, ease: easeSmooth },
+}
+
+const OFFERS_CARDS = [
+  { key: 'offersCard1', image: spaImage },
+  { key: 'offersCard2', image: nightImage },
+  { key: 'offersCard3', image: heroImage },
+]
+
+const COSTA_CARDS = [
+  { key: 'costaCard1', image: beachImage },
+  { key: 'costaCard2', image: toursImage },
+  { key: 'costaCard3', image: beach3Image },
+]
+
+function TabButton({ id, label, selected, onSelect }) {
+  return (
+    <button
+      type="button"
+      role="tab"
+      aria-selected={selected}
+      id={`moments-tab-${id}`}
+      onClick={() => onSelect(id)}
+      className={
+        selected
+          ? 'relative z-10 min-h-[44px] flex-1 rounded-full bg-[#0a3f35] px-5 py-2.5 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_rgba(10,63,53,0.22)] transition-colors sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
+          : 'min-h-[44px] flex-1 rounded-full px-5 py-2.5 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-[#6f6a65] transition-colors hover:text-[#171412] sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
+      }
+    >
+      {label}
+    </button>
+  )
+}
+
+function MomentCard({ image, imageAlt, tag, title, description, footnote, index }) {
+  return (
+    <motion.article
+      className="group flex flex-col"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.12 + index * 0.08, ease: easeSmooth }}
+    >
+      <motion.div
+        className="relative overflow-hidden rounded-sm bg-[#171412]/5"
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.32, ease: 'easeOut' }}
+      >
+        <motion.img
+          src={image}
+          alt={imageAlt}
+          className="aspect-[4/5] w-full object-cover sm:aspect-[3/4]"
+          whileHover={{ scale: 1.04 }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
+        />
+        <motion.div
+          className="pointer-events-none absolute inset-0 bg-linear-to-t from-[#062c26]/55 via-transparent to-transparent opacity-80"
+          aria-hidden="true"
+        />
+        <span className="absolute left-4 top-4 rounded-full border border-white/25 bg-white/10 px-3 py-1 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+          {tag}
+        </span>
+      </motion.div>
+
+      <div className="flex flex-1 flex-col border-b border-[#171412]/10 pb-6 pt-5">
+        <h3 className="font-cormorant text-[24px] font-normal leading-[1.15] text-[#171412] md:text-[26px]">
+          {title}
+        </h3>
+        <p className="mt-3 flex-1 font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">{description}</p>
+        <p className="mt-5 font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-[#6e361b]/80">
+          {footnote}
+        </p>
+      </div>
+    </motion.article>
+  )
+}
+
+function MomentsPanel({ tabId, featuredImage, featuredAlt, title, lead, cards, tf, cardFootnote }) {
+  return (
+    <motion.div
+      key={tabId}
+      role="tabpanel"
+      aria-labelledby={`moments-tab-${tabId}`}
+      {...panelMotion}
+    >
+      <motion.div
+        className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.45, delay: 0.05 }}
+      >
+        <div className="relative overflow-hidden rounded-sm">
+          <img src={featuredImage} alt={featuredAlt} className="aspect-[16/11] w-full object-cover lg:aspect-auto lg:min-h-[380px]" />
+          <motion.div
+            className="pointer-events-none absolute inset-0 bg-linear-to-tr from-[#062c26]/70 via-[#062c26]/20 to-transparent"
+            aria-hidden="true"
+          />
+          <motion.div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 lg:hidden">
+            <h2 className="font-cormorant text-[32px] font-normal leading-none text-white">{title}</h2>
+          </motion.div>
+        </div>
+
+        <motion.div
+          className="flex flex-col justify-center text-center lg:text-left"
+          initial={{ opacity: 0, x: 12 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.45, delay: 0.1, ease: easeSmooth }}
+        >
+          <h2 className="hidden font-cormorant text-[36px] font-normal leading-[1.05] text-[#171412] md:text-[40px] lg:block">
+            {title}
+          </h2>
+          <p className="mx-auto mt-5 max-w-[520px] font-sans text-[16px] font-[250] leading-relaxed text-[#57524e] lg:mx-0">
+            {lead}
+          </p>
+          <div className="mx-auto mt-8 hidden h-px w-16 bg-[#171412]/15 lg:mx-0 lg:block" aria-hidden="true" />
+        </motion.div>
+      </motion.div>
+
+      <motion.div
+        className="mt-12 grid gap-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8"
+        initial="hidden"
+        animate="visible"
+      >
+        {cards.map((card, index) => (
+          <MomentCard
+            key={card.key}
+            index={index}
+            image={card.image}
+            imageAlt={tf(`moments.${card.key}Alt`)}
+            tag={tf(`moments.${card.key}Tag`)}
+            title={tf(`moments.${card.key}Title`)}
+            description={tf(`moments.${card.key}Desc`)}
+            footnote={cardFootnote}
+          />
+        ))}
+      </motion.div>
+    </motion.div>
+  )
+}
+
+export default function MomentsPage() {
+  const [tab, setTab] = useState(TAB.offers)
+  const { tf } = useLanguage()
+
+  const offersCards = OFFERS_CARDS.map((c) => ({ ...c }))
+  const costaCards = COSTA_CARDS.map((c) => ({ ...c }))
+
+  return (
+    <section className="relative -mt-16 overflow-hidden bg-[#f3eee6] pb-20 pt-16 md:pb-28 md:pt-24">
+      <motion.img
+        src={plantImage}
+        alt=""
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-16 top-8 hidden w-[min(420px,38vw)] -scale-x-100 opacity-[0.12] lg:block"
+        initial={{ opacity: 0, x: 24 }}
+        animate={{ opacity: 0.12, x: 0 }}
+        transition={{ duration: 0.9, ease: easeSmooth }}
+      />
+
+      <div className="relative mx-auto max-w-[1180px] px-6 md:px-8">
+        <motion.header
+          className="mx-auto max-w-[860px] text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease: easeSmooth }}
+        >
+          <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#6e361b]">
+            {tf('moments.eyebrow')}
+          </p>
+          <h1 className="mt-4 font-cormorant text-[clamp(2.25rem,5vw,3.25rem)] font-normal leading-[1.05] tracking-[0.01em] text-[#171412]">
+            {tf('moments.titleInHeart', { name: SITE.name })}
+          </h1>
+          <p className="mx-auto mt-6 max-w-[760px] font-sans text-[16px] font-[250] leading-relaxed text-[#57524e] md:mt-8">
+            {tf('moments.intro', { fullName: SITE.fullName })}
+          </p>
+
+          <motion.div
+            className="mx-auto mt-10 flex max-w-[520px] flex-col items-stretch gap-3 sm:mt-12 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
+            role="tablist"
+            aria-label={tf('moments.tablistAria')}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.15, ease: easeSmooth }}
+          >
+            <motion.div
+              layout
+              className="inline-flex w-full flex-col gap-1 rounded-full border border-[#171412]/10 bg-[#faf6ef]/90 p-1 shadow-[0_12px_40px_rgba(23,20,18,0.06)] backdrop-blur-sm sm:w-auto sm:min-w-[min(100%,520px)] sm:flex-row sm:items-center sm:gap-0"
+            >
+              <TabButton
+                id={TAB.offers}
+                label={tf('moments.tabOffers')}
+                selected={tab === TAB.offers}
+                onSelect={setTab}
+              />
+              <span
+                className="hidden shrink-0 select-none px-2 font-sans text-[10px] font-medium uppercase tracking-[0.35em] text-[#c4bfb7] sm:inline"
+                aria-hidden="true"
+              >
+                //
+              </span>
+              <TabButton
+                id={TAB.costaBlanca}
+                label={tf('moments.tabCosta')}
+                selected={tab === TAB.costaBlanca}
+                onSelect={setTab}
+              />
+            </motion.div>
+          </motion.div>
+        </motion.header>
+
+        <div className="mx-auto mt-14 max-w-[1120px] border-t border-[#171412]/10 pt-12 md:mt-16 md:pt-14">
+          <AnimatePresence mode="wait">
+            {tab === TAB.offers ? (
+              <MomentsPanel
+                tabId={TAB.offers}
+                featuredImage={beach2Image}
+                featuredAlt={tf('moments.offersFeaturedAlt')}
+                title={tf('moments.offersTitle')}
+                lead={tf('moments.offersLead')}
+                cards={offersCards}
+                tf={tf}
+                cardFootnote={tf('moments.panelNote')}
+              />
+            ) : (
+              <MomentsPanel
+                tabId={TAB.costaBlanca}
+                featuredImage={beachImage}
+                featuredAlt={tf('moments.costaFeaturedAlt')}
+                title={tf('moments.costaTitle')}
+                lead={tf('moments.costaLead')}
+                cards={costaCards}
+                tf={tf}
+                cardFootnote={tf('moments.panelNote')}
+              />
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
+    </section>
+  )
+}

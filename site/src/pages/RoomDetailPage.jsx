@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
 import plantImage from '../assets/home/plant.png'
+import RoomGalleryLightbox from '../components/RoomGalleryLightbox'
 import HomeDiscoverySection from '../components/sections/HomeDiscoverySection'
 import RoomDetailsSection from '../components/sections/RoomDetailsSection'
 import { roomHeroFrameClass, roomHeroImageClass, roomImageClass, roomImageFrameClass } from '../components/sections/roomImageStyles'
@@ -30,7 +31,7 @@ function ChevronRight({ className, strokeWidth = 1.4 }) {
 export default function RoomDetailPage() {
   const { roomSlug } = useParams()
   const room = roomSlug ? getRoomBySlug(roomSlug) : null
-  const { locale, t, tf } = useLanguage()
+  const { locale, t } = useLanguage()
   const localizedRoom = useMemo(() => (room ? localizeRoom(room, locale) : null), [room, locale])
 
   const images = useMemo(() => {
@@ -44,10 +45,27 @@ export default function RoomDetailPage() {
   }, [localizedRoom?.images])
 
   const [slideIndex, setSlideIndex] = useState(0)
+  const [lightboxOpen, setLightboxOpen] = useState(false)
 
   useEffect(() => {
     setSlideIndex(0)
+    setLightboxOpen(false)
   }, [roomSlug])
+
+  const total = images.length
+  const safeIndex = ((slideIndex % total) + total) % total
+
+  useEffect(() => {
+    if (total <= 1) return
+    const preload = (index) => {
+      const src = images[index]?.src
+      if (!src) return
+      const img = new Image()
+      img.src = src
+    }
+    preload((safeIndex + 1) % total)
+    preload((safeIndex - 1 + total) % total)
+  }, [images, safeIndex, total])
 
   if (!room || !localizedRoom) {
     return <Navigate to="/suites-rooms" replace />
@@ -60,8 +78,6 @@ export default function RoomDetailPage() {
   const heroImage = images[0]
   const introBody = localizedRoom.galleryNarrative?.body ?? localizedRoom.description
 
-  const total = images.length
-  const safeIndex = ((slideIndex % total) + total) % total
   const slide = images[safeIndex]
   const goPrev = () => setSlideIndex((i) => (i - 1 + total) % total)
   const goNext = () => setSlideIndex((i) => (i + 1) % total)
@@ -131,17 +147,31 @@ export default function RoomDetailPage() {
         >
           <motion.div className="relative w-full max-w-[1092px]">
             <motion.div className="flex justify-center">
-              <motion.div className={`${roomImageFrameClass} w-full max-w-[1092px] lg:h-[661px] lg:w-[1092px] lg:max-w-none`}>
-                <motion.img
-                  key={`${roomSlug}-${safeIndex}`}
-                  src={slide.src}
-                  alt={slide.alt ?? localizedRoom.title}
-                  className={roomImageClass}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.45, ease: easeSmooth }}
+              <button
+                type="button"
+                onClick={() => setLightboxOpen(true)}
+                aria-label={t('roomsCommon.openGallery')}
+                className={`${roomImageFrameClass} group w-full max-w-[1092px] cursor-zoom-in bg-[#FAF3E8] text-left lg:h-[661px] lg:w-[1092px] lg:max-w-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#773A1B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF3E8]`}
+              >
+                <div className="absolute inset-0 overflow-hidden">
+                  <AnimatePresence initial={false}>
+                    <motion.img
+                      key={`${roomSlug}-${safeIndex}`}
+                      src={slide.src}
+                      alt={slide.alt ?? localizedRoom.title}
+                      className={`${roomImageClass} absolute inset-0 transition-[transform,filter] duration-500 group-hover:scale-[1.02] group-hover:brightness-[1.02]`}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ duration: 0.5, ease: easeSmooth }}
+                    />
+                  </AnimatePresence>
+                </div>
+                <span
+                  className="pointer-events-none absolute inset-0 z-[1] bg-[#141414]/0 transition-colors duration-300 group-hover:bg-[#141414]/6"
+                  aria-hidden="true"
                 />
-              </motion.div>
+              </button>
             </motion.div>
 
             {showControls ? (
@@ -180,11 +210,27 @@ export default function RoomDetailPage() {
           >
             <RoomDetailsSection
               detailSection={localizedRoom.detailSection}
-              detailsHeading={tf('roomsCommon.detailsForRoom', { room: localizedRoom.title })}
+              detailsHeading={t('roomsCommon.detailsHeading')}
             />
           </motion.div>
         ) : null}
       </section>
+
+      <RoomGalleryLightbox
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        images={images}
+        index={safeIndex}
+        onIndexChange={setSlideIndex}
+        title={localizedRoom.title}
+        imageKeyPrefix={roomSlug}
+        labels={{
+          dialog: t('roomsCommon.lightboxLabel'),
+          close: t('roomsCommon.lightboxClose'),
+          prev: t('roomsCommon.carouselPrev'),
+          next: t('roomsCommon.carouselNext'),
+        }}
+      />
 
       <HomeDiscoverySection variant="room" />
     </motion.div>

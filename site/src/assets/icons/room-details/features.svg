@@ -1,0 +1,10 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="tree">
+<g id="Group">
+<path id="Vector" d="M16.17 10.06H7.82998C6.64998 10.06 6.23998 9.27 6.92998 8.31L11.1 2.47C11.59 1.77 12.41 1.77 12.89 2.47L17.06 8.31C17.76 9.27 17.35 10.06 16.17 10.06Z" stroke="var(--stroke-0, #0D0D0D)" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_2" d="M17.59 18H6.42001C4.84001 18 4.30001 16.95 5.23001 15.67L9.22 10.06H14.79L18.78 15.67C19.71 16.95 19.17 18 17.59 18Z" stroke="var(--stroke-0, #0D0D0D)" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<path id="Vector_3" d="M12 22V18" stroke="var(--stroke-0, #0D0D0D)" stroke-opacity="0.88" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path id="Vector_4" opacity="0" d="M23 1V23H1V1H23Z" stroke="var(--stroke-0, #0D0D0D)" stroke-opacity="0.88" stroke-width="2"/>
+</g>
+</svg>
