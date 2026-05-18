@@ -185,25 +185,25 @@ export default function RoomDetailPage() {
             </motion.div>
 
             {showControls ? (
-              <motion.div className="mt-3 flex items-center justify-end gap-3">
+              <motion.div className="mt-3 flex items-center justify-end gap-4 md:gap-3">
                 <button
                   type="button"
                   onClick={goPrev}
                   aria-label={t('roomsCommon.carouselPrev')}
-                  className="flex h-5 w-5 items-center justify-center text-[rgba(13,13,13,0.88)] transition-colors hover:text-[#141414]"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center text-[rgba(13,13,13,0.88)] transition-colors hover:text-[#141414] md:h-8 md:w-8"
                 >
-                  <ChevronLeft className="h-5 w-5" strokeWidth={1.2} />
+                  <ChevronLeft className="h-7 w-7 md:h-5 md:w-5" strokeWidth={1.25} />
                 </button>
-                <span className="font-sans text-[16px] font-normal leading-[19px] tabular-nums text-[rgba(13,13,13,0.88)]">
+                <span className="min-w-[4.5rem] text-center font-sans text-[16px] font-normal leading-[19px] tabular-nums text-[rgba(13,13,13,0.88)]">
                   {String(safeIndex + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
                 </span>
                 <button
                   type="button"
                   onClick={goNext}
                   aria-label={t('roomsCommon.carouselNext')}
-                  className="flex h-5 w-5 items-center justify-center text-[rgba(13,13,13,0.88)] transition-colors hover:text-[#141414]"
+                  className="flex h-11 w-11 shrink-0 items-center justify-center text-[rgba(13,13,13,0.88)] transition-colors hover:text-[#141414] md:h-8 md:w-8"
                 >
-                  <ChevronRight className="h-5 w-5" strokeWidth={1.2} />
+                  <ChevronRight className="h-7 w-7 md:h-5 md:w-5" strokeWidth={1.25} />
                 </button>
               </motion.div>
             ) : null}
