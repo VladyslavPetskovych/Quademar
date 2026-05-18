@@ -70,6 +70,9 @@ jobs:
           pwd
 
           echo "=== 1) Git sync ==="
+          # `npm run build` regenerates sitemap.xml; discard local edits so pull is not blocked
+          git restore --staged --worktree site/public/sitemap.xml 2>/dev/null || true
+          git checkout HEAD -- site/public/sitemap.xml 2>/dev/null || true
           git fetch origin main
           git checkout main
           git pull --ff-only origin main
