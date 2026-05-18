@@ -34,7 +34,7 @@ function pairRows(left, right) {
   return Array.from({ length: max }, (_, i) => [left[i] ?? null, right[i] ?? null])
 }
 
-function DetailCell({ row, bordered }) {
+function DetailCell({ row, borderedLg, borderedMobile }) {
   if (!row) {
     return <motion.div className="hidden w-full lg:block lg:w-[421px]" aria-hidden="true" />
   }
@@ -42,8 +42,8 @@ function DetailCell({ row, bordered }) {
   return (
     <motion.div
       className={`flex w-full flex-col items-start gap-2 lg:w-[421px] ${
-        bordered ? 'border-b border-[rgba(13,13,13,0.88)] pb-4' : ''
-      }`}
+        borderedMobile ? 'max-lg:border-b max-lg:border-[rgba(13,13,13,0.88)] max-lg:pb-4' : ''
+      } ${borderedLg ? 'lg:border-b lg:border-[rgba(13,13,13,0.88)] lg:pb-4' : ''}`}
     >
       <div className="flex items-center gap-2">
         <RoomDetailIcon type={row.icon} />
@@ -151,8 +151,12 @@ export default function RoomDetailsSection({ detailSection, detailsHeading = 'De
                   }`}
                   variants={rowReveal}
                 >
-                  <DetailCell row={leftRow} bordered={!isLast} />
-                  <DetailCell row={rightRow} bordered={!isLast} />
+                  <DetailCell
+                    row={leftRow}
+                    borderedLg={!isLast}
+                    borderedMobile={Boolean(rightRow) || !isLast}
+                  />
+                  <DetailCell row={rightRow} borderedLg={!isLast} borderedMobile={!isLast} />
                 </motion.div>
               )
             })}
