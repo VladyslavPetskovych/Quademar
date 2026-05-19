@@ -8,6 +8,7 @@ import RoomDetailsSection from '../components/sections/RoomDetailsSection'
 import { roomHeroFrameClass, roomHeroImageClass, roomImageClass, roomImageFrameClass } from '../components/sections/roomImageStyles'
 import { useLanguage } from '../i18n/LanguageContext'
 import { localizeRoom } from '../i18n/localizeRoom'
+import { BOOKING_URL } from '../config/site'
 import { getRoomBySlug } from '../../rooms'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
@@ -137,12 +138,12 @@ export default function RoomDetailPage() {
             whileTap={{ scale: 0.98 }}
             transition={{ duration: 0.25 }}
           >
-            <Link
-              to="/contacts"
+            <a
+              href={BOOKING_URL}
               className="inline-flex h-[43px] min-w-[158px] items-center justify-center bg-[#773A1B] px-3 font-sans text-[14px] font-normal leading-[19px] tracking-[0] text-white uppercase transition-colors hover:bg-[#6b341c] md:text-[16px]"
             >
               {t('roomsCommon.bookThisRoom')}
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
 

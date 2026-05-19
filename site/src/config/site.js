@@ -72,6 +72,10 @@ export const HERO = {
   kicker: 'Experience the light, sea breeze, and calm rhythm of Guardamar del Segura.',
 }
 
+/** RoomCloud booking engine — Guardamar hotel (hotel id 22638). */
+export const BOOKING_URL =
+  'https://booking.roomcloud.net/be/se2/hotel.jsp?hotel=22638'
+
 /** Hotel Guardamar — official contact. */
 export const CONTACT = {
   hotelName: 'Hotel Guardamar',

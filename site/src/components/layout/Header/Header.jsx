@@ -3,7 +3,7 @@ import { Link, NavLink } from 'react-router-dom'
 import BurgerButton from '../../ui/BurgerButton'
 import MenuOverlay from '../MenuOverlay'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { LANDING_ONLY_NAV, LANDING_UNLOCKED_NAV_IDS, NAV_LINKS } from '../../../config/site'
+import { BOOKING_URL, LANDING_ONLY_NAV, LANDING_UNLOCKED_NAV_IDS, NAV_LINKS } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'
 import { navLabelKey } from '../../../i18n/navLabels'
 import logoWhite from '../../../assets/logo/white/Guardamar_logotype Vertical Version + Descriptor_header.svg'
@@ -112,8 +112,8 @@ export default function Header({ isOverVideo = true, variant = 'default' }) {
                 </svg>
               </button>
 
-              <Link
-                to="/"
+              <a
+                href={BOOKING_URL}
                 className={`flex items-center gap-1.5 px-[10px] py-[6px] sm:gap-2 sm:px-5 sm:py-2.5 transition-colors ${
                   isOverVideo
                     ? 'bg-white text-stone-900 hover:bg-stone-100 max-md:bg-[#003d35] max-md:text-white max-md:hover:bg-[#0b4a41]'
@@ -122,7 +122,7 @@ export default function Header({ isOverVideo = true, variant = 'default' }) {
                 aria-label={t('header.bookNow')}
               >
                 <span className="font-sans text-[13px] sm:text-[14px] font-normal leading-none">{t('header.bookNow')}</span>
-              </Link>
+              </a>
             </div>
           </div>
 
