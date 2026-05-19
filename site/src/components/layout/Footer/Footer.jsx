@@ -37,15 +37,13 @@ export default function Footer() {
         links: [
           { label: t('footer.linkTerms'), href: '#' },
           { label: t('footer.linkPrivacy'), href: '#' },
-          { label: t('footer.linkCookies'), href: '#' },
         ],
       },
       {
         title: t('footer.colMain'),
         links: [
-          { label: t('footer.linkApartments'), href: '/suites-rooms' },
-          { label: t('footer.linkServices'), href: '/suites-rooms' },
-          { label: t('footer.linkJardin'), href: '/restaurant-bar' },
+          { label: t('footer.linkRooms'), href: '/suites-rooms' },
+          { label: t('footer.linkRestaurant'), href: '/restaurant-bar' },
           { label: t('footer.linkSpa'), href: '/spa' },
         ],
       },
@@ -54,7 +52,7 @@ export default function Footer() {
         links: [
           { label: t('footer.linkContacts'), href: '/contacts' },
           { label: t('footer.linkRules'), href: '#' },
-          { label: t('footer.linkBlog'), href: '#' },
+          { label: t('footer.linkOffers'), href: '/moments' },
         ],
       },
     ],
