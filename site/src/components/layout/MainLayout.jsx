@@ -64,7 +64,7 @@ export default function MainLayout() {
     <ComingSoonModalProvider>
       <div className="min-h-app">
         <Header isOverVideo={isOverVideo} variant={isRoomDetail ? 'room' : 'default'} />
-        <main className={isHome ? '' : 'pt-[100px] md:pt-[110px]'}>
+        <main className={isHome ? '' : 'pt-[calc(env(safe-area-inset-top,0px)+6.25rem)] md:pt-[calc(env(safe-area-inset-top,0px)+6.875rem)]'}>
           <Outlet />
         </main>
         <Footer />

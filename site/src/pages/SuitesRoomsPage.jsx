@@ -32,7 +32,7 @@ export default function SuitesRoomsPage() {
 
   return (
     <>
-      <section className="relative overflow-x-clip bg-[#f3eee6] -mt-16 pb-20 pt-10 md:pb-24 md:pt-24">
+      <section className="relative overflow-x-clip bg-[#f3eee6] -mt-16 pb-20 pt-24 md:pb-24 md:pt-32">
         <div className="relative mx-auto w-full max-w-[1320px] px-4 md:px-0">
           <img
             src={plantImage}

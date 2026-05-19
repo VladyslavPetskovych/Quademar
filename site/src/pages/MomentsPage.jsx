@@ -47,8 +47,8 @@ function TabButton({ id, label, selected, onSelect }) {
       onClick={() => onSelect(id)}
       className={
         selected
-          ? 'relative z-10 min-h-[44px] flex-1 rounded-full bg-[#0a3f35] px-5 py-2.5 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-white shadow-[0_8px_24px_rgba(10,63,53,0.22)] transition-colors sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
-          : 'min-h-[44px] flex-1 rounded-full px-5 py-2.5 font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-[#6f6a65] transition-colors hover:text-[#171412] sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
+          ? 'relative z-10 min-h-[44px] min-w-0 flex-1 rounded-full bg-[#0a3f35] px-3 py-2.5 text-center font-sans text-[10px] font-medium uppercase leading-snug tracking-[0.12em] text-white shadow-[0_8px_24px_rgba(10,63,53,0.22)] transition-colors sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
+          : 'min-h-[44px] min-w-0 flex-1 rounded-full px-3 py-2.5 text-center font-sans text-[10px] font-medium uppercase leading-snug tracking-[0.12em] text-[#6f6a65] transition-colors hover:text-[#171412] sm:min-h-[48px] sm:px-8 sm:text-[12px] sm:tracking-[0.14em]'
       }
     >
       {label}
@@ -169,7 +169,7 @@ export default function MomentsPage() {
   const costaCards = COSTA_CARDS.map((c) => ({ ...c }))
 
   return (
-    <section className="relative -mt-16 overflow-hidden bg-[#f3eee6] pb-20 pt-16 md:pb-28 md:pt-24">
+    <section className="relative -mt-16 overflow-hidden bg-[#f3eee6] pb-20 pt-24 md:pb-28 md:pt-32">
       <motion.img
         src={plantImage}
         alt=""
@@ -198,7 +198,7 @@ export default function MomentsPage() {
           </p>
 
           <motion.div
-            className="mx-auto mt-10 flex max-w-[520px] flex-col items-stretch gap-3 sm:mt-12 sm:max-w-none sm:flex-row sm:items-center sm:justify-center"
+            className="mx-auto mt-10 flex w-full max-w-[min(100%,520px)] items-center justify-center sm:mt-12 sm:max-w-none"
             role="tablist"
             aria-label={tf('moments.tablistAria')}
             initial={{ opacity: 0, y: 12 }}
@@ -207,7 +207,7 @@ export default function MomentsPage() {
           >
             <motion.div
               layout
-              className="inline-flex w-full flex-col gap-1 rounded-full border border-[#171412]/10 bg-[#faf6ef]/90 p-1 shadow-[0_12px_40px_rgba(23,20,18,0.06)] backdrop-blur-sm sm:w-auto sm:min-w-[min(100%,520px)] sm:flex-row sm:items-center sm:gap-0"
+              className="inline-flex w-full flex-row items-center gap-0 rounded-full border border-[#171412]/10 bg-[#faf6ef]/90 p-1 shadow-[0_12px_40px_rgba(23,20,18,0.06)] backdrop-blur-sm sm:w-auto sm:min-w-[min(100%,520px)]"
             >
               <TabButton
                 id={TAB.offers}
@@ -216,7 +216,7 @@ export default function MomentsPage() {
                 onSelect={setTab}
               />
               <span
-                className="hidden shrink-0 select-none px-2 font-sans text-[10px] font-medium uppercase tracking-[0.35em] text-[#c4bfb7] sm:inline"
+                className="shrink-0 select-none px-1 font-sans text-[10px] font-medium uppercase tracking-[0.35em] text-[#c4bfb7] sm:px-2"
                 aria-hidden="true"
               >
                 //

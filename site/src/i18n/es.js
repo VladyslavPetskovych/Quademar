@@ -51,6 +51,17 @@ export default {
     logoAlt: 'Logotipo de Hotel Guardamar',
   },
 
+  notFound: {
+    eyebrow: 'Guardamar',
+    code: '404',
+    title: 'Página no encontrada',
+    body: 'La página que busca puede haberse movido o ya no existir. Le guiamos de vuelta a la calma mediterránea.',
+    cta: 'Volver al inicio',
+    seoTitle: 'Página no encontrada — Hotel Guardamar',
+    seoDescription:
+      'No se ha encontrado esta página en el sitio web de Hotel Guardamar. Vuelva a la página de inicio para explorar suites, spa y gastronomía en la Costa Blanca.',
+  },
+
   comingSoon: {
     eyebrow: 'Guardamar',
     title: 'Seguimos trabajando en este sitio web',

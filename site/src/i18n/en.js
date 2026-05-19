@@ -51,6 +51,17 @@ export default {
     logoAlt: 'Hotel Guardamar logo',
   },
 
+  notFound: {
+    eyebrow: 'Guardamar',
+    code: '404',
+    title: 'Page not found',
+    body: 'The page you are looking for may have moved or no longer exists. Let us guide you back to the Mediterranean calm.',
+    cta: 'Return home',
+    seoTitle: 'Page not found — Hotel Guardamar',
+    seoDescription:
+      'This page could not be found on the Hotel Guardamar website. Return to our Costa Blanca home page to explore suites, spa, and dining.',
+  },
+
   comingSoon: {
     eyebrow: 'Guardamar',
     title: "We're still working on this website",

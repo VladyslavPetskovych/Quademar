@@ -9,6 +9,7 @@ import SpaPage from './pages/SpaPage'
 import MomentsPage from './pages/MomentsPage'
 import ContactsPage from './pages/ContactsPage'
 import RoomDetailPage from './pages/RoomDetailPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
               <Route path="moments" element={<MomentsPage />} />
               <Route path="contacts" element={<ContactsPage />} />
             </Route>
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </BrowserRouter>
       </SplashGate>
