@@ -1,3 +1,5 @@
+const SEO_JSON_LD_ID = 'guardamar-seo-jsonld'
+
 function upsertMetaByName(name, content) {
   if (!content) return
   let el = document.head.querySelector(`meta[name="${name}"]`)
@@ -29,6 +31,22 @@ function upsertLinkCanonical(href) {
     document.head.appendChild(el)
   }
   el.setAttribute('href', href)
+}
+
+/**
+ * Replace or remove the route-specific JSON-LD block (homepage graph from build is left intact when `data` is null).
+ */
+export function syncJsonLd(data) {
+  const existing = document.getElementById(SEO_JSON_LD_ID)
+  if (!data) {
+    existing?.remove()
+    return
+  }
+  const script = existing ?? document.createElement('script')
+  script.id = SEO_JSON_LD_ID
+  script.type = 'application/ld+json'
+  script.textContent = JSON.stringify(data)
+  if (!existing) document.head.appendChild(script)
 }
 
 /**

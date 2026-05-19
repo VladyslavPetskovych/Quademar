@@ -6,7 +6,7 @@ export default {
     descriptionContacts:
       'Contacte con Hotel Guardamar, Guardamar del Segura — reservas, peticiones especiales y consultas sobre suites, spa o gastronomía en la Costa Blanca.',
     descriptionSuites:
-      'Suites y habitaciones en Hotel Guardamar, Guardamar del Segura — 48 alojamientos, desde suites premium hasta confortables dobles, calma mediterránea en la Costa Blanca.',
+      'Descubra todas las suites y habitaciones en Hotel Guardamar, Guardamar del Segura — Suite Presidencial, Suite Familiar, Junior Suite y habitaciones con vistas al mar. Compare 48 alojamientos en la Costa Blanca.',
     descriptionRestaurant:
       'Restaurante Arsito y terraza en Hotel Guardamar — cocina mediterránea, ambiente de jardín y gastronomía de temporada en Guardamar del Segura, Costa Blanca.',
     descriptionSpa:
@@ -15,7 +15,9 @@ export default {
       'Ofertas, eventos e inspiración en la Costa Blanca en Hotel Guardamar — experiencias seleccionadas y planes desde Guardamar del Segura.',
     titleDefault: 'Hotel Guardamar — Santuario mediterráneo en la Costa Blanca',
     titleContacts: 'Contacto — Hotel Guardamar',
-    titleSuites: 'Suites y habitaciones — Hotel Guardamar',
+    titleSuites: 'Suites y habitaciones en Guardamar del Segura — Hotel Guardamar',
+    keywordsSuites:
+      'suites y habitaciones Hotel Guardamar, reservar suite Guardamar del Segura, habitaciones Costa Blanca, suite presidencial Alicante, suite familiar España, junior suite Mediterráneo',
     titleRestaurant: 'Restaurante y bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Momentos — Hotel Guardamar',

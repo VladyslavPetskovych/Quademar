@@ -1,5 +1,6 @@
 import { getRoomBySlug } from '../../rooms'
 import { localizeRoom } from '../i18n/localizeRoom'
+import { getRoomSeoCopy } from './roomMeta'
 
 const META_DESC_MAX = 158
 
@@ -13,12 +14,15 @@ function truncateMetaDescription(text, max = META_DESC_MAX) {
 }
 
 /**
- * Page-specific `<title>` and meta description (unique per route where possible).
+ * Page-specific `<title>`, meta description, keywords, and optional room hero image path.
  */
 export function resolvePageSeo(pathname, locale, t) {
   const path = pathname.replace(/\/+$/, '') || '/'
   let title = t('seo.titleDefault')
   let description = t('seo.description')
+  let keywords = t('seo.keywords')
+  let ogImagePath = null
+  let pageKind = 'default'
 
   if (path === '/contacts') {
     title = t('seo.titleContacts')
@@ -26,14 +30,23 @@ export function resolvePageSeo(pathname, locale, t) {
   } else if (path === '/suites-rooms') {
     title = t('seo.titleSuites')
     description = t('seo.descriptionSuites')
+    keywords = t('seo.keywordsSuites')
+    pageKind = 'suitesListing'
   } else if (path.startsWith('/suites-rooms/')) {
-    const slug = path.slice('/suites-rooms/'.length)
+    const slug = path.slice('/suites-rooms/'.length).split('/')[0]
     const room = slug ? getRoomBySlug(slug) : null
+    const seoCopy = slug ? getRoomSeoCopy(slug, locale) : null
+
     if (room) {
       const localized = localizeRoom(room, locale)
-      title = `${localized.title} — Hotel Guardamar`
+      title = seoCopy?.title ?? `${localized.title} — Hotel Guardamar`
+      const fromSeo = seoCopy?.description ? truncateMetaDescription(seoCopy.description) : ''
       const fromRoom = truncateMetaDescription(localized.description || '')
-      description = fromRoom || t('seo.descriptionSuites')
+      description = fromSeo || fromRoom || t('seo.descriptionSuites')
+      keywords = seoCopy?.keywords ?? t('seo.keywordsSuites')
+      const hero = room.images?.find((img) => img?.src)
+      ogImagePath = typeof hero?.src === 'string' ? hero.src : null
+      pageKind = 'roomDetail'
     }
   } else if (path === '/restaurant-bar') {
     title = t('seo.titleRestaurant')
@@ -49,7 +62,10 @@ export function resolvePageSeo(pathname, locale, t) {
   return {
     title,
     description,
-    keywords: t('seo.keywords'),
+    keywords,
     path,
+    ogImagePath,
+    pageKind,
+    roomSlug: pageKind === 'roomDetail' ? path.slice('/suites-rooms/'.length).split('/')[0] : null,
   }
 }

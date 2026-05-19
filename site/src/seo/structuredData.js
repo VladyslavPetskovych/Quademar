@@ -1,5 +1,5 @@
 /**
- * JSON-LD for the homepage HTML shell (crawlers). SPA navigation updates meta via `syncHead`.
+ * JSON-LD for the homepage HTML shell (crawlers). SPA route graphs live in `structuredDataRoutes.js`.
  */
 
 import { SEO_OG_IMAGE } from '../config/site.js'

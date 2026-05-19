@@ -6,7 +6,7 @@ export default {
     descriptionContacts:
       'Contact Hotel Guardamar, Guardamar del Segura — reservations, special requests, and questions about suites, spa, or dining on the Costa Blanca.',
     descriptionSuites:
-      'Suites and rooms at Hotel Guardamar, Guardamar del Segura — 48 accommodations from premium suites to comfortable doubles, Mediterranean calm on the Costa Blanca.',
+      'Explore all suites and rooms at Hotel Guardamar, Guardamar del Segura — Presidential Suite, Family Suite, Junior Suite, and sea-view standard rooms. Compare 48 Costa Blanca accommodations and book direct.',
     descriptionRestaurant:
       'Restaurant Arsito and terrace at Hotel Guardamar — Mediterranean cuisine, garden atmosphere, and seasonal dining in Guardamar del Segura, Costa Blanca.',
     descriptionSpa:
@@ -15,7 +15,9 @@ export default {
       'Offers, events, and Costa Blanca inspiration at Hotel Guardamar — curated experiences and local highlights from Guardamar del Segura.',
     titleDefault: 'Hotel Guardamar — Mediterranean sanctuary on Costa Blanca',
     titleContacts: 'Contacts — Hotel Guardamar',
-    titleSuites: 'Suites & Rooms — Hotel Guardamar',
+    titleSuites: 'Suites & Rooms in Guardamar del Segura — Hotel Guardamar',
+    keywordsSuites:
+      'Hotel Guardamar suites and rooms, book suite Guardamar del Segura, Costa Blanca hotel rooms, presidential suite Alicante, family suite Spain, junior suite Mediterranean',
     titleRestaurant: 'Restaurant & Bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Moments — Hotel Guardamar',

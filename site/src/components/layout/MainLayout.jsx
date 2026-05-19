@@ -4,8 +4,9 @@ import { CONTACT, isPathAllowedInLandingMode, SEO_OG_IMAGE } from '../../config/
 import { ComingSoonModalProvider } from '../../context/ComingSoonModalContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { resolvePageSeo } from '../../seo/resolvePageSeo'
-import { absoluteUrl } from '../../seo/siteOrigin'
-import { syncDocumentMeta } from '../../seo/syncHead'
+import { buildRouteJsonLd } from '../../seo/structuredDataRoutes'
+import { absoluteUrl, getSiteOrigin } from '../../seo/siteOrigin'
+import { syncDocumentMeta, syncJsonLd } from '../../seo/syncHead'
 import { Header, Footer } from './index'
 
 export default function MainLayout() {
@@ -45,19 +46,39 @@ export default function MainLayout() {
   }, [location.pathname])
 
   useEffect(() => {
-    const { title, description, keywords, path } = resolvePageSeo(location.pathname, locale, t)
+    const { title, description, keywords, path, ogImagePath } = resolvePageSeo(
+      location.pathname,
+      locale,
+      t,
+    )
+    const ogImageUrl = ogImagePath ? absoluteUrl(ogImagePath) : absoluteUrl(SEO_OG_IMAGE.path)
+    const ogImageAlt = ogImagePath ? title : SEO_OG_IMAGE.alt
+
     syncDocumentMeta({
       title,
       description,
       keywords,
       canonicalUrl: absoluteUrl(path),
-      ogImageUrl: absoluteUrl(SEO_OG_IMAGE.path),
-      ogImageAlt: SEO_OG_IMAGE.alt,
+      ogImageUrl,
+      ogImageAlt,
       ogImageWidth: String(SEO_OG_IMAGE.width),
       ogImageHeight: String(SEO_OG_IMAGE.height),
       locale,
       siteName: CONTACT.hotelName,
     })
+
+    const origin = getSiteOrigin() || (typeof window !== 'undefined' ? window.location.origin : '')
+    const routeLd =
+      origin &&
+      buildRouteJsonLd({
+        origin,
+        pathname: path,
+        locale,
+        title,
+        description,
+        ogImageUrl,
+      })
+    syncJsonLd(routeLd)
   }, [location.pathname, locale, t])
 
   return (
