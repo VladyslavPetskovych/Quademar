@@ -10,6 +10,8 @@ import MomentsPage from './pages/MomentsPage'
 import ContactsPage from './pages/ContactsPage'
 import RoomDetailPage from './pages/RoomDetailPage'
 import RulesPage from './pages/RulesPage'
+import TermsPage from './pages/TermsPage'
+import PrivacyPage from './pages/PrivacyPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -26,6 +28,8 @@ export default function App() {
               <Route path="spa" element={<SpaPage />} />
               <Route path="moments" element={<MomentsPage />} />
               <Route path="rules" element={<RulesPage />} />
+              <Route path="terms" element={<TermsPage />} />
+              <Route path="privacy" element={<PrivacyPage />} />
               <Route path="contacts" element={<ContactsPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />

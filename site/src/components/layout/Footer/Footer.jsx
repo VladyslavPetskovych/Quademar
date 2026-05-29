@@ -35,8 +35,8 @@ export default function Footer() {
       {
         title: t('footer.colInformation'),
         links: [
-          { label: t('footer.linkTerms'), href: '#' },
-          { label: t('footer.linkPrivacy'), href: '#' },
+          { label: t('footer.linkTerms'), href: '/terms' },
+          { label: t('footer.linkPrivacy'), href: '/privacy' },
         ],
       },
       {

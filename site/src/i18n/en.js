@@ -24,6 +24,12 @@ export default {
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
       'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 14:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking, pets, and guest conduct on the Costa Blanca.',
+    titleTerms: 'Terms & Conditions — Hotel Guardamar',
+    descriptionTerms:
+      'Terms and conditions for bookings and stays at Hotel Guardamar, Guardamar del Segura — reservations, rates and payment, cancellation, liability, and applicable law on the Costa Blanca.',
+    titlePrivacy: 'Privacy Policy — Hotel Guardamar',
+    descriptionPrivacy:
+      'Privacy policy of Hotel Guardamar, Guardamar del Segura — how we collect, use, and protect your personal data, the legal bases for processing, and your rights under data protection law.',
     keywords:
       'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
   },
@@ -50,6 +56,8 @@ export default {
     suitesRooms: 'SUITES & ROOMS',
     contact: 'CONTACT',
     rules: 'HOTEL RULES',
+    terms: 'TERMS & CONDITIONS',
+    privacy: 'PRIVACY POLICY',
   },
 
   splash: {
@@ -132,8 +140,7 @@ export default {
     costaBlanca: 'Costa Blanca',
     legalTerms: 'Terms & Conditions',
     legalPrivacy: 'Privacy Policy',
-    legalCookies: 'Cookies Info',
-    legalNotice: 'Legal Notice',
+    rules: 'Hotel Rules',
   },
 
   aria: {
@@ -396,5 +403,189 @@ export default {
       'Thank you for helping us keep Guardamar welcoming for everyone. If you have any questions about these rules or a special request, our team is always glad to help.',
     contactCta: 'Contact us',
     updated: 'These house rules may be updated periodically · {{hotel}}',
+  },
+
+  terms: {
+    eyebrow: 'Legal',
+    title: 'Terms & Conditions',
+    breadcrumb: 'TERMS & CONDITIONS',
+    intro:
+      'These terms and conditions govern the use of the Hotel Guardamar website and the reservation of, and stay in, our accommodation in Guardamar del Segura. Please read them carefully; by making a booking or using our services you accept the terms set out below.',
+    lastUpdated: 'Last updated: May 2026',
+    tocTitle: 'Contents',
+    tocAria: 'Terms and conditions sections',
+    sections: {
+      acceptance: {
+        title: 'Acceptance of Terms',
+        body: [
+          'By accessing this website, making a reservation, or staying at Hotel Guardamar, you confirm that you have read, understood, and agree to be bound by these terms and conditions, together with our Privacy Policy and Hotel Rules.',
+          'If you do not agree with any part of these terms, please do not use our website or services. We may update these terms from time to time, and the version in force at the moment of your booking applies to that reservation.',
+        ],
+      },
+      definitions: {
+        title: 'Definitions',
+        body: [
+          '“Hotel”, “we”, “us”, and “our” refer to Hotel Guardamar, located in Guardamar del Segura, Alicante, Spain. “Guest”, “you”, and “your” refer to any person who visits the website, makes a reservation, or stays at the hotel.',
+          '“Booking” or “reservation” means a confirmed request for accommodation or services, made directly or through an authorised channel.',
+        ],
+      },
+      reservations: {
+        title: 'Reservations & Booking',
+        body: [
+          'A reservation is confirmed once you receive a written confirmation from the hotel or the booking platform used. You are responsible for providing accurate and complete information at the time of booking.',
+          'Each room is reserved for the number of guests stated in the reservation. The hotel reserves the right to refuse or cancel a booking where information is incorrect, where payment cannot be verified, or in case of suspected fraud.',
+          'Guests must be at least 18 years old to make a reservation, and a valid identity document or passport is required at check-in, as required by Spanish law.',
+        ],
+      },
+      ratesPayment: {
+        title: 'Rates & Payment',
+        body: [
+          'Rates are quoted in euros (EUR) and include applicable VAT unless stated otherwise. Any local tourist tax, where applicable, is not included in the room rate and is payable at the hotel.',
+          'Depending on the rate and offer selected, full or partial prepayment may be required to guarantee the booking. The hotel may request a pre-authorisation or security deposit at check-in to cover possible incidentals.',
+          'We accept the main credit and debit cards and cash in euros. The conditions displayed at the time of booking form part of these terms.',
+        ],
+      },
+      cancellation: {
+        title: 'Cancellation & No-show',
+        body: [
+          'Cancellation, modification, and prepayment conditions vary by rate and offer; the terms shown at the time of booking apply to your reservation. Cancellations or changes should be made through the same channel used to book.',
+          'In the event of a no-show, or a cancellation outside the permitted period, the hotel may charge the first night or the full stay in accordance with the rate selected.',
+        ],
+      },
+      checkInOut: {
+        title: 'Check-in & Check-out',
+        body: [
+          'Check-in is available from 14:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry an additional charge.',
+          'For full details about your stay, please also refer to our Hotel Rules.',
+        ],
+      },
+      conduct: {
+        title: 'Guest Conduct & Hotel Rules',
+        body: [
+          'During your stay you agree to comply with our Hotel Rules and to behave with respect towards other guests, staff, and the hotel’s property and facilities.',
+          'The hotel may refuse service or require a guest to leave, without refund, in case of behaviour that disturbs other guests, damages property, or breaches these terms or applicable law.',
+        ],
+      },
+      liability: {
+        title: 'Liability',
+        body: [
+          'Guests are responsible for any loss or damage they cause to the hotel’s property or facilities during their stay. We recommend using the in-room safe for valuables; the hotel is not liable for valuables left unattended in public areas.',
+          'To the fullest extent permitted by law, the hotel’s liability is limited to direct damages and does not extend to indirect or consequential loss. Nothing in these terms excludes liability that cannot be excluded under applicable law.',
+        ],
+      },
+      privacy: {
+        title: 'Privacy & Data Protection',
+        body: [
+          'We process personal data in accordance with applicable data protection law and our Privacy Policy. The information you provide is used to manage your reservation, your stay, and our communication with you.',
+          'For details on how we collect, use, and protect your data, and on how to exercise your rights, please see our Privacy Policy.',
+        ],
+      },
+      intellectual: {
+        title: 'Intellectual Property',
+        body: [
+          'All content on this website — including text, images, logos, and design — is the property of Hotel Guardamar or its licensors and is protected by intellectual property law. It may not be reproduced or used without prior written permission.',
+        ],
+      },
+      forceMajeure: {
+        title: 'Force Majeure',
+        body: [
+          'The hotel shall not be liable for any failure or delay in performing its obligations where this is caused by events beyond its reasonable control, including natural events, strikes, utility failures, or measures imposed by public authorities.',
+        ],
+      },
+      law: {
+        title: 'Governing Law & Jurisdiction',
+        body: [
+          'These terms are governed by Spanish law. Any dispute arising from them or from your stay shall be subject to the competent courts of Alicante, Spain, without prejudice to any mandatory consumer rights you may have.',
+        ],
+      },
+    },
+    contactIntro:
+      'If you have any questions about these terms and conditions, please contact us:',
+    footnote: 'These terms may be updated periodically · {{hotel}}',
+  },
+
+  privacy: {
+    eyebrow: 'Legal',
+    title: 'Privacy Policy',
+    breadcrumb: 'PRIVACY POLICY',
+    intro:
+      'This privacy policy explains how Hotel Guardamar collects, uses, and protects your personal data when you visit our website, make a reservation, or stay with us. We are committed to handling your information with care and in accordance with applicable data protection law.',
+    lastUpdated: 'Last updated: May 2026',
+    tocTitle: 'Contents',
+    tocAria: 'Privacy policy sections',
+    sections: {
+      controller: {
+        title: 'Data Controller',
+        body: [
+          'The data controller responsible for your personal data is Hotel Guardamar, located in Guardamar del Segura, Alicante, Spain. You can reach us using the contact details at the end of this policy for any question regarding the processing of your data.',
+        ],
+      },
+      dataCollected: {
+        title: 'Information We Collect',
+        body: [
+          'We collect information you provide directly — such as your name, contact details, identity or passport data required at check-in, booking and stay details, and any preferences or requests you share with us.',
+        ],
+      },
+      purposes: {
+        title: 'How We Use Your Information',
+        body: [
+          'We use your personal data to manage your reservation and stay, to provide the services you request, to comply with legal obligations (including guest registration required by law), and to communicate with you about your booking.',
+          'Where you have agreed, we may also send you news, offers, and event announcements. You can withdraw this consent at any time.',
+        ],
+      },
+      legalBases: {
+        title: 'Legal Bases for Processing',
+        body: [
+          'We process your data on the basis of the performance of our contract with you (your reservation and stay), compliance with our legal obligations, your consent (for marketing communications), and our legitimate interests in operating and improving the hotel and its services.',
+        ],
+      },
+      sharing: {
+        title: 'Sharing & Disclosure',
+        body: [
+          'We share personal data only as necessary — for example with trusted service providers who act on our behalf (such as booking, payment, and IT providers), and with public authorities where required by law.',
+          'We do not sell your personal data. Providers who process data on our behalf are bound by appropriate confidentiality and data protection obligations.',
+        ],
+      },
+      retention: {
+        title: 'Data Retention',
+        body: [
+          'We keep personal data only for as long as necessary for the purposes described in this policy, including to satisfy legal, accounting, or reporting requirements. When data is no longer needed, it is securely deleted or anonymised.',
+        ],
+      },
+      transfers: {
+        title: 'International Transfers',
+        body: [
+          'Your data is processed within the European Economic Area where possible. Where any transfer outside the EEA is necessary, we ensure appropriate safeguards are in place in line with applicable data protection law.',
+        ],
+      },
+      security: {
+        title: 'Data Security',
+        body: [
+          'We apply appropriate technical and organisational measures to protect your personal data against unauthorised access, loss, or misuse. While no method of transmission over the internet is completely secure, we work to safeguard your information at all times.',
+        ],
+      },
+      rights: {
+        title: 'Your Rights',
+        body: [
+          'You have the right to access, rectify, or erase your personal data, to restrict or object to its processing, and to data portability, as provided by law. Where processing is based on consent, you may withdraw it at any time.',
+          'To exercise your rights, please contact us using the details below. You also have the right to lodge a complaint with the competent data protection authority (in Spain, the Agencia Española de Protección de Datos).',
+        ],
+      },
+      children: {
+        title: "Children's Privacy",
+        body: [
+          'Our website and services are not directed at children. We do not knowingly collect personal data from minors without the consent of a parent or guardian. Bookings for stays involving minors are made by an accompanying adult.',
+        ],
+      },
+      changes: {
+        title: 'Changes to This Policy',
+        body: [
+          'We may update this privacy policy from time to time to reflect changes in our practices or legal requirements. The version published on this page, with its date, is the one in force.',
+        ],
+      },
+    },
+    contactIntro:
+      'If you have any questions about this privacy policy or wish to exercise your rights, please contact us:',
+    footnote: 'This policy may be updated periodically · {{hotel}}',
   },
 }

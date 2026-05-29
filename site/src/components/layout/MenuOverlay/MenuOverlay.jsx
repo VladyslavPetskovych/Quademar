@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
 import { CONTACT, LANDING_ONLY_NAV, LANDING_UNLOCKED_NAV_IDS, NAV_LINKS, SITE } from '../../../config/site'
@@ -10,10 +10,9 @@ import logoVerticalDark from '../../../assets/logo/dark/Guardamar_Vertical logot
 const STAGGER_MS = 45
 
 const LEGAL_LINKS = [
-  { labelKey: 'menu.legalTerms', href: '#' },
-  { labelKey: 'menu.legalPrivacy', href: '#' },
-  { labelKey: 'menu.legalCookies', href: '#' },
-  { labelKey: 'menu.legalNotice', href: '#' },
+  { labelKey: 'menu.legalTerms', to: '/terms' },
+  { labelKey: 'menu.legalPrivacy', to: '/privacy' },
+  { labelKey: 'menu.rules', to: '/rules' },
 ]
 
 function GlobeIcon({ className }) {
@@ -59,7 +58,6 @@ function FacebookIcon({ className }) {
 }
 
 export default function MenuOverlay({ isOpen, onClose }) {
-  const [momentsOpen, setMomentsOpen] = useState(false)
   const { openComingSoonModal } = useComingSoonModal()
   const { locale, toggleLocale, t } = useLanguage()
 
@@ -68,10 +66,6 @@ export default function MenuOverlay({ isOpen, onClose }) {
     return () => {
       document.body.style.overflow = ''
     }
-  }, [isOpen])
-
-  useEffect(() => {
-    if (!isOpen) setMomentsOpen(false)
   }, [isOpen])
 
   useEffect(() => {
@@ -90,11 +84,6 @@ export default function MenuOverlay({ isOpen, onClose }) {
     'block w-full py-4 font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#171412] transition-colors active:bg-[#171412]/5 hover:text-[#0a3f35] max-lg:touch-manipulation lg:py-4 lg:text-[13px] lg:font-semibold'
 
   const primaryLockedClass = `${primaryClass} cursor-pointer text-left opacity-50 hover:opacity-90 hover:text-[#0a3f35] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a3f35]/25`
-
-  const subLinkClass =
-    'block py-3 pl-1 font-sans text-[11px] font-medium uppercase tracking-[0.14em] text-[#57524e] hover:text-[#171412] max-lg:touch-manipulation lg:py-2.5'
-
-  const subLinkLockedClass = `${subLinkClass} w-full cursor-pointer text-left opacity-50 hover:opacity-88 hover:text-[#171412] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0a3f35]/25`
 
   return (
     <>
@@ -188,72 +177,29 @@ export default function MenuOverlay({ isOpen, onClose }) {
                 const delay = isOpen ? `${100 + (i + 1) * STAGGER_MS}ms` : '0ms'
                 const locked = navLocked(link.id)
                 if (link.id === 'moments') {
-                  return (
+                  const momentsItems = [
+                    { key: 'offers', label: t('menu.offersEvents') },
+                    { key: 'costa', label: t('menu.costaBlanca') },
+                  ]
+                  return momentsItems.map((item, j) => (
                     <li
-                      key={link.id}
+                      key={`${link.id}-${item.key}`}
                       className={`transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isOpen ? 'translate-y-0 opacity-100' : 'translate-y-3 opacity-0'
                       }`}
-                      style={{ transitionDelay: delay }}
+                      style={{ transitionDelay: isOpen ? `${100 + (i + 1 + j) * STAGGER_MS}ms` : '0ms' }}
                     >
-                      <div>
-                        <div className="flex items-stretch justify-between gap-2">
-                          {locked ? (
-                            <button
-                              type="button"
-                              className={`${primaryLockedClass} flex-1`}
-                              onClick={openComingSoonModal}
-                            >
-                              {t(navLabelKey(link.id))}
-                            </button>
-                          ) : (
-                            <Link to={link.path} onClick={handleLinkClick} className={`${primaryClass} flex-1`}>
-                              {t(navLabelKey(link.id))}
-                            </Link>
-                          )}
-                          <button
-                            type="button"
-                            className={`flex w-11 shrink-0 touch-manipulation items-center justify-center text-[#171412] transition-opacity hover:text-[#0a3f35] ${locked ? 'opacity-45 hover:opacity-90' : ''}`}
-                            aria-expanded={locked ? false : momentsOpen}
-                            aria-controls="menu-moments-sub"
-                            onClick={() => (locked ? openComingSoonModal() : setMomentsOpen((o) => !o))}
-                            aria-label={t('menu.momentsSubmenu')}
-                          >
-                            <ChevronDown className="h-4 w-4" open={momentsOpen} />
-                          </button>
-                        </div>
-                        <ul
-                          id="menu-moments-sub"
-                          className={`overflow-hidden bg-[#f3efe8]/60 transition-all duration-300 ${
-                            momentsOpen ? 'max-h-[200px] opacity-100' : 'max-h-0 opacity-0'
-                          }`}
-                        >
-                          <li>
-                            {locked ? (
-                              <button type="button" className={subLinkLockedClass} onClick={openComingSoonModal}>
-                                {t('menu.offersEvents')}
-                              </button>
-                            ) : (
-                              <Link to="/moments" onClick={handleLinkClick} className={subLinkClass}>
-                                {t('menu.offersEvents')}
-                              </Link>
-                            )}
-                          </li>
-                          <li>
-                            {locked ? (
-                              <button type="button" className={subLinkLockedClass} onClick={openComingSoonModal}>
-                                {t('menu.costaBlanca')}
-                              </button>
-                            ) : (
-                              <Link to="/moments" onClick={handleLinkClick} className={subLinkClass}>
-                                {t('menu.costaBlanca')}
-                              </Link>
-                            )}
-                          </li>
-                        </ul>
-                      </div>
+                      {locked ? (
+                        <button type="button" className={primaryLockedClass} onClick={openComingSoonModal}>
+                          {item.label}
+                        </button>
+                      ) : (
+                        <Link to="/moments" onClick={handleLinkClick} className={primaryClass}>
+                          {item.label}
+                        </Link>
+                      )}
                     </li>
-                  )
+                  ))
                 }
 
                 return (
@@ -292,16 +238,26 @@ export default function MenuOverlay({ isOpen, onClose }) {
                     transitionDelay: isOpen ? `${220 + i * 40}ms` : '0ms',
                   }}
                 >
-                  <a
-                    href={item.href}
-                    className="font-sans text-[13px] font-light leading-snug text-[#171412] underline-offset-4 max-lg:py-0.5 max-lg:text-[14px] hover:underline lg:font-normal"
-                    onClick={(e) => {
-                      if (item.href === '#') e.preventDefault()
-                      onClose()
-                    }}
-                  >
-                    {t(item.labelKey)}
-                  </a>
+                  {item.to ? (
+                    <Link
+                      to={item.to}
+                      className="font-sans text-[13px] font-light leading-snug text-[#171412] underline-offset-4 max-lg:py-0.5 max-lg:text-[14px] hover:underline lg:font-normal"
+                      onClick={handleLinkClick}
+                    >
+                      {t(item.labelKey)}
+                    </Link>
+                  ) : (
+                    <a
+                      href={item.href}
+                      className="font-sans text-[13px] font-light leading-snug text-[#171412] underline-offset-4 max-lg:py-0.5 max-lg:text-[14px] hover:underline lg:font-normal"
+                      onClick={(e) => {
+                        if (item.href === '#') e.preventDefault()
+                        onClose()
+                      }}
+                    >
+                      {t(item.labelKey)}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>

@@ -60,6 +60,12 @@ export function resolvePageSeo(pathname, locale, t) {
   } else if (path === '/rules') {
     title = t('seo.titleRules')
     description = t('seo.descriptionRules')
+  } else if (path === '/terms') {
+    title = t('seo.titleTerms')
+    description = t('seo.descriptionTerms')
+  } else if (path === '/privacy') {
+    title = t('seo.titlePrivacy')
+    description = t('seo.descriptionPrivacy')
   }
 
   return {

@@ -24,6 +24,12 @@ export default {
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
       'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 14:00 y salida hasta las 11:00, reservas y cancelación, horas de silencio, tabaco en el balcón, mascotas y normas de convivencia en la Costa Blanca.',
+    titleTerms: 'Términos y condiciones — Hotel Guardamar',
+    descriptionTerms:
+      'Términos y condiciones de reservas y estancias en el Hotel Guardamar, Guardamar del Segura — reservas, tarifas y pago, cancelación, responsabilidad y legislación aplicable en la Costa Blanca.',
+    titlePrivacy: 'Política de privacidad — Hotel Guardamar',
+    descriptionPrivacy:
+      'Política de privacidad del Hotel Guardamar, Guardamar del Segura — cómo recopilamos, utilizamos y protegemos sus datos personales, las bases legales del tratamiento y sus derechos en materia de protección de datos.',
     keywords:
       'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, España, hotel boutique, hotel spa, suites, hotel mediterráneo, hotel Alicante',
   },
@@ -50,6 +56,8 @@ export default {
     suitesRooms: 'SUITES Y HABITACIONES',
     contact: 'CONTACTO',
     rules: 'NORMAS DEL HOTEL',
+    terms: 'TÉRMINOS Y CONDICIONES',
+    privacy: 'POLÍTICA DE PRIVACIDAD',
   },
 
   splash: {
@@ -132,8 +140,7 @@ export default {
     costaBlanca: 'Costa Blanca',
     legalTerms: 'Términos y condiciones',
     legalPrivacy: 'Política de privacidad',
-    legalCookies: 'Información sobre cookies',
-    legalNotice: 'Aviso legal',
+    rules: 'Normas del hotel',
   },
 
   aria: {
@@ -396,5 +403,189 @@ export default {
       'Gracias por ayudarnos a mantener Guardamar acogedor para todos. Si tiene cualquier duda sobre estas normas o una petición especial, nuestro equipo estará encantado de ayudarle.',
     contactCta: 'Contáctenos',
     updated: 'Estas normas pueden actualizarse periódicamente · {{hotel}}',
+  },
+
+  terms: {
+    eyebrow: 'Legal',
+    title: 'Términos y condiciones',
+    breadcrumb: 'TÉRMINOS Y CONDICIONES',
+    intro:
+      'Estos términos y condiciones regulan el uso del sitio web del Hotel Guardamar y la reserva y estancia en nuestros alojamientos de Guardamar del Segura. Léalos con atención; al realizar una reserva o utilizar nuestros servicios acepta las condiciones que se indican a continuación.',
+    lastUpdated: 'Última actualización: mayo de 2026',
+    tocTitle: 'Contenido',
+    tocAria: 'Secciones de los términos y condiciones',
+    sections: {
+      acceptance: {
+        title: 'Aceptación de las condiciones',
+        body: [
+          'Al acceder a este sitio web, realizar una reserva o alojarse en el Hotel Guardamar, usted confirma que ha leído, comprendido y acepta quedar vinculado por estos términos y condiciones, junto con nuestra Política de privacidad y las Normas del hotel.',
+          'Si no está de acuerdo con alguna parte de estas condiciones, le rogamos que no utilice nuestro sitio web ni nuestros servicios. Podemos actualizar estos términos periódicamente, y se aplicará a cada reserva la versión vigente en el momento de realizarla.',
+        ],
+      },
+      definitions: {
+        title: 'Definiciones',
+        body: [
+          '«Hotel», «nosotros» y «nuestro» se refieren al Hotel Guardamar, situado en Guardamar del Segura, Alicante, España. «Huésped», «usted» y «su» se refieren a cualquier persona que visite el sitio web, realice una reserva o se aloje en el hotel.',
+          '«Reserva» significa una solicitud confirmada de alojamiento o servicios, realizada directamente o a través de un canal autorizado.',
+        ],
+      },
+      reservations: {
+        title: 'Reservas',
+        body: [
+          'Una reserva queda confirmada cuando recibe una confirmación por escrito del hotel o de la plataforma de reservas utilizada. Usted es responsable de facilitar información veraz y completa en el momento de reservar.',
+          'Cada habitación se reserva para el número de huéspedes indicado en la reserva. El hotel se reserva el derecho de rechazar o cancelar una reserva cuando la información sea incorrecta, no pueda verificarse el pago o exista sospecha de fraude.',
+          'Para realizar una reserva es necesario ser mayor de 18 años, y a la llegada se requiere un documento de identidad o pasaporte válido, conforme a la legislación española.',
+        ],
+      },
+      ratesPayment: {
+        title: 'Tarifas y pago',
+        body: [
+          'Las tarifas se indican en euros (EUR) e incluyen el IVA aplicable salvo que se indique lo contrario. La tasa turística local, cuando proceda, no está incluida en el precio de la habitación y se abona en el hotel.',
+          'Según la tarifa y la oferta elegidas, podrá requerirse el prepago total o parcial para garantizar la reserva. El hotel podrá solicitar una preautorización o fianza en la entrada para cubrir posibles gastos extra.',
+          'Aceptamos las principales tarjetas de crédito y débito y efectivo en euros. Las condiciones mostradas al realizar la reserva forman parte de estos términos.',
+        ],
+      },
+      cancellation: {
+        title: 'Cancelación y no presentación',
+        body: [
+          'Las condiciones de cancelación, modificación y prepago varían según la tarifa y la oferta; a su reserva se aplican los términos mostrados al realizarla. Las cancelaciones o modificaciones deben gestionarse por el mismo canal utilizado para reservar.',
+          'En caso de no presentación, o de cancelación fuera del plazo permitido, el hotel podrá cobrar la primera noche o la estancia completa según la tarifa elegida.',
+        ],
+      },
+      checkInOut: {
+        title: 'Entrada y salida',
+        body: [
+          'La entrada está disponible a partir de las 14:00 y la salida es hasta las 11:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener un coste adicional.',
+          'Para más detalles sobre su estancia, consulte también nuestras Normas del hotel.',
+        ],
+      },
+      conduct: {
+        title: 'Conducta del huésped y normas del hotel',
+        body: [
+          'Durante su estancia se compromete a cumplir nuestras Normas del hotel y a comportarse con respeto hacia los demás huéspedes, el personal y las instalaciones del hotel.',
+          'El hotel podrá denegar el servicio o solicitar a un huésped que abandone el establecimiento, sin reembolso, en caso de comportamientos que perturben a otros huéspedes, dañen las instalaciones o incumplan estos términos o la legislación aplicable.',
+        ],
+      },
+      liability: {
+        title: 'Responsabilidad',
+        body: [
+          'Los huéspedes son responsables de cualquier pérdida o daño que causen a las instalaciones del hotel durante su estancia. Recomendamos utilizar la caja fuerte de la habitación para sus objetos de valor; el hotel no se hace responsable de los objetos de valor dejados sin vigilancia en las zonas comunes.',
+          'En la máxima medida permitida por la ley, la responsabilidad del hotel se limita a los daños directos y no se extiende a daños indirectos o consecuentes. Nada de lo dispuesto en estos términos excluye la responsabilidad que no pueda excluirse conforme a la legislación aplicable.',
+        ],
+      },
+      privacy: {
+        title: 'Privacidad y protección de datos',
+        body: [
+          'Tratamos los datos personales de acuerdo con la legislación de protección de datos aplicable y nuestra Política de privacidad. La información que nos facilita se utiliza para gestionar su reserva, su estancia y nuestra comunicación con usted.',
+          'Para conocer cómo recopilamos, utilizamos y protegemos sus datos, y cómo ejercer sus derechos, consulte nuestra Política de privacidad.',
+        ],
+      },
+      intellectual: {
+        title: 'Propiedad intelectual',
+        body: [
+          'Todo el contenido de este sitio web —incluidos textos, imágenes, logotipos y diseño— es propiedad del Hotel Guardamar o de sus licenciantes y está protegido por la legislación de propiedad intelectual. No puede reproducirse ni utilizarse sin autorización previa por escrito.',
+        ],
+      },
+      forceMajeure: {
+        title: 'Fuerza mayor',
+        body: [
+          'El hotel no será responsable de ningún incumplimiento o retraso en sus obligaciones cuando se deba a causas ajenas a su control razonable, incluidos fenómenos naturales, huelgas, fallos de suministro o medidas impuestas por las autoridades públicas.',
+        ],
+      },
+      law: {
+        title: 'Legislación y jurisdicción',
+        body: [
+          'Estos términos se rigen por la legislación española. Cualquier controversia derivada de los mismos o de su estancia se someterá a los juzgados y tribunales competentes de Alicante (España), sin perjuicio de los derechos imperativos que como consumidor pudieran corresponderle.',
+        ],
+      },
+    },
+    contactIntro:
+      'Si tiene cualquier duda sobre estos términos y condiciones, póngase en contacto con nosotros:',
+    footnote: 'Estos términos pueden actualizarse periódicamente · {{hotel}}',
+  },
+
+  privacy: {
+    eyebrow: 'Legal',
+    title: 'Política de privacidad',
+    breadcrumb: 'POLÍTICA DE PRIVACIDAD',
+    intro:
+      'Esta política de privacidad explica cómo el Hotel Guardamar recopila, utiliza y protege sus datos personales cuando visita nuestro sitio web, realiza una reserva o se aloja con nosotros. Nos comprometemos a tratar su información con cuidado y conforme a la legislación de protección de datos aplicable.',
+    lastUpdated: 'Última actualización: mayo de 2026',
+    tocTitle: 'Contenido',
+    tocAria: 'Secciones de la política de privacidad',
+    sections: {
+      controller: {
+        title: 'Responsable del tratamiento',
+        body: [
+          'El responsable del tratamiento de sus datos personales es el Hotel Guardamar, situado en Guardamar del Segura, Alicante, España. Puede ponerse en contacto con nosotros a través de los datos que figuran al final de esta política para cualquier consulta sobre el tratamiento de sus datos.',
+        ],
+      },
+      dataCollected: {
+        title: 'Información que recopilamos',
+        body: [
+          'Recopilamos la información que usted nos facilita directamente —como su nombre, datos de contacto, datos de identidad o pasaporte requeridos en la entrada, detalles de la reserva y la estancia, y las preferencias o solicitudes que comparta con nosotros.',
+        ],
+      },
+      purposes: {
+        title: 'Cómo utilizamos su información',
+        body: [
+          'Utilizamos sus datos personales para gestionar su reserva y su estancia, prestar los servicios que solicita, cumplir con obligaciones legales (incluido el registro de huéspedes exigido por ley) y comunicarnos con usted sobre su reserva.',
+          'Cuando usted lo haya consentido, también podremos enviarle noticias, ofertas y avisos de eventos. Puede retirar este consentimiento en cualquier momento.',
+        ],
+      },
+      legalBases: {
+        title: 'Bases legales del tratamiento',
+        body: [
+          'Tratamos sus datos sobre la base de la ejecución de nuestro contrato con usted (su reserva y estancia), el cumplimiento de nuestras obligaciones legales, su consentimiento (para comunicaciones comerciales) y nuestro interés legítimo en operar y mejorar el hotel y sus servicios.',
+        ],
+      },
+      sharing: {
+        title: 'Comunicación de datos',
+        body: [
+          'Solo comunicamos datos personales cuando es necesario —por ejemplo, a proveedores de confianza que actúan por cuenta nuestra (como proveedores de reservas, pagos e informática) y a las autoridades públicas cuando así lo exige la ley.',
+          'No vendemos sus datos personales. Los proveedores que tratan datos por cuenta nuestra están sujetos a las obligaciones de confidencialidad y protección de datos correspondientes.',
+        ],
+      },
+      retention: {
+        title: 'Conservación de los datos',
+        body: [
+          'Conservamos los datos personales únicamente durante el tiempo necesario para los fines descritos en esta política, incluido el cumplimiento de requisitos legales, contables o de información. Cuando los datos dejan de ser necesarios, se eliminan o anonimizan de forma segura.',
+        ],
+      },
+      transfers: {
+        title: 'Transferencias internacionales',
+        body: [
+          'Sus datos se tratan dentro del Espacio Económico Europeo siempre que es posible. Cuando sea necesaria una transferencia fuera del EEE, garantizamos que se apliquen las garantías adecuadas conforme a la legislación de protección de datos aplicable.',
+        ],
+      },
+      security: {
+        title: 'Seguridad de los datos',
+        body: [
+          'Aplicamos medidas técnicas y organizativas adecuadas para proteger sus datos personales frente a accesos no autorizados, pérdidas o usos indebidos. Aunque ningún método de transmisión por internet es completamente seguro, trabajamos para salvaguardar su información en todo momento.',
+        ],
+      },
+      rights: {
+        title: 'Sus derechos',
+        body: [
+          'Tiene derecho a acceder, rectificar o suprimir sus datos personales, a limitar u oponerse a su tratamiento y a la portabilidad de los datos, según lo previsto por la ley. Cuando el tratamiento se base en su consentimiento, puede retirarlo en cualquier momento.',
+          'Para ejercer sus derechos, póngase en contacto con nosotros mediante los datos que figuran a continuación. También tiene derecho a presentar una reclamación ante la autoridad de control competente (en España, la Agencia Española de Protección de Datos).',
+        ],
+      },
+      children: {
+        title: 'Privacidad de los menores',
+        body: [
+          'Nuestro sitio web y nuestros servicios no están dirigidos a menores. No recopilamos conscientemente datos personales de menores sin el consentimiento de un padre, madre o tutor. Las reservas de estancias con menores las realiza un adulto acompañante.',
+        ],
+      },
+      changes: {
+        title: 'Cambios en esta política',
+        body: [
+          'Podemos actualizar esta política de privacidad periódicamente para reflejar cambios en nuestras prácticas o en los requisitos legales. La versión publicada en esta página, con su fecha, es la que está en vigor.',
+        ],
+      },
+    },
+    contactIntro:
+      'Si tiene cualquier duda sobre esta política de privacidad o desea ejercer sus derechos, póngase en contacto con nosotros:',
+    footnote: 'Esta política puede actualizarse periódicamente · {{hotel}}',
   },
 }
