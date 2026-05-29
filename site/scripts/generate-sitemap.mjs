@@ -24,6 +24,7 @@ const FULL_PATHS = [
   '/restaurant-bar',
   '/spa',
   '/moments',
+  '/rules',
 ]
 
 const LANDING_PATHS = FULL_PATHS.filter(
@@ -31,6 +32,7 @@ const LANDING_PATHS = FULL_PATHS.filter(
     path === '/' ||
     path === '/contacts' ||
     path === '/moments' ||
+    path === '/rules' ||
     path.startsWith('/suites-rooms'),
 )
 

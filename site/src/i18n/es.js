@@ -21,6 +21,9 @@ export default {
     titleRestaurant: 'Restaurante y bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Momentos — Hotel Guardamar',
+    titleRules: 'Normas del hotel — Hotel Guardamar',
+    descriptionRules:
+      'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 14:00 y salida hasta las 11:00, reservas y cancelación, horas de silencio, tabaco en el balcón, mascotas y normas de convivencia en la Costa Blanca.',
     keywords:
       'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, España, hotel boutique, hotel spa, suites, hotel mediterráneo, hotel Alicante',
   },
@@ -46,6 +49,7 @@ export default {
     home: 'INICIO',
     suitesRooms: 'SUITES Y HABITACIONES',
     contact: 'CONTACTO',
+    rules: 'NORMAS DEL HOTEL',
   },
 
   splash: {
@@ -287,5 +291,110 @@ export default {
     costaCard3Desc:
       'Mercados tradicionales y pueblos costeros — lagunas salinas de Torrevieja, casco antiguo de Altea o Tabarca en barco.',
     costaCard3Alt: 'Cala mediterránea y paisaje costero',
+  },
+
+  rules: {
+    eyebrow: 'Para una estancia tranquila y agradable',
+    title: 'Normas del hotel',
+    breadcrumb: 'NORMAS DEL HOTEL',
+    heroImageAlt: 'Suite del Hotel Guardamar con balcón privado y luz mediterránea',
+    intro:
+      'Estas normas nos ayudan a cuidar de cada huésped y a mantener el Hotel Guardamar como el tranquilo refugio mediterráneo que vino a buscar. Al confirmar su reserva acepta las indicaciones siguientes. Nuestra recepción está disponible las 24 horas para cualquier consulta no recogida aquí.',
+    facts: {
+      checkIn: { label: 'Entrada', value: 'desde 14:00' },
+      checkOut: { label: 'Salida', value: 'hasta 11:00' },
+      quiet: { label: 'Horas de silencio', value: '23:00 – 08:00' },
+      reception: { label: 'Recepción', value: '24 horas' },
+    },
+    sections: {
+      checkInOut: {
+        title: 'Entrada y salida',
+        items: [
+          'La entrada es a partir de las 14:00 y la salida hasta las 11:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener coste.',
+          'Se requiere un documento de identidad o pasaporte válido de cada huésped a la llegada, conforme a la legislación española.',
+          'Para registrarse es necesario ser mayor de 18 años. Los menores deben ir acompañados de un adulto.',
+          'La consigna de equipaje en recepción está disponible antes de la entrada y después de la salida sin coste.',
+        ],
+      },
+      booking: {
+        title: 'Reservas y cancelación',
+        items: [
+          'Las tarifas y las condiciones de cancelación y prepago varían según la habitación y la oferta; se aplican los términos mostrados al realizar la reserva.',
+          'Las cancelaciones o modificaciones deben gestionarse por el mismo canal utilizado para reservar.',
+          'En caso de no presentarse, se podrá cobrar la primera noche o la estancia completa según la tarifa elegida.',
+          'La habitación se reserva para el número de huéspedes indicado en la reserva; cualquier huésped adicional debe comunicarse con antelación.',
+        ],
+      },
+      payment: {
+        title: 'Pago y depósitos',
+        items: [
+          'Aceptamos las principales tarjetas de crédito y débito, así como efectivo en euros.',
+          'En la entrada se podrá solicitar una preautorización o fianza para cubrir posibles gastos extra.',
+          'La tasa turística local, cuando corresponda, no está incluida en el precio de la habitación.',
+          'Se puede emitir factura a petición — indique sus datos de facturación en la entrada.',
+        ],
+      },
+      quietConduct: {
+        title: 'Horas de silencio y convivencia',
+        items: [
+          'Las horas de silencio se respetan de 23:00 a 08:00 en todo el hotel y en las terrazas.',
+          'Le rogamos ser considerado con los demás huéspedes; los comportamientos que perturben la estancia de otros pueden conllevar la solicitud de abandono del hotel sin reembolso.',
+          'No se permiten eventos privados ni fiestas en las habitaciones.',
+        ],
+      },
+      smoking: {
+        title: 'Tabaco',
+        items: [
+          'Todas las habitaciones disponen de balcón privado, y allí sí está permitido fumar.',
+          'Las zonas interiores y las propias habitaciones son para no fumadores, incluidos cigarrillos electrónicos y vapeadores.',
+          'Se aplicará una tasa de limpieza si se detecta humo de tabaco dentro de una habitación.',
+        ],
+      },
+      pets: {
+        title: 'Mascotas',
+        items: [
+          'Se admiten mascotas de buen comportamiento en habitaciones seleccionadas, previa solicitud, con posible suplemento.',
+          'Las mascotas no deben dejarse solas en la habitación y deben ir atadas en las zonas comunes.',
+          'Los perros de asistencia y guía son siempre bienvenidos sin coste.',
+        ],
+      },
+      children: {
+        title: 'Niños y camas supletorias',
+        items: [
+          'Los niños de todas las edades son bienvenidos; las familias se sienten como en casa.',
+          'Las cunas y camas supletorias están disponibles bajo petición y sujetas a disponibilidad y capacidad de la habitación.',
+          'Los niños deben estar supervisados por un adulto en todo momento, especialmente en la piscina y el spa.',
+        ],
+      },
+      poolSpa: {
+        title: 'Piscina y spa',
+        items: [
+          'Nuestra piscina y nuestro spa aún no están abiertos — estamos dando los últimos retoques a ambos espacios.',
+          'Las fechas y horarios de apertura se anunciarán aquí y en recepción en cuanto estén listos.',
+          'Gracias por su paciencia; estaremos encantados de recibirle cuando abran.',
+        ],
+      },
+      dining: {
+        title: 'Desayuno y restauración',
+        items: [
+          'El desayuno y el régimen están incluidos según la tarifa que haya reservado — consulte su reserva o pregunte en recepción si tiene dudas.',
+          'Las comidas que excedan el régimen contratado y las consumiciones del bar se cobran aparte.',
+          'Indíquenos cualquier necesidad dietética o alergia y estaremos encantados de ayudarle.',
+        ],
+      },
+      safety: {
+        title: 'Seguridad, daños y responsabilidad',
+        items: [
+          'Cuide su tarjeta-llave y mantenga la puerta de la habitación cerrada; utilice la caja fuerte para sus objetos de valor.',
+          'Los huéspedes son responsables de cualquier pérdida o daño causado a las instalaciones del hotel durante su estancia.',
+          'Familiarícese con las salidas de emergencia y las instrucciones contra incendios expuestas en su habitación.',
+          'El hotel no se hace responsable de los objetos de valor dejados sin vigilancia en las zonas comunes.',
+        ],
+      },
+    },
+    closing:
+      'Gracias por ayudarnos a mantener Guardamar acogedor para todos. Si tiene cualquier duda sobre estas normas o una petición especial, nuestro equipo estará encantado de ayudarle.',
+    contactCta: 'Contáctenos',
+    updated: 'Estas normas pueden actualizarse periódicamente · {{hotel}}',
   },
 }

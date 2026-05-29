@@ -21,6 +21,9 @@ export default {
     titleRestaurant: 'Restaurant & Bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Moments — Hotel Guardamar',
+    titleRules: 'Hotel Rules — Hotel Guardamar',
+    descriptionRules:
+      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 14:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking, pets, and guest conduct on the Costa Blanca.',
     keywords:
       'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
   },
@@ -46,6 +49,7 @@ export default {
     home: 'HOME',
     suitesRooms: 'SUITES & ROOMS',
     contact: 'CONTACT',
+    rules: 'HOTEL RULES',
   },
 
   splash: {
@@ -287,5 +291,110 @@ export default {
     costaCard3Desc:
       'Traditional markets and coastal towns — Torrevieja salt lagoons, Altea’s old town, or Tabarca by boat.',
     costaCard3Alt: 'Mediterranean cove and coastal landscape',
+  },
+
+  rules: {
+    eyebrow: 'For a calm and comfortable stay',
+    title: 'Hotel Rules',
+    breadcrumb: 'HOTEL RULES',
+    heroImageAlt: 'Hotel Guardamar suite with a private balcony and Mediterranean light',
+    intro:
+      'These hotel rules help us care for every guest and keep Hotel Guardamar the calm Mediterranean retreat you came for. By confirming your reservation you agree to the guidelines below. Our reception team is available around the clock for anything not covered here.',
+    facts: {
+      checkIn: { label: 'Check-in', value: 'from 14:00' },
+      checkOut: { label: 'Check-out', value: 'until 11:00' },
+      quiet: { label: 'Quiet hours', value: '23:00 – 08:00' },
+      reception: { label: 'Reception', value: '24 hours' },
+    },
+    sections: {
+      checkInOut: {
+        title: 'Check-in & Check-out',
+        items: [
+          'Check-in is from 14:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry a charge.',
+          'A valid photo ID or passport is required for every guest at arrival, as required by Spanish law.',
+          'Guests must be at least 18 years old to check in. Minors must be accompanied by an adult.',
+          'Luggage storage is available at reception before check-in and after check-out at no charge.',
+        ],
+      },
+      booking: {
+        title: 'Reservations & Cancellation',
+        items: [
+          'Rates, cancellation, and prepayment conditions vary by room and offer; the terms shown at the time of booking apply.',
+          'Cancellations or changes should be made through the same channel used to book.',
+          'No-shows may be charged the first night or the full stay depending on the rate selected.',
+          'The room is reserved for the number of guests stated in the booking; additional guests must be declared in advance.',
+        ],
+      },
+      payment: {
+        title: 'Payment & Deposits',
+        items: [
+          'We accept the main credit and debit cards as well as cash in euros.',
+          'A pre-authorisation or security deposit may be requested at check-in to cover incidentals.',
+          'The local tourist tax, where applicable, is not included in the room rate.',
+          'An invoice can be issued on request — please provide billing details at check-in.',
+        ],
+      },
+      quietConduct: {
+        title: 'Quiet Hours & Conduct',
+        items: [
+          'Quiet hours are observed from 23:00 to 08:00 throughout the hotel and on terraces.',
+          'Please be considerate of other guests; behaviour that disturbs the stay of others may lead to a request to leave without refund.',
+          'Private events and parties in the rooms are not permitted.',
+        ],
+      },
+      smoking: {
+        title: 'Smoking',
+        items: [
+          'Every room has a private balcony, and smoking is allowed there.',
+          'Indoor areas and the rooms themselves are non-smoking, including e-cigarettes and vaping.',
+          'A cleaning fee applies if smoking is detected inside a room.',
+        ],
+      },
+      pets: {
+        title: 'Pets',
+        items: [
+          'Well-behaved pets are welcome in selected rooms by prior arrangement and may carry a supplement.',
+          'Pets must not be left unattended in the room and should be kept on a lead in common areas.',
+          'Assistance and guide animals are always welcome at no charge.',
+        ],
+      },
+      children: {
+        title: 'Children & Extra Beds',
+        items: [
+          'Children of all ages are welcome; families are very much at home here.',
+          'Cots and extra beds are available on request and subject to availability and room capacity.',
+          'Children must be supervised by an adult at all times, especially in the pool and spa areas.',
+        ],
+      },
+      poolSpa: {
+        title: 'Pool & Spa',
+        items: [
+          'Our pool and spa are not open yet — we are putting the finishing touches to both spaces.',
+          'Opening dates and hours will be announced here and at reception as soon as they are ready.',
+          'Thank you for your patience; we look forward to welcoming you once they open.',
+        ],
+      },
+      dining: {
+        title: 'Breakfast & Dining',
+        items: [
+          'Breakfast and board are included according to the rate you booked — please check your reservation or ask reception if you are unsure.',
+          'Meals beyond your chosen board, and items from the bar, are charged separately.',
+          'Let us know of any dietary needs or allergies and we will be glad to help.',
+        ],
+      },
+      safety: {
+        title: 'Safety, Damages & Liability',
+        items: [
+          'Please look after your key card and keep your room door closed; use the in-room safe for valuables.',
+          'Guests are responsible for any loss or damage caused to hotel property during their stay.',
+          'Familiarise yourself with the emergency exits and fire instructions displayed in your room.',
+          'The hotel is not liable for valuables left unattended in public areas.',
+        ],
+      },
+    },
+    closing:
+      'Thank you for helping us keep Guardamar welcoming for everyone. If you have any questions about these rules or a special request, our team is always glad to help.',
+    contactCta: 'Contact us',
+    updated: 'These house rules may be updated periodically · {{hotel}}',
   },
 }

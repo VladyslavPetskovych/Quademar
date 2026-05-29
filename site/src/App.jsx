@@ -9,6 +9,7 @@ import SpaPage from './pages/SpaPage'
 import MomentsPage from './pages/MomentsPage'
 import ContactsPage from './pages/ContactsPage'
 import RoomDetailPage from './pages/RoomDetailPage'
+import RulesPage from './pages/RulesPage'
 import NotFoundPage from './pages/NotFoundPage'
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
               <Route path="restaurant-bar" element={<RestaurantBarPage />} />
               <Route path="spa" element={<SpaPage />} />
               <Route path="moments" element={<MomentsPage />} />
+              <Route path="rules" element={<RulesPage />} />
               <Route path="contacts" element={<ContactsPage />} />
             </Route>
             <Route path="*" element={<NotFoundPage />} />

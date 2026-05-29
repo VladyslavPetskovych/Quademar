@@ -51,7 +51,7 @@ export default function Footer() {
         title: t('footer.colOther'),
         links: [
           { label: t('footer.linkContacts'), href: '/contacts' },
-          { label: t('footer.linkRules'), href: '#' },
+          { label: t('footer.linkRules'), href: '/rules' },
           { label: t('footer.linkOffers'), href: '/moments' },
         ],
       },
