@@ -23,7 +23,7 @@ export default {
     titleMoments: 'Moments — Hotel Guardamar',
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
-      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 14:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking, pets, and guest conduct on the Costa Blanca.',
+      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 12:00, booking and cancellation, quiet hours, balcony smoking, pets, and guest conduct on the Costa Blanca.',
     titleTerms: 'Terms & Conditions — Hotel Guardamar',
     descriptionTerms:
       'Terms and conditions for bookings and stays at Hotel Guardamar, Guardamar del Segura — reservations, rates and payment, cancellation, liability, and applicable law on the Costa Blanca.',
@@ -308,8 +308,8 @@ export default {
     intro:
       'These hotel rules help us care for every guest and keep Hotel Guardamar the calm Mediterranean retreat you came for. By confirming your reservation you agree to the guidelines below. Our reception team is available around the clock for anything not covered here.',
     facts: {
-      checkIn: { label: 'Check-in', value: 'from 14:00' },
-      checkOut: { label: 'Check-out', value: 'until 11:00' },
+      checkIn: { label: 'Check-in', value: 'from 15:00' },
+      checkOut: { label: 'Check-out', value: 'until 12:00' },
       quiet: { label: 'Quiet hours', value: '23:00 – 08:00' },
       reception: { label: 'Reception', value: '24 hours' },
     },
@@ -317,7 +317,7 @@ export default {
       checkInOut: {
         title: 'Check-in & Check-out',
         items: [
-          'Check-in is from 14:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry a charge.',
+          'Check-in is from 15:00 and check-out is until 12:00. Early check-in and late check-out are subject to availability and may carry a charge.',
           'A valid photo ID or passport is required for every guest at arrival, as required by Spanish law.',
           'Guests must be at least 18 years old to check in. Minors must be accompanied by an adult.',
           'Luggage storage is available at reception before check-in and after check-out at no charge.',
@@ -335,7 +335,7 @@ export default {
       payment: {
         title: 'Payment & Deposits',
         items: [
-          'We accept the main credit and debit cards as well as cash in euros.',
+          'We accept the main credit and debit cards.',
           'A pre-authorisation or security deposit may be requested at check-in to cover incidentals.',
           'The local tourist tax, where applicable, is not included in the room rate.',
           'An invoice can be issued on request — please provide billing details at check-in.',
@@ -360,7 +360,7 @@ export default {
       pets: {
         title: 'Pets',
         items: [
-          'Well-behaved pets are welcome in selected rooms by prior arrangement and may carry a supplement.',
+          'Well-behaved pets are welcome in selected rooms by prior arrangement, for a charge of €9 per night.',
           'Pets must not be left unattended in the room and should be kept on a lead in common areas.',
           'Assistance and guide animals are always welcome at no charge.',
         ],
@@ -376,9 +376,9 @@ export default {
       poolSpa: {
         title: 'Pool & Spa',
         items: [
-          'Our pool and spa are not open yet — we are putting the finishing touches to both spaces.',
-          'Opening dates and hours will be announced here and at reception as soon as they are ready.',
-          'Thank you for your patience; we look forward to welcoming you once they open.',
+          'Our outdoor pool is open and heated, and access is included in your room rate.',
+          'Please wear appropriate swimwear and shower before entering; children must be supervised at all times.',
+          'The spa is currently closed — we will announce its opening here and at reception.',
         ],
       },
       dining: {
@@ -442,7 +442,7 @@ export default {
         body: [
           'Rates are quoted in euros (EUR) and include applicable VAT unless stated otherwise. Any local tourist tax, where applicable, is not included in the room rate and is payable at the hotel.',
           'Depending on the rate and offer selected, full or partial prepayment may be required to guarantee the booking. The hotel may request a pre-authorisation or security deposit at check-in to cover possible incidentals.',
-          'We accept the main credit and debit cards and cash in euros. The conditions displayed at the time of booking form part of these terms.',
+          'We accept the main credit and debit cards. The conditions displayed at the time of booking form part of these terms.',
         ],
       },
       cancellation: {
@@ -455,7 +455,7 @@ export default {
       checkInOut: {
         title: 'Check-in & Check-out',
         body: [
-          'Check-in is available from 14:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry an additional charge.',
+          'Check-in is available from 15:00 and check-out is until 12:00. Early check-in and late check-out are subject to availability and may carry an additional charge.',
           'For full details about your stay, please also refer to our Hotel Rules.',
         ],
       },
