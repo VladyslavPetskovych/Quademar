@@ -2,7 +2,7 @@
 export default {
   seo: {
     description:
-      'Four-star boutique hotel and spa in Guardamar del Segura, Alicante. Sea-near suites, garden dining, and a calm Costa Blanca base between Alicante and the Mediterranean — book your stay.',
+      'Boutique hotel and spa in Guardamar del Segura, Alicante. Sea-near suites, garden dining, and a calm Costa Blanca base between Alicante and the Mediterranean — book your stay.',
     descriptionContacts:
       'Contact Hotel Guardamar, Guardamar del Segura — reservations, special requests, and questions about suites, spa, or dining on the Costa Blanca.',
     descriptionSuites:
@@ -157,8 +157,8 @@ export default {
 
   home: {
     hero: {
-      h1Title: 'Guardamar — 4 star hotel on the Costa Blanca.',
-      h1Aria: 'Guardamar — 4 star hotel on the Costa Blanca.',
+      h1Title: 'Guardamar — hotel on the Costa Blanca.',
+      h1Aria: 'Guardamar — hotel on the Costa Blanca.',
       lead: 'Experience the light, sea breeze, and calm rhythm of Guardamar del Segura.',
       learnMore: 'Learn more',
       learnMoreAria: 'Learn more — scroll to next section',
@@ -234,8 +234,6 @@ export default {
     heroImageAlt: 'Hotel Guardamar exterior and Mediterranean evening light',
     breadcrumbContact: 'CONTACT',
     h2: 'Write to us',
-    hotelRatingInfo:
-      'We are a 4-star hotel on the Costa Blanca — boutique rooms & suites, spa, and Mediterranean hospitality in Guardamar del Segura.',
     intro:
       'Reservations, questions, or special requests — we will get back to you as soon as we can.',
     thankYou: 'Thank you — we have received your message and will reply shortly.',
@@ -243,6 +241,9 @@ export default {
     labelEmail: 'Email',
     labelMessage: 'Message',
     send: 'Send',
+    mapTitle: 'Find us',
+    mapEmbedTitle: 'Map showing the location of Hotel Guardamar',
+    getDirections: 'Get directions',
   },
 
   placeholder: {

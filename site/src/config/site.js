@@ -42,7 +42,7 @@ export const SITE = {
 export const SEO = {
   title: 'Hotel Guardamar — Mediterranean sanctuary on Costa Blanca',
   description:
-    'Four-star boutique hotel and spa in Guardamar del Segura, Alicante. Sea-near suites, garden dining, and a calm Costa Blanca base between Alicante and the Mediterranean — book your stay.',
+    'Boutique hotel and spa in Guardamar del Segura, Alicante. Sea-near suites, garden dining, and a calm Costa Blanca base between Alicante and the Mediterranean — book your stay.',
   keywords:
     'Hotel Guardamar, Guardamar del Segura, Costa Blanca, Alicante, Spain, boutique hotel, spa hotel, suites, Mediterranean hotel, hotel Alicante',
 }
@@ -68,7 +68,7 @@ export const NAV_LINKS = [
 ]
 
 export const HERO = {
-  subtitle: 'Guardamar — 4 star hotel on the Costa Blanca.',
+  subtitle: 'Guardamar — hotel on the Costa Blanca.',
   kicker: 'Experience the light, sea breeze, and calm rhythm of Guardamar del Segura.',
 }
 
@@ -85,4 +85,8 @@ export const CONTACT = {
   email: 'info@hotelguardamar.com',
   emailHref: 'mailto:info@hotelguardamar.com',
   instagramHref: 'https://www.instagram.com/hotelguardamar/',
+  /** Google Maps — embed (iframe) and the shareable place link for "Get directions". */
+  mapEmbedSrc:
+    'https://www.google.com/maps?q=Hotel%20Guardamar%2C%20Calle%20Puerto%20Rico%2011%2C%2003140%20Guardamar%20del%20Segura%2C%20Alicante%2C%20Espa%C3%B1a&output=embed',
+  mapLink: 'https://share.google/4sAdhGmFrlODNuHCj',
 }

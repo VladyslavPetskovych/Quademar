@@ -21,31 +21,6 @@ const inView = { once: true, amount: 0.25 }
 const fieldClass =
   'w-full border-0 border-b border-[#171412]/18 bg-transparent px-0 py-3 font-sans text-[16px] font-[250] text-[#171412] placeholder:text-[#9a948e] outline-none transition-colors focus:border-[#6e361b] focus:ring-0'
 
-const CONTACT_STAR_MARKERS = [
-  { rotate: '-7deg', y: '-1px', scale: 1.04 },
-  { rotate: '5deg', y: '2px', scale: 0.96 },
-  { rotate: '-4deg', y: '-1px', scale: 1 },
-  { rotate: '6deg', y: '2px', scale: 0.97 },
-]
-
-function ContactRatingStars() {
-  return (
-    <span className="inline-flex shrink-0 items-center gap-[3px] leading-none" aria-hidden="true">
-      {CONTACT_STAR_MARKERS.map((s, i) => (
-        <span
-          key={i}
-          className="inline-block bg-linear-to-br from-amber-100 via-amber-300 to-amber-600 bg-clip-text text-[15px] text-transparent filter-[drop-shadow(0_1px_4px_rgba(251,191,36,0.35))] sm:text-[16px]"
-          style={{
-            transform: `rotate(${s.rotate}) translateY(${s.y}) scale(${s.scale})`,
-          }}
-        >
-          ★
-        </span>
-      ))}
-    </span>
-  )
-}
-
 export default function ContactsPage() {
   const { t } = useLanguage()
   const [sent, setSent] = useState(false)
@@ -91,28 +66,13 @@ export default function ContactsPage() {
               >
                 {CONTACT.hotelName}
               </motion.h1>
-              <motion.div
-                className="mt-6 max-w-md rounded-sm border border-white/18 bg-white/6 px-4 py-3.5 backdrop-blur-[2px]"
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="visible"
-                viewport={inView}
-                custom={2}
-              >
-                <div className="flex gap-3.5">
-                  <ContactRatingStars />
-                  <p className="font-sans text-[14px] font-[250] leading-snug text-[#f3eee6]/92 sm:text-[15px]">
-                    {t('contacts.hotelRatingInfo')}
-                  </p>
-                </div>
-              </motion.div>
               <motion.address
                 className="mt-8 not-italic font-sans text-[15px] font-[250] leading-relaxed text-[#f3eee6]/88"
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="visible"
                 viewport={inView}
-                custom={3}
+                custom={2}
               >
                 {CONTACT.addressLines.map((line) => (
                   <span key={line} className="block">
@@ -126,7 +86,7 @@ export default function ContactsPage() {
                 initial="hidden"
                 whileInView="visible"
                 viewport={inView}
-                custom={4}
+                custom={3}
               >
                 <a href={CONTACT.phoneHref} className="block transition-opacity hover:opacity-80">
                   {CONTACT.phoneDisplay}
@@ -249,6 +209,55 @@ export default function ContactsPage() {
               )}
             </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/* Location map */}
+      <div className="bg-[#062c26]">
+        <div className="px-6 py-12 sm:px-10 sm:py-14 lg:px-14 lg:py-16 xl:px-20">
+          <motion.div
+            className="flex flex-wrap items-end justify-between gap-x-6 gap-y-3"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={inView}
+            custom={0}
+          >
+            <div>
+              <p className="font-sans text-[11px] font-medium uppercase tracking-[0.2em] text-[#f3eee6]/70">
+                {t('contacts.mapTitle')}
+              </p>
+              <h2 className="mt-3 font-cormorant text-[clamp(1.75rem,3.5vw,2.5rem)] font-normal leading-none text-[#f3eee6]">
+                {CONTACT.addressLines[0]}
+              </h2>
+            </div>
+            <a
+              href={CONTACT.mapLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-[12px] font-medium uppercase tracking-[0.12em] text-[#f3eee6]/80 underline-offset-4 transition-colors hover:text-[#f3eee6] hover:underline"
+            >
+              {t('contacts.getDirections')} →
+            </a>
+          </motion.div>
+
+          <motion.div
+            className="mt-7 overflow-hidden rounded-sm border border-white/15"
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={inView}
+            custom={1}
+          >
+            <iframe
+              src={CONTACT.mapEmbedSrc}
+              title={t('contacts.mapEmbedTitle')}
+              className="block h-80 w-full sm:h-105"
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
+          </motion.div>
         </div>
       </div>
     </section>
