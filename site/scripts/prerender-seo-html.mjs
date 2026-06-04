@@ -1,18 +1,20 @@
 /**
  * Writes route-specific `index.html` files under `dist/` so crawlers and link previews
- * receive unique title, description, canonical, and JSON-LD before the SPA hydrates.
+ * receive unique title, description, canonical, social image, and JSON-LD before the SPA hydrates.
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadEnv } from 'vite'
-import { CONTACT, SEO, SEO_OG_IMAGE, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+import { SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
 import en from '../src/i18n/en.js'
-import { ROOM_SEO_META, SUITE_ROOM_SLUGS } from '../src/seo/roomMeta.js'
 import {
-  buildRouteJsonLd,
-  buildSuitesListingJsonLd,
-} from '../src/seo/structuredDataRoutes.js'
+  ROOM_SEO_META,
+  roomOgImagePath,
+  SUITE_ROOM_SLUGS,
+  SUITES_OG_IMAGE_PATH,
+} from '../src/seo/roomMeta.js'
+import { buildRouteJsonLd } from '../src/seo/structuredDataRoutes.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = join(__dirname, '..')
@@ -52,7 +54,7 @@ function injectRouteJsonLd(html, jsonLd) {
   return withoutRoute.replace('</head>', `\n    ${script}\n  </head>`)
 }
 
-function patchHtml(html, { title, description, keywords, canonical, jsonLd }) {
+function patchHtml(html, { title, description, keywords, canonical, ogImage, ogImageAlt, jsonLd }) {
   let out = replaceTitle(html, title)
   out = replaceMeta(out, 'name', 'description', description)
   out = replaceMeta(out, 'name', 'keywords', keywords)
@@ -61,6 +63,11 @@ function patchHtml(html, { title, description, keywords, canonical, jsonLd }) {
   out = replaceMeta(out, 'property', 'og:title', title)
   out = replaceMeta(out, 'property', 'og:description', description)
   out = replaceMeta(out, 'property', 'og:url', canonical)
+  if (ogImage) {
+    out = replaceMeta(out, 'property', 'og:image', ogImage)
+    out = replaceMeta(out, 'name', 'twitter:image', ogImage)
+  }
+  if (ogImageAlt) out = replaceMeta(out, 'property', 'og:image:alt', ogImageAlt)
   out = replaceCanonical(out, canonical)
   if (jsonLd) out = injectRouteJsonLd(out, jsonLd)
   return out
@@ -73,29 +80,24 @@ function writeRouteHtml(relativeDir, html) {
 }
 
 const baseHtml = readFileSync(join(distDir, 'index.html'), 'utf8')
-const ogImage = `${origin}${SEO_OG_IMAGE.path}`
 
 const suitesCanonical = `${origin}/suites-rooms`
+const suitesOgImage = `${origin}${SUITES_OG_IMAGE_PATH}`
 const suitesHtml = patchHtml(baseHtml, {
   title: en.seo.titleSuites,
   description: en.seo.descriptionSuites,
   keywords: en.seo.keywordsSuites,
   canonical: suitesCanonical,
-  jsonLd: {
-    '@context': 'https://schema.org',
-    '@graph': [
-      buildSuitesListingJsonLd({ origin, locale: 'en' }),
-      {
-        '@type': 'WebPage',
-        '@id': `${suitesCanonical}#webpage`,
-        url: suitesCanonical,
-        name: en.seo.titleSuites,
-        description: en.seo.descriptionSuites,
-        isPartOf: { '@id': `${origin}/#website` },
-        about: { '@id': `${origin}/#hotel` },
-      },
-    ],
-  },
+  ogImage: suitesOgImage,
+  ogImageAlt: en.seo.titleSuites,
+  jsonLd: buildRouteJsonLd({
+    origin,
+    pathname: '/suites-rooms',
+    locale: 'en',
+    title: en.seo.titleSuites,
+    description: en.seo.descriptionSuites,
+    ogImageUrl: suitesOgImage,
+  }),
 })
 
 writeRouteHtml('suites-rooms', suitesHtml)
@@ -105,6 +107,7 @@ for (const slug of SUITE_ROOM_SLUGS) {
   if (!copy) continue
   const path = `/suites-rooms/${slug}`
   const canonical = `${origin}${path}`
+  const ogImage = `${origin}${roomOgImagePath(slug)}`
   const jsonLd = buildRouteJsonLd({
     origin,
     pathname: path,
@@ -119,6 +122,8 @@ for (const slug of SUITE_ROOM_SLUGS) {
     description: copy.description,
     keywords: copy.keywords,
     canonical,
+    ogImage,
+    ogImageAlt: copy.title,
     jsonLd,
   }))
 }

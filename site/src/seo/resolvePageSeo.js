@@ -1,6 +1,6 @@
 import { getRoomBySlug } from '../../rooms'
 import { localizeRoom } from '../i18n/localizeRoom'
-import { getRoomSeoCopy } from './roomMeta'
+import { getRoomSeoCopy, roomOgImagePath, SUITES_OG_IMAGE_PATH } from './roomMeta'
 
 const META_DESC_MAX = 158
 
@@ -31,6 +31,7 @@ export function resolvePageSeo(pathname, locale, t) {
     title = t('seo.titleSuites')
     description = t('seo.descriptionSuites')
     keywords = t('seo.keywordsSuites')
+    ogImagePath = SUITES_OG_IMAGE_PATH
     pageKind = 'suitesListing'
   } else if (path.startsWith('/suites-rooms/')) {
     const slug = path.slice('/suites-rooms/'.length).split('/')[0]
@@ -44,8 +45,8 @@ export function resolvePageSeo(pathname, locale, t) {
       const fromRoom = truncateMetaDescription(localized.description || '')
       description = fromSeo || fromRoom || t('seo.descriptionSuites')
       keywords = seoCopy?.keywords ?? t('seo.keywordsSuites')
-      const hero = room.images?.find((img) => img?.src)
-      ogImagePath = typeof hero?.src === 'string' ? hero.src : null
+      // Stable, crawler-cacheable per-room social image (see scripts/generate-og-images.mjs).
+      ogImagePath = roomOgImagePath(slug)
       pageKind = 'roomDetail'
     }
   } else if (path === '/restaurant-bar') {

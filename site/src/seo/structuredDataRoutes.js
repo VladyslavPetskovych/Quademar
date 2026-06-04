@@ -2,10 +2,26 @@
  * Route-specific JSON-LD for suites listing and room detail pages.
  */
 
-import { getRoomSeoCopy, getRoomSeoMeta, SUITE_ROOM_SLUGS } from './roomMeta.js'
+import { BOOKING_URL } from '../config/site.js'
+import {
+  getRoomSeoCopy,
+  getRoomSeoMeta,
+  roomOgImagePath,
+  SUITE_ROOM_SLUGS,
+} from './roomMeta.js'
+
+const LISTING_DESC_MAX = 155
 
 function hotelRef(origin) {
   return { '@id': `${origin}/#hotel` }
+}
+
+function shorten(text, max = LISTING_DESC_MAX) {
+  const s = (text || '').replace(/\s+/g, ' ').trim()
+  if (s.length <= max) return s
+  const cut = s.slice(0, max - 1)
+  const lastSpace = cut.lastIndexOf(' ')
+  return `${(lastSpace > max * 0.55 ? cut.slice(0, lastSpace) : cut).trimEnd()}…`
 }
 
 function roomOccupancy(meta) {
@@ -26,6 +42,47 @@ function roomFloorSize(meta) {
     value: m2,
     unitCode: 'MTK',
     unitText: 'm²',
+  }
+}
+
+function roomBedDetails(meta) {
+  const beds = Array.isArray(meta?.beds) ? meta.beds : []
+  if (!beds.length) return undefined
+  return beds.map((b) => ({
+    '@type': 'BedDetails',
+    typeOfBed: b.type,
+    numberOfBeds: b.count ?? 1,
+  }))
+}
+
+function roomAmenityFeatures(meta) {
+  const list = Array.isArray(meta?.amenities) ? meta.amenities : []
+  if (!list.length) return undefined
+  return list.map((name) => ({
+    '@type': 'LocationFeatureSpecification',
+    name,
+    value: true,
+  }))
+}
+
+/** ReserveAction wiring the room to the booking engine. */
+function roomReserveAction({ roomUrl, roomTitle }) {
+  return {
+    '@type': 'ReserveAction',
+    name: `Book the ${roomTitle}`,
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: BOOKING_URL,
+      inLanguage: ['en', 'es'],
+      actionPlatform: [
+        'http://schema.org/DesktopWebPlatform',
+        'http://schema.org/MobileWebPlatform',
+      ],
+    },
+    result: {
+      '@type': 'LodgingReservation',
+      name: `${roomTitle} reservation`,
+    },
   }
 }
 
@@ -63,7 +120,10 @@ export function buildRoomDetailJsonLd({ origin, slug, roomTitle, description, im
     containedInPlace: hotelRef(origin),
     occupancy: meta ? roomOccupancy(meta) : undefined,
     floorSize: meta ? roomFloorSize(meta) : undefined,
+    bed: meta ? roomBedDetails(meta) : undefined,
+    amenityFeature: meta ? roomAmenityFeatures(meta) : undefined,
     numberOfRooms: meta?.quantity ?? 1,
+    potentialAction: roomReserveAction({ roomUrl, roomTitle }),
   }
 }
 
@@ -73,13 +133,21 @@ export function buildSuitesListingJsonLd({ origin, locale = 'en' }) {
   const lang = locale === 'es' ? 'es' : 'en'
 
   const itemListElement = SUITE_ROOM_SLUGS.map((slug, index) => {
+    const meta = getRoomSeoMeta(slug)
     const seo = getRoomSeoCopy(slug, lang)
     const name = seo?.title?.split(' — ')[0] ?? slug
+    const roomUrl = `${origin}/suites-rooms/${slug}`
     return {
       '@type': 'ListItem',
       position: index + 1,
-      name,
-      url: `${origin}/suites-rooms/${slug}`,
+      item: {
+        '@type': meta?.schemaType ?? 'HotelRoom',
+        '@id': `${roomUrl}#room`,
+        name,
+        description: shorten(seo?.description),
+        url: roomUrl,
+        image: `${origin}${roomOgImagePath(slug)}`,
+      },
     }
   })
 
@@ -87,6 +155,8 @@ export function buildSuitesListingJsonLd({ origin, locale = 'en' }) {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: 'Suites & Rooms at Hotel Guardamar',
+    description:
+      'All suite and room categories at Hotel Guardamar in Guardamar del Segura, Costa Blanca.',
     url: listingUrl,
     numberOfItems: itemListElement.length,
     itemListElement,
@@ -110,6 +180,7 @@ export function buildRouteJsonLd({ origin, pathname, locale, title, description,
           description,
           isPartOf: { '@id': `${origin}/#website` },
           about: hotelRef(origin),
+          primaryImageOfPage: ogImageUrl ? { '@type': 'ImageObject', url: ogImageUrl } : undefined,
         },
       ],
     }
@@ -123,7 +194,7 @@ export function buildRouteJsonLd({ origin, pathname, locale, title, description,
     return {
       '@context': 'https://schema.org',
       '@graph': [
-        buildRoomBreadcrumbJsonLd({ origin, roomTitle, path }),
+        buildRoomBreadcrumbJsonLd({ origin, roomTitle, roomPath: path }),
         buildRoomDetailJsonLd({
           origin,
           slug,
@@ -139,6 +210,7 @@ export function buildRouteJsonLd({ origin, pathname, locale, title, description,
           description,
           isPartOf: { '@id': `${origin}/#website` },
           about: { '@id': `${origin}/suites-rooms/${slug}#room` },
+          primaryImageOfPage: ogImageUrl ? { '@type': 'ImageObject', url: ogImageUrl } : undefined,
         },
       ],
     }
