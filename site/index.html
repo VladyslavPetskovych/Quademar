@@ -2,30 +2,43 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18181561522"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-18181561522"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'AW-18181561522');
+      gtag("config", "AW-18181561522");
     </script>
     <!-- iOS Telegram / in-app browsers: stabilize visible height so content fills the viewport (no top gap). -->
     <script>
-      ;(function () {
+      (function () {
         function setAppVh() {
-          var h = window.visualViewport ? window.visualViewport.height : window.innerHeight
-          document.documentElement.style.setProperty('--app-vh', h * 0.01 + 'px')
+          var h = window.visualViewport
+            ? window.visualViewport.height
+            : window.innerHeight;
+          document.documentElement.style.setProperty(
+            "--app-vh",
+            h * 0.01 + "px",
+          );
         }
-        setAppVh()
-        window.addEventListener('resize', setAppVh)
+        setAppVh();
+        window.addEventListener("resize", setAppVh);
         if (window.visualViewport) {
-          window.visualViewport.addEventListener('resize', setAppVh)
-          window.visualViewport.addEventListener('scroll', setAppVh)
+          window.visualViewport.addEventListener("resize", setAppVh);
+          window.visualViewport.addEventListener("scroll", setAppVh);
         }
-      })()
+      })();
     </script>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="theme-color" content="#264d43" />
@@ -43,7 +56,10 @@
 
     <meta name="description" content="__SEO_DESCRIPTION__" />
     <meta name="keywords" content="__SEO_KEYWORDS__" />
-    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
     <meta name="googlebot" content="index, follow" />
     <link rel="canonical" href="__CANONICAL_URL__" />
 
@@ -53,7 +69,12 @@
 
     <link rel="icon" href="/favicon.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="/android-chrome-192x192.png"
+    />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
@@ -76,11 +97,33 @@
     <meta name="twitter:description" content="__SEO_DESCRIPTION__" />
     <meta name="twitter:image" content="__TWITTER_IMAGE__" />
 
-    __GSC_VERIFICATION__
-    __SEO_LD_JSON__
+    __GSC_VERIFICATION__ __SEO_LD_JSON__
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <!-- BEGIN PLERDY CODE -->
+    <script type="text/javascript" defer data-plerdy_code="1">
+      var _protocol =
+        "https:" == document.location.protocol ? "https://" : "http://";
+      ((_site_hash_code = "41650c297b7613efec7dc10bd7b32398"),
+        (_suid = 77500),
+        (plerdyScript = document.createElement("script")));
+      (plerdyScript.setAttribute("defer", ""),
+        (plerdyScript.dataset.plerdymainscript = "plerdymainscript"),
+        (plerdyScript.src =
+          "https://a.plerdy.com/public/js/click/main.js?v=" + Math.random()));
+      var plerdymainscript = document.querySelector(
+        "[data-plerdymainscript='plerdymainscript']",
+      );
+      plerdymainscript &&
+        plerdymainscript.parentNode.removeChild(plerdymainscript);
+      try {
+        document.head.appendChild(plerdyScript);
+      } catch (t) {
+        console.log(t, "unable add script tag");
+      }
+    </script>
+    <!-- END PLERDY CODE -->
   </body>
 </html>
