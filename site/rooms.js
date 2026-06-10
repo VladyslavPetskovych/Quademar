@@ -14,11 +14,21 @@ import presidentialBathroomShower from './src/assets/suites/presidential/bathroo
 import presidentialBathroomToilet from './src/assets/suites/presidential/bathroom-toilet-area.png'
 import presidentialBathroomWetRoom from './src/assets/suites/presidential/bathroom-wet-room-glass.png'
 import presidentialBathroomVanityTowel from './src/assets/suites/presidential/bathroom-vanity-towel-ring.png'
-import familyBathroomMirror from './src/assets/suites/family/bathroom-vanity-backlit-mirror.png'
-import familyBathroomSink from './src/assets/suites/family/bathroom-vanity-sink.png'
-import familyBathroomTowels from './src/assets/suites/family/bathroom-vanity-towels.png'
-import familyBathroomDetail from './src/assets/suites/family/bathroom-vanity-detail.png'
-import familyBathroomWide from './src/assets/suites/family/bathroom-vanity-wide.png'
+import familyBedroomWide from './src/assets/suites/family/bedroom-wide-orange-headboard.png'
+import familyBedroomCentered from './src/assets/suites/family/bedroom-centered-branded-bed.png'
+import familyBedNightstandRoses from './src/assets/suites/family/bed-nightstand-white-roses.png'
+import familyBedGreenPillows from './src/assets/suites/family/bed-green-pillows-detail.png'
+import familyBedCaneNightstand from './src/assets/suites/family/bed-cane-nightstand-detail.png'
+import familyBedGreenBrandedPillow from './src/assets/suites/family/bed-green-branded-pillow.png'
+import familyBedLinenDetail from './src/assets/suites/family/bed-guardamar-linen-detail.png'
+import familyBedroomTvVanity from './src/assets/suites/family/bedroom-tv-vanity-corner.png'
+import familyBalconySeaView from './src/assets/suites/family/balcony-chairs-sea-view.png'
+import familyBathroomShower from './src/assets/suites/family/bathroom-shower-terracotta.png'
+import familyBathroomMirror from './src/assets/suites/family/bathroom-vanity-mirror.png'
+import familyBathroomSink from './src/assets/suites/family/bathroom-sink-detail.png'
+import familyBathroomAmenities from './src/assets/suites/family/bathroom-lalique-amenities.png'
+import familyBathroomTowel from './src/assets/suites/family/bathroom-branded-towel.png'
+import familyBathroomBathrobes from './src/assets/suites/family/bathroom-branded-bathrobes.png'
 import juniorRoomFromEntrance from './src/assets/suites/junior-partial-view/room-from-entrance.png'
 import juniorBedroomWide from './src/assets/suites/junior-partial-view/bedroom-wide-rattan-lights.png'
 import juniorBalconyDoorOpen from './src/assets/suites/junior-partial-view/balcony-door-open-sea-view.png'
@@ -184,24 +194,64 @@ export const ROOM_CATEGORIES = [
     reverse: true,
     images: [
       {
+        src: familyBedroomWide,
+        alt: 'Family Suite bedroom with terracotta tufted headboard, green accent linens, sofa bed and balcony',
+      },
+      {
+        src: familyBedroomCentered,
+        alt: 'Family Suite double bed with Guardamar branding, green pillows, framed art and louvered wardrobe',
+      },
+      {
+        src: familyBedNightstandRoses,
+        alt: 'Family Suite bedside with terracotta headboard, cane-front nightstand and white roses',
+      },
+      {
+        src: familyBedGreenPillows,
+        alt: 'Family Suite bed detail with green velvet Guardamar pillows, armchair and rattan pendant light',
+      },
+      {
+        src: familyBedCaneNightstand,
+        alt: 'Family Suite bed corner with embroidered Guardamar pillow and cane-front rattan nightstand',
+      },
+      {
+        src: familyBedGreenBrandedPillow,
+        alt: 'Family Suite bedding close-up with green Guardamar Hotel & Spa embroidered accent pillow and runner',
+      },
+      {
+        src: familyBedLinenDetail,
+        alt: 'Close-up of Guardamar Hotel & Spa logo on the Family Suite white bed linen',
+      },
+      {
+        src: familyBedroomTvVanity,
+        alt: 'Family Suite with wall-mounted flat-screen TV, vanity desk corner and orange pouf',
+      },
+      {
+        src: familyBalconySeaView,
+        alt: 'Family Suite private balcony with woven chairs, table and Mediterranean sea view',
+      },
+      {
+        src: familyBathroomShower,
+        alt: 'Family Suite bathroom with glass corner shower, terracotta wall, round mirror and vessel sink',
+      },
+      {
         src: familyBathroomMirror,
-        alt: 'Family Suite bathroom with backlit circular mirror, vessel sink and terracotta wall',
+        alt: 'Family Suite bathroom vanity with backlit round mirror, vessel sink and terracotta accent wall',
       },
       {
         src: familyBathroomSink,
-        alt: 'Family Suite bathroom vanity with white sink, black faucet and Guardamar branded towels',
+        alt: 'Family Suite bathroom detail with white vessel sink, tall black faucet and terracotta tiles',
       },
       {
-        src: familyBathroomTowels,
-        alt: 'Folded Guardamar Hotel & Spa towels on the Family Suite bathroom countertop',
+        src: familyBathroomAmenities,
+        alt: 'Premium Lalique bath amenities on the terracotta tiled wall of the Family Suite bathroom',
       },
       {
-        src: familyBathroomDetail,
-        alt: 'Family Suite bathroom detail with warm terracotta tiles and premium fixtures',
+        src: familyBathroomTowel,
+        alt: 'Folded Guardamar Hotel & Spa branded towel beside the Family Suite vessel sink',
       },
       {
-        src: familyBathroomWide,
-        alt: 'Family Suite bathroom wide view with backlit mirror and branded amenities',
+        src: familyBathroomBathrobes,
+        alt: 'Two Guardamar Hotel & Spa branded bathrobes hanging in the Family Suite bathroom',
       },
     ],
     title: 'Family Suite',

@@ -25,7 +25,7 @@ const OG_HEIGHT = 630
 /** Representative source photo per room (relative to `src/assets/suites`). */
 const ROOM_SOURCES = {
   presidential: 'presidential/bedroom-wide-rattan-pendants.png',
-  family: 'family/bathroom-vanity-wide.png',
+  family: 'family/bedroom-wide-orange-headboard.png',
   junior: 'junior-partial-view/bedroom-wide-rattan-lights.png',
   'standard-view-double': 'standard-view-double/bathroom-shower-green-tiles.png',
   'standard-partial-double': 'junior-partial-view/bedroom-wide-rattan-lights.png',
