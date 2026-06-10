@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useState } from 'react'
+import { useSearchParams } from 'react-router-dom'
 import beachImage from '../assets/home/beach.png'
 import beach2Image from '../assets/home/beach2.png'
 import beach3Image from '../assets/home/beach3.png'
@@ -162,8 +162,12 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, title, lead, cards, t
 }
 
 export default function MomentsPage() {
-  const [tab, setTab] = useState(TAB.offers)
+  const [searchParams, setSearchParams] = useSearchParams()
   const { tf } = useLanguage()
+
+  const tab = searchParams.get('tab') === TAB.costaBlanca ? TAB.costaBlanca : TAB.offers
+  const selectTab = (next) =>
+    setSearchParams(next === TAB.costaBlanca ? { tab: TAB.costaBlanca } : {}, { replace: true })
 
   const offersCards = OFFERS_CARDS.map((c) => ({ ...c }))
   const costaCards = COSTA_CARDS.map((c) => ({ ...c }))
@@ -213,7 +217,7 @@ export default function MomentsPage() {
                 id={TAB.offers}
                 label={tf('moments.tabOffers')}
                 selected={tab === TAB.offers}
-                onSelect={setTab}
+                onSelect={selectTab}
               />
               <span
                 className="shrink-0 select-none px-1 font-sans text-[10px] font-medium uppercase tracking-[0.35em] text-[#c4bfb7] sm:px-2"
@@ -225,7 +229,7 @@ export default function MomentsPage() {
                 id={TAB.costaBlanca}
                 label={tf('moments.tabCosta')}
                 selected={tab === TAB.costaBlanca}
-                onSelect={setTab}
+                onSelect={selectTab}
               />
             </motion.div>
           </motion.div>

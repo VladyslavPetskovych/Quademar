@@ -149,6 +149,7 @@ export default {
     languageSpanish: 'Idioma: español',
     prevSlide: 'Diapositiva anterior',
     nextSlide: 'Diapositiva siguiente',
+    goToSlide: 'Ir a la diapositiva {{n}}',
     openMenu: 'Abrir menú',
     closeMenuBurger: 'Cerrar menú',
     instagramHotel: 'Hotel Guardamar en Instagram (se abre en una pestaña nueva)',
@@ -172,6 +173,8 @@ export default {
         'Guardamar se prepara para abrir un nuevo capítulo en su historia. Muy pronto le invitamos a descubrir Guardamar del Segura desde una nueva perspectiva, donde el legado español se encuentra con el azul infinito del Mediterráneo. Descubra un lugar donde jardines frondosos, experiencias culinarias únicas y el espíritu de la Costa Blanca se unen en una sola experiencia.',
       readMore: 'Leer más',
       beachAlt: 'Costa de la Costa Blanca',
+      newStory2Alt: 'Huésped con albornoz de Guardamar disfrutando de una copa de vino espumoso en el balcón con vistas al mar',
+      newStory3Alt: 'Balcón privado con asientos y amplias vistas al Mediterráneo',
     },
     discovery: {
       h2: '¡Descubra el corazón de la Costa Blanca en Guardamar!',
@@ -191,7 +194,7 @@ export default {
         'Viva veladas inolvidables al aire libre con música en vivo, cócteles elaborados y el espíritu vibrante del Mediterráneo en Guardamar.',
     },
     spring: {
-      h3: 'Un viaje primaveral al corazón de la hospitalidad española',
+      h3: 'Un viaje al corazón de la hospitalidad española',
       p1:
         'La primavera envuelve suavemente la costa, trayendo los primeros rayos cálidos y el perfume de los jardines en flor. Guardamar vuelve a abrir sus puertas y le muestra sus vistas más bellas.',
       p2:
@@ -200,10 +203,15 @@ export default {
         'Le invitamos a adelantarse al verano y contemplar el despertar mágico de la naturaleza en uno de los destinos más excepcionales de la Costa Blanca.',
       readMore: 'Leer más',
       imageAlt: 'Costa primaveral en Guardamar',
+      spring1Alt: 'Pareja paseando de la mano junto a la piscina entre los jardines en flor de Guardamar',
+      spring2Alt: 'Un momento primaveral de hospitalidad española en Hotel Guardamar',
+      spring3Alt: 'Huésped con albornoz de Guardamar sosteniendo rosas blancas sobre una cama con la marca Hotel & Spa',
     },
     jardin: {
       stampAlt: 'Marca Restaurante Aristo',
       imageAlt: 'Terraza del restaurante Aristo con vistas al mar',
+      aristo1Alt: 'Huéspedes brindando con vino blanco en una mesa de la terraza de Aristo junto a la fuente',
+      aristo2Alt: 'Elegante comedor de Aristo con lámparas de araña, columnas y mesas preparadas',
       h3: 'Restaurante Aristo: un nuevo capítulo culinario en Guardamar',
       p1:
         'Pensado para los verdaderos gourmets, Aristo celebra una cocina auténtica y generosa que fusiona tradiciones españolas con productos de la Costa Blanca. Nuestro restaurante es un espacio donde una decoración excepcional se encuentra con la naturaleza intacta.',
@@ -283,7 +291,7 @@ export default {
     offersCard3Alt: 'Fachada del hotel y jardines al anochecer',
     costaTitle: 'Costa Blanca',
     costaLead:
-      'Desde las dunas de Guardamar hasta pueblos encalados y calas escondidas — una guía suave para excursiones, sabor local y el ritmo de la costa.',
+      'Una nueva historia se despliega en la costa de la Costa Blanca. Desde las dunas doradas y los pinares de Guardamar hasta los pueblos encalados y las calas escondidas, aquí el legado español se encuentra con el azul infinito del Mediterráneo. Déjese guiar por excursiones sin prisas, sabor local y el ritmo suave de la costa — las primeras páginas de un capítulo que deseamos compartir.',
     costaFeaturedAlt: 'Playa de arena y orilla mediterránea cerca de Guardamar',
     costaCard1Tag: 'Naturaleza',
     costaCard1Title: 'Pinares y parque',
@@ -361,7 +369,7 @@ export default {
       pets: {
         title: 'Mascotas',
         items: [
-          'Se admiten mascotas de buen comportamiento en habitaciones seleccionadas, previa solicitud, con un coste de 9 € por noche.',
+          'Se admiten mascotas de buen comportamiento de hasta 7 kg en habitaciones seleccionadas, previa solicitud, con un coste de 9 € por noche y un máximo de una mascota por habitación.',
           'Las mascotas no deben dejarse solas en la habitación y deben ir atadas en las zonas comunes.',
           'Los perros de asistencia y guía son siempre bienvenidos sin coste.',
         ],

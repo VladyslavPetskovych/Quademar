@@ -1,6 +1,7 @@
 import heroImage from '../../assets/home/hero.png'
+import heroVideo from '../../assets/home/heroVid.mov'
 import { motion, useReducedMotion } from 'framer-motion'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLenis } from 'lenis/react'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_INTRO_SECTION_ID, scrollToHomeIntro } from './homeSectionCta'
@@ -11,6 +12,17 @@ export default function HomeHero() {
   const lenis = useLenis()
   const reduceMotion = useReducedMotion()
   const [isNarrowViewport, setIsNarrowViewport] = useState(false)
+  const videoRef = useRef(null)
+  const [videoReady, setVideoReady] = useState(false)
+
+  const handleVideoReady = () => {
+    const video = videoRef.current
+    if (video) {
+      const played = video.play()
+      if (played && typeof played.catch === 'function') played.catch(() => {})
+    }
+    setVideoReady(true)
+  }
 
   useEffect(() => {
     const mq = window.matchMedia('(max-width: 767px)')
@@ -46,6 +58,24 @@ export default function HomeHero() {
         animate={{ scale: 1 }}
         transition={imageScaleTransition}
       />
+      {!reduceMotion && (
+        <motion.video
+          ref={videoRef}
+          src={heroVideo}
+          poster={heroImage}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center max-md:object-[center_30%]"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: videoReady ? 1 : 0 }}
+          transition={{ duration: 1.4, ease: HOME_SCROLL_EASE }}
+          onCanPlay={handleVideoReady}
+        />
+      )}
       <div className="absolute inset-0 bg-black/72" />
 
       <motion.div

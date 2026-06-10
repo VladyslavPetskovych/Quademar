@@ -149,6 +149,7 @@ export default {
     languageSpanish: 'Language: Spanish',
     prevSlide: 'Previous slide',
     nextSlide: 'Next slide',
+    goToSlide: 'Go to slide {{n}}',
     openMenu: 'Open menu',
     closeMenuBurger: 'Close menu',
     instagramHotel:
@@ -173,6 +174,8 @@ export default {
         "Guardamar is preparing to open a new chapter in its history. Soon, we'll invite you to discover Guardamar del Segura from a new perspective, where Spanish heritage meets the endless blue of the Mediterranean. Discover a place where lush gardens, unique culinary experiences, and the spirit of Costa Blanca come together as one.",
       readMore: 'Read more',
       beachAlt: 'Coastline of Costa Blanca',
+      newStory2Alt: 'Guest in a Guardamar robe enjoying a glass of sparkling wine on the sea-view balcony',
+      newStory3Alt: 'Private balcony with seating and a sweeping view of the Mediterranean',
     },
     discovery: {
       h2: 'Discover the heart of Costa Blanca in Guardamar!',
@@ -192,7 +195,7 @@ export default {
         'Spend unforgettable evenings under the open sky with live music, crafted cocktails, and the vibrant Mediterranean spirit of Guardamar.',
     },
     spring: {
-      h3: 'A Spring Journey to the Heart of Spanish Hospitality',
+      h3: 'A Journey to the Heart of Spanish Hospitality',
       p1:
         'Spring gently envelops the coast, bringing with it the first warm rays and the scent of blooming gardens. Guardamar reopens its doors, revealing its most beautiful views to you.',
       p2:
@@ -201,10 +204,15 @@ export default {
         "We invite you to get a head start on summer and witness the magical awakening of nature in one of Costa Blanca's most exceptional destinations.",
       readMore: 'Read more',
       imageAlt: 'Spring coastline at Guardamar',
+      spring1Alt: 'Couple walking hand in hand by the pool through the blossoming garden at Guardamar',
+      spring2Alt: 'A spring moment of Spanish hospitality at Hotel Guardamar',
+      spring3Alt: 'Guest in a Guardamar robe holding white roses on a branded Hotel & Spa bed',
     },
     jardin: {
       stampAlt: 'Aristo Restaurant mark',
       imageAlt: 'Aristo restaurant sea-view terrace',
+      aristo1Alt: 'Guests toasting with white wine at an Aristo terrace table by the fountain',
+      aristo2Alt: 'Elegant Aristo dining room with chandeliers, columns, and set tables',
       h3: 'Aristo Restaurant: A New Culinary Chapter in Guardamar',
       p1:
         'Designed for true gourmets, Aristo celebrates authentic and generous cuisine that blends Spanish traditions with Costa Blanca ingredients. Our restaurant is a space where exceptional decor meets pristine nature.',
@@ -283,7 +291,7 @@ export default {
     offersCard3Alt: 'Hotel facade and gardens at dusk',
     costaTitle: 'Costa Blanca',
     costaLead:
-      'From Guardamar’s dunes to whitewashed villages and hidden coves — a gentle guide to days out, local flavour, and the rhythm of the coast.',
+      'A new story is unfolding on the coast of Costa Blanca. From Guardamar’s golden dunes and pine forests to whitewashed villages and hidden coves, this is where Spanish heritage meets the endless blue of the Mediterranean. Let us guide you through unhurried days out, local flavour, and the gentle rhythm of the coast — the opening pages of a chapter we can’t wait to share.',
     costaFeaturedAlt: 'Sandy beach and Mediterranean shoreline near Guardamar',
     costaCard1Tag: 'Nature',
     costaCard1Title: 'Pine forest & park',
@@ -361,7 +369,7 @@ export default {
       pets: {
         title: 'Pets',
         items: [
-          'Well-behaved pets are welcome in selected rooms by prior arrangement, for a charge of €9 per night.',
+          'Well-behaved pets up to 7 kg are welcome in selected rooms by prior arrangement, for a charge of €9 per night, with a maximum of one pet per room.',
           'Pets must not be left unattended in the room and should be kept on a lead in common areas.',
           'Assistance and guide animals are always welcome at no charge.',
         ],

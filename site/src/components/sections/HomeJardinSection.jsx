@@ -1,13 +1,23 @@
+import { useState } from 'react'
 import beach3Image from '../../assets/home/beach3.png'
+import aristo1Image from '../../assets/home/aristo1.jpg'
+import aristo2Image from '../../assets/home/aristo2.jpg'
 import aristoStamp from '../../assets/logo/royal_green/aristo.png'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import CircleArrowButton from '../ui/CircleArrowButton'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
 import { HOME_SCROLL_EASE, HOME_SECTION_VIEWPORT } from './homeMotion'
 
 export default function HomeJardinSection() {
-  const { t } = useLanguage()
+  const { t, tf } = useLanguage()
+  const slides = [
+    { src: aristo1Image, alt: t('home.jardin.aristo1Alt') },
+    { src: beach3Image, alt: t('home.jardin.imageAlt') },
+    { src: aristo2Image, alt: t('home.jardin.aristo2Alt') },
+  ]
+  const [slide, setSlide] = useState(0)
+  const nextSlide = () => setSlide((i) => (i + 1) % slides.length)
   const textReveal = {
     hidden: { opacity: 0, y: 20 },
     visible: (delay = 0) => ({
@@ -34,14 +44,37 @@ export default function HomeJardinSection() {
           transition={{ duration: 0.88, ease: HOME_SCROLL_EASE }}
         >
           <div className="relative h-full w-full overflow-hidden">
-            <motion.img
-              src={beach3Image}
-              alt={t('home.jardin.imageAlt')}
-              className="h-full w-full object-cover"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.45, ease: 'easeOut' }}
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={slide}
+                src={slides[slide].src}
+                alt={slides[slide].alt}
+                className="absolute inset-0 h-full w-full object-cover"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.55, ease: HOME_SCROLL_EASE }}
+              />
+            </AnimatePresence>
+            <CircleArrowButton
+              onClick={nextSlide}
+              className="absolute right-4 top-1/2 z-10 -translate-y-1/2"
+              label={t('aria.nextSlide')}
             />
-            <CircleArrowButton className="absolute right-4 top-1/2 -translate-y-1/2" label={t('aria.nextSlide')} />
+            <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+              {slides.map((s, i) => (
+                <button
+                  key={s.src}
+                  type="button"
+                  onClick={() => setSlide(i)}
+                  aria-label={tf('aria.goToSlide', { n: i + 1 })}
+                  aria-current={i === slide}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === slide ? 'w-6 bg-white' : 'w-1.5 bg-white/55 hover:bg-white/80'
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </motion.div>
 

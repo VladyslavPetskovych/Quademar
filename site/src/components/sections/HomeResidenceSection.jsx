@@ -30,6 +30,7 @@ export default function HomeResidenceSection() {
   }
 
   const sliderRef = useRef(null)
+  const settleTimer = useRef(0)
   const loopCards = useMemo(() => [...RESIDENCE_META, ...RESIDENCE_META, ...RESIDENCE_META], [])
 
   const getCardStep = () => {
@@ -54,7 +55,7 @@ export default function HomeResidenceSection() {
     })
   }
 
-  const normalizeScrollPosition = () => {
+  const recenterLoop = () => {
     if (!sliderRef.current) return
     const current = sliderRef.current.scrollLeft
     const loopWidth = getLoopWidth()
@@ -66,6 +67,13 @@ export default function HomeResidenceSection() {
     }
   }
 
+  // Recenter only once scrolling has settled, so the instant teleport never
+  // interrupts an in-flight smooth slide (which would make it snap back).
+  const normalizeScrollPosition = () => {
+    clearTimeout(settleTimer.current)
+    settleTimer.current = setTimeout(recenterLoop, 120)
+  }
+
   useEffect(() => {
     if (!sliderRef.current) return
     const syncLoopStart = () => {
@@ -75,7 +83,10 @@ export default function HomeResidenceSection() {
 
     syncLoopStart()
     window.addEventListener('resize', syncLoopStart)
-    return () => window.removeEventListener('resize', syncLoopStart)
+    return () => {
+      window.removeEventListener('resize', syncLoopStart)
+      clearTimeout(settleTimer.current)
+    }
   }, [])
 
   return (
@@ -179,7 +190,7 @@ export default function HomeResidenceSection() {
         <motion.div
           ref={sliderRef}
           onScroll={normalizeScrollPosition}
-          className="mt-8 -mr-4 overflow-x-auto overflow-y-hidden scroll-smooth md:mt-12 md:mr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
+          className="mt-8 -mr-4 overflow-x-auto overflow-y-hidden md:mt-12 md:mr-0 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true, amount: 0.2 }}

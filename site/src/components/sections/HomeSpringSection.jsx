@@ -1,12 +1,23 @@
-import beach2Image from '../../assets/home/beach2.png'
-import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { AnimatePresence, motion } from 'framer-motion'
+import spring1Image from '../../assets/home/spring1.jpg'
+import spring2Image from '../../assets/home/spring2.jpg'
+import spring3Image from '../../assets/home/spring3.jpg'
 import CircleArrowButton from '../ui/CircleArrowButton'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
 import { HOME_SCROLL_EASE, HOME_SECTION_VIEWPORT } from './homeMotion'
 
 export default function HomeSpringSection() {
-  const { t } = useLanguage()
+  const { t, tf } = useLanguage()
+  const slides = [
+    { src: spring3Image, alt: t('home.spring.spring3Alt') },
+    { src: spring1Image, alt: t('home.spring.spring1Alt') },
+    { src: spring2Image, alt: t('home.spring.spring2Alt') },
+  ]
+  const [slide, setSlide] = useState(0)
+  const nextSlide = () => setSlide((i) => (i + 1) % slides.length)
   const textReveal = {
     hidden: { opacity: 0, y: 20 },
     visible: (delay = 0) => ({
@@ -73,17 +84,17 @@ export default function HomeSpringSection() {
             {t('home.spring.p3')}
           </motion.p>
 
-          <motion.button
-            type="button"
-            className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}
+          <motion.div
             variants={textReveal}
             initial="hidden"
             whileInView="visible"
             custom={0.48}
             viewport={{ once: true, amount: 0.7 }}
           >
-            {t('home.spring.readMore')}
-          </motion.button>
+            <Link to="/moments" className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}>
+              {t('home.spring.readMore')}
+            </Link>
+          </motion.div>
         </motion.div>
 
         <motion.div
@@ -93,14 +104,37 @@ export default function HomeSpringSection() {
           viewport={{ once: true, amount: 0.25 }}
           transition={{ duration: 0.88, ease: HOME_SCROLL_EASE }}
         >
-          <motion.img
-            src={beach2Image}
-            alt={t('home.spring.imageAlt')}
-            className="h-full w-full object-cover"
-            whileHover={{ scale: 1.04 }}
-            transition={{ duration: 0.45, ease: 'easeOut' }}
+          <AnimatePresence initial={false}>
+            <motion.img
+              key={slide}
+              src={slides[slide].src}
+              alt={slides[slide].alt}
+              className="absolute inset-0 h-full w-full object-cover"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.55, ease: HOME_SCROLL_EASE }}
+            />
+          </AnimatePresence>
+          <CircleArrowButton
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 z-10 -translate-y-1/2"
+            label={t('aria.nextSlide')}
           />
-          <CircleArrowButton className="absolute right-4 top-1/2 -translate-y-1/2" label={t('aria.nextSlide')} />
+          <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+            {slides.map((s, i) => (
+              <button
+                key={s.src}
+                type="button"
+                onClick={() => setSlide(i)}
+                aria-label={tf('aria.goToSlide', { n: i + 1 })}
+                aria-current={i === slide}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === slide ? 'w-6 bg-white' : 'w-1.5 bg-white/55 hover:bg-white/80'
+                }`}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </motion.section>
