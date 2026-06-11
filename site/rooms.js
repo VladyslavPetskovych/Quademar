@@ -1,19 +1,17 @@
-import presidentialBedroomWide from './src/assets/suites/presidential/bedroom-wide-rattan-pendants.webp'
-import presidentialBedroomCentered from './src/assets/suites/presidential/bedroom-centered-green-accents.webp'
-import presidentialBedroomVanityCorner from './src/assets/suites/presidential/bedroom-vanity-nook-corner.webp'
-import presidentialClosetVanity from './src/assets/suites/presidential/closet-vanity-dressing-area.webp'
-import presidentialBalconyView from './src/assets/suites/presidential/bedroom-balcony-hydromassage-view.webp'
-import presidentialBedGreenPillows from './src/assets/suites/presidential/bed-green-pillows-branding.webp'
-import presidentialBedNightstand from './src/assets/suites/presidential/bed-nightstand-buddha-rattan-light.webp'
-import presidentialBedroomLedAccent from './src/assets/suites/presidential/bedroom-led-accent-palm-arch.webp'
-import presidentialBedroomRattanDetail from './src/assets/suites/presidential/bedroom-rattan-pendants-detail.webp'
-import presidentialBathroomVanity from './src/assets/suites/presidential/bathroom-double-vanity-mirrors.webp'
-import presidentialBathroomTubTowel from './src/assets/suites/presidential/bathroom-freestanding-tub-towel.webp'
-import presidentialBathroomTubRoses from './src/assets/suites/presidential/bathroom-freestanding-tub-roses.webp'
-import presidentialBathroomShower from './src/assets/suites/presidential/bathroom-walk-in-shower.webp'
-import presidentialBathroomToilet from './src/assets/suites/presidential/bathroom-toilet-area.webp'
-import presidentialBathroomWetRoom from './src/assets/suites/presidential/bathroom-wet-room-glass.webp'
-import presidentialBathroomVanityTowel from './src/assets/suites/presidential/bathroom-vanity-towel-ring.webp'
+import presidentialPhoto1 from './src/assets/suites/presidential/IMG_0543.JPG'
+import presidentialPhoto2 from './src/assets/suites/presidential/IMG_0544.JPG'
+import presidentialPhoto3 from './src/assets/suites/presidential/IMG_0545.JPG'
+import presidentialPhoto4 from './src/assets/suites/presidential/IMG_0547.JPG'
+import presidentialPhoto5 from './src/assets/suites/presidential/IMG_0549.JPG'
+import presidentialPhoto6 from './src/assets/suites/presidential/IMG_0550.JPG'
+import presidentialPhoto7 from './src/assets/suites/presidential/IMG_0553.JPG'
+import presidentialPhoto8 from './src/assets/suites/presidential/IMG_0559.JPG'
+import presidentialPhoto9 from './src/assets/suites/presidential/IMG_0560.JPG'
+import presidentialPhoto10 from './src/assets/suites/presidential/IMG_0564.JPG'
+import presidentialPhoto11 from './src/assets/suites/presidential/IMG_0568.JPG'
+import presidentialPhoto12 from './src/assets/suites/presidential/IMG_0577.JPG'
+import presidentialPhoto13 from './src/assets/suites/presidential/IMG_0579.JPG'
+import presidentialPhoto14 from './src/assets/suites/presidential/IMG_0580 (2).JPG'
 import familyBedroomWide from './src/assets/suites/family/bedroom-wide-orange-headboard.webp'
 import familyBedroomCentered from './src/assets/suites/family/bedroom-centered-branded-bed.webp'
 import familyBedNightstandRoses from './src/assets/suites/family/bed-nightstand-white-roses.webp'
@@ -87,70 +85,20 @@ export const ROOM_CATEGORIES = [
     id: 'presidential',
     reverse: false,
     images: [
-      {
-        src: presidentialBedroomWide,
-        alt: 'Presidential suite bedroom with terracotta headboard, green accents, and woven rattan pendant lights',
-      },
-      {
-        src: presidentialBedroomCentered,
-        alt: 'Presidential suite bed with Guardamar branding, palm tree wallpaper, and cane-front nightstands',
-      },
-      {
-        src: presidentialBedroomVanityCorner,
-        alt: 'Presidential suite bedroom with terracotta headboard, vanity nook, and palm tree mural',
-      },
-      {
-        src: presidentialClosetVanity,
-        alt: 'Presidential suite dressing area with louvered wardrobe, vanity desk, and palm tree wallpaper',
-      },
-      {
-        src: presidentialBalconyView,
-        alt: 'Presidential suite bedroom view toward balcony with private hydromassage tub beyond sheer curtains',
-      },
-      {
-        src: presidentialBedGreenPillows,
-        alt: 'Presidential suite bed close-up with green velvet pillows, Guardamar embroidery, and tropical palm wallpaper',
-      },
-      {
-        src: presidentialBedNightstand,
-        alt: 'Presidential suite bedside with cane-front nightstand, Buddha figurine, and woven rattan pendant light',
-      },
-      {
-        src: presidentialBedroomLedAccent,
-        alt: 'Presidential suite bedroom with arched alcove, palm wallpaper, LED accent lighting, and rattan pendants',
-      },
-      {
-        src: presidentialBedroomRattanDetail,
-        alt: 'Presidential suite bed with woven rattan pendant lights, palm tree mural, and Buddha nightstand',
-      },
-      {
-        src: presidentialBathroomVanity,
-        alt: 'Presidential suite bathroom with double vanity, backlit round mirrors, and olive fluted tile wall',
-      },
-      {
-        src: presidentialBathroomTubRoses,
-        alt: 'Presidential suite bathroom with freestanding tub, wood-paneled wall, and rose petals on the floor',
-      },
-      {
-        src: presidentialBathroomTubTowel,
-        alt: 'Presidential suite freestanding bathtub with rose petals, fairy lights, and Guardamar branded towel',
-      },
-      {
-        src: presidentialBathroomShower,
-        alt: 'Presidential suite walk-in rain shower with matte black fixtures and beige stone tiles',
-      },
-      {
-        src: presidentialBathroomToilet,
-        alt: 'Presidential suite bathroom with wall-hung toilet, backlit mirror, and beige stone finishes',
-      },
-      {
-        src: presidentialBathroomWetRoom,
-        alt: 'Presidential suite glass wet room with freestanding tub, rain shower, and rose petals',
-      },
-      {
-        src: presidentialBathroomVanityTowel,
-        alt: 'Presidential suite double vanity with backlit mirrors and Guardamar hand towel',
-      },
+      { src: presidentialPhoto1, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto2, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto3, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto4, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto5, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto6, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto7, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto8, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto9, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto10, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto11, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto12, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto13, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      { src: presidentialPhoto14, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
     ],
     title: 'Presidential Suite',
     quantity: 4,
