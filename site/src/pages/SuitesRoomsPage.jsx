@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import { motion } from "framer-motion";
-import plantImage from "../assets/home/plant.png";
+import plantImage from "../assets/home/plant.webp";
 import HomeDiscoverySection from "../components/sections/HomeDiscoverySection";
 import { ROOM_CATEGORIES } from "../../rooms";
 import RoomCategorySection from "../components/sections/RoomCategorySection";

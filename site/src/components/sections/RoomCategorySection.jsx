@@ -161,6 +161,8 @@ export default function RoomCategorySection({
               <motion.img
                 src={primaryImage.src}
                 alt={primaryImage.alt ?? title}
+                loading="lazy"
+                decoding="async"
                 className={cx(roomImageClass, classNames.image)}
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}

@@ -1,7 +1,7 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import plantImage from '../assets/home/plant.png'
+import plantImage from '../assets/home/plant.webp'
 import RoomGalleryLightbox from '../components/RoomGalleryLightbox'
 import HomeDiscoverySection from '../components/sections/HomeDiscoverySection'
 import RoomDetailsSection from '../components/sections/RoomDetailsSection'
@@ -116,6 +116,8 @@ export default function RoomDetailPage() {
           alt=""
           aria-hidden="true"
           role="presentation"
+          loading="lazy"
+          decoding="async"
           className="pointer-events-none absolute right-[-28px] top-24 hidden w-[220px] -scale-x-100 opacity-22 lg:block"
         />
 

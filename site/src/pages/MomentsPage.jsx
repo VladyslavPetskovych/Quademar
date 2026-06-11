@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useSearchParams } from 'react-router-dom'
-import beachImage from '../assets/home/beach.png'
-import beach2Image from '../assets/home/beach2.png'
-import beach3Image from '../assets/home/beach3.png'
-import nightImage from '../assets/home/discover/night.png'
-import spaImage from '../assets/home/discover/spa.png'
-import heroImage from '../assets/home/hero.png'
-import plantImage from '../assets/home/plant.png'
-import toursImage from '../assets/home/residence/tours.png'
+import beachImage from '../assets/home/beach.webp'
+import beach2Image from '../assets/home/beach2.webp'
+import beach3Image from '../assets/home/beach3.webp'
+import nightImage from '../assets/home/discover/night.webp'
+import spaImage from '../assets/home/discover/spa.webp'
+import heroImage from '../assets/home/hero.webp'
+import plantImage from '../assets/home/plant.webp'
+import toursImage from '../assets/home/residence/tours.webp'
 import { SITE } from '../config/site'
 import { useLanguage } from '../i18n/LanguageContext'
 
@@ -72,6 +72,8 @@ function MomentCard({ image, imageAlt, tag, title, description, footnote, index 
         <motion.img
           src={image}
           alt={imageAlt}
+          loading="lazy"
+          decoding="async"
           className="aspect-[4/5] w-full object-cover sm:aspect-[3/4]"
           whileHover={{ scale: 1.04 }}
           transition={{ duration: 0.5, ease: 'easeOut' }}
@@ -113,7 +115,7 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, title, lead, cards, t
         transition={{ duration: 0.45, delay: 0.05 }}
       >
         <div className="relative overflow-hidden rounded-sm">
-          <img src={featuredImage} alt={featuredAlt} className="aspect-[16/11] w-full object-cover lg:aspect-auto lg:min-h-[380px]" />
+          <img src={featuredImage} alt={featuredAlt} loading="lazy" decoding="async" className="aspect-[16/11] w-full object-cover lg:aspect-auto lg:min-h-[380px]" />
           <motion.div
             className="pointer-events-none absolute inset-0 bg-linear-to-tr from-[#062c26]/70 via-[#062c26]/20 to-transparent"
             aria-hidden="true"

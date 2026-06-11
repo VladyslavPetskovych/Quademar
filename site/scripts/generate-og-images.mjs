@@ -24,15 +24,15 @@ const OG_HEIGHT = 630
 
 /** Representative source photo per room (relative to `src/assets/suites`). */
 const ROOM_SOURCES = {
-  presidential: 'presidential/bedroom-wide-rattan-pendants.png',
-  family: 'family/bedroom-wide-orange-headboard.png',
-  junior: 'junior-partial-view/bedroom-wide-rattan-lights.png',
-  'standard-view-double': 'standard-view-double/bathroom-shower-green-tiles.png',
-  'standard-partial-double': 'junior-partial-view/bedroom-wide-rattan-lights.png',
+  presidential: 'presidential/bedroom-wide-rattan-pendants.webp',
+  family: 'family/bedroom-wide-orange-headboard.webp',
+  junior: 'junior-partial-view/bedroom-wide-rattan-lights.webp',
+  'standard-view-double': 'standard-view-double/bathroom-shower-green-tiles.webp',
+  'standard-partial-double': 'junior-partial-view/bedroom-wide-rattan-lights.webp',
 }
 
 /** Hero image for the `/suites-rooms` listing card. */
-const SUITES_SOURCE = 'presidential/bedroom-wide-rattan-pendants.png'
+const SUITES_SOURCE = 'presidential/bedroom-wide-rattan-pendants.webp'
 
 async function writeOg(sourceRel, outPath) {
   const input = join(assetsDir, sourceRel)

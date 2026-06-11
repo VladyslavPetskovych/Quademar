@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('./assets/fonts/aeonik/Aeonik-Light.ttf') format('truetype');
+  src: url('./assets/fonts/aeonik/Aeonik-Light.woff2') format('woff2');
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('./assets/fonts/aeonik/Aeonik-Regular.ttf') format('truetype');
+  src: url('./assets/fonts/aeonik/Aeonik-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -18,7 +18,7 @@
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('./assets/fonts/aeonik/Aeonik-Medium.ttf') format('truetype');
+  src: url('./assets/fonts/aeonik/Aeonik-Medium.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: 'Aeonik';
-  src: url('./assets/fonts/aeonik/Aeonik-Bold.ttf') format('truetype');
+  src: url('./assets/fonts/aeonik/Aeonik-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -34,7 +34,7 @@
 
 @font-face {
   font-family: 'Big Caslon CC';
-  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC.otf') format('opentype');
+  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -42,7 +42,7 @@
 
 @font-face {
   font-family: 'Big Caslon CC';
-  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC_Italic.otf') format('opentype');
+  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC_Italic.woff2') format('woff2');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
@@ -50,7 +50,7 @@
 
 @font-face {
   font-family: 'Big Caslon CC';
-  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC_Bold.otf') format('opentype');
+  src: url('./assets/fonts/big-caslon/fonnts.com-Big_Caslon_CC_Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;

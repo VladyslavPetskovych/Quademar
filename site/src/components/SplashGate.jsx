@@ -108,7 +108,7 @@ export default function SplashGate({ children }) {
               src="/splash-logo-transparent.png"
               alt={t('splash.logoAlt')}
               decoding="async"
-              fetchPriority="high"
+              fetchpriority="high"
               className="h-[min(220px,38vh)] w-auto max-w-[min(320px,88vw)] object-contain drop-shadow-[0_16px_56px_rgba(0,0,0,0.42)]"
             />
             <SplashCircularLoader />

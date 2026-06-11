@@ -1,5 +1,5 @@
-import heroImage from '../../assets/home/hero.png'
-import heroVideo from '../../assets/home/heroVid.mov'
+import heroImage from '../../assets/home/hero.webp'
+import heroVideo from '../../assets/home/heroVid.mp4'
 import { motion, useReducedMotion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { useLenis } from 'lenis/react'
@@ -52,7 +52,7 @@ export default function HomeHero() {
         src={heroImage}
         alt={t('home.hero.imageAlt')}
         decoding="async"
-        fetchPriority="high"
+        fetchpriority="high"
         className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center max-md:object-[center_30%]"
         initial={{ scale: lightMotion ? 1 : 1.06 }}
         animate={{ scale: 1 }}

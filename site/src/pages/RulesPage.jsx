@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import heroImage from '../assets/home/hero.png'
+import heroImage from '../assets/home/hero.webp'
 import { CONTACT } from '../config/site'
 import { useLanguage } from '../i18n/LanguageContext'
 

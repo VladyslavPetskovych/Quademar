@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { AnimatePresence, motion } from 'framer-motion'
-import beachImage from '../../assets/home/beach.png'
-import plantImage from '../../assets/home/plant.png'
-import newStory2Image from '../../assets/home/newStory2.jpg'
-import newStory3Image from '../../assets/home/newStory3.jpg'
+import { motion } from 'framer-motion'
+import beachImage from '../../assets/home/beach.webp'
+import plantImage from '../../assets/home/plant.webp'
+import newStory2Image from '../../assets/home/newStory2.webp'
+import newStory3Image from '../../assets/home/newStory3.webp'
 import CircleArrowButton from '../ui/CircleArrowButton'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
@@ -42,6 +42,8 @@ export default function HomeIntroSection() {
         alt=""
         aria-hidden="true"
         role="presentation"
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute right-[-80px] top-[120px] hidden w-[310px] opacity-28 lg:block -scale-x-100"
         initial={{ opacity: 0, x: 30 }}
         whileInView={{ opacity: 0.28, x: 0 }}
@@ -87,18 +89,21 @@ export default function HomeIntroSection() {
             viewport={{ once: true, amount: 0.25 }}
             transition={{ duration: 0.88, ease: HOME_SCROLL_EASE }}
           >
-            <AnimatePresence initial={false}>
+            {slides.map((s, i) => (
               <motion.img
-                key={slide}
-                src={slides[slide].src}
-                alt={slides[slide].alt}
+                key={s.src}
+                src={s.src}
+                alt={i === slide ? s.alt : ''}
+                aria-hidden={i !== slide}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={false}
+                animate={{ opacity: i === slide ? 1 : 0 }}
                 transition={{ duration: 0.55, ease: HOME_SCROLL_EASE }}
+                style={{ zIndex: i === slide ? 1 : 0 }}
               />
-            </AnimatePresence>
+            ))}
             <CircleArrowButton
               onClick={nextSlide}
               className="absolute right-4 top-1/2 z-10 -translate-y-1/2"

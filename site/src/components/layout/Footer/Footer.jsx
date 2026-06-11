@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import logoVertical from '../../../assets/footer/Guardamar_Vertical logotype.svg'
-import footerTexture from '../../../assets/footer/footer_texture.jpg'
+import footerTexture from '../../../assets/footer/footer_texture.webp'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
 import { CONTACT, LANDING_ONLY_NAV, SITE, isPathAllowedInLandingMode } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'

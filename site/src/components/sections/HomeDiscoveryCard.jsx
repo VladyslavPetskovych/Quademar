@@ -28,6 +28,8 @@ export default function HomeDiscoveryCard({
         <motion.img
           src={image}
           alt={imageAlt}
+          loading="lazy"
+          decoding="async"
           className={`h-[320px] w-full object-cover md:h-[360px] lg:h-[484.547px] ${imageClassName}`}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.45, ease: 'easeOut' }}

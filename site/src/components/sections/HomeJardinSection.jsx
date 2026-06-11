@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import beach3Image from '../../assets/home/beach3.png'
-import aristo1Image from '../../assets/home/aristo1.jpg'
-import aristo2Image from '../../assets/home/aristo2.jpg'
-import aristoStamp from '../../assets/logo/royal_green/aristo.png'
-import { AnimatePresence, motion } from 'framer-motion'
+import beach3Image from '../../assets/home/beach3.webp'
+import aristo1Image from '../../assets/home/aristo1.webp'
+import aristo2Image from '../../assets/home/aristo2.webp'
+import aristoStamp from '../../assets/logo/royal_green/aristo.webp'
+import { motion } from 'framer-motion'
 import CircleArrowButton from '../ui/CircleArrowButton'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
@@ -44,18 +44,21 @@ export default function HomeJardinSection() {
           transition={{ duration: 0.88, ease: HOME_SCROLL_EASE }}
         >
           <div className="relative h-full w-full overflow-hidden">
-            <AnimatePresence initial={false}>
+            {slides.map((s, i) => (
               <motion.img
-                key={slide}
-                src={slides[slide].src}
-                alt={slides[slide].alt}
+                key={s.src}
+                src={s.src}
+                alt={i === slide ? s.alt : ''}
+                aria-hidden={i !== slide}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 h-full w-full object-cover"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
+                initial={false}
+                animate={{ opacity: i === slide ? 1 : 0 }}
                 transition={{ duration: 0.55, ease: HOME_SCROLL_EASE }}
+                style={{ zIndex: i === slide ? 1 : 0 }}
               />
-            </AnimatePresence>
+            ))}
             <CircleArrowButton
               onClick={nextSlide}
               className="absolute right-4 top-1/2 z-10 -translate-y-1/2"
@@ -88,6 +91,8 @@ export default function HomeJardinSection() {
           <motion.img
             src={aristoStamp}
             alt={t('home.jardin.stampAlt')}
+            loading="lazy"
+            decoding="async"
             className="mb-4 -ml-10 h-32 w-auto self-start"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
