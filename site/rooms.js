@@ -1,79 +1,67 @@
-import presidentialPhoto1 from './src/assets/suites/presidential/IMG_0543.JPG'
-import presidentialPhoto2 from './src/assets/suites/presidential/IMG_0544.JPG'
-import presidentialPhoto3 from './src/assets/suites/presidential/IMG_0545.JPG'
-import presidentialPhoto4 from './src/assets/suites/presidential/IMG_0547.JPG'
-import presidentialPhoto5 from './src/assets/suites/presidential/IMG_0549.JPG'
-import presidentialPhoto6 from './src/assets/suites/presidential/IMG_0550.JPG'
-import presidentialPhoto7 from './src/assets/suites/presidential/IMG_0553.JPG'
-import presidentialPhoto8 from './src/assets/suites/presidential/IMG_0559.JPG'
-import presidentialPhoto9 from './src/assets/suites/presidential/IMG_0560.JPG'
-import presidentialPhoto10 from './src/assets/suites/presidential/IMG_0564.JPG'
-import presidentialPhoto11 from './src/assets/suites/presidential/IMG_0568.JPG'
-import presidentialPhoto12 from './src/assets/suites/presidential/IMG_0577.JPG'
-import presidentialPhoto13 from './src/assets/suites/presidential/IMG_0579.JPG'
-import presidentialPhoto14 from './src/assets/suites/presidential/IMG_0580 (2).JPG'
-import familyBedroomWide from './src/assets/suites/family/bedroom-wide-orange-headboard.webp'
-import familyBedroomCentered from './src/assets/suites/family/bedroom-centered-branded-bed.webp'
-import familyBedNightstandRoses from './src/assets/suites/family/bed-nightstand-white-roses.webp'
-import familyBedGreenPillows from './src/assets/suites/family/bed-green-pillows-detail.webp'
-import familyBedCaneNightstand from './src/assets/suites/family/bed-cane-nightstand-detail.webp'
-import familyBedGreenBrandedPillow from './src/assets/suites/family/bed-green-branded-pillow.webp'
-import familyBedLinenDetail from './src/assets/suites/family/bed-guardamar-linen-detail.webp'
-import familyBedroomTvVanity from './src/assets/suites/family/bedroom-tv-vanity-corner.webp'
-import familyBalconySeaView from './src/assets/suites/family/balcony-chairs-sea-view.webp'
-import familyBathroomShower from './src/assets/suites/family/bathroom-shower-terracotta.webp'
-import familyBathroomMirror from './src/assets/suites/family/bathroom-vanity-mirror.webp'
-import familyBathroomSink from './src/assets/suites/family/bathroom-sink-detail.webp'
-import familyBathroomAmenities from './src/assets/suites/family/bathroom-lalique-amenities.webp'
-import familyBathroomTowel from './src/assets/suites/family/bathroom-branded-towel.webp'
-import familyBathroomBathrobes from './src/assets/suites/family/bathroom-branded-bathrobes.webp'
-import juniorRoomFromEntrance from './src/assets/suites/junior-partial-view/room-from-entrance.webp'
-import juniorBedroomWide from './src/assets/suites/junior-partial-view/bedroom-wide-rattan-lights.webp'
-import juniorBalconyDoorOpen from './src/assets/suites/junior-partial-view/balcony-door-open-sea-view.webp'
-import juniorBalconyChairs from './src/assets/suites/junior-partial-view/balcony-chairs-partial-sea-view.webp'
-import juniorClosetBalcony from './src/assets/suites/junior-partial-view/closet-balcony-partial-sea-view.webp'
-import juniorBedroomFull from './src/assets/suites/junior-partial-view/bedroom-full-rattan-pendants.webp'
-import juniorBedWide from './src/assets/suites/junior-partial-view/bed-wide-orange-headboard.webp'
-import juniorBedSeashellArt from './src/assets/suites/junior-partial-view/bed-seashell-wall-art.webp'
-import juniorBedShellCloseUp from './src/assets/suites/junior-partial-view/bed-shell-art-close-up.webp'
-import juniorBedGreenPillows from './src/assets/suites/junior-partial-view/bed-green-pillows-detail.webp'
-import juniorBedNightstandLight from './src/assets/suites/junior-partial-view/bed-nightstand-rattan-light.webp'
-import juniorBedNightstandGlasses from './src/assets/suites/junior-partial-view/bed-nightstand-wine-glasses.webp'
-import juniorWallTv from './src/assets/suites/junior-partial-view/wall-mounted-tv.webp'
-import juniorClosetSeaView from './src/assets/suites/junior-partial-view/closet-balcony-sea-view.webp'
-import juniorEntranceHallway from './src/assets/suites/junior-partial-view/entrance-hallway.webp'
-// Junior Suite reshoot — full-quality PNG source (kept uncompressed; gallery loads step-by-step).
-import juniorBedroomWideRecliner from './src/assets/suites/junior-partial-view/bedroom-wide-recliner-balcony.png'
-import juniorBedCenteredSymmetry from './src/assets/suites/junior-partial-view/bed-centered-branded-symmetry.png'
-import juniorBedHeadboardArch from './src/assets/suites/junior-partial-view/bed-headboard-arch-nightstand.png'
-import juniorBedroomWardrobeDetail from './src/assets/suites/junior-partial-view/bedroom-wardrobe-headboard-detail.png'
-import juniorBedroomArchPendants from './src/assets/suites/junior-partial-view/bedroom-wide-arch-pendants.png'
-import juniorBedroomWideDesk from './src/assets/suites/junior-partial-view/bedroom-wide-recliner-desk.png'
-import juniorBedroomFromEntrance from './src/assets/suites/junior-partial-view/bedroom-from-entrance-wide.png'
-import juniorBedroomFromEntranceWardrobe from './src/assets/suites/junior-partial-view/bedroom-from-entrance-wardrobe.png'
-import juniorBedroomAngledBalconyTv from './src/assets/suites/junior-partial-view/bedroom-angled-balcony-tv.png'
-import juniorBedroomTvDeskConsole from './src/assets/suites/junior-partial-view/bedroom-tv-desk-console.png'
-import juniorDressingDeskMirror from './src/assets/suites/junior-partial-view/dressing-desk-mirror-tv.png'
-import juniorBalconyChairSeaView from './src/assets/suites/junior-partial-view/balcony-chair-sea-view.png'
-import juniorBathroomWideCopper from './src/assets/suites/junior-partial-view/bathroom-wide-copper-shower.png'
-import juniorBathroomShowerVanity from './src/assets/suites/junior-partial-view/bathroom-shower-copper-vanity.png'
-import juniorBathroomVanityToilet from './src/assets/suites/junior-partial-view/bathroom-vanity-toilet-wide.png'
-import juniorBathroomVesselSink from './src/assets/suites/junior-partial-view/bathroom-vessel-sink-black-faucet.png'
-import juniorBathroomTowelsShelf from './src/assets/suites/junior-partial-view/bathroom-branded-towels-shelf.png'
-import juniorBathroomHairdryerMirror from './src/assets/suites/junior-partial-view/bathroom-hairdryer-mirror.png'
-import juniorBathroomBathrobe from './src/assets/suites/junior-partial-view/bathroom-bathrobe-porthole-window.png'
-import standardViewBedroomWide from './src/assets/suites/standard-view-double/bedroom-wide-branded-bed.webp'
-import standardViewBedroomCentered from './src/assets/suites/standard-view-double/bedroom-centered-branded-bed.webp'
-import standardViewBedHeadboard from './src/assets/suites/standard-view-double/bed-headboard-nightstand-detail.webp'
-import standardViewBedDressing from './src/assets/suites/standard-view-double/bed-dressing-table-detail.webp'
-import standardViewBedroomTv from './src/assets/suites/standard-view-double/bedroom-wall-tv-wardrobe.webp'
-import standardViewBedroomBalcony from './src/assets/suites/standard-view-double/bedroom-balcony-tv-view.webp'
-import standardViewBathroomGlassShower from './src/assets/suites/standard-view-double/bathroom-glass-shower-green-tiles.webp'
-import standardViewShower from './src/assets/suites/standard-view-double/bathroom-shower-green-tiles.webp'
-import standardViewTowelsStacked from './src/assets/suites/standard-view-double/branded-towels-stacked.webp'
-import standardViewVanity from './src/assets/suites/standard-view-double/bathroom-vanity-mirror-hairdryer.webp'
-import standardViewTowelsShower from './src/assets/suites/standard-view-double/branded-towels-shower.webp'
-import standardViewHairdryer from './src/assets/suites/standard-view-double/wall-mounted-hairdryer.webp'
+import { suiteSrc } from './src/lib/suiteImages.js'
+
+// Optimized display-sized WebP URLs (see scripts/optimize-suite-images.mjs). The full-
+// resolution originals stay on disk under src/assets/suites/ but are never shipped.
+const presidentialPhoto1 = suiteSrc('presidential/IMG_0543.JPG')
+const presidentialPhoto2 = suiteSrc('presidential/IMG_0544.JPG')
+const presidentialPhoto3 = suiteSrc('presidential/IMG_0545.JPG')
+const presidentialPhoto4 = suiteSrc('presidential/IMG_0547.JPG')
+const presidentialPhoto5 = suiteSrc('presidential/IMG_0549.JPG')
+const presidentialPhoto6 = suiteSrc('presidential/IMG_0550.JPG')
+const presidentialPhoto7 = suiteSrc('presidential/IMG_0553.JPG')
+const presidentialPhoto8 = suiteSrc('presidential/IMG_0559.JPG')
+const presidentialPhoto9 = suiteSrc('presidential/IMG_0560.JPG')
+const presidentialPhoto10 = suiteSrc('presidential/IMG_0564.JPG')
+const presidentialPhoto11 = suiteSrc('presidential/IMG_0568.JPG')
+const presidentialPhoto12 = suiteSrc('presidential/IMG_0577.JPG')
+const presidentialPhoto13 = suiteSrc('presidential/IMG_0579.JPG')
+const presidentialPhoto14 = suiteSrc('presidential/IMG_0580 (2).JPG')
+const familyBedroomWide = suiteSrc('family/bedroom-wide-orange-headboard.webp')
+const familyBedroomCentered = suiteSrc('family/bedroom-centered-branded-bed.webp')
+const familyBedNightstandRoses = suiteSrc('family/bed-nightstand-white-roses.webp')
+const familyBedGreenPillows = suiteSrc('family/bed-green-pillows-detail.webp')
+const familyBedCaneNightstand = suiteSrc('family/bed-cane-nightstand-detail.webp')
+const familyBedGreenBrandedPillow = suiteSrc('family/bed-green-branded-pillow.webp')
+const familyBedLinenDetail = suiteSrc('family/bed-guardamar-linen-detail.webp')
+const familyBedroomTvVanity = suiteSrc('family/bedroom-tv-vanity-corner.webp')
+const familyBalconySeaView = suiteSrc('family/balcony-chairs-sea-view.webp')
+const familyBathroomShower = suiteSrc('family/bathroom-shower-terracotta.webp')
+const familyBathroomMirror = suiteSrc('family/bathroom-vanity-mirror.webp')
+const familyBathroomSink = suiteSrc('family/bathroom-sink-detail.webp')
+const familyBathroomAmenities = suiteSrc('family/bathroom-lalique-amenities.webp')
+const familyBathroomTowel = suiteSrc('family/bathroom-branded-towel.webp')
+const familyBathroomBathrobes = suiteSrc('family/bathroom-branded-bathrobes.webp')
+const juniorBedroomWideRecliner = suiteSrc('junior-partial-view/bedroom-wide-recliner-balcony.png')
+const juniorBedCenteredSymmetry = suiteSrc('junior-partial-view/bed-centered-branded-symmetry.png')
+const juniorBedHeadboardArch = suiteSrc('junior-partial-view/bed-headboard-arch-nightstand.png')
+const juniorBedroomWardrobeDetail = suiteSrc('junior-partial-view/bedroom-wardrobe-headboard-detail.png')
+const juniorBedroomArchPendants = suiteSrc('junior-partial-view/bedroom-wide-arch-pendants.png')
+const juniorBedroomWideDesk = suiteSrc('junior-partial-view/bedroom-wide-recliner-desk.png')
+const juniorBedroomFromEntrance = suiteSrc('junior-partial-view/bedroom-from-entrance-wide.png')
+const juniorBedroomFromEntranceWardrobe = suiteSrc('junior-partial-view/bedroom-from-entrance-wardrobe.png')
+const juniorBedroomAngledBalconyTv = suiteSrc('junior-partial-view/bedroom-angled-balcony-tv.png')
+const juniorBedroomTvDeskConsole = suiteSrc('junior-partial-view/bedroom-tv-desk-console.png')
+const juniorDressingDeskMirror = suiteSrc('junior-partial-view/dressing-desk-mirror-tv.png')
+const juniorBalconyChairSeaView = suiteSrc('junior-partial-view/balcony-chair-sea-view.png')
+const juniorBathroomWideCopper = suiteSrc('junior-partial-view/bathroom-wide-copper-shower.png')
+const juniorBathroomShowerVanity = suiteSrc('junior-partial-view/bathroom-shower-copper-vanity.png')
+const juniorBathroomVanityToilet = suiteSrc('junior-partial-view/bathroom-vanity-toilet-wide.png')
+const juniorBathroomVesselSink = suiteSrc('junior-partial-view/bathroom-vessel-sink-black-faucet.png')
+const juniorBathroomTowelsShelf = suiteSrc('junior-partial-view/bathroom-branded-towels-shelf.png')
+const juniorBathroomHairdryerMirror = suiteSrc('junior-partial-view/bathroom-hairdryer-mirror.png')
+const juniorBathroomBathrobe = suiteSrc('junior-partial-view/bathroom-bathrobe-porthole-window.png')
+const standardViewBedroomWide = suiteSrc('standard-view-double/bedroom-wide-branded-bed.webp')
+const standardViewBedroomCentered = suiteSrc('standard-view-double/bedroom-centered-branded-bed.webp')
+const standardViewBedHeadboard = suiteSrc('standard-view-double/bed-headboard-nightstand-detail.webp')
+const standardViewBedDressing = suiteSrc('standard-view-double/bed-dressing-table-detail.webp')
+const standardViewBedroomTv = suiteSrc('standard-view-double/bedroom-wall-tv-wardrobe.webp')
+const standardViewBedroomBalcony = suiteSrc('standard-view-double/bedroom-balcony-tv-view.webp')
+const standardViewBathroomGlassShower = suiteSrc('standard-view-double/bathroom-glass-shower-green-tiles.webp')
+const standardViewShower = suiteSrc('standard-view-double/bathroom-shower-green-tiles.webp')
+const standardViewTowelsStacked = suiteSrc('standard-view-double/branded-towels-stacked.webp')
+const standardViewVanity = suiteSrc('standard-view-double/bathroom-vanity-mirror-hairdryer.webp')
+const standardViewTowelsShower = suiteSrc('standard-view-double/branded-towels-shower.webp')
+const standardViewHairdryer = suiteSrc('standard-view-double/wall-mounted-hairdryer.webp')
 
 /**
  * Suite / room listings in page order. Alternating layout: `reverse: false` = photo left,
@@ -558,64 +546,60 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorRoomFromEntrance,
-        alt: 'Standard room partial view bedroom seen from the entrance hallway with balcony light',
+        src: juniorBedCenteredSymmetry,
+        alt: 'Standard room partial view double bed centred beneath the arched alcove with Guardamar branded runner and green accent pillows',
       },
       {
-        src: juniorBedroomWide,
-        alt: 'Standard room partial view with terracotta headboard, green accents and rattan pendant lights',
+        src: juniorBedHeadboardArch,
+        alt: 'Standard room partial view terracotta headboard within the plaster arch with green velvet pillows and a cane-front nightstand',
       },
       {
-        src: juniorBalconyDoorOpen,
-        alt: 'Standard room partial view balcony doors open to a terrace with partial sea views',
+        src: juniorBedroomWardrobeDetail,
+        alt: 'Standard room partial view white louvered wardrobe beside the terracotta headboard and Guardamar branded green pillow',
       },
       {
-        src: juniorBalconyChairs,
-        alt: 'Standard room partial view private balcony with woven chairs and partial Mediterranean sea view',
+        src: juniorBedroomFromEntrance,
+        alt: 'Standard room partial view seen from the entrance with the terracotta bed, louvered wardrobe and arched headboard wall',
       },
       {
-        src: juniorClosetBalcony,
-        alt: 'Standard room partial view with louvered closet and balcony overlooking the sea',
+        src: juniorBedroomFromEntranceWardrobe,
+        alt: 'Standard room partial view from the entrance angle with terracotta bed, white louvered wardrobe and cane-front nightstand',
       },
       {
-        src: juniorBedroomFull,
-        alt: 'Standard room partial view full bedroom with Guardamar branded linens and coastal décor',
+        src: juniorBedroomTvDeskConsole,
+        alt: 'Standard room partial view with wall-mounted TV, wooden desk console with kettle and terracotta upholstered bed',
       },
       {
-        src: juniorBedWide,
-        alt: 'Standard room partial view double bed with orange upholstered headboard and seashell wall art',
+        src: juniorDressingDeskMirror,
+        alt: 'Standard room partial view wooden dressing console with kettle, large mirror reflecting the bed and wall-mounted TV',
       },
       {
-        src: juniorBedSeashellArt,
-        alt: 'Standard room partial view bed with green velvet pillows and framed seashell artwork',
+        src: juniorBathroomWideCopper,
+        alt: 'Standard room partial view bathroom with corner glass shower, copper-toned tiles, backlit round mirror and vessel sink',
       },
       {
-        src: juniorBedShellCloseUp,
-        alt: 'Close-up of the Standard room partial view bed with Guardamar embroidered green accent pillows',
+        src: juniorBathroomShowerVanity,
+        alt: 'Standard room partial view walk-in glass shower with copper tiles, black fixtures, Lalique amenities and vessel sink vanity',
       },
       {
-        src: juniorBedGreenPillows,
-        alt: 'Standard room partial view bedding detail with green runner and branded velvet accent pillows',
+        src: juniorBathroomVanityToilet,
+        alt: 'Standard room partial view bathroom vanity with backlit round mirror, vessel sink, magnifying mirror and wall-hung toilet',
       },
       {
-        src: juniorBedNightstandLight,
-        alt: 'Standard room partial view bedside area with woven rattan pendant light and cane-front nightstand',
+        src: juniorBathroomVesselSink,
+        alt: 'Close-up of the Standard room partial view white vessel sink with a tall matte-black faucet on a stone counter',
       },
       {
-        src: juniorBedNightstandGlasses,
-        alt: 'Standard room partial view nightstand with wine glasses beneath a fringed rattan pendant lamp',
+        src: juniorBathroomTowelsShelf,
+        alt: 'Folded Guardamar Hotel & Spa branded towels on the stone shelf beneath the Standard room partial view vessel sink',
       },
       {
-        src: juniorWallTv,
-        alt: 'Standard room partial view wall-mounted flat-screen TV above the bed with green runner linens',
+        src: juniorBathroomHairdryerMirror,
+        alt: 'Standard room partial view wall-mounted hairdryer beside a backlit round magnifying mirror on beige stone tiles',
       },
       {
-        src: juniorClosetSeaView,
-        alt: 'Standard room partial view closet and open balcony door with bright sea views',
-      },
-      {
-        src: juniorEntranceHallway,
-        alt: 'Standard room partial view private entrance hallway with warm textured walls and wood flooring',
+        src: juniorBathroomBathrobe,
+        alt: 'Standard room partial view Guardamar branded bathrobe hanging beside a round porthole window and towel ring',
       },
     ],
     title: 'Standard room partial view',

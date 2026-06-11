@@ -5,7 +5,8 @@ import plantImage from '../assets/home/plant.webp'
 import RoomGalleryLightbox from '../components/RoomGalleryLightbox'
 import HomeDiscoverySection from '../components/sections/HomeDiscoverySection'
 import RoomDetailsSection from '../components/sections/RoomDetailsSection'
-import { roomHeroFrameClass, roomHeroImageClass, roomImageClass, roomImageFrameClass } from '../components/sections/roomImageStyles'
+import { blurBackgroundStyle, roomHeroFrameClass, roomHeroImageClass, roomImageClass, roomImageFrameClass } from '../components/sections/roomImageStyles'
+import { suiteMeta } from '../lib/suiteImages'
 import { useLanguage } from '../i18n/LanguageContext'
 import { localizeRoom } from '../i18n/localizeRoom'
 import { BOOKING_URL } from '../config/site'
@@ -85,9 +86,11 @@ export default function RoomDetailPage() {
   }
 
   const heroImage = images[0]
+  const heroMeta = suiteMeta(heroImage.src)
   const introBody = localizedRoom.galleryNarrative?.body ?? localizedRoom.description
 
   const slide = images[safeIndex]
+  const slideMeta = suiteMeta(slide.src)
   const goPrev = () => setSlideIndex((i) => (i - 1 + total) % total)
   const goNext = () => setSlideIndex((i) => (i + 1) % total)
   const showControls = total > 1
@@ -96,6 +99,7 @@ export default function RoomDetailPage() {
     <motion.div className="bg-[#FAF3E8]">
       <motion.div
         className={roomHeroFrameClass}
+        style={blurBackgroundStyle(heroMeta)}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.75, ease: easeSmooth }}
@@ -103,6 +107,9 @@ export default function RoomDetailPage() {
         <motion.img
           src={heroImage.src}
           alt={heroImage.alt ?? localizedRoom.title}
+          width={heroMeta?.width}
+          height={heroMeta?.height}
+          decoding="async"
           className={roomHeroImageClass}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -165,12 +172,18 @@ export default function RoomDetailPage() {
                 className={`${roomImageFrameClass} group w-full max-w-[1092px] cursor-zoom-in bg-[#FAF3E8] text-left lg:h-[661px] lg:w-[1092px] lg:max-w-none focus:outline-none focus-visible:ring-2 focus-visible:ring-[#773A1B]/40 focus-visible:ring-offset-2 focus-visible:ring-offset-[#FAF3E8]`}
               >
                 <div className="absolute inset-0 overflow-hidden">
-                  <div className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.015]">
+                  <div
+                    className="h-full w-full origin-center transition-transform duration-[650ms] ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform group-hover:scale-[1.015]"
+                    style={blurBackgroundStyle(slideMeta)}
+                  >
                     <AnimatePresence initial={false}>
                       <motion.img
                         key={`${roomSlug}-${safeIndex}`}
                         src={slide.src}
                         alt={slide.alt ?? localizedRoom.title}
+                        width={slideMeta?.width}
+                        height={slideMeta?.height}
+                        decoding="async"
                         className={`${roomImageClass} absolute inset-0`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}

@@ -1,7 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useMemo } from "react";
 import { Link } from "react-router-dom";
-import { roomImageClass, roomImageFrameClass } from "./roomImageStyles";
+import { suiteMeta } from "../../lib/suiteImages";
+import { blurBackgroundStyle, roomImageClass, roomImageFrameClass } from "./roomImageStyles";
 
 /** Image zoom on hover (same scale/timing as discovery cards, without vertical lift). */
 const ROOM_IMAGE_HOVER = { scale: 1.05 };
@@ -93,6 +94,7 @@ export default function RoomCategorySection({
     : [];
   /** Suites & rooms listing: first image only (no thumbnail strip / gallery). */
   const primaryImage = useMemo(() => safeImages[0] ?? null, [safeImages]);
+  const primaryMeta = primaryImage ? suiteMeta(primaryImage.src) : null;
   const reduceMotion = useReducedMotion();
 
   const easeSmooth = [0.4, 0, 0.2, 1];
@@ -155,12 +157,15 @@ export default function RoomCategorySection({
           >
             <motion.div
               className={cx(roomImageFrameClass, "bg-white", classNames.imageFrame)}
+              style={blurBackgroundStyle(primaryMeta)}
               whileHover={reduceMotion ? undefined : ROOM_IMAGE_HOVER}
               transition={{ scale: ROOM_IMAGE_HOVER_TRANSITION }}
             >
               <motion.img
                 src={primaryImage.src}
                 alt={primaryImage.alt ?? title}
+                width={primaryMeta?.width}
+                height={primaryMeta?.height}
                 loading="lazy"
                 decoding="async"
                 className={cx(roomImageClass, classNames.image)}

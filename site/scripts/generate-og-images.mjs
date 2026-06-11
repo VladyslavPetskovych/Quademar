@@ -28,7 +28,7 @@ const ROOM_SOURCES = {
   family: 'family/bedroom-wide-orange-headboard.webp',
   junior: 'junior-partial-view/bedroom-wide-recliner-balcony.png',
   'standard-view-double': 'standard-view-double/bedroom-wide-branded-bed.webp',
-  'standard-partial-double': 'junior-partial-view/bedroom-wide-rattan-lights.webp',
+  'standard-partial-double': 'junior-partial-view/bed-centered-branded-symmetry.png',
 }
 
 /** Hero image for the `/suites-rooms` listing card. */

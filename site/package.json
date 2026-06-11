@@ -7,8 +7,9 @@
     "dev": "vite",
     "generate-icons": "node scripts/generate-brand-icons.mjs",
     "generate-og": "node scripts/generate-og-images.mjs",
+    "optimize-images": "node scripts/optimize-suite-images.mjs",
     "sharpen-room-images": "node scripts/sharpen-room-images.mjs",
-    "build": "npm run generate-icons && npm run generate-og && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender-seo-html.mjs",
+    "build": "npm run generate-icons && npm run generate-og && npm run optimize-images && node scripts/generate-sitemap.mjs && vite build && node scripts/prerender-seo-html.mjs",
     "preview": "vite preview"
   },
   "dependencies": {

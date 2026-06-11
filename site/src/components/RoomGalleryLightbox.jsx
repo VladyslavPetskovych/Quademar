@@ -1,6 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { suiteMeta } from '../lib/suiteImages'
+import { blurBackgroundStyle } from './sections/roomImageStyles'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
 const fadeTransition = { duration: 0.5, ease: easeSmooth }
@@ -59,6 +61,7 @@ export default function RoomGalleryLightbox({
   const total = images.length
   const safeIndex = total ? ((index % total) + total) % total : 0
   const slide = images[safeIndex]
+  const slideMeta = slide ? suiteMeta(slide.src) : null
   const showNav = total > 1
 
   const goPrev = useCallback(() => {
@@ -167,6 +170,7 @@ export default function RoomGalleryLightbox({
               <figure className="pointer-events-none relative mx-auto h-[min(78vh,900px)] w-full max-w-[min(1200px,96vw)] px-12 md:px-20">
                 <motion.div
                   className="pointer-events-auto relative h-full w-full overflow-hidden rounded-sm shadow-[0_24px_80px_rgba(0,0,0,0.45)] ring-1 ring-white/10"
+                  style={blurBackgroundStyle(slideMeta)}
                   onPointerDown={(e) => e.stopPropagation()}
                 >
                   <AnimatePresence initial={false}>

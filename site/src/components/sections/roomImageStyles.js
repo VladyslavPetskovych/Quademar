@@ -16,3 +16,17 @@ export const roomHeroFrameClass =
 
 export const roomHeroImageClass =
   'absolute inset-0 block h-full w-full object-cover object-center [transform:translateZ(0)] [backface-visibility:hidden]'
+
+/**
+ * Inline style that paints an image's tiny blur placeholder as the frame background,
+ * so a soft preview shows instantly while the full WebP streams in ("blur-up").
+ * Pass the result of `suiteMeta(src)`; returns `undefined` when no placeholder exists.
+ */
+export function blurBackgroundStyle(meta) {
+  if (!meta?.placeholder) return undefined
+  return {
+    backgroundImage: `url("${meta.placeholder}")`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+  }
+}
