@@ -44,6 +44,33 @@ import juniorBedNightstandGlasses from './src/assets/suites/junior-partial-view/
 import juniorWallTv from './src/assets/suites/junior-partial-view/wall-mounted-tv.webp'
 import juniorClosetSeaView from './src/assets/suites/junior-partial-view/closet-balcony-sea-view.webp'
 import juniorEntranceHallway from './src/assets/suites/junior-partial-view/entrance-hallway.webp'
+// Junior Suite reshoot — full-quality PNG source (kept uncompressed; gallery loads step-by-step).
+import juniorBedroomWideRecliner from './src/assets/suites/junior-partial-view/bedroom-wide-recliner-balcony.png'
+import juniorBedCenteredSymmetry from './src/assets/suites/junior-partial-view/bed-centered-branded-symmetry.png'
+import juniorBedHeadboardArch from './src/assets/suites/junior-partial-view/bed-headboard-arch-nightstand.png'
+import juniorBedroomWardrobeDetail from './src/assets/suites/junior-partial-view/bedroom-wardrobe-headboard-detail.png'
+import juniorBedroomArchPendants from './src/assets/suites/junior-partial-view/bedroom-wide-arch-pendants.png'
+import juniorBedroomWideDesk from './src/assets/suites/junior-partial-view/bedroom-wide-recliner-desk.png'
+import juniorBedroomFromEntrance from './src/assets/suites/junior-partial-view/bedroom-from-entrance-wide.png'
+import juniorBedroomFromEntranceWardrobe from './src/assets/suites/junior-partial-view/bedroom-from-entrance-wardrobe.png'
+import juniorBedroomAngledBalconyTv from './src/assets/suites/junior-partial-view/bedroom-angled-balcony-tv.png'
+import juniorBedroomTvDeskConsole from './src/assets/suites/junior-partial-view/bedroom-tv-desk-console.png'
+import juniorDressingDeskMirror from './src/assets/suites/junior-partial-view/dressing-desk-mirror-tv.png'
+import juniorBalconyChairSeaView from './src/assets/suites/junior-partial-view/balcony-chair-sea-view.png'
+import juniorBathroomWideCopper from './src/assets/suites/junior-partial-view/bathroom-wide-copper-shower.png'
+import juniorBathroomShowerVanity from './src/assets/suites/junior-partial-view/bathroom-shower-copper-vanity.png'
+import juniorBathroomVanityToilet from './src/assets/suites/junior-partial-view/bathroom-vanity-toilet-wide.png'
+import juniorBathroomVesselSink from './src/assets/suites/junior-partial-view/bathroom-vessel-sink-black-faucet.png'
+import juniorBathroomTowelsShelf from './src/assets/suites/junior-partial-view/bathroom-branded-towels-shelf.png'
+import juniorBathroomHairdryerMirror from './src/assets/suites/junior-partial-view/bathroom-hairdryer-mirror.png'
+import juniorBathroomBathrobe from './src/assets/suites/junior-partial-view/bathroom-bathrobe-porthole-window.png'
+import standardViewBedroomWide from './src/assets/suites/standard-view-double/bedroom-wide-branded-bed.webp'
+import standardViewBedroomCentered from './src/assets/suites/standard-view-double/bedroom-centered-branded-bed.webp'
+import standardViewBedHeadboard from './src/assets/suites/standard-view-double/bed-headboard-nightstand-detail.webp'
+import standardViewBedDressing from './src/assets/suites/standard-view-double/bed-dressing-table-detail.webp'
+import standardViewBedroomTv from './src/assets/suites/standard-view-double/bedroom-wall-tv-wardrobe.webp'
+import standardViewBedroomBalcony from './src/assets/suites/standard-view-double/bedroom-balcony-tv-view.webp'
+import standardViewBathroomGlassShower from './src/assets/suites/standard-view-double/bathroom-glass-shower-green-tiles.webp'
 import standardViewShower from './src/assets/suites/standard-view-double/bathroom-shower-green-tiles.webp'
 import standardViewTowelsStacked from './src/assets/suites/standard-view-double/branded-towels-stacked.webp'
 import standardViewVanity from './src/assets/suites/standard-view-double/bathroom-vanity-mirror-hairdryer.webp'
@@ -322,64 +349,80 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorRoomFromEntrance,
-        alt: 'Junior Suite bedroom viewed from the entrance hallway with balcony and natural light',
+        src: juniorBedroomWideRecliner,
+        alt: 'Junior Suite bedroom with terracotta channel-tufted bed, green Guardamar pillows, recliner armchair and balcony with sea-view light',
       },
       {
-        src: juniorBedroomWide,
-        alt: 'Junior Suite bedroom with terracotta headboard, green accents and woven rattan pendant lights',
+        src: juniorBedCenteredSymmetry,
+        alt: 'Junior Suite double bed centred beneath the arched alcove with Guardamar branded runner and green accent pillows',
       },
       {
-        src: juniorBalconyDoorOpen,
-        alt: 'Junior Suite balcony doors open to a private terrace with partial sea views',
+        src: juniorBedHeadboardArch,
+        alt: 'Junior Suite terracotta headboard within the plaster arch with green velvet pillows and a cane-front nightstand',
       },
       {
-        src: juniorBalconyChairs,
-        alt: 'Junior Suite private balcony with woven chairs, table and partial Mediterranean sea view',
+        src: juniorBedroomWardrobeDetail,
+        alt: 'Junior Suite white louvered wardrobe beside the terracotta headboard and Guardamar branded green pillow',
       },
       {
-        src: juniorClosetBalcony,
-        alt: 'Junior Suite with louvered closet and balcony overlooking the sea',
+        src: juniorBedroomArchPendants,
+        alt: 'Junior Suite bedroom with terracotta bed beneath the plaster arch, twin rattan pendant lights and balcony',
       },
       {
-        src: juniorBedroomFull,
-        alt: 'Junior Suite full bedroom view with Guardamar branded linens and coastal décor',
+        src: juniorBedroomWideDesk,
+        alt: 'Junior Suite bedroom with recliner armchair, balcony doors and a wooden desk console',
       },
       {
-        src: juniorBedWide,
-        alt: 'Junior Suite double bed with orange upholstered headboard and seashell wall art',
+        src: juniorBedroomFromEntrance,
+        alt: 'Junior Suite seen from the entrance with the terracotta bed, louvered wardrobe and arched headboard wall',
       },
       {
-        src: juniorBedSeashellArt,
-        alt: 'Junior Suite bed with green velvet pillows and framed seashell artwork above the headboard',
+        src: juniorBedroomFromEntranceWardrobe,
+        alt: 'Junior Suite from the entrance angle with terracotta bed, white louvered wardrobe and cane-front nightstand',
       },
       {
-        src: juniorBedShellCloseUp,
-        alt: 'Close-up of the Junior Suite bed with Guardamar embroidered green accent pillows',
+        src: juniorBedroomAngledBalconyTv,
+        alt: 'Junior Suite bedroom angled toward the balcony with sheer curtains and a wall-mounted flat-screen TV',
       },
       {
-        src: juniorBedGreenPillows,
-        alt: 'Junior Suite bedding detail with green runner and branded velvet accent pillows',
+        src: juniorBedroomTvDeskConsole,
+        alt: 'Junior Suite with wall-mounted TV, wooden desk console with kettle and terracotta upholstered bed',
       },
       {
-        src: juniorBedNightstandLight,
-        alt: 'Junior Suite bedside area with woven rattan pendant light and cane-front nightstand',
+        src: juniorDressingDeskMirror,
+        alt: 'Junior Suite wooden dressing console with kettle, large mirror reflecting the bed and wall-mounted TV',
       },
       {
-        src: juniorBedNightstandGlasses,
-        alt: 'Junior Suite nightstand with wine glasses beneath a fringed rattan pendant lamp',
+        src: juniorBalconyChairSeaView,
+        alt: 'Junior Suite private balcony with a woven chair and partial Mediterranean sea view over the beach',
       },
       {
-        src: juniorWallTv,
-        alt: 'Junior Suite wall-mounted flat-screen TV above the bed with green runner linens',
+        src: juniorBathroomWideCopper,
+        alt: 'Junior Suite bathroom with corner glass shower, copper-toned tiles, backlit round mirror and vessel sink',
       },
       {
-        src: juniorClosetSeaView,
-        alt: 'Junior Suite closet and open balcony door with bright sea views',
+        src: juniorBathroomShowerVanity,
+        alt: 'Junior Suite walk-in glass shower with copper tiles, black fixtures, Lalique amenities and vessel sink vanity',
       },
       {
-        src: juniorEntranceHallway,
-        alt: 'Junior Suite private entrance hallway with warm textured walls and wood flooring',
+        src: juniorBathroomVanityToilet,
+        alt: 'Junior Suite bathroom vanity with backlit round mirror, vessel sink, magnifying mirror and wall-hung toilet',
+      },
+      {
+        src: juniorBathroomVesselSink,
+        alt: 'Close-up of the Junior Suite white vessel sink with a tall matte-black faucet on a stone counter',
+      },
+      {
+        src: juniorBathroomTowelsShelf,
+        alt: 'Folded Guardamar Hotel & Spa branded towels on the stone shelf beneath the Junior Suite vessel sink',
+      },
+      {
+        src: juniorBathroomHairdryerMirror,
+        alt: 'Junior Suite wall-mounted hairdryer beside a backlit round magnifying mirror on beige stone tiles',
+      },
+      {
+        src: juniorBathroomBathrobe,
+        alt: 'Junior Suite Guardamar branded bathrobe hanging beside a round porthole window and towel ring',
       },
     ],
     title: 'Junior Suite',
@@ -449,6 +492,34 @@ export const ROOM_CATEGORIES = [
     id: 'standard-view-double',
     reverse: true,
     images: [
+      {
+        src: standardViewBedroomWide,
+        alt: 'Standard room with view bedroom with orange upholstered bed, green Guardamar branded runner and twin rattan pendant lights',
+      },
+      {
+        src: standardViewBedroomCentered,
+        alt: 'Standard room with view double bed with white striped linens, green runner and rattan pendant lighting',
+      },
+      {
+        src: standardViewBedHeadboard,
+        alt: 'Standard room with view bed with orange headboard, green Guardamar branded accent pillow and cane-front nightstand',
+      },
+      {
+        src: standardViewBedDressing,
+        alt: 'Standard room with view dressing table with mirror, yellow velvet pouf and fresh white roses',
+      },
+      {
+        src: standardViewBedroomTv,
+        alt: 'Standard room with view bedroom with wall-mounted flat-screen TV and white louvered wardrobe',
+      },
+      {
+        src: standardViewBedroomBalcony,
+        alt: 'Standard room with view bedroom facing the balcony doors with sheer curtains and wall-mounted TV',
+      },
+      {
+        src: standardViewBathroomGlassShower,
+        alt: 'Standard room with view bathroom with glass shower, backlit green tiles, round mirror and vessel sink',
+      },
       {
         src: standardViewShower,
         alt: 'Standard room with view bathroom with glass shower, green tiles and backlit mirror',

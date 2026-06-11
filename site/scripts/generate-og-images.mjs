@@ -26,8 +26,8 @@ const OG_HEIGHT = 630
 const ROOM_SOURCES = {
   presidential: 'presidential/bedroom-wide-rattan-pendants.webp',
   family: 'family/bedroom-wide-orange-headboard.webp',
-  junior: 'junior-partial-view/bedroom-wide-rattan-lights.webp',
-  'standard-view-double': 'standard-view-double/bathroom-shower-green-tiles.webp',
+  junior: 'junior-partial-view/bedroom-wide-recliner-balcony.png',
+  'standard-view-double': 'standard-view-double/bedroom-wide-branded-bed.webp',
   'standard-partial-double': 'junior-partial-view/bedroom-wide-rattan-lights.webp',
 }
 
