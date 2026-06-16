@@ -38,7 +38,7 @@ export default function HomeDiscoveryCard({
       <h4 className={`mt-4 font-sans text-[22px] font-medium tracking-[0.01em] text-[#1b1917] uppercase ${titleClassName}`}>
         {title}
       </h4>
-      <p className="mt-2 max-w-[360px] font-sans text-[16px] font-light leading-normal text-[#56524f]">{description}</p>
+      <p className="mt-2 font-sans text-[16px] font-light leading-normal text-[#56524f]">{description}</p>
     </motion.article>
   )
 }
