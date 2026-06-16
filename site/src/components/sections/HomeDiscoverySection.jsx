@@ -1,7 +1,7 @@
 import plantImage from '../../assets/home/plant.webp'
 import windowImage from '../../assets/home/discover/window.webp'
 import spaImage from '../../assets/home/discover/spa.webp'
-import nightImage from '../../assets/home/discover/night.webp'
+import nightsMusicImage from '../../assets/home/discover/nights-music.webp'
 import { motion } from 'framer-motion'
 import HomeDiscoveryCard from './HomeDiscoveryCard'
 import { useLanguage } from '../../i18n/LanguageContext'
@@ -23,7 +23,7 @@ const DISCOVERY_META = [
   },
   {
     key: 'card3',
-    image: nightImage,
+    image: nightsMusicImage,
     className: 'lg:w-[421px]',
     imageClassName: 'lg:h-[485px]',
   },

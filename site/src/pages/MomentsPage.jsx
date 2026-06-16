@@ -1,13 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useSearchParams } from 'react-router-dom'
 import beachImage from '../assets/home/beach.webp'
-import beach2Image from '../assets/home/beach2.webp'
 import beach3Image from '../assets/home/beach3.webp'
-import nightImage from '../assets/home/discover/night.webp'
-import spaImage from '../assets/home/discover/spa.webp'
-import heroImage from '../assets/home/hero.webp'
 import plantImage from '../assets/home/plant.webp'
 import toursImage from '../assets/home/residence/tours.webp'
+import earlySummerImage from '../assets/moments/early-summer.webp'
+import offersEventsImage from '../assets/moments/offers-events.webp'
+import romanceImage from '../assets/moments/romance.webp'
+import weekendEscapeImage from '../assets/moments/weekend-escape.webp'
 import { SITE } from '../config/site'
 import { useLanguage } from '../i18n/LanguageContext'
 
@@ -26,9 +26,9 @@ const panelMotion = {
 }
 
 const OFFERS_CARDS = [
-  { key: 'offersCard1', image: spaImage },
-  { key: 'offersCard2', image: nightImage },
-  { key: 'offersCard3', image: heroImage },
+  { key: 'offersCard1', image: earlySummerImage },
+  { key: 'offersCard2', image: weekendEscapeImage },
+  { key: 'offersCard3', image: romanceImage },
 ]
 
 const COSTA_CARDS = [
@@ -100,7 +100,7 @@ function MomentCard({ image, imageAlt, tag, title, description, footnote, index 
   )
 }
 
-function MomentsPanel({ tabId, featuredImage, featuredAlt, title, lead, cards, tf, cardFootnote }) {
+function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote }) {
   return (
     <motion.div
       key={tabId}
@@ -115,7 +115,7 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, title, lead, cards, t
         transition={{ duration: 0.45, delay: 0.05 }}
       >
         <div className="relative overflow-hidden rounded-sm">
-          <img src={featuredImage} alt={featuredAlt} loading="lazy" decoding="async" className="aspect-[16/11] w-full object-cover lg:aspect-auto lg:min-h-[380px]" />
+          <img src={featuredImage} alt={featuredAlt} loading="lazy" decoding="async" className={`aspect-[16/11] w-full object-cover lg:aspect-auto lg:min-h-[380px] ${featuredImageClassName}`.trim()} />
           <motion.div
             className="pointer-events-none absolute inset-0 bg-linear-to-tr from-[#062c26]/70 via-[#062c26]/20 to-transparent"
             aria-hidden="true"
@@ -242,8 +242,9 @@ export default function MomentsPage() {
             {tab === TAB.offers ? (
               <MomentsPanel
                 tabId={TAB.offers}
-                featuredImage={beach2Image}
+                featuredImage={offersEventsImage}
                 featuredAlt={tf('moments.offersFeaturedAlt')}
+                featuredImageClassName="lg:max-h-[420px]"
                 title={tf('moments.offersTitle')}
                 lead={tf('moments.offersLead')}
                 cards={offersCards}

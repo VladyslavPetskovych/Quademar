@@ -8,7 +8,7 @@ export default {
     descriptionSuites:
       'Descubra todas las suites y habitaciones en Hotel Guardamar, Guardamar del Segura — Suite Presidencial, Suite Familiar, Junior Suite y habitaciones con vistas al mar. Compare 48 alojamientos en la Costa Blanca.',
     descriptionRestaurant:
-      'Restaurante Arsito y terraza en Hotel Guardamar — cocina mediterránea, ambiente de jardín y gastronomía de temporada en Guardamar del Segura, Costa Blanca.',
+      'Restaurante Aristo y terraza en Hotel Guardamar — cocina mediterránea, ambiente de jardín y gastronomía de temporada en Guardamar del Segura, Costa Blanca.',
     descriptionSpa:
       'Spa y bienestar en Hotel Guardamar, Guardamar del Segura — rituales a medida, descanso y momentos restauradores junto al Mediterráneo.',
     descriptionMoments:
@@ -180,14 +180,14 @@ export default {
       h2: '¡Descubra el corazón de la Costa Blanca en Guardamar!',
       lead:
         'La primavera en Guardamar florece con mil momentos inolvidables. Vuelva a enamorarse de la arquitectura española bajo el sol mediterráneo. Sienta el ritmo del mar en terrazas privadas o disfrute de una cocina auténtica a la sombra de frondosos jardines. Guardamar es un lugar donde la tranquilidad se encuentra con el lujo.',
-      card1Title: 'Restaurante Arsito y terraza',
-      card1Alt: 'Interior de la terraza del restaurante Arsito',
+      card1Title: 'Restaurante Aristo y terraza',
+      card1Alt: 'Interior de la terraza del restaurante Aristo',
       card1Body:
         'La temporada de sabores comienza en nuestro jardín. Descubra cocina mediterránea auténtica y creaciones de autor en el ambiente cálido del Restaurante Jardín.',
       card2Title: 'El Spa Santuario',
-      card2Alt: 'Piscina del spa santuario de Guardamar',
+      card2Alt: 'Huésped en albornoz usando gel de baño Lalique en el spa de Guardamar',
       card3Title: 'Noches y música en Guardamar',
-      card3Alt: 'Celebración vespertina en Guardamar',
+      card3Alt: 'Vino blanco frío y fruta fresca en una mesa de la terraza de Guardamar',
       card2Body:
         'Es hora de restaurar cuerpo y mente. Disfrute de rituales de bienestar inspirados en la brisa marina y el ritmo relajado de Guardamar.',
       card3Body:
@@ -276,19 +276,19 @@ export default {
     offersTitle: 'Ofertas y eventos',
     offersLead:
       'Paquetes de temporada, tarifas por compra anticipada y eventos del hotel — pensados para estancias largas, fines de semana espontáneos y celebraciones memorables.',
-    offersFeaturedAlt: 'Terraza mediterránea al atardecer, Hotel Guardamar',
+    offersFeaturedAlt: 'Fuente de jardín de piedra escalonada entre palmeras y flores en Hotel Guardamar',
     offersCard1Tag: 'Temporada',
     offersCard1Title: 'Principios de verano',
     offersCard1Desc: 'Estancia prolongada con desayuno incluido — prolongue la calma junto al mar al abrir la temporada.',
-    offersCard1Alt: 'Zona de spa con luz cálida y ambiente relajado',
+    offersCard1Alt: 'Cítrico en maceta con frutos naranjas frente a azulejos españoles',
     offersCard2Tag: 'Fin de semana',
     offersCard2Title: 'Escapada de fin de semana',
     offersCard2Desc: 'Dos noches, crédito spa y salida tardía — tiempo sin prisas para desconectar en la costa.',
-    offersCard2Alt: 'Ambiente nocturno en la terraza del hotel',
+    offersCard2Alt: 'Huésped en albornoz de Guardamar relajándose con una revista en la cama',
     offersCard3Tag: 'Romance',
     offersCard3Title: 'Romance en Guardamar',
     offersCard3Desc: 'Flores, menú degustación y preparación en terraza privada — una velada íntima sobre el Mediterráneo.',
-    offersCard3Alt: 'Fachada del hotel y jardines al anochecer',
+    offersCard3Alt: 'Pareja brindando con vino blanco en una mesa al aire libre junto a la fuente',
     costaTitle: 'Costa Blanca',
     costaLead:
       'Una nueva historia se despliega en la costa de la Costa Blanca. Desde las dunas doradas y los pinares de Guardamar hasta los pueblos encalados y las calas escondidas, aquí el legado español se encuentra con el azul infinito del Mediterráneo. Déjese guiar por excursiones sin prisas, sabor local y el ritmo suave de la costa — las primeras páginas de un capítulo que deseamos compartir.',

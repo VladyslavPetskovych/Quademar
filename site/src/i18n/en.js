@@ -8,7 +8,7 @@ export default {
     descriptionSuites:
       'Explore all suites and rooms at Hotel Guardamar, Guardamar del Segura — Presidential Suite, Family Suite, Junior Suite, and sea-view standard rooms. Compare 48 Costa Blanca accommodations and book direct.',
     descriptionRestaurant:
-      'Restaurant Arsito and terrace at Hotel Guardamar — Mediterranean cuisine, garden atmosphere, and seasonal dining in Guardamar del Segura, Costa Blanca.',
+      'Restaurant Aristo and terrace at Hotel Guardamar — Mediterranean cuisine, garden atmosphere, and seasonal dining in Guardamar del Segura, Costa Blanca.',
     descriptionSpa:
       'Spa and wellness at Hotel Guardamar, Guardamar del Segura — tailored rituals, relaxation, and restorative moments by the Mediterranean.',
     descriptionMoments:
@@ -181,14 +181,14 @@ export default {
       h2: 'Discover the heart of Costa Blanca in Guardamar!',
       lead:
         'Spring in Guardamar blossoms with a thousand unforgettable moments. Let yourself fall in love all over again with Spanish architecture under the warm Mediterranean sun. Feel the rhythm of the sea on private terraces or enjoy authentic cuisine in the shade of lush gardens. Guardamar is a place where tranquility meets luxury.',
-      card1Title: 'Arsito Restaurant & Terrace',
-      card1Alt: 'Arsito restaurant terrace interior',
+      card1Title: 'Aristo Restaurant & Terrace',
+      card1Alt: 'Aristo restaurant terrace interior',
       card1Body:
         'The season of flavors begins in our garden. Discover authentic Mediterranean cuisine and signature creations in the warm atmosphere of Restaurant Jardin.',
       card2Title: 'The Sanctuary Spa',
-      card2Alt: 'Guardamar spa sanctuary pool',
+      card2Alt: 'Guest in a bathrobe using Lalique body wash in the Guardamar spa',
       card3Title: 'Guardamar Nights & Music',
-      card3Alt: 'Evening street celebration in Guardamar',
+      card3Alt: 'Chilled white wine and fresh fruit on a Guardamar terrace table',
       card2Body:
         'Time to restore body and mind. Enjoy tailored wellness rituals inspired by the sea breeze and relaxed rhythm of Guardamar.',
       card3Body:
@@ -276,19 +276,19 @@ export default {
     offersTitle: 'Offers and events',
     offersLead:
       'Seasonal packages, advance purchase rates, and hotel-hosted events — crafted for longer stays, spontaneous weekends, and celebrations worth remembering.',
-    offersFeaturedAlt: 'Mediterranean terrace at golden hour, Hotel Guardamar',
+    offersFeaturedAlt: 'Tiered stone garden fountain framed by palm trees and flowers at Hotel Guardamar',
     offersCard1Tag: 'Seasonal',
     offersCard1Title: 'Early summer',
     offersCard1Desc: 'Extended stay with breakfast included — linger by the sea as the season opens.',
-    offersCard1Alt: 'Spa relaxation area with warm ambient light',
+    offersCard1Alt: 'Potted citrus tree with ripe orange fruit against Spanish azulejo tiles',
     offersCard2Tag: 'Weekend',
     offersCard2Title: 'Weekend escape',
     offersCard2Desc: 'Two nights, spa credit, and late checkout — unhurried time to reset by the coast.',
-    offersCard2Alt: 'Evening atmosphere on the hotel terrace',
+    offersCard2Alt: 'Guest in a Guardamar bathrobe relaxing with a magazine on the bed',
     offersCard3Tag: 'Romance',
     offersCard3Title: 'Romance at Guardamar',
     offersCard3Desc: 'Flowers, tasting menu, and private terrace setup — an intimate evening above the Mediterranean.',
-    offersCard3Alt: 'Hotel facade and gardens at dusk',
+    offersCard3Alt: 'Couple toasting with white wine at an outdoor table by the fountain',
     costaTitle: 'Costa Blanca',
     costaLead:
       'A new story is unfolding on the coast of Costa Blanca. From Guardamar’s golden dunes and pine forests to whitewashed villages and hidden coves, this is where Spanish heritage meets the endless blue of the Mediterranean. Let us guide you through unhurried days out, local flavour, and the gentle rhythm of the coast — the opening pages of a chapter we can’t wait to share.',
