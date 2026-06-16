@@ -27,7 +27,6 @@ const SECTION_IDS = [
   'payment',
   'quietConduct',
   'smoking',
-  'pets',
   'children',
   'poolSpa',
   'dining',

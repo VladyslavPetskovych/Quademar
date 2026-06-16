@@ -23,7 +23,7 @@ export default {
     titleMoments: 'Momentos — Hotel Guardamar',
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
-      'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 12:00, reservas y cancelación, horas de silencio, tabaco en el balcón, mascotas y normas de convivencia en la Costa Blanca.',
+      'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 12:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
     titleTerms: 'Términos y condiciones — Hotel Guardamar',
     descriptionTerms:
       'Términos y condiciones de reservas y estancias en el Hotel Guardamar, Guardamar del Segura — reservas, tarifas y pago, cancelación, responsabilidad y legislación aplicable en la Costa Blanca.',
@@ -364,14 +364,6 @@ export default {
           'Todas las habitaciones disponen de balcón privado, y allí sí está permitido fumar.',
           'Las zonas interiores y las propias habitaciones son para no fumadores, incluidos cigarrillos electrónicos y vapeadores.',
           'Se aplicará una tasa de limpieza si se detecta humo de tabaco dentro de una habitación.',
-        ],
-      },
-      pets: {
-        title: 'Mascotas',
-        items: [
-          'Se admiten mascotas de buen comportamiento de hasta 7 kg en habitaciones seleccionadas, previa solicitud, con un coste de 9 € por noche y un máximo de una mascota por habitación.',
-          'Las mascotas no deben dejarse solas en la habitación y deben ir atadas en las zonas comunes.',
-          'Los perros de asistencia y guía son siempre bienvenidos sin coste.',
         ],
       },
       children: {

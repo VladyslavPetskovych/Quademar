@@ -23,7 +23,7 @@ export default {
     titleMoments: 'Moments — Hotel Guardamar',
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
-      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 12:00, booking and cancellation, quiet hours, balcony smoking, pets, and guest conduct on the Costa Blanca.',
+      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 12:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
     titleTerms: 'Terms & Conditions — Hotel Guardamar',
     descriptionTerms:
       'Terms and conditions for bookings and stays at Hotel Guardamar, Guardamar del Segura — reservations, rates and payment, cancellation, liability, and applicable law on the Costa Blanca.',
@@ -364,14 +364,6 @@ export default {
           'Every room has a private balcony, and smoking is allowed there.',
           'Indoor areas and the rooms themselves are non-smoking, including e-cigarettes and vaping.',
           'A cleaning fee applies if smoking is detected inside a room.',
-        ],
-      },
-      pets: {
-        title: 'Pets',
-        items: [
-          'Well-behaved pets up to 7 kg are welcome in selected rooms by prior arrangement, for a charge of €9 per night, with a maximum of one pet per room.',
-          'Pets must not be left unattended in the room and should be kept on a lead in common areas.',
-          'Assistance and guide animals are always welcome at no charge.',
         ],
       },
       children: {
