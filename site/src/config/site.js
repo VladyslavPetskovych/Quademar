@@ -76,6 +76,16 @@ export const HERO = {
 export const BOOKING_URL =
   'https://booking.roomcloud.net/be/se2/hotel.jsp?hotel=22638'
 
+/**
+ * MailerLite newsletter signup (footer form). `formAction` is the `<form action="…">` URL from
+ * MailerLite's embedded form (Forms → embedded form → HTML). Posting the email there adds it to
+ * the subscriber list without exposing an API key in the browser. The IDs are public (they ship
+ * in the page anyway). To switch MailerLite accounts, just replace this URL.
+ */
+export const MAILERLITE = {
+  formAction: 'https://assets.mailerlite.com/jsonp/2462522/forms/190970030208321271/subscribe',
+}
+
 /** Hotel Guardamar — official contact. */
 export const CONTACT = {
   hotelName: 'Hotel Guardamar',

@@ -123,6 +123,11 @@ export default {
     send: 'SEND',
     newsletterLegal:
       'By checking this box, you agree to receive news from Guardamar. We will share exclusive offers and event announcements via email. You can unsubscribe at any time. For more details, please see our Privacy Policy.',
+    newsletterSending: 'Sending…',
+    newsletterSuccess: 'Thank you! Please check your inbox to confirm your subscription.',
+    newsletterError: 'Something went wrong. Please try again later.',
+    newsletterInvalidEmail: 'Please enter a valid email address.',
+    newsletterConsentRequired: 'Please accept the terms to subscribe.',
     rightsReserved: 'All Rights Reserved',
     switchToEnglish: 'English',
     switchToSpanish: 'Spanish',

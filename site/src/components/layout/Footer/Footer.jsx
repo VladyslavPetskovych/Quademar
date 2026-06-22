@@ -1,9 +1,11 @@
-import { useMemo } from 'react'
+import { useMemo, useState } from 'react'
 import logoVertical from '../../../assets/footer/Guardamar_Vertical logotype.svg'
 import footerTexture from '../../../assets/footer/footer_texture.webp'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { CONTACT, LANDING_ONLY_NAV, SITE, isPathAllowedInLandingMode } from '../../../config/site'
+import { CONTACT, LANDING_ONLY_NAV, MAILERLITE, SITE, isPathAllowedInLandingMode } from '../../../config/site'
 import { useLanguage } from '../../../i18n/LanguageContext'
+
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function FooterColumnLink({ href, label, className }) {
   const { openComingSoonModal } = useComingSoonModal()
@@ -29,6 +31,58 @@ function FooterColumnLink({ href, label, className }) {
 
 export default function Footer() {
   const { locale, toggleLocale, t } = useLanguage()
+
+  const [email, setEmail] = useState('')
+  const [consent, setConsent] = useState(false)
+  // 'idle' | 'loading' | 'success' | 'error'
+  const [status, setStatus] = useState('idle')
+  const [errorKey, setErrorKey] = useState(null)
+
+  async function handleNewsletterSubmit(e) {
+    e.preventDefault()
+    if (status === 'loading') return
+
+    if (!EMAIL_RE.test(email.trim())) {
+      setStatus('error')
+      setErrorKey('footer.newsletterInvalidEmail')
+      return
+    }
+    if (!consent) {
+      setStatus('error')
+      setErrorKey('footer.newsletterConsentRequired')
+      return
+    }
+    if (!MAILERLITE.formAction) {
+      setStatus('error')
+      setErrorKey('footer.newsletterError')
+      console.warn('Newsletter: VITE_MAILERLITE_FORM_ACTION is not configured.')
+      return
+    }
+
+    setStatus('loading')
+    setErrorKey(null)
+    try {
+      const body = new URLSearchParams()
+      body.set('fields[email]', email.trim())
+      body.set('ml-submit', '1')
+      body.set('anticsrf', 'true')
+      // MailerLite's subscribe endpoint is cross-origin without CORS, so the response is
+      // opaque ('no-cors'): the email is recorded but we can't read a status, so we treat a
+      // resolved request as success and only surface network failures as errors.
+      await fetch(MAILERLITE.formAction, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: body.toString(),
+      })
+      setStatus('success')
+      setEmail('')
+      setConsent(false)
+    } catch {
+      setStatus('error')
+      setErrorKey('footer.newsletterError')
+    }
+  }
 
   const COLS = useMemo(
     () => [
@@ -148,24 +202,38 @@ export default function Footer() {
 
           <div>
             <h4 className="font-sans text-[12px] font-medium tracking-[0.08em] text-white">{t('footer.newsletters')}</h4>
-            <form className="mt-4">
+            <form className="mt-4" onSubmit={handleNewsletterSubmit} noValidate>
               <div className="flex items-end gap-3">
                 <input
                   type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   placeholder={t('footer.emailPlaceholder')}
+                  aria-label={t('footer.emailPlaceholder')}
+                  autoComplete="email"
                   className="h-11 w-full border-b border-white/42 bg-transparent px-0.5 font-sans text-[15px] font-light text-white placeholder:text-white/52 focus:border-white focus:outline-none"
                 />
                 <button
-                  type="button"
-                  className="h-11 min-w-[74px] bg-white px-4 font-sans text-[12px] font-medium tracking-[0.03em] text-[#133f37] transition-colors hover:bg-white/90"
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="h-11 min-w-[74px] bg-white px-4 font-sans text-[12px] font-medium tracking-[0.03em] text-[#133f37] transition-colors hover:bg-white/90 disabled:cursor-not-allowed disabled:opacity-60"
                 >
-                  {t('footer.send')}
+                  {status === 'loading' ? t('footer.newsletterSending') : t('footer.send')}
                 </button>
               </div>
               <label className="mt-3.5 flex items-start gap-2.5">
-                <input type="checkbox" className="mt-1 h-[14px] w-[14px] rounded-sm border border-white/70 bg-transparent accent-white" />
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-1 h-[14px] w-[14px] rounded-sm border border-white/70 bg-transparent accent-white"
+                />
                 <span className="font-sans text-[12px] font-light leading-[1.4] text-white/72">{t('footer.newsletterLegal')}</span>
               </label>
+              <p aria-live="polite" className="mt-2 min-h-[18px] font-sans text-[12px] font-light leading-[1.4]">
+                {status === 'success' && <span className="text-white">{t('footer.newsletterSuccess')}</span>}
+                {status === 'error' && <span className="text-[#ffd9d2]">{t(errorKey || 'footer.newsletterError')}</span>}
+              </p>
             </form>
           </div>
         </div>

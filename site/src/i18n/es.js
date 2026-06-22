@@ -123,6 +123,11 @@ export default {
     send: 'ENVIAR',
     newsletterLegal:
       'Al marcar esta casilla, acepta recibir noticias de Guardamar. Compartiremos ofertas exclusivas y avisos de eventos por correo electrónico. Puede darse de baja en cualquier momento. Para más información, consulte nuestra Política de privacidad.',
+    newsletterSending: 'Enviando…',
+    newsletterSuccess: '¡Gracias! Revise su correo para confirmar la suscripción.',
+    newsletterError: 'Algo salió mal. Inténtelo de nuevo más tarde.',
+    newsletterInvalidEmail: 'Introduzca una dirección de correo válida.',
+    newsletterConsentRequired: 'Acepte los términos para suscribirse.',
     rightsReserved: 'Todos los derechos reservados',
     switchToEnglish: 'English',
     switchToSpanish: 'Español',
