@@ -1,11 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useMemo } from 'react'
 import logoVertical from '../../../assets/footer/Guardamar_Vertical logotype.svg'
 import footerTexture from '../../../assets/footer/footer_texture.webp'
 import { useComingSoonModal } from '../../../context/ComingSoonModalContext'
-import { CONTACT, LANDING_ONLY_NAV, MAILERLITE, SITE, isPathAllowedInLandingMode } from '../../../config/site'
+import { CONTACT, LANDING_ONLY_NAV, SITE, isPathAllowedInLandingMode } from '../../../config/site'
+import { useNewsletterSubscribe } from '../../../hooks/useNewsletterSubscribe'
 import { useLanguage } from '../../../i18n/LanguageContext'
-
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 function FooterColumnLink({ href, label, className }) {
   const { openComingSoonModal } = useComingSoonModal()
@@ -31,58 +30,7 @@ function FooterColumnLink({ href, label, className }) {
 
 export default function Footer() {
   const { locale, toggleLocale, t } = useLanguage()
-
-  const [email, setEmail] = useState('')
-  const [consent, setConsent] = useState(false)
-  // 'idle' | 'loading' | 'success' | 'error'
-  const [status, setStatus] = useState('idle')
-  const [errorKey, setErrorKey] = useState(null)
-
-  async function handleNewsletterSubmit(e) {
-    e.preventDefault()
-    if (status === 'loading') return
-
-    if (!EMAIL_RE.test(email.trim())) {
-      setStatus('error')
-      setErrorKey('footer.newsletterInvalidEmail')
-      return
-    }
-    if (!consent) {
-      setStatus('error')
-      setErrorKey('footer.newsletterConsentRequired')
-      return
-    }
-    if (!MAILERLITE.formAction) {
-      setStatus('error')
-      setErrorKey('footer.newsletterError')
-      console.warn('Newsletter: VITE_MAILERLITE_FORM_ACTION is not configured.')
-      return
-    }
-
-    setStatus('loading')
-    setErrorKey(null)
-    try {
-      const body = new URLSearchParams()
-      body.set('fields[email]', email.trim())
-      body.set('ml-submit', '1')
-      body.set('anticsrf', 'true')
-      // MailerLite's subscribe endpoint is cross-origin without CORS, so the response is
-      // opaque ('no-cors'): the email is recorded but we can't read a status, so we treat a
-      // resolved request as success and only surface network failures as errors.
-      await fetch(MAILERLITE.formAction, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: body.toString(),
-      })
-      setStatus('success')
-      setEmail('')
-      setConsent(false)
-    } catch {
-      setStatus('error')
-      setErrorKey('footer.newsletterError')
-    }
-  }
+  const { email, setEmail, consent, setConsent, status, errorKey, handleSubmit } = useNewsletterSubscribe()
 
   const COLS = useMemo(
     () => [
@@ -202,7 +150,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-sans text-[12px] font-medium tracking-[0.08em] text-white">{t('footer.newsletters')}</h4>
-            <form className="mt-4" onSubmit={handleNewsletterSubmit} noValidate>
+            <form className="mt-4" onSubmit={handleSubmit} noValidate>
               <div className="flex items-end gap-3">
                 <input
                   type="email"

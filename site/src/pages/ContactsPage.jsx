@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import heroImage from '../assets/home/hero.webp'
 import { CONTACT } from '../config/site'
+import { useNewsletterSubscribe } from '../hooks/useNewsletterSubscribe'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
@@ -23,12 +23,7 @@ const fieldClass =
 
 export default function ContactsPage() {
   const { t } = useLanguage()
-  const [sent, setSent] = useState(false)
-
-  function handleSubmit(e) {
-    e.preventDefault()
-    setSent(true)
-  }
+  const { email, setEmail, consent, setConsent, status, errorKey, handleSubmit } = useNewsletterSubscribe()
 
   return (
     <section className="relative -mt-16 min-h-[calc(100dvh-140px)] bg-[#f3eee6] md:min-h-[calc(100dvh-160px)]">
@@ -175,38 +170,43 @@ export default function ContactsPage() {
               viewport={inView}
               custom={3}
             >
-              {sent ? (
-                <p className="font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">
-                  {t('contacts.thankYou')}
+              <form className="space-y-6" onSubmit={handleSubmit} noValidate>
+                <div>
+                  <label htmlFor="c-email" className="font-sans text-[11px] font-medium uppercase tracking-widest text-[#6f6a65]">
+                    {t('contacts.labelEmail')}
+                  </label>
+                  <input
+                    id="c-email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder={t('footer.emailPlaceholder')}
+                    className={fieldClass}
+                  />
+                </div>
+                <label className="flex items-start gap-2.5">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                    className="mt-1 h-[14px] w-[14px] shrink-0 rounded-sm border border-[#171412]/30 accent-[#6e361b]"
+                  />
+                  <span className="font-sans text-[12px] font-[250] leading-[1.5] text-[#57524e]">{t('footer.newsletterLegal')}</span>
+                </label>
+                <button
+                  type="submit"
+                  disabled={status === 'loading'}
+                  className="mt-2 w-full bg-[#6e361b] py-3.5 font-sans text-[13px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#5d2c15] disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto sm:min-w-[200px] sm:px-10"
+                >
+                  {status === 'loading' ? t('footer.newsletterSending') : t('contacts.send')}
+                </button>
+                <p aria-live="polite" className="min-h-[18px] font-sans text-[13px] font-[250] leading-relaxed">
+                  {status === 'success' && <span className="text-[#57524e]">{t('footer.newsletterSuccess')}</span>}
+                  {status === 'error' && <span className="text-[#9a3b1e]">{t(errorKey || 'footer.newsletterError')}</span>}
                 </p>
-              ) : (
-                <form className="space-y-8" onSubmit={handleSubmit} noValidate>
-                  <div>
-                    <label htmlFor="c-name" className="font-sans text-[11px] font-medium uppercase tracking-widest text-[#6f6a65]">
-                      {t('contacts.labelName')}
-                    </label>
-                    <input id="c-name" name="name" type="text" autoComplete="name" required className={fieldClass} />
-                  </div>
-                  <div>
-                    <label htmlFor="c-email" className="font-sans text-[11px] font-medium uppercase tracking-widest text-[#6f6a65]">
-                      {t('contacts.labelEmail')}
-                    </label>
-                    <input id="c-email" name="email" type="email" autoComplete="email" required className={fieldClass} />
-                  </div>
-                  <div>
-                    <label htmlFor="c-msg" className="font-sans text-[11px] font-medium uppercase tracking-widest text-[#6f6a65]">
-                      {t('contacts.labelMessage')}
-                    </label>
-                    <textarea id="c-msg" name="message" rows={4} required className={`${fieldClass} resize-y min-h-[100px]`} />
-                  </div>
-                  <button
-                    type="submit"
-                    className="mt-2 w-full bg-[#6e361b] py-3.5 font-sans text-[13px] font-medium uppercase tracking-[0.12em] text-white transition-colors hover:bg-[#5d2c15] sm:w-auto sm:min-w-[200px] sm:px-10"
-                  >
-                    {t('contacts.send')}
-                  </button>
-                </form>
-              )}
+              </form>
             </motion.div>
           </div>
         </div>
