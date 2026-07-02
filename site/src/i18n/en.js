@@ -23,7 +23,7 @@ export default {
     titleMoments: 'Moments — Hotel Guardamar',
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
-      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
+      'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 12:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
     titleTerms: 'Terms & Conditions — Hotel Guardamar',
     descriptionTerms:
       'Terms and conditions for bookings and stays at Hotel Guardamar, Guardamar del Segura — reservations, rates and payment, cancellation, liability, and applicable law on the Costa Blanca.',
@@ -320,7 +320,7 @@ export default {
       'These hotel rules help us care for every guest and keep Hotel Guardamar the calm Mediterranean retreat you came for. By confirming your reservation you agree to the guidelines below. Our reception team is available around the clock for anything not covered here.',
     facts: {
       checkIn: { label: 'Check-in', value: 'from 15:00' },
-      checkOut: { label: 'Check-out', value: 'until 11:00' },
+      checkOut: { label: 'Check-out', value: 'until 12:00' },
       quiet: { label: 'Quiet hours', value: '23:00 – 08:00' },
       reception: { label: 'Reception', value: '24 hours' },
     },
@@ -328,7 +328,7 @@ export default {
       checkInOut: {
         title: 'Check-in & Check-out',
         items: [
-          'Check-in is from 15:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry a charge.',
+          'Check-in is from 15:00 and check-out is until 12:00. Early check-in and late check-out are subject to availability and may carry a charge.',
           'A valid photo ID or passport is required for every guest at arrival, as required by Spanish law.',
           'Guests must be at least 18 years old to check in. Minors must be accompanied by an adult.',
           'Luggage storage is available at reception before check-in and after check-out at no charge.',
@@ -458,7 +458,7 @@ export default {
       checkInOut: {
         title: 'Check-in & Check-out',
         body: [
-          'Check-in is available from 15:00 and check-out is until 11:00. Early check-in and late check-out are subject to availability and may carry an additional charge.',
+          'Check-in is available from 15:00 and check-out is until 12:00. Early check-in and late check-out are subject to availability and may carry an additional charge.',
           'For full details about your stay, please also refer to our Hotel Rules.',
         ],
       },
