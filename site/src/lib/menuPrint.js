@@ -1,8 +1,13 @@
+import logoSvg from '../assets/logo/dark/Guardamar_Vertical logotype.svg?raw'
+
 /**
  * Build a clean, single-page A4 version of the daily menu and open the browser's
  * print dialog (from which the user can "Save as PDF"). Rendered into a hidden
- * iframe so it never disturbs the page, and self-contained (inline CSS, system
- * serif) so it prints reliably without waiting on web fonts.
+ * iframe so it never disturbs the page, and self-contained (inline CSS + inline
+ * logo SVG, system serif) so it prints reliably without waiting on network/fonts.
+ *
+ * The page is laid out to fill an A4 sheet exactly: logo at the top, the menu
+ * vertically centred, the included/price line and hotel name pinned to the bottom.
  *
  * All strings are expected already localized. `sections` is `[{ title, items[] }]`.
  */
@@ -29,37 +34,47 @@ export function printMenu({ hotelName, dateLabel, sections = [], included = [], 
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
     <title>${esc(hotelName)} — ${esc(dateLabel)}</title>
     <style>
-      @page { size: A4 portrait; margin: 18mm; }
+      @page { size: A4 portrait; margin: 0; }
       * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
       body { font-family: Georgia, 'Times New Roman', serif; color: #171412;
              -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .sheet { max-width: 160mm; margin: 0 auto; }
-      .eyebrow { font-family: Arial, Helvetica, sans-serif; text-align: center; text-transform: uppercase;
-                 letter-spacing: .28em; font-size: 9px; font-weight: 700; color: #6e361b; }
-      h1 { text-align: center; font-weight: 400; font-size: 30px; margin: 8px 0 0; letter-spacing: .3px; }
-      .rule { width: 46px; height: 1px; background: #6e361b; margin: 13px auto 24px; }
-      .grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 30px; row-gap: 14px; }
+      .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 20mm 22mm 16mm;
+              display: flex; flex-direction: column; }
+      .logo { text-align: center; }
+      .logo svg { width: 62mm; height: auto; display: inline-block; }
+      .logo svg path { fill: #171412; }
+      .head { text-align: center; margin-top: 11mm; }
+      .eyebrow { font-family: Arial, Helvetica, sans-serif; text-transform: uppercase;
+                 letter-spacing: .3em; font-size: 10px; font-weight: 700; color: #6e361b; }
+      .date { font-weight: 400; font-size: 34px; margin: 10px 0 0; letter-spacing: .3px; }
+      .rule { width: 52px; height: 1px; background: #6e361b; margin: 15px auto 0; }
+      .body { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center;
+              padding: 12mm 0; }
+      .grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; row-gap: 22px; }
       .sec { break-inside: avoid; }
-      .sec h2 { font-size: 17px; font-weight: 400; margin: 0 0 6px; padding-bottom: 5px;
-                border-bottom: 1px solid rgba(23,20,18,.14); }
+      .sec h2 { font-size: 19px; font-weight: 400; margin: 0 0 7px; padding-bottom: 6px;
+                border-bottom: 1px solid rgba(23,20,18,.16); }
       .sec ul { list-style: none; margin: 0; padding: 0; }
-      .sec li { font-family: Arial, Helvetica, sans-serif; font-weight: 300; font-size: 12.5px;
-                color: #4a4642; line-height: 1.55; }
-      .foot { margin-top: 26px; padding-top: 14px; border-top: 1px solid rgba(23,20,18,.14);
-              display: flex; justify-content: space-between; align-items: flex-end; gap: 18px; }
-      .inc { font-family: Arial, Helvetica, sans-serif; font-size: 12px; color: #4a4642; }
+      .sec li { font-family: Arial, Helvetica, sans-serif; font-weight: 300; font-size: 14px;
+                color: #4a4642; line-height: 1.6; }
+      .foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px;
+              padding-top: 15px; border-top: 1px solid rgba(23,20,18,.16); }
+      .inc { font-family: Arial, Helvetica, sans-serif; font-size: 12.5px; color: #4a4642; }
       .inc .lbl { display: block; text-transform: uppercase; letter-spacing: .18em; font-size: 9px;
                   font-weight: 700; color: #6e361b; margin-bottom: 3px; }
-      .price { font-size: 23px; white-space: nowrap; }
+      .price { font-size: 25px; white-space: nowrap; }
       .brand { text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 9px;
-               letter-spacing: .22em; text-transform: uppercase; color: #9a948e; margin-top: 28px; }
+               letter-spacing: .24em; text-transform: uppercase; color: #9a948e; margin-top: 9mm; }
     </style></head>
-    <body><div class="sheet">
-      <div class="eyebrow">${esc(hotelName)}</div>
-      <h1>${esc(dateLabel)}</h1>
-      <div class="rule"></div>
-      <div class="grid">${sectionsHtml}</div>
+    <body><div class="page">
+      <div class="logo">${logoSvg}</div>
+      <div class="head">
+        <div class="eyebrow">${esc(hotelName)}</div>
+        <div class="date">${esc(dateLabel)}</div>
+        <div class="rule"></div>
+      </div>
+      <div class="body"><div class="grid">${sectionsHtml}</div></div>
       ${footHtml}
       <div class="brand">${esc(hotelName)}</div>
     </div></body></html>`
