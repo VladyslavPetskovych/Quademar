@@ -12,7 +12,7 @@
 export const LANDING_ONLY_NAV = true
 
 /** Exact paths allowed in landing mode (no trailing slash). */
-const LANDING_ALLOWED = new Set(['/', '/contacts', '/moments', '/rules', '/terms', '/privacy', '/suites-rooms'])
+const LANDING_ALLOWED = new Set(['/', '/contacts', '/moments', '/rules', '/menu', '/terms', '/privacy', '/suites-rooms'])
 
 /** Nav link ids that stay real links in landing mode (matches `NAV_LINKS` ids). */
 export const LANDING_UNLOCKED_NAV_IDS = new Set(['about', 'contacts', 'moments', 'rules', 'terms', 'privacy', 'suites-rooms'])
@@ -75,6 +75,19 @@ export const HERO = {
 /** RoomCloud booking engine — Guardamar hotel (hotel id 22638). */
 export const BOOKING_URL =
   'https://booking.roomcloud.net/be/se2/hotel.jsp?hotel=22638'
+
+/**
+ * Daily menu source — a public Google Sheet read at runtime as CSV (gviz endpoint).
+ * The sheet must stay shared "Anyone with the link → Viewer"; edits appear on the site within
+ * a minute or two (Google caches the export briefly). The menu lives on the FIRST tab — see
+ * `lib/menuSheet` for the expected columns. Override the id with `VITE_MENU_SHEET_ID` if the
+ * sheet is ever replaced; no code change needed.
+ */
+export const MENU_SHEET_ID =
+  import.meta.env?.VITE_MENU_SHEET_ID || '1Bt_TtSpey5ZKKfXSX1VdPCiO07uL-7Vj-Qp4I7yOrKs'
+// `headers=1` pins the first row as the (only) header — otherwise gviz sometimes guesses two
+// header rows and swallows the first data row (the date) into the column labels.
+export const MENU_SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${MENU_SHEET_ID}/gviz/tq?tqx=out:csv&headers=1`
 
 /**
  * MailerLite newsletter signup (footer form). `formAction` is the `<form action="…">` URL from

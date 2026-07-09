@@ -46,6 +46,7 @@ export default function Footer() {
         links: [
           { label: t('footer.linkRooms'), href: '/suites-rooms' },
           { label: t('footer.linkRestaurant'), href: '/restaurant-bar' },
+          { label: t('footer.linkMenu'), href: '/menu' },
           { label: t('footer.linkSpa'), href: '/spa' },
         ],
       },

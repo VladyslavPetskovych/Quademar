@@ -24,6 +24,9 @@ export default {
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
       'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 12:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
+    titleMenu: 'Menu of the Day — Hotel Guardamar',
+    descriptionMenu:
+      'The daily menu at Hotel Guardamar, Guardamar del Segura — a fixed three-course menu with a shared starter, main, and dessert, drink included, on the Costa Blanca.',
     titleTerms: 'Terms & Conditions — Hotel Guardamar',
     descriptionTerms:
       'Terms and conditions for bookings and stays at Hotel Guardamar, Guardamar del Segura — reservations, rates and payment, cancellation, liability, and applicable law on the Costa Blanca.',
@@ -58,6 +61,14 @@ export default {
     rules: 'HOTEL RULES',
     terms: 'TERMS & CONDITIONS',
     privacy: 'PRIVACY POLICY',
+    menu: 'MENU OF THE DAY',
+  },
+
+  menu: {
+    breadcrumb: 'MENU OF THE DAY',
+    loading: 'Loading today’s menu…',
+    unavailable: 'Today’s menu isn’t available right now. Please check back soon.',
+    downloadPdf: 'Download PDF',
   },
 
   splash: {
@@ -114,6 +125,7 @@ export default {
     linkPrivacy: 'Privacy Policy',
     linkRooms: 'Our rooms',
     linkRestaurant: 'Restaurant',
+    linkMenu: 'Menu of the Day',
     linkSpa: 'SPA Space',
     linkContacts: 'Contacts',
     linkRules: 'Rules',

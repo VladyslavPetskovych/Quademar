@@ -24,6 +24,9 @@ export default {
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
       'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 12:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
+    titleMenu: 'Menú del día — Hotel Guardamar',
+    descriptionMenu:
+      'El menú del día del Hotel Guardamar, Guardamar del Segura — un menú cerrado de tres platos con entrante para compartir, principal y postre, bebida incluida, en la Costa Blanca.',
     titleTerms: 'Términos y condiciones — Hotel Guardamar',
     descriptionTerms:
       'Términos y condiciones de reservas y estancias en el Hotel Guardamar, Guardamar del Segura — reservas, tarifas y pago, cancelación, responsabilidad y legislación aplicable en la Costa Blanca.',
@@ -58,6 +61,14 @@ export default {
     rules: 'NORMAS DEL HOTEL',
     terms: 'TÉRMINOS Y CONDICIONES',
     privacy: 'POLÍTICA DE PRIVACIDAD',
+    menu: 'MENÚ DEL DÍA',
+  },
+
+  menu: {
+    breadcrumb: 'MENÚ DEL DÍA',
+    loading: 'Cargando el menú de hoy…',
+    unavailable: 'El menú de hoy no está disponible en este momento. Vuelva a consultarlo pronto.',
+    downloadPdf: 'Descargar PDF',
   },
 
   splash: {
@@ -114,6 +125,7 @@ export default {
     linkPrivacy: 'Política de privacidad',
     linkRooms: 'Nuestras habitaciones',
     linkRestaurant: 'Restaurante',
+    linkMenu: 'Menú del día',
     linkSpa: 'Espacio SPA',
     linkContacts: 'Contacto',
     linkRules: 'Normas',

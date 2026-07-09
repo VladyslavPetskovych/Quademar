@@ -13,6 +13,7 @@ const MomentsPage = lazy(() => import('./pages/MomentsPage'))
 const ContactsPage = lazy(() => import('./pages/ContactsPage'))
 const RoomDetailPage = lazy(() => import('./pages/RoomDetailPage'))
 const RulesPage = lazy(() => import('./pages/RulesPage'))
+const MenuPage = lazy(() => import('./pages/MenuPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
@@ -32,6 +33,7 @@ export default function App() {
                 <Route path="spa" element={<SpaPage />} />
                 <Route path="moments" element={<MomentsPage />} />
                 <Route path="rules" element={<RulesPage />} />
+                <Route path="menu" element={<MenuPage />} />
                 <Route path="terms" element={<TermsPage />} />
                 <Route path="privacy" element={<PrivacyPage />} />
                 <Route path="contacts" element={<ContactsPage />} />

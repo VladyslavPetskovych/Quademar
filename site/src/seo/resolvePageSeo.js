@@ -61,6 +61,9 @@ export function resolvePageSeo(pathname, locale, t) {
   } else if (path === '/rules') {
     title = t('seo.titleRules')
     description = t('seo.descriptionRules')
+  } else if (path === '/menu') {
+    title = t('seo.titleMenu')
+    description = t('seo.descriptionMenu')
   } else if (path === '/terms') {
     title = t('seo.titleTerms')
     description = t('seo.descriptionTerms')
