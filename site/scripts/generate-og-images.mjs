@@ -27,8 +27,8 @@ const ROOM_SOURCES = {
   presidential: 'presidential/501A0809.JPG',
   family: 'family/bedroom-wide-orange-headboard.webp',
   junior: 'junior-partial-view/501A0604.JPG',
-  'standard-view-double': 'standard-view-double/bedroom-wide-branded-bed.webp',
-  'standard-partial-double': 'junior-partial-view/501A0609R.JPG',
+  'standard-view-double': 'standard-view-double/bedroom-wide-yellow-bed.jpg',
+  'standard-partial-double': 'standard-view-double/bedroom-centered-twin-pendants.jpg',
 }
 
 /** Hero image for the `/suites-rooms` listing card. */

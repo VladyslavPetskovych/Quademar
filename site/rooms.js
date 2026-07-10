@@ -56,18 +56,12 @@ const juniorPhoto14 = suiteSrc('junior-partial-view/501A0650.JPG')
 const juniorPhoto15 = suiteSrc('junior-partial-view/501A0653.JPG')
 const juniorPhoto16 = suiteSrc('junior-partial-view/501A0646.JPG')
 const juniorPhoto17 = suiteSrc('junior-partial-view/501A0647.JPG')
-const standardViewBedroomWide = suiteSrc('standard-view-double/bedroom-wide-branded-bed.webp')
-const standardViewBedroomCentered = suiteSrc('standard-view-double/bedroom-centered-branded-bed.webp')
-const standardViewBedHeadboard = suiteSrc('standard-view-double/bed-headboard-nightstand-detail.webp')
-const standardViewBedDressing = suiteSrc('standard-view-double/bed-dressing-table-detail.webp')
-const standardViewBedroomTv = suiteSrc('standard-view-double/bedroom-wall-tv-wardrobe.webp')
-const standardViewBedroomBalcony = suiteSrc('standard-view-double/bedroom-balcony-tv-view.webp')
-const standardViewBathroomGlassShower = suiteSrc('standard-view-double/bathroom-glass-shower-green-tiles.webp')
-const standardViewShower = suiteSrc('standard-view-double/bathroom-shower-green-tiles.webp')
-const standardViewTowelsStacked = suiteSrc('standard-view-double/branded-towels-stacked.webp')
-const standardViewVanity = suiteSrc('standard-view-double/bathroom-vanity-mirror-hairdryer.webp')
-const standardViewTowelsShower = suiteSrc('standard-view-double/branded-towels-shower.webp')
-const standardViewHairdryer = suiteSrc('standard-view-double/wall-mounted-hairdryer.webp')
+const standardViewPhoto1 = suiteSrc('standard-view-double/bedroom-wide-yellow-bed.jpg')
+const standardViewPhoto2 = suiteSrc('standard-view-double/bedroom-yellow-bed-tv-wardrobe.jpg')
+const standardViewPhoto3 = suiteSrc('standard-view-double/bedroom-centered-twin-pendants.jpg')
+const standardViewPhoto4 = suiteSrc('standard-view-double/bedroom-desk-dressing-corner.jpg')
+const standardViewPhoto5 = suiteSrc('standard-view-double/branded-towel-detail.jpg')
+const standardViewPhoto6 = suiteSrc('standard-view-double/bathroom-green-tiles-shower.jpg')
 
 /**
  * Suite / room listings in page order. Alternating layout: `reverse: false` = photo left,
@@ -501,52 +495,28 @@ export const ROOM_CATEGORIES = [
     reverse: true,
     images: [
       {
-        src: standardViewBedroomWide,
-        alt: 'Standard room with view bedroom with orange upholstered bed, green Guardamar branded runner and twin rattan pendant lights',
+        src: standardViewPhoto2,
+        alt: 'Standard room with view bedroom with mustard-yellow bed, green accent pillow, wall-mounted TV and white louvered wardrobe',
       },
       {
-        src: standardViewBedroomCentered,
-        alt: 'Standard room with view double bed with white striped linens, green runner and rattan pendant lighting',
+        src: standardViewPhoto1,
+        alt: 'Standard room with view bedroom with mustard-yellow upholstered bed, green Guardamar runner, wall-mounted TV and balcony window',
       },
       {
-        src: standardViewBedHeadboard,
-        alt: 'Standard room with view bed with orange headboard, green Guardamar branded accent pillow and cane-front nightstand',
+        src: standardViewPhoto3,
+        alt: 'Standard room with view double bed with mustard-yellow base, green Guardamar pillows and twin woven rattan pendant lights',
       },
       {
-        src: standardViewBedDressing,
-        alt: 'Standard room with view dressing table with mirror, yellow velvet pouf and fresh white roses',
+        src: standardViewPhoto4,
+        alt: 'Standard room with view dressing desk with mirror, fresh roses, yellow velvet pouf and rattan pendant beside the bed',
       },
       {
-        src: standardViewBedroomTv,
-        alt: 'Standard room with view bedroom with wall-mounted flat-screen TV and white louvered wardrobe',
+        src: standardViewPhoto5,
+        alt: 'Folded Guardamar Hotel & Spa branded towels against the green-tiled wall of the Standard room with view bathroom',
       },
       {
-        src: standardViewBedroomBalcony,
-        alt: 'Standard room with view bedroom facing the balcony doors with sheer curtains and wall-mounted TV',
-      },
-      {
-        src: standardViewBathroomGlassShower,
-        alt: 'Standard room with view bathroom with glass shower, backlit green tiles, round mirror and vessel sink',
-      },
-      {
-        src: standardViewShower,
-        alt: 'Standard room with view bathroom with glass shower, green tiles and backlit mirror',
-      },
-      {
-        src: standardViewTowelsStacked,
-        alt: 'Guardamar Hotel & Spa branded towels in the Standard room with view bathroom',
-      },
-      {
-        src: standardViewVanity,
-        alt: 'Standard room with view bathroom vanity with backlit mirror and wall-mounted hairdryer',
-      },
-      {
-        src: standardViewTowelsShower,
-        alt: 'Folded Guardamar towels beside the shower in the Standard room with view',
-      },
-      {
-        src: standardViewHairdryer,
-        alt: 'Wall-mounted Valera hairdryer in the Standard room with view bathroom',
+        src: standardViewPhoto6,
+        alt: 'Standard room with view bathroom with walk-in glass shower, backlit green tiles, round mirror and vessel sink',
       },
     ],
     title: 'Standard room with view',
@@ -618,72 +588,28 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorPhoto1,
-        alt: 'Standard room partial view bedroom with terracotta channel-tufted double and twin beds, green Guardamar runner and arched alcove',
+        src: standardViewPhoto3,
+        alt: 'Standard room partial view double bed with mustard-yellow base, green Guardamar pillows and twin woven rattan pendant lights',
       },
       {
-        src: juniorPhoto2,
-        alt: 'Standard room partial view bedroom with terracotta beds, green accent pillows, wall-mounted TV and arched headboard niche',
+        src: standardViewPhoto4,
+        alt: 'Standard room partial view dressing desk with mirror, fresh roses, yellow velvet pouf and rattan pendant beside the bed',
       },
       {
-        src: juniorPhoto3,
-        alt: 'Standard room partial view beds centred beneath the arched alcove with gold Guardamar branded runner and green pillows',
+        src: standardViewPhoto2,
+        alt: 'Standard room partial view bedroom with mustard-yellow bed, green accent pillow, wall-mounted TV and white louvered wardrobe',
       },
       {
-        src: juniorPhoto4,
-        alt: 'Standard room partial view seen from the entrance with terracotta beds, louvered wardrobe and wall-mounted TV',
+        src: standardViewPhoto1,
+        alt: 'Standard room partial view bedroom with mustard-yellow upholstered bed, green Guardamar runner, wall-mounted TV and window',
       },
       {
-        src: juniorPhoto5,
-        alt: 'Standard room partial view wooden desk and dressing corner with kettle, orange pouf and wall-mounted TV',
+        src: standardViewPhoto6,
+        alt: 'Standard room partial view bathroom with walk-in glass shower, backlit green tiles, round mirror and vessel sink',
       },
       {
-        src: juniorPhoto6,
-        alt: 'Standard room partial view nightstand detail with kettle and a warm woven pendant light beside the walnut wall',
-      },
-      {
-        src: juniorPhoto7,
-        alt: 'Guardamar Hotel & Spa branded bathrobe laid on the Standard room partial view bed with green runner',
-      },
-      {
-        src: juniorPhoto8,
-        alt: 'Standard room partial view balcony with Mediterranean sea and rooftop views over Guardamar',
-      },
-      {
-        src: juniorPhoto9,
-        alt: 'Standard room partial view balcony with woven chairs and a Mediterranean sea view over the beach',
-      },
-      {
-        src: juniorPhoto10,
-        alt: 'Standard room partial view balcony with woven chairs, side table and Mediterranean sea view',
-      },
-      {
-        src: juniorPhoto11,
-        alt: 'Standard room partial view balcony with woven chairs beside the sheer-curtained French doors',
-      },
-      {
-        src: juniorPhoto12,
-        alt: 'Standard room partial view bathroom with copper-toned tiles, backlit round mirror, vessel sink, glass shower and wall-hung toilet',
-      },
-      {
-        src: juniorPhoto13,
-        alt: 'Standard room partial view bathroom with walk-in glass shower, copper tiles, backlit round mirror and vessel sink vanity',
-      },
-      {
-        src: juniorPhoto14,
-        alt: 'Close-up of the Standard room partial view white vessel sink with a tall matte-black faucet and folded branded towels',
-      },
-      {
-        src: juniorPhoto15,
-        alt: 'Standard room partial view backlit round mirror reflecting the copper-tiled walk-in shower',
-      },
-      {
-        src: juniorPhoto16,
-        alt: 'Standard room partial view walk-in shower detail with copper tiles, black rain fixtures and premium Lalique amenities',
-      },
-      {
-        src: juniorPhoto17,
-        alt: 'Standard room partial view bathroom with wall-hung toilet, black fixtures and glass shower partition',
+        src: standardViewPhoto5,
+        alt: 'Folded Guardamar Hotel & Spa branded towels against the green-tiled wall of the Standard room partial view bathroom',
       },
     ],
     title: 'Standard room partial view',

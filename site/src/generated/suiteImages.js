@@ -325,76 +325,40 @@ export default {
     "height": 1467,
     "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUABBhl3EgKC4t/zbAADxiEvcws/Ffn1Pbkh4hBU5XQ5KpbpzRFXZ2tcoiJisSbhQEPjYwjoDXz4zwTKBV8EWlddsW4ni9DX+kpfoR6QA"
   },
-  "standard-view-double/bathroom-glass-shower-green-tiles.webp": {
-    "src": "/suites/standard-view-double/bathroom-glass-shower-green-tiles.webp?v=29bada37",
-    "width": 1363,
-    "height": 2048,
-    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBYeNQAmCAyvPBGUihGDAAD9/dw9RMg45d9fGrla+e5rO3oU2+ENDKkzLIlsP9qKtUWyAKBpSvgdfC5KGjT49k+2716it9KmB9RpBVarIOSELqtAkBGaQnD4WBKmdm1QM1vDmuxGYwg//IAAAA=="
+  "standard-view-double/bathroom-green-tiles-shower.jpg": {
+    "src": "/suites/standard-view-double/bathroom-green-tiles-shower.webp?v=c085c555",
+    "width": 511,
+    "height": 768,
+    "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOgMZURkzG2A93Jy6UYAPV2ZDVuZ9KBjwQuHQmeHIehwKIS2GwZ092Oi7KS2UvAjdHFUfpQrxgFvEmSOVEfqR9Ex2vG/To7+00ojGEeP3Fe+wvNxOY/1DiviPI8zJDx+ZIjsT7WYjAXxJocrRiAAAA="
   },
-  "standard-view-double/bathroom-shower-green-tiles.webp": {
-    "src": "/suites/standard-view-double/bathroom-shower-green-tiles.webp?v=667ee610",
-    "width": 682,
-    "height": 1024,
-    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABQBACdASoQABgAPu1iqU2ppaQiMAgBMB2JYwCo9CB/Dr2PMYf2l8blBg6AAP5AB4OdL43apqfN1OFsbRc/O7GbsuZhtf3RkRXCVLx+6td3cZKo5HyDtrjaSFO+nwT2aD8ZWIUmvvsLOfq9Thf35odumTz5oBmd0OUZFxqiHEOY2W8RftDSRLuZ4aroSMLoEdSKjfYwwAA="
-  },
-  "standard-view-double/bathroom-vanity-mirror-hairdryer.webp": {
-    "src": "/suites/standard-view-double/bathroom-vanity-mirror-hairdryer.webp?v=fceadcbb",
+  "standard-view-double/bedroom-centered-twin-pendants.jpg": {
+    "src": "/suites/standard-view-double/bedroom-centered-twin-pendants.webp?v=82037e8e",
     "width": 1024,
-    "height": 682,
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdMoACxGurCrklKcMUrIJcAAD+hlLwJLof9DwlV2W6X92FAr5DwG1O09Iw4bWHvRsYkCQiItO2GCeTD12lkNe7mUbpjnkJCDcYOOUVWwj0bcqtaAUtaytFWjn789vvv7nI+RIBpY3d4H4kqoZrEeyAAA=="
+    "height": 681,
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMjbEhYuB8PqN75h8DAAPaz088KZrs21pFMPVZ7ALUzWNuq2kFfdspRdm1dkJ6gf+F5ebN4qLkx2rQwwe61LT0X5Y9S5F9FiycNRmBt/SjeDfK+GGxnC2agdSBGse3WGabiDBuaYgPPJf/l5IUHA4J8bTJiSIaWGN8ykNSCt1DegSCwNbggiSAA"
   },
-  "standard-view-double/bed-dressing-table-detail.webp": {
-    "src": "/suites/standard-view-double/bed-dressing-table-detail.webp?v=e0670121",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoC4AAtLehZn0aA5m9M8AAD8xXsYJIXrYi9HOe6jaSALHGFr6Eo43lUMns0nm67fGbUMeGerNUGAKcWKJhnwjTIcU2txOivcEwVc8VZ1RwCBmDnWRgX9wC0DZ/ObAfTjZADDEnIvL27YUsankgAAAA=="
-  },
-  "standard-view-double/bed-headboard-nightstand-detail.webp": {
-    "src": "/suites/standard-view-double/bed-headboard-nightstand-detail.webp?v=24209738",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPu1kqU2ppaOiMAgBMB2JbACdMoC9ABONJmQyZn3cXXK6ZrgA3ZMYCJ5O9faIfZbVKr+jt8QUjuiQ2OzVu0mQO5NSLHi/OpfJjD1wSWexgj2AYEU+99Qw2VuSXuBSDIxCDltj5k54Nx9+UcmDSlw4op7E5fXsPkkFh/54HZdJmNDcAO/H3B60xIfJWK1C+gAA"
-  },
-  "standard-view-double/bedroom-balcony-tv-view.webp": {
-    "src": "/suites/standard-view-double/bedroom-balcony-tv-view.webp?v=048f4895",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgMY7Uc/v5teukxHPUCADifaawdXoEdh37h43tJq0aZwSSmVeDGDIHjWfjKVZARugZNWyKPuV6Rc+l89lw/JuQaYg0ltntZPmNnxX6TqVkSdIqoTcc1K4mqfsnP8isGbRvE+86aznq9U/mkY//Aseqx/wTqYAAAA=="
-  },
-  "standard-view-double/bedroom-centered-branded-bed.webp": {
-    "src": "/suites/standard-view-double/bedroom-centered-branded-bed.webp?v=94b6618e",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoACXSj1V5QUtSbVzAD2s9ZINZCzP83BsR6SFNdR7+7NcA9rfAHEEDlyNO9ykIHBNkfgfVwJr6Zgiy+9frcFiMzNqi+wNqnucnS9vEl9Hg8/PF7xcQrhXXQ7DwFBpxe5xf/PMSycj/xWq6LssPD/b6/ruU5Yrdb79lQuU6yuWKXz2CQSdjo7tDiAAAA="
-  },
-  "standard-view-double/bedroom-wall-tv-wardrobe.webp": {
-    "src": "/suites/standard-view-double/bedroom-wall-tv-wardrobe.webp?v=65160c56",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoR4GB676jISQt248ajNAAD+WewOSLq8k92H1nIS9m/s9nGBW1YvZRnUoy6On7N5sxIXa3PIipX2ryBwroOpiCzmA0cDYMT6yEgwExfQ4FH4kpiSAh+9b2kl+mpmf5exAQbC+CUuzWnQlJb3Tr84Ku8IR/NiIAJYli4EZiFlV7d3t+SAAAA="
-  },
-  "standard-view-double/bedroom-wide-branded-bed.webp": {
-    "src": "/suites/standard-view-double/bedroom-wide-branded-bed.webp?v=5773da9c",
-    "width": 2048,
-    "height": 1363,
-    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdLwABlcLoSxX9n6G54ADh84abOGFwgFW6vxVeZzH2zIQ6MYpvoca4NKi149KWpl3fHCrHi8N6F9t/Sk3NbAeuTJoHTIf8C0OeR5/QXbIRbtCBU79g0lyjxzcU8ZRKodlHLRKzGch1OGzXp1jYmfJ8u7o7UGCQAAAA"
-  },
-  "standard-view-double/branded-towels-shower.webp": {
-    "src": "/suites/standard-view-double/branded-towels-shower.webp?v=62cd9d3d",
+  "standard-view-double/bedroom-desk-dressing-corner.jpg": {
+    "src": "/suites/standard-view-double/bedroom-desk-dressing-corner.webp?v=8081deb1",
     "width": 1024,
-    "height": 682,
-    "placeholder": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdACFSVq9fp1+H2KgA/ovb36nOuY513y8NgMEz/S3d9usYqwLpY/vjn9t2bspZGkVQTLKAAA=="
+    "height": 681,
+    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JbACdMoC4AAwBFuEUa68l6e6JqADdiGi6kG6tDK/lX8x/JwmIQUY34YRZ5lAzYRsX/5mSU9cQ2gNyxiJBiAaVVRm2Z9CKQRN2Fd0tPlfcaZBKtUG/ypXoLQCJqaRn3SDCrNgEFmh8JlIBa1yoMMaPXyHHNO5kNT1osgxZRmZovNYcYVDyAYcAAAA="
   },
-  "standard-view-double/branded-towels-stacked.webp": {
-    "src": "/suites/standard-view-double/branded-towels-stacked.webp?v=43124e8b",
+  "standard-view-double/bedroom-wide-yellow-bed.jpg": {
+    "src": "/suites/standard-view-double/bedroom-wide-yellow-bed.webp?v=69f15214",
     "width": 1024,
-    "height": 682,
-    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdAB6x0fHj4/2IX8QAAK5n9MaFpkr+Ez1oowolCBoHaK5S719sSdipdnsaR1EAk4Yuaj9w8zJywb9KqwAA"
+    "height": 681,
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JQBOgMZZUeZAEea0Zn3AahBzSAADifdKJPd6nP1pBwCoHnXdqqBg0rmpyVpD8C8lTds53PqKJ1ZJpmSGW0z//sUocXF+hEF/oe1srtws2w0IWAtN9yalz6nT2KeYwN0CPNGlW2mMOXTVOAynUXoW00kwpFKXPAHNnkAAA"
   },
-  "standard-view-double/wall-mounted-hairdryer.webp": {
-    "src": "/suites/standard-view-double/wall-mounted-hairdryer.webp?v=7656c6c3",
-    "width": 682,
-    "height": 1024,
-    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZQCdMvICbwue0voJh4zs6AAA/rbsTiMO5uVIX0PHZGthaYP3kqLscGVa+7n59jfQQ+WGJw25/5+2qUm1qg1ujSii0QN8LFo6y4YX385ixn3lFwtw1jsAAAA="
+  "standard-view-double/bedroom-yellow-bed-tv-wardrobe.jpg": {
+    "src": "/suites/standard-view-double/bedroom-yellow-bed-tv-wardrobe.webp?v=6c7ea5f8",
+    "width": 1024,
+    "height": 681,
+    "placeholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoMYADYa9Kjyx8PMdRwygAD+WewPtPGzbDxRVURmQEIvFOahlm96U+eyMqOjp+z2k0zgtTE9S/+q3GZ5rpjgotEqJnb3U7uEhe5piU93vd2wASZfuaYP9nWbXJ2ThwOOA8Jsr7dZHDYTQ/OeUQ8agH/NiIAyZSxsBZ2kkqQ6kCck5AAA"
+  },
+  "standard-view-double/branded-towel-detail.jpg": {
+    "src": "/suites/standard-view-double/branded-towel-detail.webp?v=2aa212df",
+    "width": 1024,
+    "height": 683,
+    "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdAB9Gone2PZnUykSgAK7LAy4Mkbqm/wMlLJQQ9nZumq3mpH1JJPxfw0RLWb69J5px3uQoh65VE45hduEXoBgAAA=="
   }
 }
