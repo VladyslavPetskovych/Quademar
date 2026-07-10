@@ -1,82 +1,111 @@
-import logoSvg from '../assets/logo/dark/Guardamar_Vertical logotype.svg?raw'
+import aristoLogoUrl from '../assets/logo/royal_green/aristo.webp'
+import scriptFontUrl from '../assets/fonts/pinyon-script/PinyonScript-Regular.woff2?url'
+import { oliveBranchSvg } from './menuDecor'
 
 /**
- * Build a clean, single-page A4 version of the daily menu and open the browser's
- * print dialog (from which the user can "Save as PDF"). Rendered into a hidden
- * iframe so it never disturbs the page, and self-contained (inline CSS + inline
- * logo SVG, system serif) so it prints reliably without waiting on network/fonts.
+ * Build a single-page A4 version of the daily menu, styled like the framed print menu
+ * (Aristo logo, script course headings, olive-branch corners, dotted dividers) and open
+ * the browser's print dialog — from which the user can "Save as PDF".
  *
- * The page is laid out to fill an A4 sheet exactly: logo at the top, the menu
- * vertically centred, the included/price line and hotel name pinned to the bottom.
- *
- * All strings are expected already localized. `sections` is `[{ title, items[] }]`.
+ * The logo and script font are fetched once and inlined as data URIs so the print
+ * document is fully self-contained and renders reliably (no network/font race). All
+ * strings are expected already localized. `sections` is `[{ title, items[] }]`.
  */
 const ESC = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ESC[c])
 
-export function printMenu({ hotelName, dateLabel, sections = [], included = [], priceLabel, includeLabel }) {
-  const sectionsHtml = sections
-    .filter((s) => s.items.length > 0)
-    .map(
-      (s) => `<div class="sec">
-        <h2>${esc(s.title)}</h2>
-        <ul>${s.items.map((it) => `<li>${esc(it)}</li>`).join('')}</ul>
-      </div>`,
-    )
-    .join('')
+let logoPromise
+let fontPromise
 
-  const includedHtml = included.length
-    ? `<div class="inc"><span class="lbl">${esc(includeLabel)}</span>${esc(included.join(' · '))}</div>`
-    : ''
-  const priceHtml = priceLabel ? `<div class="price">${esc(priceLabel)}</div>` : ''
-  const footHtml = includedHtml || priceHtml ? `<div class="foot">${includedHtml}${priceHtml}</div>` : ''
+async function toDataUrl(url, mime) {
+  const res = await fetch(url)
+  const buf = await res.arrayBuffer()
+  const blob = mime ? new Blob([buf], { type: mime }) : await res.blob()
+  return await new Promise((resolve, reject) => {
+    const fr = new FileReader()
+    fr.onload = () => resolve(fr.result)
+    fr.onerror = reject
+    fr.readAsDataURL(blob)
+  })
+}
+
+const getLogo = () => (logoPromise ??= toDataUrl(aristoLogoUrl))
+const getFont = () => (fontPromise ??= toDataUrl(scriptFontUrl, 'font/woff2'))
+
+export async function printMenu({ hotelName, dateLabel, sections = [], included = [], priceLabel, orLabel = 'o' }) {
+  // Inline the logo + script font (best-effort — the PDF still works without them).
+  let logoData = ''
+  let fontData = ''
+  try {
+    ;[logoData, fontData] = await Promise.all([getLogo().catch(() => ''), getFont().catch(() => '')])
+  } catch {
+    /* fall back to plain type below */
+  }
+
+  const branch = oliveBranchSvg({ color: '#84907a', opacity: 0.5 })
+
+  const coursesHtml = sections
+    .filter((s) => s.items.length > 0)
+    .map((s) => {
+      const dishes = s.items
+        .map((it, i) => `${i > 0 ? `<div class="or">${esc(orLabel)}</div>` : ''}<div class="dish">${esc(it)}</div>`)
+        .join('')
+      return `<div class="course"><h2>${esc(s.title)}</h2>${dishes}</div>`
+    })
+    .join('<div class="dot"></div>')
+
+  const footLines = [...included.map(esc), priceLabel ? esc(priceLabel) : '']
+    .filter(Boolean)
+    .map((l) => `<div>${l}</div>`)
+    .join('')
+  const footHtml = footLines ? `<div class="dot"></div><div class="foot">${footLines}</div>` : ''
+
+  const titleFont = fontData ? "'Pinyon Script', cursive" : 'Georgia, serif'
 
   const html = `<!doctype html><html lang="en"><head><meta charset="utf-8">
     <title>${esc(hotelName)} — ${esc(dateLabel)}</title>
     <style>
       @page { size: A4 portrait; margin: 0; }
+      ${fontData ? `@font-face{font-family:'Pinyon Script';src:url(${fontData}) format('woff2');font-weight:400;font-style:normal;}` : ''}
       * { box-sizing: border-box; }
       html, body { margin: 0; padding: 0; }
       body { font-family: Georgia, 'Times New Roman', serif; color: #171412;
              -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .page { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 20mm 22mm 16mm;
-              display: flex; flex-direction: column; }
+      .page { position: relative; overflow: hidden; width: 210mm; min-height: 297mm; margin: 0 auto;
+              padding: 20mm 22mm 18mm; background: #faf7f0; display: flex; flex-direction: column; }
+      .branch { position: absolute; width: 54mm; }
+      .branch.tl { top: -7mm; left: -9mm; transform: rotate(128deg); }
+      .branch.br { bottom: -7mm; right: -9mm; transform: rotate(-52deg); }
+      .bracket { position: absolute; width: 12mm; height: 12mm; }
+      .bracket.bl { bottom: 11mm; left: 11mm; border-left: 1px solid rgba(110,54,27,.32); border-bottom: 1px solid rgba(110,54,27,.32); }
+      .bracket.tr { top: 11mm; right: 11mm; border-right: 1px solid rgba(110,54,27,.32); border-top: 1px solid rgba(110,54,27,.32); }
+      .content { position: relative; z-index: 1; flex: 1 1 auto; display: flex; flex-direction: column; }
       .logo { text-align: center; }
-      .logo svg { width: 62mm; height: auto; display: inline-block; }
-      .logo svg path { fill: #171412; }
-      .head { text-align: center; margin-top: 11mm; }
-      .eyebrow { font-family: Arial, Helvetica, sans-serif; text-transform: uppercase;
-                 letter-spacing: .3em; font-size: 10px; font-weight: 700; color: #6e361b; }
-      .date { font-weight: 400; font-size: 34px; margin: 10px 0 0; letter-spacing: .3px; }
-      .rule { width: 52px; height: 1px; background: #6e361b; margin: 15px auto 0; }
-      .body { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center;
-              padding: 12mm 0; }
-      .grid { display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; row-gap: 22px; }
-      .sec { break-inside: avoid; }
-      .sec h2 { font-size: 19px; font-weight: 400; margin: 0 0 7px; padding-bottom: 6px;
-                border-bottom: 1px solid rgba(23,20,18,.16); }
-      .sec ul { list-style: none; margin: 0; padding: 0; }
-      .sec li { font-family: Arial, Helvetica, sans-serif; font-weight: 300; font-size: 14px;
-                color: #4a4642; line-height: 1.6; }
-      .foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px;
-              padding-top: 15px; border-top: 1px solid rgba(23,20,18,.16); }
-      .inc { font-family: Arial, Helvetica, sans-serif; font-size: 12.5px; color: #4a4642; }
-      .inc .lbl { display: block; text-transform: uppercase; letter-spacing: .18em; font-size: 9px;
-                  font-weight: 700; color: #6e361b; margin-bottom: 3px; }
-      .price { font-size: 25px; white-space: nowrap; }
-      .brand { text-align: center; font-family: Arial, Helvetica, sans-serif; font-size: 9px;
-               letter-spacing: .24em; text-transform: uppercase; color: #9a948e; margin-top: 9mm; }
+      .logo img { height: 24mm; width: auto; }
+      .date { text-align: center; text-transform: uppercase; letter-spacing: .14em; font-size: 26px;
+              margin: 13px 0 0; color: #171412; }
+      .body { flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; padding: 10mm 0; }
+      .course { text-align: center; }
+      .course h2 { font-family: ${titleFont}; font-style: ${fontData ? 'normal' : 'italic'}; font-weight: 400;
+                   color: #9a8d80; font-size: 38px; line-height: 1.1; margin: 0 0 6px; }
+      .dish { font-size: 15px; color: #33302c; line-height: 1.55; }
+      .or { font-style: italic; font-size: 13px; color: #9a938c; margin: 2px 0; }
+      .dot { height: 3px; max-width: 280px; margin: 20px auto;
+             background-image: radial-gradient(circle, rgba(23,20,18,.32) 1.3px, transparent 1.6px);
+             background-size: 9px 3px; background-repeat: repeat-x; background-position: center; }
+      .foot { text-align: center; font-size: 16px; color: #33302c; line-height: 1.6; }
     </style></head>
     <body><div class="page">
-      <div class="logo">${logoSvg}</div>
-      <div class="head">
-        <div class="eyebrow">${esc(hotelName)}</div>
+      <div class="branch tl">${branch}</div>
+      <div class="branch br">${branch}</div>
+      <span class="bracket bl"></span>
+      <span class="bracket tr"></span>
+      <div class="content">
+        ${logoData ? `<div class="logo"><img src="${logoData}" alt=""></div>` : ''}
         <div class="date">${esc(dateLabel)}</div>
-        <div class="rule"></div>
+        <div class="body">${coursesHtml}</div>
+        ${footHtml}
       </div>
-      <div class="body"><div class="grid">${sectionsHtml}</div></div>
-      ${footHtml}
-      <div class="brand">${esc(hotelName)}</div>
     </div></body></html>`
 
   const iframe = document.createElement('iframe')
@@ -104,15 +133,21 @@ export function printMenu({ hotelName, dateLabel, sections = [], included = [], 
   doc.close()
 
   win.onafterprint = cleanup
-  // Let the iframe lay out, then print. (Content is self-contained, so a short tick is enough.)
-  setTimeout(() => {
+
+  let printed = false
+  const printOnce = () => {
+    if (printed) return
+    printed = true
     try {
       win.focus()
       win.print()
     } catch {
       cleanup()
     }
-  }, 200)
-  // Safety net if `onafterprint` never fires (some browsers).
-  setTimeout(cleanup, 60000)
+  }
+
+  const fontsReady = win.document.fonts ? win.document.fonts.ready : Promise.resolve()
+  fontsReady.then(() => setTimeout(printOnce, 80))
+  setTimeout(printOnce, 1500) // fallback if fonts.ready never resolves
+  setTimeout(cleanup, 60000) // safety net if onafterprint never fires
 }

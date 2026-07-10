@@ -205,89 +205,137 @@ export default {
     "height": 851,
     "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdABxt5WnVgskLwi/NgmAA+uThWIgZcR5B+CiMJGRUtJ3Btp9igG8zptXGoCk9XWWgiO4PIUBYP/Hbra6m/ZDmzkIOOLXydBud/BfBhASeFhwyzuZwvOwI6nqxkMn8yPNYEZGvCXTFGaoLwMMNcckEWsF3o94ceCuNGnewAAAA"
   },
-  "presidential/IMG_0543.JPG": {
-    "src": "/suites/presidential/IMG_0543.webp?v=b5f896db",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAACwBQCdASoSABgAPu1qqk8ppiOiMBgIATAdiUATpll4UzoID6kla1u0RK+r8/wfbsBMqJi9oAAA9wR/J3NlBozgfKlBFaOigP517ZEXRko+uQz/9jLuo3JZBp6iHoK43I3wJ4ekvzWLh57UvlQkzeYs0ulpb8DAacVWcqyaGbWFTiGw52PC8Zx80FjKVJ0ubu9JWz29klYeZFs9SdNJlFZe+rJsVvUROHQAAA=="
-  },
-  "presidential/IMG_0544.JPG": {
-    "src": "/suites/presidential/IMG_0544.webp?v=6d334b35",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQBACdASoSABgAPu1kq1AppSOisBgIATAdiWMAs4AQ/GU8sInBWaqqmQsw6nl3AAD98144dpqrxUmyjYWIWVQ+g2UE7mxZ3aciSycnWEzdWQjLFGPiIEEfkwPc1Gt58vdiqF3VTznHXv12DChvdGfR3tawkQBlaCKbgEa9Wtg6zNpEOnKWDNKfdYsh7Q7LqDIUsqoGFH/4AA=="
-  },
-  "presidential/IMG_0545.JPG": {
-    "src": "/suites/presidential/IMG_0545.webp?v=1fc77f24",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRqgAAABXRUJQVlA4IJwAAAAQBQCdASoSABgAPu1qrlCppaQiqAqpMB2JYgC7Ef/gF0iHlYzs1BixpljwGzLKtIQAAPUzx3dh4US0Vw7tHi7InPP/8GIcEWJYeJ475RX6sWgeWAIK/cmtiFj5mQirtqxyWaDuxd8lv7ubLjp1UX0V0DVbtmpCEsGZMnZ1+zgoieBduq/PulANBgZXdAs+m8Rp7Xk2Vb73jyPuAAA="
-  },
-  "presidential/IMG_0547.JPG": {
-    "src": "/suites/presidential/IMG_0547.webp?v=ab7bcf43",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQBQCdASoSABgAPu1iqE4ppSOiMBgMATAdiWcAwoAMMI05BDh8yaiifdtomnU8vbIAAPxhXl9o++q83uVBm2lRUuyWTeNdYAwfEG6y1Vb3Xk7BR80NEOStdfblrmyzcU3d6LwvMkThUaNVOZA+2ji9bH5qNL/j9qDr/QcSMy5JKDj4f90AAAAA"
-  },
-  "presidential/IMG_0549.JPG": {
-    "src": "/suites/presidential/IMG_0549.webp?v=356dcbe9",
-    "width": 1878,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRsYAAABXRUJQVlA4ILoAAAAwBQCdASoVABgAPuFeqE2opSQiMAwBEBwJQBadMZARA3sz+91RDcsrlebVvg0V97vFQAD92Uw5FvcjVwK0RuI/ayLwabj47pT8J7vektluI4hMaEdCvcOBQr0tGTiDvE0cDDuyXvMMYZJU00r7EY2rMDQmrjujhOME1BtZdVkftFYqRAGu3SbHPp7aoGkNISNBo9ZiDxnWmprOm5cd/65n9bW13zQuDxlBEijXM6JKm/GdmkL7JXe5AAA="
-  },
-  "presidential/IMG_0550.JPG": {
-    "src": "/suites/presidential/IMG_0550.webp?v=9796d7b1",
+  "presidential/501A0764.JPG": {
+    "src": "/suites/presidential/501A0764.webp?v=b600ab0f",
     "width": 2200,
-    "height": 1650,
-    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAACwBQCdASoYABIAPu1sq08ppiOiMBgIATAdiWIAnTNMQanKhQ6HMS6YihCY9EYB6PX3Qy7YQAAA4k933VLN62QegsKYq33BVgg50Jxif3Lqffs9HSWo3PRZPcfkz8Dulfn2QDF9OqWMMovALlWh7jofn/4Ao0hzGU/ybPONUPvt1ug/NNjJDkRIMefI6SV4p0nk2FUzbF3q2KPoL0gT0YngROzXlejFlmPuxADBBs0JMAAA"
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JQBOgA9JMg6+npubYgAcb4wAA4B2OGhuirUbERAvZkDxAy4NdRk7Gs8LJeWy6/YLx9JqhY1fV6sTHa8dA89+F4dqmUTrzPmlmNXmRvSJ7UFFOUpYc9iCNaLLG5100Z/nT8Nm8CEmrHicLNhimsY08AAA="
   },
-  "presidential/IMG_0553.JPG": {
-    "src": "/suites/presidential/IMG_0553.webp?v=93597424",
-    "width": 1927,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRswAAABXRUJQVlA4IMAAAAAQBQCdASoVABgAPu1qsFAppaSiqAqpMB2JQBOmW+A0hz9Qa3lxtgBrMHgFh+dDSP8gAPfDIZjJolPiPzUR/BSJl4sD57jY89iS0+a0im6mw/xUdynZxlQGH4FHElaX68xyyMWCXcxKiF0XadERQX4I6svowCuCOetiyc5oGcGOaVhHERihUqAoOEUTxwO89G4JaR0LybM8mGVTJJ0jBVWF7pCw/R1ZfqefseIjUxJim4sSBStvRTqd/COJV1xRMAA="
+  "presidential/501A0772.JPG": {
+    "src": "/suites/presidential/501A0772.webp?v=7042d31d",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAAAQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JZACw7CKo3wgSrj6y0K6RMAD81tpAaQZ74ZwhuayiUQyUTPLBe8Ps/tPW1JbdUXRXD4XqJkeZplhp3o76pbLOxOXZlizCxzH3v4tHooLVTN/1ahJKKUUR+U+ziZfb4XLsWvxR2pQlaAAA"
   },
-  "presidential/IMG_0559.JPG": {
-    "src": "/suites/presidential/IMG_0559.webp?v=3a8295d8",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAABQBQCdASoSABgAPu1kp02ppaOiMBgMATAdiUAWIadwHKWF1rhN523zLRK75auU1tsa0mAA63mA+yZyFgo7Fb1htGu6NL0o/F7aq/VEJiabt8r7OuFFT+Cn9Y6URQf3vb8M2GZL/efCZW6mEoicVBA1H5NpKLH5RAd5V4fEtSlrReDvwS85NYh4PL4LFOD1UUF7aWdquiRnASbaqMRtc/iy4TRQgAYAXN4VCaE+pFWSOAAA"
+  "presidential/501A0773.JPG": {
+    "src": "/suites/presidential/501A0773.webp?v=b23006cd",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABQBACdASoYABAAPu1kqU2ppaQiMAgBMB2JZACdMoR4GCm77rqQzkiGSBQAAP7enMlEfcS39rSouVAYftCp8L+PLEYPgIgfUgqwPhSEg1a2OQmz7DHGsRXmM6Mtf79Go+qWkzvYmlm/66NdT6m4XrzWhRJaQWfGqWcerOLhWhKAAA=="
   },
-  "presidential/IMG_0560.JPG": {
-    "src": "/suites/presidential/IMG_0560.webp?v=9bb47649",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAADwBACdASoSABgAPu1krE+ppSQiMBgIATAdiWYArhwQls0lgTYVuHfdPGkCjwuwusAA/stat4uQp2weBZEUCF0+XUieJ09EcIPXZCm0p6XK1BpRXAuV//0XQ5EvNl3xZLySCL8j5cCB30QsSSO680Z+62CTjPamVVO3F2BWhcZnpeyaqwUat2PG9B2sCR3DPnVji11Xr7ACaCsUCeAAAA=="
+  "presidential/501A0776.JPG": {
+    "src": "/suites/presidential/501A0776.webp?v=7e1b57c4",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAADwAwCdASoYABAAPu1iqk4ppaQiMAgBMB2JZgCdMoAC+LjZCpiHdk8AAPzGbIESuK2hW8dWPNll96hqt8NuwCGRxPXPrC+N4lrIIBoFC4kCPq80z+QcDvY/AbqtKuB9AE3njOfomFOhfONb7l3uLIpuhpdHDO0zdl/k6CjYmYPLixwyuSGkuSqCiBB36rToAAA="
   },
-  "presidential/IMG_0564.JPG": {
-    "src": "/suites/presidential/IMG_0564.webp?v=8e94d1ca",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRrgAAABXRUJQVlA4IKwAAAAQBQCdASoSABgAPu1srVCppiQiqAqpMB2JYwC90YyyTJUCxH2mfO1573VPa81yO0AAAPeNLxL64dxSYwY3GPntpqIDn12RRYXP1PorIxweRy8Rde554o6dxJiQkM94oAhIOGZhXGsJ8Vluv0YU0ympCgJ14msSQEO2fb9BQQV+eJJYegT0+Prm7X6PosZHYDGHkPPzgi0XEoncawIa8DdCFj5UowosXHcox8gA"
+  "presidential/501A0779.JPG": {
+    "src": "/suites/presidential/501A0779.webp?v=755c8f71",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUABqplx5UCk1K/3bdv9iAAD9/ACqWzBSMWr3jXjtC+LcZD4fVoJC9JbRlMhQ95HHAQLOZOKmhJVMtExYugOEpqIcxYBQ71lJh/X23pwaoSZ7qROctgwUMcAA"
   },
-  "presidential/IMG_0568.JPG": {
-    "src": "/suites/presidential/IMG_0568.webp?v=2761bb05",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAAAwBQCdASoSABgAPu1ur1IppiQiqAgBMB2JZQCzgA8wHvHC6HfKaFIKQxl/Y93QiUNyAAD84WYs+5Zgh7wvmwU5EbDdA25ObEBLcDwD5MRPOcQGCfKDV4qpwNku12qKoZ8Zj7u581vnVrgzdrO5f412tg79XTlE5l6YwQ0XMdeCv67kjrfcnpuajdMIwtX39q+UUpaMEy0xNVb6p4jEXfc0BgcAAA=="
+  "presidential/501A0782.JPG": {
+    "src": "/suites/presidential/501A0782.webp?v=5662b888",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYwCdMoADJ5sbGYu3sCKjmcA2AADh7GIQdvBf9Sx0hsZRPOWX1gF+FebSWn4aLSm15yjpbdhRkVJBhJsqxQbrH6Xc1cvb9eV/8Iba19nO9D13x4NwG70xzi1HMSZqYif2X95JSWEpJnQaeGjdy3OJYySMQ57meBSzjE1TUeULaPDC2QprdWSNfpAsAAAA"
   },
-  "presidential/IMG_0577.JPG": {
-    "src": "/suites/presidential/IMG_0577.webp?v=8906eba8",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAABQBQCdASoSABgAPu1qr1CppaQiqAqpMB2JZQC/OAm/nb94BecmuMpExBStcjy7n4eQJgAAfQYQbPph3Q6UL2afLZ2l0WiA6VprxgyuLfOPKqeSkE4rtmWti44xycrR1YqM5Cs+fO7uBdX/3ejWbwtMAJJ8nDDIBLegJO72kFEBkCFCYPZ9bj9OYW9vpWV7tUBGlKlQXeItajNJqY8ZPeOUo0vdZla0owPQAA=="
+  "presidential/501A0785.JPG": {
+    "src": "/suites/presidential/501A0785.webp?v=2c572b0e",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgA/HRpBae1sOk9VxAAP7CJf3m2kC2vj3Rj2bcKMv1UwZ7cJgkiv8ZCld3w7omS9Ysqk9KKMy5W0lchbxh3LBmPHBNe3Y2bGTtaGNx/F9rdvUIuQAWY+hRY0oDF9rnJhcHeGvgnAICAAA="
   },
-  "presidential/IMG_0579.JPG": {
-    "src": "/suites/presidential/IMG_0579.webp?v=d54f0b0f",
-    "width": 1650,
-    "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBQCdASoSABgAPu1mq0+ppSOiMBgIATAdiUAU4oI//Cf0TVqdHYcagtMM2ZNQwJ8AAMtHR0di1cxturtkO3R2LbUDZmrTpgY91QkTnKIRuLpa9k1FF1T/Ex1bL8Pc1GdzLfFxWJu2N97fS7fR4hM2gGoEETNQIe5zV3fq4xm6DVapl/eANRof+zBz4kUJz4fYJP1YCXclYFj2wRwWbJeN62QLAOAA"
+  "presidential/501A0797.JPG": {
+    "src": "/suites/presidential/501A0797.webp?v=5dcd387e",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOiP/wEHW/3XBTM9lbPZ4AA9x+J9ccZukI83E8B7flvUH+Gc0nrAAKNd9eN/QUk0vLVvFC6DxBfCogaosmCdwsTKu/RyJ0L3M1FfDT6+rjfBAQ/SwummUuqDtNpXfWM2VMnvK9/C+wAAAA="
   },
-  "presidential/IMG_0580 (2).JPG": {
-    "src": "/suites/presidential/IMG_0580%20(2).webp?v=5fa82324",
-    "width": 1650,
+  "presidential/501A0801.JPG": {
+    "src": "/suites/presidential/501A0801.webp?v=c0b588f1",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JYgCdMoRwACsffIhiW20CrrMoQAD+w8ndY7k/Pii+pghw5QyMTpqxYtr+JI4CeWA4KZr6dQLvZw6dUzHzlQWZDpZ4Vxsn8NUdZ3ztxAJLohj1Pvla21IKPdyqiTN9BbqQWXgA"
+  },
+  "presidential/501A0808.JPG": {
+    "src": "/suites/presidential/501A0808.webp?v=0e152a13",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdMoADgOd4oqNpun/8LQAA/gKIIYpCQYI7QTymMR43tURnN8rzU8sU8E7ji/iEj57pK9jRFcb3yQWbFuCgsohN3p+68qZ9/7fmf/xbVb/ri2NJjrufVKtHOslh/Bu6CMKCK1QAAA=="
+  },
+  "presidential/501A0809.JPG": {
+    "src": "/suites/presidential/501A0809.webp?v=d40f4af2",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoR4GdEYeOGv/PMUhHTRRgAA3k2hxvEsQCFhKgCpq1RFcS1OUuzGnY/C5CgAPj9qlURa7dWmMLzMWlL2PoAzCoC3AoQ1liCSEnRSbfBZhwiOoy1qynFzna28bf6SfGp85Dot6OlHzfDH+ecJPnkDzphMf4p+zr91d36ncQbzNRcRO/P6U4s9NSycr3sLbBeZAAA="
+  },
+  "presidential/501A0823.JPG": {
+    "src": "/suites/presidential/501A0823.webp?v=319b5d75",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JbACdMoR4GCUHR4QDVhqAM9tgAPyCM7qadGfJ+qao002FHodemrVqdjy3dUZJrZPdBOPoRRs8MQNmMEs3dEFmkXMr1aPIH/yk49xzRRvNmIIx1DJ7faeIXEKjNy/q6hBSU74Zm1m2waCOACbc7aszXHQDGN+ZjGwPLpYRIHOEU7XRUbU9A05U6wAAAA=="
+  },
+  "presidential/501A0827.JPG": {
+    "src": "/suites/presidential/501A0827.webp?v=8bbd12d5",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JaACw7YxEnHIdaraIv8v1dtAA21R400UK+3FJWJa8uGVnE1ilGMd8ZWLwYDxIAeevWHEfUryrvy1LaWzi2S7ZQNeDNB/Th2V25FUpIv5KwjpGqOSC6poX8wcr1JWiiIXEa2xB+AFmlRzDpO8+r1QAAAA="
+  },
+  "presidential/501A0830.JPG": {
+    "src": "/suites/presidential/501A0830.webp?v=e9d2f099",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JbACdMoMYA0cgc4bdBYyETMgQAPzXnrsAAM4ilBycGPweuFYX6Gp3My/dxkOCC1lHFgqE8/F2QtP6RXsCzfhwFUmG7nrXbA49Km1a/2IrNsVfgKvA4uK7x2TR+UD2LZTdk/jSG2/sxv4v8fRs0TWSz5xtfFVvCoaSv9+aPGQCiO824TaHuH/EDWVifs0CUxKx9SrGx97coVgAAAA="
+  },
+  "presidential/501A0833.JPG": {
+    "src": "/suites/presidential/501A0833.webp?v=0cb2d6a5",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACdMoHggAdNRz3yWKZ91OMhUwAA4fRyhqdX74Z4iTtgcwVpY/HDShT1rKc7DrFFLgm/i5QI40GlXMyhkhdv9H/wZNlBVTPOkKaVhSCQ0Shig3MdPbO+7QfMHxGqb+Y9yRgMxIOqm2ASNE9kJGBXPhFvm+qigl1NYObiIWyx0un9+VovNi/cnJIs2cdJrhuxc+CixV6B8AAA"
+  },
+  "presidential/501A0836.JPG": {
+    "src": "/suites/presidential/501A0836.webp?v=b4b81ca6",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAACwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JbACdMoRwAdEM8khjDuQ+IfmK0VWAAMnqxal8Qte49Tb4M+bXKppABXoGbOxkZuvSeiSCUadLuclY565qMjHCk/pei23G+rxq5RHb3MpcZWIUiEspph/ujV6ljIhaLHB/2fIz1L91DCgemrfeZgMQWv34KmcmqVniwCqBgg3bK9H76dvEPAmRUVk+GAAA"
+  },
+  "presidential/501A0840.JPG": {
+    "src": "/suites/presidential/501A0840.webp?v=7ece11b0",
+    "width": 1467,
     "height": 2200,
-    "placeholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAADQBACdASoSABgAPu1sqk6ppqOiMBgIATAdiWIAAIqmVvdSMz6yA6shdS+LGrG+gAD+tU+TuzA+qiqOSJdeczvtrqimtVF5pCJQsLp/1UdLs77ZYvYCzyFKt0apEAA9Zikai56gLj7NroQK8BM/EtImMBKtcukvggXeTFhVFyqNlWl7qeudDgSmFG4D/9bTppVqyJvR+ic6oXa3BdcmAAAA"
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAQBACdASoQABgAPu1kqU2ppaQiMAgBMB2JbACdMoRwAAysCIQ/IGc4gAD+F4OYucB7dxSSHev3Nh/a7ZrV7mYgaNieDxwGfFrqzMTWm44pvn2/uzwTyYMdMde/27pTI8z/EfevPYPFmXssM1iF3jPjCdTl3uZSAptvdwPCpcHWXo0SqFIZE8sN+TAAAA=="
+  },
+  "presidential/501A0842.JPG": {
+    "src": "/suites/presidential/501A0842.webp?v=38f8052c",
+    "width": 1467,
+    "height": 2200,
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JagCdMoRwABDX/0m1GxyJ0RAA/gPPBRmh31/9wXgK1nDGe8K4ym0Mz168YKDa8DkWALV2WAQxv30arZVb6bR5uGnk+ptEfrNjqCcbANDVBG0yoy2nAL5I3OIjpYRIZXtIwNgAAAA="
+  },
+  "presidential/501A0844.JPG": {
+    "src": "/suites/presidential/501A0844.webp?v=d266cbe4",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAAAQBACdASoYABAAPu1iqk4ppaQiMAgBMB2JbACdLoAANA2uBbLz8s+kAAD+lsGZmiZsP3qVPdnHO7DYEs+mnhVkwTZZ70xu1nuwb9lkyGZPGL+jyKSJ/AGXb5N+wNwuNff/ewtY7qNwzx6VwLS/ff3aB4GDP32nOaUF8UiBXkrQj7aAqLtDz21zZ2Os31un/U4ErX2bqAA="
+  },
+  "presidential/501A0845.JPG": {
+    "src": "/suites/presidential/501A0845.webp?v=1de319b8",
+    "width": 1467,
+    "height": 2200,
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAABQAwCdASoQABgAPu1orU2ppqSiMAgBMB2JQBOgBZHzr6ijVAD+5c5SpViy/WVKSj0JZHIWynoYZjcyX61IbS/rkvBjv8fFJNtJ0PE+AAA="
+  },
+  "presidential/501A0848.JPG": {
+    "src": "/suites/presidential/501A0848.webp?v=c8d5bdb6",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRnQAAABXRUJQVlA4IGgAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoABfdv3qXId94AA+KHQvfXwzu//gKq2TT/t6Go9SdLJQDk7mFBns3R4jNaglEABLTJXO1u/7ahbORNwO3zfactZNnkVaJ2engAAAA=="
+  },
+  "presidential/501A0849.JPG": {
+    "src": "/suites/presidential/501A0849.webp?v=173416f9",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAAAQBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUABBhl3EgKC4t/zbAADxiEvcws/Ffn1Pbkh4hBU5XQ5KpbpzRFXZ2tcoiJisSbhQEPjYwjoDXz4zwTKBV8EWlddsW4ni9DX+kpfoR6QA"
   },
   "standard-view-double/bathroom-glass-shower-green-tiles.webp": {
     "src": "/suites/standard-view-double/bathroom-glass-shower-green-tiles.webp?v=29bada37",

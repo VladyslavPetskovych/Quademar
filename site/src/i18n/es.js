@@ -66,6 +66,7 @@ export default {
 
   menu: {
     breadcrumb: 'MENÚ DEL DÍA',
+    or: 'o',
     loading: 'Cargando el menú de hoy…',
     unavailable: 'El menú de hoy no está disponible en este momento. Vuelva a consultarlo pronto.',
     downloadPdf: 'Descargar PDF',

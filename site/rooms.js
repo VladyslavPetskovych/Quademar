@@ -2,20 +2,28 @@ import { suiteSrc } from './src/lib/suiteImages.js'
 
 // Optimized display-sized WebP URLs (see scripts/optimize-suite-images.mjs). The full-
 // resolution originals stay on disk under src/assets/suites/ but are never shipped.
-const presidentialPhoto1 = suiteSrc('presidential/IMG_0543.JPG')
-const presidentialPhoto2 = suiteSrc('presidential/IMG_0544.JPG')
-const presidentialPhoto3 = suiteSrc('presidential/IMG_0545.JPG')
-const presidentialPhoto4 = suiteSrc('presidential/IMG_0547.JPG')
-const presidentialPhoto5 = suiteSrc('presidential/IMG_0549.JPG')
-const presidentialPhoto6 = suiteSrc('presidential/IMG_0550.JPG')
-const presidentialPhoto7 = suiteSrc('presidential/IMG_0553.JPG')
-const presidentialPhoto8 = suiteSrc('presidential/IMG_0559.JPG')
-const presidentialPhoto9 = suiteSrc('presidential/IMG_0560.JPG')
-const presidentialPhoto10 = suiteSrc('presidential/IMG_0564.JPG')
-const presidentialPhoto11 = suiteSrc('presidential/IMG_0568.JPG')
-const presidentialPhoto12 = suiteSrc('presidential/IMG_0577.JPG')
-const presidentialPhoto13 = suiteSrc('presidential/IMG_0579.JPG')
-const presidentialPhoto14 = suiteSrc('presidential/IMG_0580 (2).JPG')
+const presidentialPhoto1 = suiteSrc('presidential/501A0809.JPG')
+const presidentialPhoto2 = suiteSrc('presidential/501A0823.JPG')
+const presidentialPhoto3 = suiteSrc('presidential/501A0827.JPG')
+const presidentialPhoto4 = suiteSrc('presidential/501A0830.JPG')
+const presidentialPhoto5 = suiteSrc('presidential/501A0833.JPG')
+const presidentialPhoto6 = suiteSrc('presidential/501A0836.JPG')
+const presidentialPhoto7 = suiteSrc('presidential/501A0840.JPG')
+const presidentialPhoto8 = suiteSrc('presidential/501A0842.JPG')
+const presidentialPhoto9 = suiteSrc('presidential/501A0844.JPG')
+const presidentialPhoto10 = suiteSrc('presidential/501A0845.JPG')
+const presidentialPhoto11 = suiteSrc('presidential/501A0848.JPG')
+const presidentialPhoto12 = suiteSrc('presidential/501A0849.JPG')
+const presidentialPhoto13 = suiteSrc('presidential/501A0764.JPG')
+const presidentialPhoto14 = suiteSrc('presidential/501A0772.JPG')
+const presidentialPhoto15 = suiteSrc('presidential/501A0773.JPG')
+const presidentialPhoto16 = suiteSrc('presidential/501A0776.JPG')
+const presidentialPhoto17 = suiteSrc('presidential/501A0779.JPG')
+const presidentialPhoto18 = suiteSrc('presidential/501A0782.JPG')
+const presidentialPhoto19 = suiteSrc('presidential/501A0785.JPG')
+const presidentialPhoto20 = suiteSrc('presidential/501A0797.JPG')
+const presidentialPhoto21 = suiteSrc('presidential/501A0801.JPG')
+const presidentialPhoto22 = suiteSrc('presidential/501A0808.JPG')
 const familyBedroomWide = suiteSrc('family/bedroom-wide-orange-headboard.webp')
 const familyBedroomCentered = suiteSrc('family/bedroom-centered-branded-bed.webp')
 const familyBedNightstandRoses = suiteSrc('family/bed-nightstand-white-roses.webp')
@@ -73,20 +81,94 @@ export const ROOM_CATEGORIES = [
     id: 'presidential',
     reverse: false,
     images: [
-      { src: presidentialPhoto1, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto2, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto3, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto4, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto5, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto6, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto7, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto8, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto9, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto10, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto11, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto12, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto13, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
-      { src: presidentialPhoto14, alt: 'Presidential Suite at Hotel Guardamar del Segura' },
+      {
+        src: presidentialPhoto1,
+        alt: 'Presidential Suite bedroom with terracotta velvet bed, tropical palm mural, twin rattan pendants and green Guardamar runner',
+      },
+      {
+        src: presidentialPhoto2,
+        alt: 'Presidential Suite bedroom from the side with cream louvered wardrobe, palm-print walls and terracotta bed',
+      },
+      {
+        src: presidentialPhoto3,
+        alt: 'Presidential Suite dressing corridor with louvered wardrobe, round rope mirror, red pouf and Buddha figure',
+      },
+      {
+        src: presidentialPhoto4,
+        alt: 'Presidential Suite terracotta headboard within the plaster arch with green velvet pillows and teal runner',
+      },
+      {
+        src: presidentialPhoto5,
+        alt: 'Presidential Suite double bed centred beneath the arched alcove with twin rattan pendants and palm mural',
+      },
+      {
+        src: presidentialPhoto6,
+        alt: 'Presidential Suite wide view with white louvered wardrobe, terracotta bed and gold Guardamar branded runner',
+      },
+      {
+        src: presidentialPhoto7,
+        alt: 'Presidential Suite bedside detail with woven rattan pendant, cane nightstand and green Guardamar pillow',
+      },
+      {
+        src: presidentialPhoto8,
+        alt: 'Presidential Suite round rope mirror reflecting the rattan pendants above a wooden console with Buddha figure',
+      },
+      {
+        src: presidentialPhoto9,
+        alt: 'Presidential Suite warm detail of the woven rattan pendant light beside the terracotta bed',
+      },
+      {
+        src: presidentialPhoto10,
+        alt: 'Gold Guardamar Hotel & Spa logo embroidered on the Presidential Suite white bed linen',
+      },
+      {
+        src: presidentialPhoto11,
+        alt: 'Etched Guardamar Hotel & Spa glass panel with the spa bathtub beyond in the Presidential Suite',
+      },
+      {
+        src: presidentialPhoto12,
+        alt: 'Presidential Suite private hydromassage bathtub filled with water against a pebble-stone wall',
+      },
+      {
+        src: presidentialPhoto13,
+        alt: 'Presidential Suite bathroom double vanity with two backlit round mirrors, green fluted tiles and twin vessel sinks',
+      },
+      {
+        src: presidentialPhoto14,
+        alt: 'Presidential Suite bathroom with freestanding bathtub, walnut wall and black rain shower behind glass',
+      },
+      {
+        src: presidentialPhoto15,
+        alt: 'Presidential Suite bathroom wide view with freestanding bathtub, walk-in shower and heated towel rail',
+      },
+      {
+        src: presidentialPhoto16,
+        alt: 'Presidential Suite freestanding bathtub centred against the walnut wall with black fixtures',
+      },
+      {
+        src: presidentialPhoto17,
+        alt: 'Guardamar branded bathrobe hanging beside the Presidential Suite freestanding bathtub and walnut wall',
+      },
+      {
+        src: presidentialPhoto18,
+        alt: 'Presidential Suite bathroom with wall-hung toilet, walk-in shower and freestanding bathtub in a walnut niche',
+      },
+      {
+        src: presidentialPhoto19,
+        alt: 'Presidential Suite freestanding bathtub against the walnut wall with premium Lalique amenities',
+      },
+      {
+        src: presidentialPhoto20,
+        alt: 'Presidential Suite bathroom with twin vessel sinks, backlit round mirror, green tiles and wall-hung toilet',
+      },
+      {
+        src: presidentialPhoto21,
+        alt: 'Presidential Suite entrance hall with mirrored wardrobe and room 401 sign opening to the lounge',
+      },
+      {
+        src: presidentialPhoto22,
+        alt: 'Presidential Suite entrance hall with warm lighting, mirrored wall and room 401 sign',
+      },
     ],
     title: 'Presidential Suite',
     quantity: 4,

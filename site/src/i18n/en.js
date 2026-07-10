@@ -66,6 +66,7 @@ export default {
 
   menu: {
     breadcrumb: 'MENU OF THE DAY',
+    or: 'or',
     loading: 'Loading today’s menu…',
     unavailable: 'Today’s menu isn’t available right now. Please check back soon.',
     downloadPdf: 'Download PDF',

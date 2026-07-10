@@ -1,8 +1,11 @@
+import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import aristoLogo from '../assets/logo/royal_green/aristo.webp'
 import { CONTACT } from '../config/site'
 import { useDailyMenu } from '../hooks/useDailyMenu'
 import { useLanguage } from '../i18n/LanguageContext'
+import { oliveBranchSvg } from '../lib/menuDecor'
 import { printMenu } from '../lib/menuPrint'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
@@ -16,7 +19,7 @@ const fadeUp = {
   }),
 }
 
-const INCLUDE_LABEL = 'Include'
+const branchHtml = oliveBranchSvg({ color: '#7f8d6f', opacity: 0.55 })
 
 /** Pick the localized string from a bilingual `{ en, es }` value (or pass a plain string through). */
 function pick(value, locale) {
@@ -25,24 +28,36 @@ function pick(value, locale) {
   return value[locale] || value.en || value.es || ''
 }
 
-function MenuSection({ title, items, number }) {
+function DottedDivider({ className = '' }) {
   return (
-    <motion.article className="flex flex-col" variants={fadeUp} custom={number}>
-      <div className="flex items-baseline gap-2.5 border-b border-[#171412]/12 pb-2">
-        <span className="font-cormorant text-[15px] font-normal leading-none text-[#6e361b]/60">
-          {String(number + 1).padStart(2, '0')}
-        </span>
-        <h2 className="font-cormorant text-[22px] font-normal leading-tight text-[#171412] md:text-[24px]">
-          {title}
-        </h2>
-      </div>
-      <ul className="mt-2.5 space-y-1.5">
+    <div
+      className={`mx-auto h-[3px] w-full max-w-[280px] ${className}`}
+      style={{
+        backgroundImage: 'radial-gradient(circle, rgba(23,20,18,0.32) 1.3px, transparent 1.6px)',
+        backgroundSize: '9px 3px',
+        backgroundRepeat: 'repeat-x',
+        backgroundPosition: 'center',
+      }}
+      aria-hidden="true"
+    />
+  )
+}
+
+function MenuSection({ title, items, index, orLabel }) {
+  return (
+    <motion.article className="text-center" variants={fadeUp} custom={index}>
+      <h2 className="font-script text-[34px] leading-[1.15] text-[#9a8d80] md:text-[40px]">{title}</h2>
+      <ul className="mt-2">
         {items.map((item, i) => (
-          <li
-            key={i}
-            className="font-sans text-[15px] font-[250] leading-snug text-[#57524e] md:text-[15.5px]"
-          >
-            {item}
+          <li key={i}>
+            {i > 0 && (
+              <div className="my-0.5 font-cormorant text-[15px] italic leading-tight text-[#9a938c]">
+                {orLabel}
+              </div>
+            )}
+            <div className="font-cormorant text-[18px] leading-relaxed text-[#33302c] md:text-[19px]">
+              {item}
+            </div>
           </li>
         ))}
       </ul>
@@ -59,6 +74,7 @@ export default function MenuPage() {
   const dateLabel = pick(menu?.date, locale)
   const priceLabel = pick(menu?.price, locale)
   const includedLabels = included.map((item) => pick(item, locale))
+  const orLabel = t('menu.or')
 
   const handleDownloadPdf = () => {
     printMenu({
@@ -70,13 +86,13 @@ export default function MenuPage() {
       })),
       included: includedLabels,
       priceLabel,
-      includeLabel: INCLUDE_LABEL,
+      orLabel,
     })
   }
 
   return (
     <section className="relative bg-[#f3eee6] px-6 pb-16 pt-6 md:px-8 md:pb-20 md:pt-8">
-      <div className="mx-auto max-w-[900px]">
+      <div className="mx-auto max-w-[640px]">
         {/* Breadcrumb */}
         <motion.nav
           className="font-sans text-[12px] font-[250] uppercase tracking-[0.12em] text-[#171412]/55"
@@ -92,81 +108,97 @@ export default function MenuPage() {
           <span className="text-[#171412]">{t('menu.breadcrumb')}</span>
         </motion.nav>
 
-        {/* Centered header — the menu date, straight from the sheet */}
-        <motion.div
-          className="mt-8 text-center md:mt-10"
-          variants={fadeUp}
-          initial="hidden"
-          animate="visible"
-          custom={1}
-        >
-          <p className="font-sans text-[11px] font-medium uppercase tracking-[0.24em] text-[#6e361b]">
-            {t('menu.breadcrumb')}
-          </p>
-          <h1 className="mt-2.5 font-cormorant text-[clamp(2.25rem,5vw,3rem)] font-normal leading-[1.05] tracking-[0.01em] text-[#171412]">
-            {dateLabel}
-          </h1>
-          <div className="mx-auto mt-5 h-px w-12 bg-[#6e361b]/70" aria-hidden="true" />
-        </motion.div>
-
         {/* Loading / empty / error — never show placeholder dishes */}
         {status !== 'ready' && (
-          <p className="mt-8 text-center font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
+          <p className="mt-10 text-center font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
             {status === 'loading' ? t('menu.loading') : t('menu.unavailable')}
           </p>
         )}
 
         {status === 'ready' && (
           <>
-            {/* Menu card */}
+            {/* Menu card, framed like the printed menu */}
             <motion.div
-              className="mt-9 rounded-sm border border-[#171412]/12 bg-[#faf6ef]/70 px-6 py-8 md:mt-11 md:px-12 md:py-10"
+              className="relative mt-8 overflow-hidden rounded-sm border border-[#171412]/12 bg-[#faf7f0] px-6 py-10 md:mt-9 md:px-14 md:py-12"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ once: true, amount: 0.12 }}
               custom={0}
             >
-              <div className="grid gap-x-12 gap-y-7 sm:grid-cols-2">
-                {sections.map((section, i) => (
-                  <MenuSection
-                    key={section.key}
-                    number={i}
-                    title={pick(section.title, locale)}
-                    items={section.items.map((item) => pick(item, locale))}
-                  />
-                ))}
-              </div>
+              {/* Botanical corners */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -left-9 -top-7 w-36 rotate-[128deg] md:w-48"
+                dangerouslySetInnerHTML={{ __html: branchHtml }}
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-7 -right-9 w-36 -rotate-[52deg] md:w-48"
+                dangerouslySetInnerHTML={{ __html: branchHtml }}
+              />
+              {/* Corner brackets */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-4 left-4 h-9 w-9 border-b border-l border-[#6e361b]/30"
+              />
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute right-4 top-4 h-9 w-9 border-r border-t border-[#6e361b]/30"
+              />
 
-              {(includedLabels.length > 0 || priceLabel) && (
-                <div className="mt-8 flex flex-col gap-4 border-t border-[#171412]/12 pt-6 sm:flex-row sm:items-end sm:justify-between">
-                  {includedLabels.length > 0 && (
-                    <div>
-                      <p className="font-sans text-[11px] font-medium uppercase tracking-[0.18em] text-[#6e361b]">
-                        {INCLUDE_LABEL}
-                      </p>
-                      <p className="mt-1.5 font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">
-                        {includedLabels.join(' · ')}
-                      </p>
-                    </div>
-                  )}
-                  {priceLabel && (
-                    <p className="font-cormorant text-[30px] font-normal leading-none text-[#171412] md:text-[34px]">
-                      {priceLabel}
-                    </p>
-                  )}
+              <div className="relative">
+                {/* Logo */}
+                <img
+                  src={aristoLogo}
+                  alt="Aristo"
+                  className="mx-auto h-16 w-auto md:h-[76px]"
+                  width="152"
+                  height="152"
+                />
+                {/* Date */}
+                <h1 className="mt-4 text-center font-cormorant text-[26px] font-normal uppercase leading-none tracking-[0.14em] text-[#171412] md:text-[30px]">
+                  {dateLabel}
+                </h1>
+
+                {/* Courses */}
+                <div className="mx-auto mt-8 flex max-w-[430px] flex-col">
+                  {sections.map((section, i) => (
+                    <Fragment key={section.key}>
+                      {i > 0 && <DottedDivider className="my-6" />}
+                      <MenuSection
+                        index={i}
+                        title={pick(section.title, locale)}
+                        items={section.items.map((item) => pick(item, locale))}
+                        orLabel={orLabel}
+                      />
+                    </Fragment>
+                  ))}
                 </div>
-              )}
+
+                {/* Included + price */}
+                {(includedLabels.length > 0 || priceLabel) && (
+                  <>
+                    <DottedDivider className="mt-8" />
+                    <div className="mt-6 text-center font-cormorant text-[16px] leading-relaxed text-[#33302c] md:text-[17px]">
+                      {includedLabels.map((label, i) => (
+                        <p key={i}>{label}</p>
+                      ))}
+                      {priceLabel && <p className="mt-0.5">{priceLabel}</p>}
+                    </div>
+                  </>
+                )}
+              </div>
             </motion.div>
 
             {/* Download-as-PDF */}
-            <div className="mt-7 flex justify-center">
+            <div className="mt-6 flex justify-center">
               <button
                 type="button"
                 onClick={handleDownloadPdf}
-                className="inline-flex items-center gap-2 rounded-sm border border-[#6e361b]/40 px-5 py-2.5 font-sans text-[12px] font-medium uppercase tracking-[0.14em] text-[#6e361b] transition-colors hover:bg-[#6e361b] hover:text-white"
+                className="inline-flex items-center gap-1.5 rounded-sm border border-[#6e361b]/40 px-3.5 py-1.5 font-sans text-[10.5px] font-medium uppercase tracking-[0.13em] text-[#6e361b] transition-colors hover:bg-[#6e361b] hover:text-white"
               >
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.8">
+                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <path d="M12 3v11m0 0l-4-4m4 4l4-4" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M5 17v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2" strokeLinecap="round" />
                 </svg>
