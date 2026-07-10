@@ -39,25 +39,23 @@ const familyBathroomSink = suiteSrc('family/bathroom-sink-detail.webp')
 const familyBathroomAmenities = suiteSrc('family/bathroom-lalique-amenities.webp')
 const familyBathroomTowel = suiteSrc('family/bathroom-branded-towel.webp')
 const familyBathroomBathrobes = suiteSrc('family/bathroom-branded-bathrobes.webp')
-const juniorBedroomWideRecliner = suiteSrc('junior-partial-view/bedroom-wide-recliner-balcony.png')
-const juniorBedCenteredSymmetry = suiteSrc('junior-partial-view/bed-centered-branded-symmetry.png')
-const juniorBedHeadboardArch = suiteSrc('junior-partial-view/bed-headboard-arch-nightstand.png')
-const juniorBedroomWardrobeDetail = suiteSrc('junior-partial-view/bedroom-wardrobe-headboard-detail.png')
-const juniorBedroomArchPendants = suiteSrc('junior-partial-view/bedroom-wide-arch-pendants.png')
-const juniorBedroomWideDesk = suiteSrc('junior-partial-view/bedroom-wide-recliner-desk.png')
-const juniorBedroomFromEntrance = suiteSrc('junior-partial-view/bedroom-from-entrance-wide.png')
-const juniorBedroomFromEntranceWardrobe = suiteSrc('junior-partial-view/bedroom-from-entrance-wardrobe.png')
-const juniorBedroomAngledBalconyTv = suiteSrc('junior-partial-view/bedroom-angled-balcony-tv.png')
-const juniorBedroomTvDeskConsole = suiteSrc('junior-partial-view/bedroom-tv-desk-console.png')
-const juniorDressingDeskMirror = suiteSrc('junior-partial-view/dressing-desk-mirror-tv.png')
-const juniorBalconyChairSeaView = suiteSrc('junior-partial-view/balcony-chair-sea-view.png')
-const juniorBathroomWideCopper = suiteSrc('junior-partial-view/bathroom-wide-copper-shower.png')
-const juniorBathroomShowerVanity = suiteSrc('junior-partial-view/bathroom-shower-copper-vanity.png')
-const juniorBathroomVanityToilet = suiteSrc('junior-partial-view/bathroom-vanity-toilet-wide.png')
-const juniorBathroomVesselSink = suiteSrc('junior-partial-view/bathroom-vessel-sink-black-faucet.png')
-const juniorBathroomTowelsShelf = suiteSrc('junior-partial-view/bathroom-branded-towels-shelf.png')
-const juniorBathroomHairdryerMirror = suiteSrc('junior-partial-view/bathroom-hairdryer-mirror.png')
-const juniorBathroomBathrobe = suiteSrc('junior-partial-view/bathroom-bathrobe-porthole-window.png')
+const juniorPhoto1 = suiteSrc('junior-partial-view/501A0604.JPG')
+const juniorPhoto2 = suiteSrc('junior-partial-view/501A0601.JPG')
+const juniorPhoto3 = suiteSrc('junior-partial-view/501A0609R.JPG')
+const juniorPhoto4 = suiteSrc('junior-partial-view/501A0613.JPG')
+const juniorPhoto5 = suiteSrc('junior-partial-view/501A0618.JPG')
+const juniorPhoto6 = suiteSrc('junior-partial-view/501A0655.JPG')
+const juniorPhoto7 = suiteSrc('junior-partial-view/501A0654.JPG')
+const juniorPhoto8 = suiteSrc('junior-partial-view/501A0631.JPG')
+const juniorPhoto9 = suiteSrc('junior-partial-view/501A0633.JPG')
+const juniorPhoto10 = suiteSrc('junior-partial-view/501A0634.JPG')
+const juniorPhoto11 = suiteSrc('junior-partial-view/501A0632.JPG')
+const juniorPhoto12 = suiteSrc('junior-partial-view/501A0623R.JPG')
+const juniorPhoto13 = suiteSrc('junior-partial-view/501A0630.JPG')
+const juniorPhoto14 = suiteSrc('junior-partial-view/501A0650.JPG')
+const juniorPhoto15 = suiteSrc('junior-partial-view/501A0653.JPG')
+const juniorPhoto16 = suiteSrc('junior-partial-view/501A0646.JPG')
+const juniorPhoto17 = suiteSrc('junior-partial-view/501A0647.JPG')
 const standardViewBedroomWide = suiteSrc('standard-view-double/bedroom-wide-branded-bed.webp')
 const standardViewBedroomCentered = suiteSrc('standard-view-double/bedroom-centered-branded-bed.webp')
 const standardViewBedHeadboard = suiteSrc('standard-view-double/bed-headboard-nightstand-detail.webp')
@@ -367,80 +365,72 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorBedroomWideRecliner,
-        alt: 'Junior Suite bedroom with terracotta channel-tufted bed, green Guardamar pillows, recliner armchair and balcony with sea-view light',
+        src: juniorPhoto1,
+        alt: 'Junior Suite bedroom with terracotta channel-tufted double and twin beds, green Guardamar runner, arched alcove and balcony window',
       },
       {
-        src: juniorBedCenteredSymmetry,
-        alt: 'Junior Suite double bed centred beneath the arched alcove with Guardamar branded runner and green accent pillows',
+        src: juniorPhoto2,
+        alt: 'Junior Suite bedroom with terracotta beds, green accent pillows, wall-mounted TV and arched headboard niche',
       },
       {
-        src: juniorBedHeadboardArch,
-        alt: 'Junior Suite terracotta headboard within the plaster arch with green velvet pillows and a cane-front nightstand',
+        src: juniorPhoto3,
+        alt: 'Junior Suite beds centred beneath the arched alcove with gold Guardamar branded runner and green pillows',
       },
       {
-        src: juniorBedroomWardrobeDetail,
-        alt: 'Junior Suite white louvered wardrobe beside the terracotta headboard and Guardamar branded green pillow',
+        src: juniorPhoto4,
+        alt: 'Junior Suite seen from the entrance with terracotta beds, louvered wardrobe and wall-mounted TV',
       },
       {
-        src: juniorBedroomArchPendants,
-        alt: 'Junior Suite bedroom with terracotta bed beneath the plaster arch, twin rattan pendant lights and balcony',
+        src: juniorPhoto5,
+        alt: 'Junior Suite wooden desk and dressing corner with kettle, orange pouf and wall-mounted TV',
       },
       {
-        src: juniorBedroomWideDesk,
-        alt: 'Junior Suite bedroom with recliner armchair, balcony doors and a wooden desk console',
+        src: juniorPhoto6,
+        alt: 'Junior Suite nightstand detail with kettle and a warm woven pendant light beside the walnut wall',
       },
       {
-        src: juniorBedroomFromEntrance,
-        alt: 'Junior Suite seen from the entrance with the terracotta bed, louvered wardrobe and arched headboard wall',
+        src: juniorPhoto7,
+        alt: 'Guardamar Hotel & Spa branded bathrobe laid on the Junior Suite bed with green runner',
       },
       {
-        src: juniorBedroomFromEntranceWardrobe,
-        alt: 'Junior Suite from the entrance angle with terracotta bed, white louvered wardrobe and cane-front nightstand',
+        src: juniorPhoto8,
+        alt: 'Junior Suite private balcony with Mediterranean sea and rooftop views over Guardamar',
       },
       {
-        src: juniorBedroomAngledBalconyTv,
-        alt: 'Junior Suite bedroom angled toward the balcony with sheer curtains and a wall-mounted flat-screen TV',
+        src: juniorPhoto9,
+        alt: 'Junior Suite balcony with woven chairs and a wide Mediterranean sea view over the beach',
       },
       {
-        src: juniorBedroomTvDeskConsole,
-        alt: 'Junior Suite with wall-mounted TV, wooden desk console with kettle and terracotta upholstered bed',
+        src: juniorPhoto10,
+        alt: 'Junior Suite balcony with woven chairs, side table and Mediterranean sea view',
       },
       {
-        src: juniorDressingDeskMirror,
-        alt: 'Junior Suite wooden dressing console with kettle, large mirror reflecting the bed and wall-mounted TV',
+        src: juniorPhoto11,
+        alt: 'Junior Suite balcony with woven chairs beside the sheer-curtained French doors',
       },
       {
-        src: juniorBalconyChairSeaView,
-        alt: 'Junior Suite private balcony with a woven chair and partial Mediterranean sea view over the beach',
+        src: juniorPhoto12,
+        alt: 'Junior Suite bathroom with copper-toned tiles, backlit round mirror, vessel sink, glass shower and wall-hung toilet',
       },
       {
-        src: juniorBathroomWideCopper,
-        alt: 'Junior Suite bathroom with corner glass shower, copper-toned tiles, backlit round mirror and vessel sink',
+        src: juniorPhoto13,
+        alt: 'Junior Suite bathroom with walk-in glass shower, copper tiles, backlit round mirror and vessel sink vanity',
       },
       {
-        src: juniorBathroomShowerVanity,
-        alt: 'Junior Suite walk-in glass shower with copper tiles, black fixtures, Lalique amenities and vessel sink vanity',
+        src: juniorPhoto14,
+        alt: 'Close-up of the Junior Suite white vessel sink with a tall matte-black faucet and folded branded towels',
       },
       {
-        src: juniorBathroomVanityToilet,
-        alt: 'Junior Suite bathroom vanity with backlit round mirror, vessel sink, magnifying mirror and wall-hung toilet',
+        src: juniorPhoto15,
+        alt: 'Junior Suite backlit round mirror reflecting the copper-tiled walk-in shower',
       },
       {
-        src: juniorBathroomVesselSink,
-        alt: 'Close-up of the Junior Suite white vessel sink with a tall matte-black faucet on a stone counter',
+        src: juniorPhoto16,
+        alt: 'Junior Suite walk-in shower detail with copper tiles, black rain fixtures and premium Lalique amenities',
       },
       {
-        src: juniorBathroomTowelsShelf,
-        alt: 'Folded Guardamar Hotel & Spa branded towels on the stone shelf beneath the Junior Suite vessel sink',
-      },
-      {
-        src: juniorBathroomHairdryerMirror,
-        alt: 'Junior Suite wall-mounted hairdryer beside a backlit round magnifying mirror on beige stone tiles',
-      },
-      {
-        src: juniorBathroomBathrobe,
-        alt: 'Junior Suite Guardamar branded bathrobe hanging beside a round porthole window and towel ring',
+        src: juniorPhoto17,
+        alt: 'Junior Suite bathroom with wall-hung toilet, black fixtures and glass shower partition',
       },
     ],
     title: 'Junior Suite',
@@ -628,60 +618,72 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorBedCenteredSymmetry,
-        alt: 'Standard room partial view double bed centred beneath the arched alcove with Guardamar branded runner and green accent pillows',
+        src: juniorPhoto1,
+        alt: 'Standard room partial view bedroom with terracotta channel-tufted double and twin beds, green Guardamar runner and arched alcove',
       },
       {
-        src: juniorBedHeadboardArch,
-        alt: 'Standard room partial view terracotta headboard within the plaster arch with green velvet pillows and a cane-front nightstand',
+        src: juniorPhoto2,
+        alt: 'Standard room partial view bedroom with terracotta beds, green accent pillows, wall-mounted TV and arched headboard niche',
       },
       {
-        src: juniorBedroomWardrobeDetail,
-        alt: 'Standard room partial view white louvered wardrobe beside the terracotta headboard and Guardamar branded green pillow',
+        src: juniorPhoto3,
+        alt: 'Standard room partial view beds centred beneath the arched alcove with gold Guardamar branded runner and green pillows',
       },
       {
-        src: juniorBedroomFromEntrance,
-        alt: 'Standard room partial view seen from the entrance with the terracotta bed, louvered wardrobe and arched headboard wall',
+        src: juniorPhoto4,
+        alt: 'Standard room partial view seen from the entrance with terracotta beds, louvered wardrobe and wall-mounted TV',
       },
       {
-        src: juniorBedroomFromEntranceWardrobe,
-        alt: 'Standard room partial view from the entrance angle with terracotta bed, white louvered wardrobe and cane-front nightstand',
+        src: juniorPhoto5,
+        alt: 'Standard room partial view wooden desk and dressing corner with kettle, orange pouf and wall-mounted TV',
       },
       {
-        src: juniorBedroomTvDeskConsole,
-        alt: 'Standard room partial view with wall-mounted TV, wooden desk console with kettle and terracotta upholstered bed',
+        src: juniorPhoto6,
+        alt: 'Standard room partial view nightstand detail with kettle and a warm woven pendant light beside the walnut wall',
       },
       {
-        src: juniorDressingDeskMirror,
-        alt: 'Standard room partial view wooden dressing console with kettle, large mirror reflecting the bed and wall-mounted TV',
+        src: juniorPhoto7,
+        alt: 'Guardamar Hotel & Spa branded bathrobe laid on the Standard room partial view bed with green runner',
       },
       {
-        src: juniorBathroomWideCopper,
-        alt: 'Standard room partial view bathroom with corner glass shower, copper-toned tiles, backlit round mirror and vessel sink',
+        src: juniorPhoto8,
+        alt: 'Standard room partial view balcony with Mediterranean sea and rooftop views over Guardamar',
       },
       {
-        src: juniorBathroomShowerVanity,
-        alt: 'Standard room partial view walk-in glass shower with copper tiles, black fixtures, Lalique amenities and vessel sink vanity',
+        src: juniorPhoto9,
+        alt: 'Standard room partial view balcony with woven chairs and a Mediterranean sea view over the beach',
       },
       {
-        src: juniorBathroomVanityToilet,
-        alt: 'Standard room partial view bathroom vanity with backlit round mirror, vessel sink, magnifying mirror and wall-hung toilet',
+        src: juniorPhoto10,
+        alt: 'Standard room partial view balcony with woven chairs, side table and Mediterranean sea view',
       },
       {
-        src: juniorBathroomVesselSink,
-        alt: 'Close-up of the Standard room partial view white vessel sink with a tall matte-black faucet on a stone counter',
+        src: juniorPhoto11,
+        alt: 'Standard room partial view balcony with woven chairs beside the sheer-curtained French doors',
       },
       {
-        src: juniorBathroomTowelsShelf,
-        alt: 'Folded Guardamar Hotel & Spa branded towels on the stone shelf beneath the Standard room partial view vessel sink',
+        src: juniorPhoto12,
+        alt: 'Standard room partial view bathroom with copper-toned tiles, backlit round mirror, vessel sink, glass shower and wall-hung toilet',
       },
       {
-        src: juniorBathroomHairdryerMirror,
-        alt: 'Standard room partial view wall-mounted hairdryer beside a backlit round magnifying mirror on beige stone tiles',
+        src: juniorPhoto13,
+        alt: 'Standard room partial view bathroom with walk-in glass shower, copper tiles, backlit round mirror and vessel sink vanity',
       },
       {
-        src: juniorBathroomBathrobe,
-        alt: 'Standard room partial view Guardamar branded bathrobe hanging beside a round porthole window and towel ring',
+        src: juniorPhoto14,
+        alt: 'Close-up of the Standard room partial view white vessel sink with a tall matte-black faucet and folded branded towels',
+      },
+      {
+        src: juniorPhoto15,
+        alt: 'Standard room partial view backlit round mirror reflecting the copper-tiled walk-in shower',
+      },
+      {
+        src: juniorPhoto16,
+        alt: 'Standard room partial view walk-in shower detail with copper tiles, black rain fixtures and premium Lalique amenities',
+      },
+      {
+        src: juniorPhoto17,
+        alt: 'Standard room partial view bathroom with wall-hung toilet, black fixtures and glass shower partition',
       },
     ],
     title: 'Standard room partial view',

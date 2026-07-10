@@ -26,9 +26,9 @@ const OG_HEIGHT = 630
 const ROOM_SOURCES = {
   presidential: 'presidential/501A0809.JPG',
   family: 'family/bedroom-wide-orange-headboard.webp',
-  junior: 'junior-partial-view/bedroom-wide-recliner-balcony.png',
+  junior: 'junior-partial-view/501A0604.JPG',
   'standard-view-double': 'standard-view-double/bedroom-wide-branded-bed.webp',
-  'standard-partial-double': 'junior-partial-view/bed-centered-branded-symmetry.png',
+  'standard-partial-double': 'junior-partial-view/501A0609R.JPG',
 }
 
 /** Hero image for the `/suites-rooms` listing card. */

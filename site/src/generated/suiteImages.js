@@ -91,119 +91,107 @@ export default {
     "height": 851,
     "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBdgBFIus0+KON2nWaoAAPl5rRVgB4Ifq8JB43mRaz96tSneClp6J3l3xkz/R6jyqsVM/YwRAsGjKEnYxs5SpH/iBmyreY8r3Yyf0t4sfNdKw72jQsAiW5PyKaKCYSno2jwHvlqjADxXfhGLr4m8piIIAA=="
   },
-  "junior-partial-view/balcony-chair-sea-view.png": {
-    "src": "/suites/junior-partial-view/balcony-chair-sea-view.webp?v=30720519",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAAAwBACdASoYABAAPu1mqk4ppaOiMAgBMB2JQBOgA9EwATrJZFY3C0bdoiAA/oZTpa+8fJLoXKIwvHP+SYYWl5spN7Vh4V/0f7G46IyFr5Rm5X1G2GY7sV1ToRiKRIS+ZR9ilc2JPACmz6ZAVuSzHgfFTAA="
+  "junior-partial-view/501A0601.JPG": {
+    "src": "/suites/junior-partial-view/501A0601.webp?v=682b16d9",
+    "width": 2200,
+    "height": 1468,
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAACQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBWAA1jc6awvt7wgAPcfHK3vBIQ5xhaAU4+nAiQO80qm4ELzZ7qebTtGIa5+q6J+vpvm1XRCH7UNx5yZ9hB/UUTV91sEDgzByUz0swq2k27rb/Innv53/cD5jtDKeopBYPrKkhSslCAA"
   },
-  "junior-partial-view/bathroom-bathrobe-porthole-window.png": {
-    "src": "/suites/junior-partial-view/bathroom-bathrobe-porthole-window.webp?v=0f10393b",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOgAxW1PTfQeT+nxsAA+/G50vt/9jP3QXmsp7zfrRT079JF+BV2bbFt15VDIyCS4Xb9RHHeAdrmpIcteN03+gY1zq0KL8OP264AAAA="
+  "junior-partial-view/501A0604.JPG": {
+    "src": "/suites/junior-partial-view/501A0604.webp?v=066f806c",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADwAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JZACdMoABXTZnrEehH+HYAP6Yc+L0bnbQNEEQyC3J4dZLvVvEoJBgxnBhN4WPd54jMSIm/SSfYsbt2SpyyHwE6OJNO9d2LbGXa1UKajyazUbYmjFyjgL7TjTTyUuMB+TBE4NAV+cCmkxqTddvvivcWODVFzbD+GPDsFjYxtB9FCYTHFiI+nQROecZPCzNqAA="
   },
-  "junior-partial-view/bathroom-branded-towels-shelf.png": {
-    "src": "/suites/junior-partial-view/bathroom-branded-towels-shelf.webp?v=49e51e71",
-    "width": 851,
-    "height": 1280,
-    "placeholder": "data:image/webp;base64,UklGRqIAAABXRUJQVlA4IJYAAABwBACdASoQABgAPu1iqU2ppaQiMAgBMB2JQBOmUABbIKHGr8he91z/HflsAAD8/9FEJS84LhdNOZl/5kYpgB9Vph5H5SrAN8/1u4GSf+kGD3MDpNu/YJb25RCuoEzM25NXWlpDGrLjOpryTv8++5nuGcuUbS6emQEodd5PQAS6bhr6wvuJSVVXqUY4VTwFLgDEyrx7AAA="
+  "junior-partial-view/501A0609R.JPG": {
+    "src": "/suites/junior-partial-view/501A0609R.webp?v=60b05189",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JZgCdMoHgAFPmLwyiFSSfKK22BQc94AD8xt+dP/0COsIGe+O07FBlNLwmQerZlItd178SvHJu4Pgh1MDkvqHWevJqq99ftP7kM8+gwOZdh3ysjcX655v0z79kuhyVMldTrT6ubblfeu8WiAs7uGV+UO58Mr9EzEln1aVuBrrqCt0XjVN/NQ6zTqUYEo/Z4bju7E4ewAAAAA=="
   },
-  "junior-partial-view/bathroom-hairdryer-mirror.png": {
-    "src": "/suites/junior-partial-view/bathroom-hairdryer-mirror.webp?v=02058aab",
-    "width": 851,
-    "height": 1280,
-    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAQBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBWABD0nyE7ljYYIoMSuAAD9wmy5zs/h3iMZsVltWUytQpTPV1v8NnRc0rVO1uworRQVG4demGvIi4dFvetFAwTT088Lb2GIEuZSEnjF0nKSvp6H1jDXrnDpVKurLy8neDAA"
+  "junior-partial-view/501A0613.JPG": {
+    "src": "/suites/junior-partial-view/501A0613.webp?v=9fb83f7b",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JbACxG11s/xbCbE6sVksWI4KM9TCatADftl03uKCNjKkDKQUyDyGpi87kWWky6/C9KD82yJPPTzXPES7ie5p5FqWh21W4NE/3ZlQKMhpVsdYEWv2J/k17qis4O77KRBfrPFP22JH/EDNAQymjwMubRiar6vnyXcd+H4MG5weyyu2acopChvXwe8GfPuAAAAA="
   },
-  "junior-partial-view/bathroom-shower-copper-vanity.png": {
-    "src": "/suites/junior-partial-view/bathroom-shower-copper-vanity.webp?v=d37b126f",
-    "width": 851,
-    "height": 1280,
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JQBYdgx5BfBj7peusZlt5KgAA/kQoheJSpnUNRWnE4CEVM58jxtQ7+wdfW24nJJ47qgyAvSxYk9xHk726g3CUfz79S1baD7G5dtof6LpKGvcCcMlrY91hp/Em+/Q+prTuxtgwyZaibKvdPts+meKqV0AAAA=="
+  "junior-partial-view/501A0618.JPG": {
+    "src": "/suites/junior-partial-view/501A0618.webp?v=0b62991b",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAADQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoR3Ff/gM2oA/YXjHvw+J6UAAAD+qlOXmfyl7Cv9X6TtwGeTn1/vkgqVwONTl/5trEWPtopKzTv2Qh5n918U+u75YFqyYMwxaI3sNVv9qcm+xnah6RqSF/vafTGpqS0el/4HJ7RAqibZusXfnvMQGAGliHMPZRK6P3ojPqt9E4dHukX0/1VJxqjlYjzFz8KAxnG4ckE+AAA="
   },
-  "junior-partial-view/bathroom-vanity-toilet-wide.png": {
-    "src": "/suites/junior-partial-view/bathroom-vanity-toilet-wide.webp?v=17c713c8",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOgA4mZcscTIofU2P0fcjwAAP7qU4wy7sQ8FirLIm17llWMyNZ4UK/5cF0bMPpXKyMepTif75XVzX5eMcJTkk2uwlFvcOXT01xT1THBjv+0qGS/sHDqfF6RoEip3LMabB/iHT+KfOZOc8Pzgy3JGJwAAA=="
+  "junior-partial-view/501A0623R.JPG": {
+    "src": "/suites/junior-partial-view/501A0623R.webp?v=3abcd23c",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdMoR2WB5ojlOm2JYGmiOAAP5x5bq9yuYU2cGDyxKX1XFCTxAYjB4HjTplWa6QOCdQrVHtAFTueWnMeVrZcKmoWdud/x+L+xGHiBcU1o0qN7m++c0XjqfM9/CZ89hbzcpuFnoIftJTxYAAAA=="
   },
-  "junior-partial-view/bathroom-vessel-sink-black-faucet.png": {
-    "src": "/suites/junior-partial-view/bathroom-vessel-sink-black-faucet.webp?v=f16fa6e9",
-    "width": 851,
-    "height": 1280,
-    "placeholder": "data:image/webp;base64,UklGRoQAAABXRUJQVlA4IHgAAAAwBACdASoQABgAPu1iqU2ppaOiMAgBMB2JZgCdMoR3ABdaRIp2qtdQ8QAA/RNMc7LQzANWJz7GLP09cZwUTaIvI6WD9I2FzsbyK+hAzRUAEkoSeAtth7GpUspVLsH4BG04QTnMlQkA2ZCnzQC/t/ouFYsRcPAAAAA="
+  "junior-partial-view/501A0630.JPG": {
+    "src": "/suites/junior-partial-view/501A0630.webp?v=c537bd5e",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAACQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JagCdMoRwACWJjlLV6VzRwj3GgwAA/uN9U6Zi2PU8GOGm2lERdjjlzX19p4ol4urCoSx7zXNO2XfhmDmGe75n397zaHPrFMOlM91MmM4TPBqlw+EHo/9RIXg3tbwZXF5ABV8KgwlZcnSiqlvCqX+fUgtKE0xCUGKp5Z3I3z3iGdEWWgAAAA=="
   },
-  "junior-partial-view/bathroom-wide-copper-shower.png": {
-    "src": "/suites/junior-partial-view/bathroom-wide-copper-shower.webp?v=1802211e",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUI8H0AawJn8VV5VlOqPz5BIEAP3vNKER3fpqthVV8iX56FsPgtUDogNxBcEHrdZ3208QqKwRyncSBshysKqbP6Q3sCs2UAbju3ARLfre9XazR8ELmYrWnCaM141yYUq3P3tQLz5iDV6D5ZXms/xmiV1+ijVtwN0wKhOQjm4A"
+  "junior-partial-view/501A0631.JPG": {
+    "src": "/suites/junior-partial-view/501A0631.webp?v=fffa6b72",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAABQBACdASoYABAAPu1iqk4ppaQiMAgBMB2JQBOmUGYwCHpt4V7GvJeky/cAAP6DvwdZIiN3MVth6KR/cetWwCFfvr6D5H6LBvPax7/FBGxAWzaH0qmfkT5+Bp4KjSv/w1ENhAlxA8ukvEDd3Ggt3st6lNO2DpgQBNaoDw+MB1k9BzJPXMAAAA=="
   },
-  "junior-partial-view/bed-centered-branded-symmetry.png": {
-    "src": "/suites/junior-partial-view/bed-centered-branded-symmetry.webp?v=61f5691f",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAQBACdASoYABAAPu1kqU2ppaQiMAgBMB2JQBOgA2bR/pHGdK6zFE2rQAD3rquPt/F0wTPUKOuJBdQbz/Bchz835pF9s6I7eCcb0hISSfC0iEEJwurECgWmFFEO8C2ahLwQDJ922VGbESOLakVrA6iNT18RDvljPb4pJf7ltSGLNThzZRQAAA=="
+  "junior-partial-view/501A0632.JPG": {
+    "src": "/suites/junior-partial-view/501A0632.webp?v=0c5f4c9f",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUABpniMC8w9QiMnshwAA/rTI6d0WyXD11TMVSfmI6euyhgF7XW5TfpubWqL1cuW8gbe04NteJNcyWNish02/iozSiwkpE5GBgJg+7UUyLjzhPyoBgSTxgC7aH36PbQuAAAA="
   },
-  "junior-partial-view/bed-headboard-arch-nightstand.png": {
-    "src": "/suites/junior-partial-view/bed-headboard-arch-nightstand.webp?v=4ba42277",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQBACdASoYABAAPu1iqk2ppaQiMAgBMB2JQBOmUGMHJ/AXloTm3WMFCvwfFmdAIADKebYAaNRyiMKcISdRNW9l/VzASN5d4Qdd3WSN0gLM8lNBCct/3YyWsC9xMPiwKD34oDssW+WGrXeudPb0jpNKzDvLjn9mP9PO5qDhJoKh1AZtDCACly02dstiAAAA"
+  "junior-partial-view/501A0633.JPG": {
+    "src": "/suites/junior-partial-view/501A0633.webp?v=a536a207",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpwAAABXRUJQVlA4IJAAAABQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JZgCdMoR4GCm8MZz7xyVcRGFgAP6ML4Ecl6dE8/acdCrINgFNwpclYFDHWXjTZx+p3na7nsshmVhPJ0tsndtdtvnAWrqwvzfRrJRTnGcDXcrQqSJ5JmKQq3sGarlaSsAV7Ku/0lNF08t1I02uOeb4c1fO9hIDAAA="
   },
-  "junior-partial-view/bedroom-angled-balcony-tv.png": {
-    "src": "/suites/junior-partial-view/bedroom-angled-balcony-tv.webp?v=be7cc4ae",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdBagBdA1pKMXoXeMWlX8fgGAA7joyYTFjqQP78PGgOw1BEETK6XzRZz8vb3J4IoUn+r3ljc56/GvI2nIl5ZQk2JYEgb8nXaRFqk3igEteTF6atWeXeJMvXSh4TTkhVZs/KBZ3wgMR7NVEy3S0fyLWm8/j9JTEMsuvtO+UW5SnDp0s2v1OAAA="
+  "junior-partial-view/501A0634.JPG": {
+    "src": "/suites/junior-partial-view/501A0634.webp?v=f5652da8",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAwBACdASoYABAAPu1iqU2ppaQiMAgBMB2JZACdEf/gJ5HfOV/vk44zHwAA/F2bjfIek8BfNWllUMeZ7/mzH0UD9cx4SH8V2vaU+1ZFxNczYjMTdOQBsd5LjyMgjoGaf5j7KH9JalmSFxzlkql2onnEr6Y8+WtruUONqmGB5Bj9q1qBwHEIAAAA"
   },
-  "junior-partial-view/bedroom-from-entrance-wardrobe.png": {
-    "src": "/suites/junior-partial-view/bedroom-from-entrance-wardrobe.webp?v=2bcaf9c2",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAAAQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdABnywE4YwwBw/TFEwAD+PZyJdi+RQZNkD8S+INAr8EWwkLWpRsEPlvbZUtY35NqMn6szQEcVVY3oOhrhaJ1SxZQIHSwZ9r3/zmVYEGEFvgDFBVSVDqz5iAmo2M/NreOSDgLDxD0ddjOhTSvuAAA="
+  "junior-partial-view/501A0646.JPG": {
+    "src": "/suites/junior-partial-view/501A0646.webp?v=3941820c",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoYABAAPu1kqU2ppaQiMAgBMB2JZACdMoRwACG2NzELj2AA4h4xxu9TkRfDVdOQUWZ+DFm8CtiLFzH6Vr5B3RmAON7l3mP0qmf5KWPR75QBF0nOZn7A2Q99UiHbAfK4yH2FPEsQVvBZgs3SAAA="
   },
-  "junior-partial-view/bedroom-from-entrance-wide.png": {
-    "src": "/suites/junior-partial-view/bedroom-from-entrance-wide.webp?v=2b85bb52",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAADQAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JZgCdAAf89Ifzy3O/5uAA9q9iMnWSmcyCPwkOEXIhCin98smPfZ5moGcm7hTVPYxDV+30V3MiRgEiLx55THXGlN4mkI7MKfIUv0dN4dJvMdzOIedKJw2c4fG9/6nPsJODQNj6Pof5OIBmGB6iGofs2IGXdwAA"
+  "junior-partial-view/501A0647.JPG": {
+    "src": "/suites/junior-partial-view/501A0647.webp?v=9fdfecc0",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQDE2BRPzLKDLWj1AAD+05aN/hCsSyAWZWWGB6eaSeVzag2hVpn3ReMisCoSrgUDzQZ0nTShtNTPf+tKk4HQU8pkd9Ugte81XZywBfjXw9P92vewgAAA"
   },
-  "junior-partial-view/bedroom-tv-desk-console.png": {
-    "src": "/suites/junior-partial-view/bedroom-tv-desk-console.webp?v=a6ec90c0",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdMoCGABpAUwlw8ImXXMxP94AA/p/t2FcTtSBRfUYHjAlsENx2c/4NrmcPA6dY4SUk3REgw6x4tmK2s9YnJGdHvj7G9wfhD7os15oFZGb8cFYcN3/mOYlrUyyzTVx3ghygyIn73F3Cz33Wz3alSGAPglRM3tOee8IOCmhVm6n3vForCfYJ0KOAAA=="
+  "junior-partial-view/501A0650.JPG": {
+    "src": "/suites/junior-partial-view/501A0650.webp?v=c70ddcc4",
+    "width": 2200,
+    "height": 1466,
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgC7ACIj4xWisUVUU2hoxI8AAP6//yklEJMnMA5JT8ZuSg4aqIYAW6BTf9YEa/XuHuW0JVTpCNQPPtP/jXQUfsCqzn//4R6tGh49+rMYk5UJ08REFlKjYXih/mUfq0YQx4TAAAA="
   },
-  "junior-partial-view/bedroom-wardrobe-headboard-detail.png": {
-    "src": "/suites/junior-partial-view/bedroom-wardrobe-headboard-detail.webp?v=d7e87fc1",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JQBOmUI7gBJPiNNlV6MdXOkUAAPegFBFRFNwWPCMsRv+h4jLjxpoVCAobRGrf5pXAkIeyIpfKZxs/WoU0Lm711Dy8af9ocaB3TQN9yN3IykJ1//uWS3Upv+SEZbHYIf/nyAGzOZ1bVS70ZGaQ4gAA"
+  "junior-partial-view/501A0653.JPG": {
+    "src": "/suites/junior-partial-view/501A0653.webp?v=d971de2d",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRo4AAABXRUJQVlA4IIIAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdMoADYtMi/q1qvo5vyc4DAAD+7AjiU9ZSvdOID2wXgtLvCSn4jAOmZnKpWlPe2YrZens8kutiuZCboqbvq5OsBK7ES7RjMfqgNTi84EH0ak2Ejac0+riKr0IJ2Q3Tz3HpdqzTRKAA"
   },
-  "junior-partial-view/bedroom-wide-arch-pendants.png": {
-    "src": "/suites/junior-partial-view/bedroom-wide-arch-pendants.webp?v=29d02abd",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAACQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JaACdMoAC+5ivwrpxL4Vb3mw0cwAA+5IwnFZnjvx40PbtpcpnNvL4RhTTAanVtT4M3BpCFy0smZtpCmg5TpFZg17Qd3m1mRn4pzP2KKuQoHkegl5I1Or65EhRvDZNCcVZkrLFoM1Ae4CZiZDrGyQja7EYnfdpc6U4AAAA"
+  "junior-partial-view/501A0654.JPG": {
+    "src": "/suites/junior-partial-view/501A0654.webp?v=dac912ba",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoADg83ZZeoHcRu3IQAA/d0bMS9XCxudB95179LTnZhaOxrQ/gy6h9s0QOlsapHT04BhRIrbRajscKDvAnas+3AMa4OTWD71vmAvGVTABT+Dp7d3F1gmyTwrMPVOBUp/Ccm5AO/sXCA6gUOg+QDgli6aeycjYesTmhZAAA=="
   },
-  "junior-partial-view/bedroom-wide-recliner-balcony.png": {
-    "src": "/suites/junior-partial-view/bedroom-wide-recliner-balcony.webp?v=afa7313e",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdMoR3ACHjxi1fHYRMAqJWoADNwGfobO0m6cJ/amHp4DeGJWJ4dbpeZwHHlg9Q/5YVomLKS8cJeBbYZn1hDQ5y9fpF1DJffMTf0doRUN+4/II7c4mrUdmg16agA2gCyaz4pi3VSGeM4uIcDRP5F6bEdHuE/mkWeEX9LbaC599W4kpRWs+AAAA="
-  },
-  "junior-partial-view/bedroom-wide-recliner-desk.png": {
-    "src": "/suites/junior-partial-view/bedroom-wide-recliner-desk.webp?v=46a93147",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAABwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoADf+pw0lLzSF728ggdgAD2lviaPJO8RNkMlbfo7obbhe9qO4c80HAM5b6AakwGB8yTVRO+AMGgfg7bm43lBqvVuI3brTCjdSOBYdZJr1zlPrehZoN/6klx7aZ05wS4QziwuF0tqDH8Qkjb0Xs35aX+bZLvO48CpvF2JhSE8GriNpeUQ4lJfFKwRNWnOv+DmkOMAA=="
-  },
-  "junior-partial-view/dressing-desk-mirror-tv.png": {
-    "src": "/suites/junior-partial-view/dressing-desk-mirror-tv.webp?v=ae2791a6",
-    "width": 1280,
-    "height": 851,
-    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAAAwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdABxt5WnVgskLwi/NgmAA+uThWIgZcR5B+CiMJGRUtJ3Btp9igG8zptXGoCk9XWWgiO4PIUBYP/Hbra6m/ZDmzkIOOLXydBud/BfBhASeFhwyzuZwvOwI6nqxkMn8yPNYEZGvCXTFGaoLwMMNcckEWsF3o94ceCuNGnewAAAA"
+  "junior-partial-view/501A0655.JPG": {
+    "src": "/suites/junior-partial-view/501A0655.webp?v=c20a4d0c",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZgCdMoADT7VZm+fo6LN4AM4/i4SPVruy6o2SPLH7RlL+yhwb+myiiEJP0ezNnAgnP/fbhxEIKuBk6XsY95tRn7dR4Gl104WjGBaQ3TNVFD1uFe3mtemwAAA="
   },
   "presidential/501A0764.JPG": {
     "src": "/suites/presidential/501A0764.webp?v=b600ab0f",
