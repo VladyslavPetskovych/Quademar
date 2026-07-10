@@ -27,7 +27,7 @@ const ROOM_SOURCES = {
   presidential: 'presidential/501A0809.JPG',
   family: 'family/bedroom-wide-orange-headboard.webp',
   junior: 'junior-partial-view/501A0604.JPG',
-  'standard-view-double': 'standard-view-double/bedroom-wide-yellow-bed.jpg',
+  'standard-view-double': 'standard-view-double/bedroom-wide-sea-view-red-bed.jpg',
   'standard-partial-double': 'standard-view-double/bedroom-centered-twin-pendants.jpg',
 }
 

@@ -331,6 +331,18 @@ export default {
     "height": 768,
     "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADwAwCdASoQABgAPu1iqU2ppaOiMAgBMB2JQBOgMZURkzG2A93Jy6UYAPV2ZDVuZ9KBjwQuHQmeHIehwKIS2GwZ092Oi7KS2UvAjdHFUfpQrxgFvEmSOVEfqR9Ex2vG/To7+00ojGEeP3Fe+wvNxOY/1DiviPI8zJDx+ZIjsT7WYjAXxJocrRiAAAA="
   },
+  "standard-view-double/bed-foot-branded-linen.jpg": {
+    "src": "/suites/standard-view-double/bed-foot-branded-linen.webp?v=7dea120e",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdAYwI5EvYU/bF8VlTPoshYZAA/tzrlgSds4yVX40gmXXdWpC+p6AL35pC+w07r+D0augUPLGEnB+mDUE3Tf8XqkkN0B84v0ECvDP6snp0pI+/CbeQIDO8Z8cNgQOTvTlJz08oFwokTbxVrXlcT33MfW4mI+akQFo8dMTrNPOeIyuK6IO0JYRt3Fnx5AA="
+  },
+  "standard-view-double/bed-roses-green-pillow-detail.jpg": {
+    "src": "/suites/standard-view-double/bed-roses-green-pillow-detail.webp?v=f1292da3",
+    "width": 1467,
+    "height": 2200,
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAAAQAwCdASoQABgAA4BaJbACdMoC4AByvZg40zvQqcpnLWAA/SptMoF6GjGbGKMV4c4FwxkrpX7C+Euff7F/0t+nB3NJZcj8OcpiT9Na5htfFJnSpb6OmDVFQ4CuiSOUcdqZDR/9yhaXu/3+ujmtv6HKCItoKztsL6gHdmTg20T2XlTPKEs8t8AA"
+  },
   "standard-view-double/bedroom-centered-twin-pendants.jpg": {
     "src": "/suites/standard-view-double/bedroom-centered-twin-pendants.webp?v=82037e8e",
     "width": 1024,
@@ -342,6 +354,12 @@ export default {
     "width": 1024,
     "height": 681,
     "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JbACdMoC4AAwBFuEUa68l6e6JqADdiGi6kG6tDK/lX8x/JwmIQUY34YRZ5lAzYRsX/5mSU9cQ2gNyxiJBiAaVVRm2Z9CKQRN2Fd0tPlfcaZBKtUG/ypXoLQCJqaRn3SDCrNgEFmh8JlIBa1yoMMaPXyHHNO5kNT1osgxZRmZovNYcYVDyAYcAAAA="
+  },
+  "standard-view-double/bedroom-wide-sea-view-red-bed.jpg": {
+    "src": "/suites/standard-view-double/bedroom-wide-sea-view-red-bed.webp?v=8f1cd5f0",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRrQAAABXRUJQVlA4IKgAAACwBACdASoYABAAPu1iqU2ppaOiMAgBMB2JYgCdAYyU5TNP0d464x1OZkfIarpoAP38bEjaE3L2ieY/hY8qDjeYlckoUwHq/MnlIjJ0eeJcP2jeb1a1AE5oAO1yjXUzPi68bnGw6MS5cZ2xgn4IPzHKgn9xEsvnyBaQNq3xjN5gDfqfKPXd97FjgiR/XfSx1Vex4lrla9vK0vYx8vpVS3V9sNI/W/gAAAA="
   },
   "standard-view-double/bedroom-wide-yellow-bed.jpg": {
     "src": "/suites/standard-view-double/bedroom-wide-yellow-bed.webp?v=69f15214",
@@ -360,5 +378,11 @@ export default {
     "width": 1024,
     "height": 683,
     "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCdAB9Gone2PZnUykSgAK7LAy4Mkbqm/wMlLJQQ9nZumq3mpH1JJPxfw0RLWb69J5px3uQoh65VE45hduEXoBgAAA=="
+  },
+  "standard-view-double/green-branded-pillows-detail.jpg": {
+    "src": "/suites/standard-view-double/green-branded-pillows-detail.webp?v=f89a8a36",
+    "width": 2200,
+    "height": 1467,
+    "placeholder": "data:image/webp;base64,UklGRsgAAABXRUJQVlA4ILwAAACQBACdASoYABAAPu1iqU2ppaQiMAgBMB2JaACdL144ACRDCZjicOi49/M92WYA/OVMAbDSPd3mY08z8PjCRsGJ+tqfwE/d6iIZnjWPH1Cpk7JujkQTQaI/Ibj98nX06wMNSNDo4SGg2A5KCFT2a2QS8+55NtKd3iknTntaHjJGWieib7d7eAIUppv2p5uv1WZ8xLDuSex2JzmtAJae/BKMEqp0Jky/G4ps/8BxTwCAq/8Q5xqzCkI8sAUcAA=="
   }
 }

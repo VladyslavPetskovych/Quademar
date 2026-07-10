@@ -62,6 +62,10 @@ const standardViewPhoto3 = suiteSrc('standard-view-double/bedroom-centered-twin-
 const standardViewPhoto4 = suiteSrc('standard-view-double/bedroom-desk-dressing-corner.jpg')
 const standardViewPhoto5 = suiteSrc('standard-view-double/branded-towel-detail.jpg')
 const standardViewPhoto6 = suiteSrc('standard-view-double/bathroom-green-tiles-shower.jpg')
+const standardViewSeaWide = suiteSrc('standard-view-double/bedroom-wide-sea-view-red-bed.jpg')
+const standardViewBedFoot = suiteSrc('standard-view-double/bed-foot-branded-linen.jpg')
+const standardViewRosesDetail = suiteSrc('standard-view-double/bed-roses-green-pillow-detail.jpg')
+const standardViewGreenPillows = suiteSrc('standard-view-double/green-branded-pillows-detail.jpg')
 
 /**
  * Suite / room listings in page order. Alternating layout: `reverse: false` = photo left,
@@ -494,6 +498,22 @@ export const ROOM_CATEGORIES = [
     id: 'standard-view-double',
     reverse: true,
     images: [
+      {
+        src: standardViewSeaWide,
+        alt: 'Standard room with view bedroom with terracotta upholstered bed, green Guardamar runner and pillows, twin woven pendants and a balcony with Mediterranean sea view',
+      },
+      {
+        src: standardViewBedFoot,
+        alt: 'Standard room with view double bed from the foot with gold Guardamar Hotel & Spa branded linen, green runner and green accent pillows',
+      },
+      {
+        src: standardViewRosesDetail,
+        alt: 'Standard room with view bedside detail with fresh pink roses, terracotta headboard, green Guardamar pillow and woven pendant light',
+      },
+      {
+        src: standardViewGreenPillows,
+        alt: 'Two green Guardamar Hotel & Spa embroidered accent pillows on the Standard room with view bed',
+      },
       {
         src: standardViewPhoto2,
         alt: 'Standard room with view bedroom with mustard-yellow bed, green accent pillow, wall-mounted TV and white louvered wardrobe',
