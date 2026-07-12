@@ -1,11 +1,11 @@
 import { Fragment } from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import aristoLogo from '../assets/logo/royal_green/aristo.webp'
+import aristoLogo from '../assets/logo/aristo-restaurant.webp'
 import { CONTACT } from '../config/site'
 import { useDailyMenu } from '../hooks/useDailyMenu'
 import { useLanguage } from '../i18n/LanguageContext'
-import { oliveBranchSvg } from '../lib/menuDecor'
+import { oliveBranchSvg, oliveSprigSvg } from '../lib/menuDecor'
 import { printMenu } from '../lib/menuPrint'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
@@ -19,7 +19,16 @@ const fadeUp = {
   }),
 }
 
-const branchHtml = oliveBranchSvg({ color: '#7f8d6f', opacity: 0.55 })
+const branchHtml = oliveBranchSvg({ color: '#7f8d6f', opacity: 0.5 })
+const sprigHtml = oliveSprigSvg({ color: '#7f8d6f', opacity: 0.9 })
+
+/** Shared dotted-rule fill (radial dots), used by the plain and ornamented dividers. */
+const dotFill = {
+  backgroundImage: 'radial-gradient(circle, rgba(110,54,27,0.34) 1.3px, transparent 1.6px)',
+  backgroundSize: '9px 3px',
+  backgroundRepeat: 'repeat-x',
+  backgroundPosition: 'center',
+}
 
 /** Pick the localized string from a bilingual `{ en, es }` value (or pass a plain string through). */
 function pick(value, locale) {
@@ -28,34 +37,33 @@ function pick(value, locale) {
   return value[locale] || value.en || value.es || ''
 }
 
-function DottedDivider({ className = '' }) {
+/** Dotted rule with a small olive-sprig motif at its centre. */
+function OrnamentDivider({ className = '' }) {
   return (
     <div
-      className={`mx-auto h-[3px] w-full max-w-[280px] ${className}`}
-      style={{
-        backgroundImage: 'radial-gradient(circle, rgba(23,20,18,0.32) 1.3px, transparent 1.6px)',
-        backgroundSize: '9px 3px',
-        backgroundRepeat: 'repeat-x',
-        backgroundPosition: 'center',
-      }}
+      className={`mx-auto flex w-full max-w-[300px] items-center justify-center gap-3 ${className}`}
       aria-hidden="true"
-    />
+    >
+      <span className="h-[3px] flex-1" style={dotFill} />
+      <span className="w-[36px] shrink-0" dangerouslySetInnerHTML={{ __html: sprigHtml }} />
+      <span className="h-[3px] flex-1" style={dotFill} />
+    </div>
   )
 }
 
 function MenuSection({ title, items, index, orLabel }) {
   return (
     <motion.article className="text-center" variants={fadeUp} custom={index}>
-      <h2 className="font-script text-[34px] leading-[1.15] text-[#9a8d80] md:text-[40px]">{title}</h2>
-      <ul className="mt-2">
+      <h2 className="font-script text-[35px] leading-[1.15] text-[#8f8274] md:text-[42px]">{title}</h2>
+      <ul className="mt-2.5">
         {items.map((item, i) => (
           <li key={i}>
             {i > 0 && (
-              <div className="my-0.5 font-cormorant text-[15px] italic leading-tight text-[#9a938c]">
+              <div className="my-1 font-cormorant text-[14px] italic leading-tight text-[#a1988d]">
                 {orLabel}
               </div>
             )}
-            <div className="font-cormorant text-[18px] leading-relaxed text-[#33302c] md:text-[19px]">
+            <div className="font-cormorant text-[19px] leading-[1.6] text-[#2b2622] md:text-[20px]">
               {item}
             </div>
           </li>
@@ -119,7 +127,7 @@ export default function MenuPage() {
           <>
             {/* Menu card, framed like the printed menu */}
             <motion.div
-              className="relative mt-8 overflow-hidden rounded-sm border border-[#171412]/12 bg-[#faf7f0] px-6 py-10 md:mt-9 md:px-14 md:py-12"
+              className="relative mt-8 overflow-hidden rounded-sm border border-[#171412]/12 bg-[#faf7f0] px-6 py-10 shadow-[0_18px_50px_-30px_rgba(23,20,18,0.5)] md:mt-9 md:px-14 md:py-14"
               variants={fadeUp}
               initial="hidden"
               whileInView="visible"
@@ -137,35 +145,46 @@ export default function MenuPage() {
                 className="pointer-events-none absolute -bottom-7 -right-9 w-36 -rotate-[52deg] md:w-48"
                 dangerouslySetInnerHTML={{ __html: branchHtml }}
               />
-              {/* Corner brackets */}
+              {/* Inner hairline frame */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute bottom-4 left-4 h-9 w-9 border-b border-l border-[#6e361b]/30"
+                className="pointer-events-none absolute inset-[10px] rounded-[2px] border border-[#6e361b]/15 md:inset-3"
+              />
+              {/* Corner accents on the inner frame */}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute bottom-4 left-4 h-8 w-8 border-b border-l border-[#6e361b]/35 md:bottom-5 md:left-5"
               />
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute right-4 top-4 h-9 w-9 border-r border-t border-[#6e361b]/30"
+                className="pointer-events-none absolute right-4 top-4 h-8 w-8 border-r border-t border-[#6e361b]/35 md:right-5 md:top-5"
               />
 
               <div className="relative">
                 {/* Logo */}
                 <img
                   src={aristoLogo}
-                  alt="Aristo"
-                  className="mx-auto h-16 w-auto md:h-[76px]"
-                  width="152"
-                  height="152"
+                  alt="Aristo Restaurant"
+                  className="mx-auto h-auto w-[228px] md:w-[286px]"
+                  width="300"
+                  height="110"
                 />
                 {/* Date */}
-                <h1 className="mt-4 text-center font-cormorant text-[26px] font-normal uppercase leading-none tracking-[0.14em] text-[#171412] md:text-[30px]">
+                <h1 className="mt-5 text-center font-cormorant text-[26px] font-normal uppercase leading-none tracking-[0.16em] text-[#171412] md:text-[30px]">
                   {dateLabel}
                 </h1>
+                {/* Header flourish */}
+                <span
+                  aria-hidden="true"
+                  className="mx-auto mt-4 block w-[54px]"
+                  dangerouslySetInnerHTML={{ __html: sprigHtml }}
+                />
 
                 {/* Courses */}
-                <div className="mx-auto mt-8 flex max-w-[430px] flex-col">
+                <div className="mx-auto mt-7 flex max-w-[430px] flex-col">
                   {sections.map((section, i) => (
                     <Fragment key={section.key}>
-                      {i > 0 && <DottedDivider className="my-6" />}
+                      {i > 0 && <OrnamentDivider className="my-6" />}
                       <MenuSection
                         index={i}
                         title={pick(section.title, locale)}
@@ -179,12 +198,16 @@ export default function MenuPage() {
                 {/* Included + price */}
                 {(includedLabels.length > 0 || priceLabel) && (
                   <>
-                    <DottedDivider className="mt-8" />
+                    <OrnamentDivider className="mt-9" />
                     <div className="mt-6 text-center font-cormorant text-[16px] leading-relaxed text-[#33302c] md:text-[17px]">
                       {includedLabels.map((label, i) => (
                         <p key={i}>{label}</p>
                       ))}
-                      {priceLabel && <p className="mt-0.5">{priceLabel}</p>}
+                      {priceLabel && (
+                        <p className="mt-2 font-cormorant text-[20px] font-bold tracking-[0.02em] text-[#6e361b] md:text-[22px]">
+                          {priceLabel}
+                        </p>
+                      )}
                     </div>
                   </>
                 )}
