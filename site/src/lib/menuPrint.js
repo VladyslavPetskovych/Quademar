@@ -39,7 +39,7 @@ const once = (url, mime) => {
   return cache.get(url)
 }
 
-export async function printMenu({ hotelName, dateLabel, sections = [], included = [], priceLabel, orLabel = 'o' }) {
+export async function printMenu({ hotelName, dateLabel, sections = [], included = [], priceLabel }) {
   // Inline the logo + fonts (best-effort — the PDF still works with system fallbacks).
   const [logoData, caslon, caslonI, caslonB, pinyon] = await Promise.all([
     once(aristoLogoUrl, 'image/png'),
@@ -57,7 +57,7 @@ export async function printMenu({ hotelName, dateLabel, sections = [], included 
     .filter((s) => s.items.length > 0)
     .map((s) => {
       const dishes = s.items
-        .map((it, i) => `${i > 0 ? `<div class="or">${esc(orLabel)}</div>` : ''}<div class="dish">${esc(it)}</div>`)
+        .map((it, i) => `${i > 0 ? `<div class="or">/</div>` : ''}<div class="dish">${esc(it)}</div>`)
         .join('')
       return `<div class="course"><h2>${esc(s.title)}</h2>${dishes}</div>`
     })
@@ -87,32 +87,32 @@ export async function printMenu({ hotelName, dateLabel, sections = [], included 
          kept compact so the included/price footer always fits without clipping. */
       .page { position: relative; overflow: hidden; width: 210mm; height: 297mm; margin: 0 auto;
               background: #faf7f0; padding: 13mm 22mm; display: flex; flex-direction: column; }
-      .br { position: absolute; width: 54mm; pointer-events: none; }
-      .br.tl { top: -8mm; left: -10mm; transform: rotate(128deg); }
-      .br.br2 { bottom: -8mm; right: -10mm; transform: rotate(-52deg); }
+      .br { position: absolute; width: 66mm; pointer-events: none; }
+      .br.tl { top: -10mm; left: -12mm; transform: rotate(128deg); }
+      .br.br2 { bottom: -10mm; right: -12mm; transform: rotate(-52deg); }
       .frame { position: absolute; inset: 9mm; border: 1px solid rgba(110,54,27,.15); }
       .acc { position: absolute; width: 10mm; height: 10mm; pointer-events: none; }
       .acc.bl { bottom: 11mm; left: 11mm; border-left: 1px solid rgba(110,54,27,.35); border-bottom: 1px solid rgba(110,54,27,.35); }
       .acc.tr { top: 11mm; right: 11mm; border-right: 1px solid rgba(110,54,27,.35); border-top: 1px solid rgba(110,54,27,.35); }
       .content { position: relative; z-index: 1; flex: 1 1 auto; display: flex; flex-direction: column; justify-content: center; }
       .logo { display: block; margin: 0 auto; width: 64mm; height: auto; }
-      .date { text-align: center; font-family: ${bcSerif}; font-size: 25px; text-transform: uppercase;
+      .date { text-align: center; font-family: ${bcSerif}; font-size: 26px; text-transform: uppercase;
               letter-spacing: .16em; color: #171412; margin-top: 11px; }
       .flourish { width: 13mm; margin: 7px auto 0; }
       .flourish svg, .sprig svg { display: block; width: 100%; height: auto; }
       .courses { max-width: 118mm; margin: 15px auto 0; display: flex; flex-direction: column; }
       .course { text-align: center; }
       .course h2 { font-family: ${scriptFont}; font-weight: 400; font-style: ${pinyon ? 'normal' : 'italic'};
-                   font-size: 35px; line-height: 1.06; color: #8f8274; }
-      .dish { font-family: ${bcSerif}; font-size: 18px; line-height: 1.42; color: #2b2622; margin-top: 5px; }
-      .or { font-family: ${bcSerif}; font-style: italic; font-size: 12.5px; color: #a1988d; margin: 2px 0; }
+                   font-size: 37px; line-height: 1.06; color: #8f8274; }
+      .dish { font-family: ${bcSerif}; font-size: 19px; line-height: 1.42; color: #2b2622; margin-top: 5px; }
+      .or { font-family: ${bcSerif}; font-size: 13px; color: #a1988d; margin: 2px 0; }
       .div { display: flex; align-items: center; justify-content: center; gap: 12px; max-width: 78mm; margin: 12px auto; }
       .div .rule { flex: 1; height: 3px;
              background-image: radial-gradient(circle, rgba(110,54,27,.34) 1.3px, transparent 1.6px);
              background-size: 9px 3px; background-repeat: repeat-x; background-position: center; }
       .div .sprig { width: 32px; flex: 0 0 auto; }
-      .foot { text-align: center; font-family: ${bcSerif}; font-size: 15px; line-height: 1.5; color: #33302c; margin-top: 12px; }
-      .price { font-family: ${bcSerif}; font-weight: 700; font-size: 19.5px; color: #6e361b; margin-top: 5px; letter-spacing: .02em; }
+      .foot { text-align: center; font-family: ${bcSerif}; font-size: 16px; line-height: 1.5; color: #33302c; margin-top: 12px; }
+      .price { font-family: ${bcSerif}; font-weight: 700; font-size: 20.5px; color: #6e361b; margin-top: 5px; letter-spacing: .02em; }
     </style></head>
     <body><div class="page">
       <span class="br tl">${branch}</span>

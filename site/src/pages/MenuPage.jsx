@@ -51,19 +51,17 @@ function OrnamentDivider({ className = '' }) {
   )
 }
 
-function MenuSection({ title, items, index, orLabel }) {
+function MenuSection({ title, items, index }) {
   return (
     <motion.article className="text-center" variants={fadeUp} custom={index}>
-      <h2 className="font-script text-[35px] leading-[1.15] text-[#8f8274] md:text-[42px]">{title}</h2>
+      <h2 className="font-script text-[38px] leading-[1.15] text-[#8f8274] md:text-[45px]">{title}</h2>
       <ul className="mt-2.5">
         {items.map((item, i) => (
           <li key={i}>
             {i > 0 && (
-              <div className="my-1 font-cormorant text-[14px] italic leading-tight text-[#a1988d]">
-                {orLabel}
-              </div>
+              <div className="my-1 font-cormorant text-[15px] leading-tight text-[#a1988d]">/</div>
             )}
-            <div className="font-cormorant text-[19px] leading-[1.6] text-[#2b2622] md:text-[20px]">
+            <div className="font-cormorant text-[20px] leading-[1.6] text-[#2b2622] md:text-[21px]">
               {item}
             </div>
           </li>
@@ -82,7 +80,6 @@ export default function MenuPage() {
   const dateLabel = pick(menu?.date, locale)
   const priceLabel = pick(menu?.price, locale)
   const includedLabels = included.map((item) => pick(item, locale))
-  const orLabel = t('menu.or')
 
   const handleDownloadPdf = () => {
     printMenu({
@@ -94,7 +91,6 @@ export default function MenuPage() {
       })),
       included: includedLabels,
       priceLabel,
-      orLabel,
     })
   }
 
@@ -137,12 +133,12 @@ export default function MenuPage() {
               {/* Botanical corners */}
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -left-9 -top-7 w-36 rotate-[128deg] md:w-48"
+                className="pointer-events-none absolute -left-11 -top-9 w-44 rotate-[128deg] md:w-60"
                 dangerouslySetInnerHTML={{ __html: branchHtml }}
               />
               <span
                 aria-hidden="true"
-                className="pointer-events-none absolute -bottom-7 -right-9 w-36 -rotate-[52deg] md:w-48"
+                className="pointer-events-none absolute -bottom-9 -right-11 w-44 -rotate-[52deg] md:w-60"
                 dangerouslySetInnerHTML={{ __html: branchHtml }}
               />
               {/* Inner hairline frame */}
@@ -170,7 +166,7 @@ export default function MenuPage() {
                   height="110"
                 />
                 {/* Date */}
-                <h1 className="mt-5 text-center font-cormorant text-[26px] font-normal uppercase leading-none tracking-[0.16em] text-[#171412] md:text-[30px]">
+                <h1 className="mt-5 text-center font-cormorant text-[28px] font-normal uppercase leading-none tracking-[0.16em] text-[#171412] md:text-[32px]">
                   {dateLabel}
                 </h1>
                 {/* Header flourish */}
@@ -189,7 +185,6 @@ export default function MenuPage() {
                         index={i}
                         title={pick(section.title, locale)}
                         items={section.items.map((item) => pick(item, locale))}
-                        orLabel={orLabel}
                       />
                     </Fragment>
                   ))}
@@ -199,12 +194,12 @@ export default function MenuPage() {
                 {(includedLabels.length > 0 || priceLabel) && (
                   <>
                     <OrnamentDivider className="mt-9" />
-                    <div className="mt-6 text-center font-cormorant text-[16px] leading-relaxed text-[#33302c] md:text-[17px]">
+                    <div className="mt-6 text-center font-cormorant text-[17px] leading-relaxed text-[#33302c] md:text-[18px]">
                       {includedLabels.map((label, i) => (
                         <p key={i}>{label}</p>
                       ))}
                       {priceLabel && (
-                        <p className="mt-2 font-cormorant text-[20px] font-bold tracking-[0.02em] text-[#6e361b] md:text-[22px]">
+                        <p className="mt-2 font-cormorant text-[21px] font-bold tracking-[0.02em] text-[#6e361b] md:text-[23px]">
                           {priceLabel}
                         </p>
                       )}

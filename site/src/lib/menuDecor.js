@@ -35,10 +35,21 @@ function quadAt(t, P0, P1, P2) {
 /** One veined, lanceolate leaf anchored at (x,y), pointing along `ang`. */
 function oliveLeaf(x, y, ang, L, W, leafCol, veinCol) {
   const c = (L * 0.48).toFixed(1)
+  const sideVeins = [0.3, 0.48, 0.66]
+    .map((t) => {
+      const vx = (L * t).toFixed(1)
+      const vw = (W * (1 - Math.abs(t - 0.5) * 1.1)).toFixed(1)
+      return (
+        `<path d="M${vx} 0 L ${(L * (t - 0.09)).toFixed(1)} ${(-vw).toFixed(1)}" stroke="${veinCol}" stroke-width="0.4" fill="none" opacity="0.5"/>` +
+        `<path d="M${vx} 0 L ${(L * (t - 0.09)).toFixed(1)} ${vw} " stroke="${veinCol}" stroke-width="0.4" fill="none" opacity="0.5"/>`
+      )
+    })
+    .join('')
   return (
     `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${ang.toFixed(1)})">` +
     `<path d="M0 0 Q ${c} ${(-W).toFixed(1)} ${L.toFixed(1)} 0 Q ${c} ${W.toFixed(1)} 0 0 Z" fill="${leafCol}"/>` +
     `<path d="M${(L * 0.1).toFixed(1)} 0 L ${(L * 0.88).toFixed(1)} 0" stroke="${veinCol}" stroke-width="0.7" fill="none" opacity="0.75"/>` +
+    sideVeins +
     `</g>`
   )
 }
@@ -56,22 +67,22 @@ export function oliveBranchSvg({ color = '#7f8d6f', opacity = 0.5 } = {}) {
   const P2 = [236, 40]
 
   const parts = []
-  const nodes = [0.14, 0.3, 0.46, 0.62, 0.76, 0.88]
+  const nodes = [0.1, 0.22, 0.34, 0.46, 0.58, 0.68, 0.78, 0.88, 0.95]
   nodes.forEach((t) => {
     const p = quadAt(t, P0, P1, P2)
     const s = 1 - t * 0.5
-    const L = 30 * s
-    const W = 9.5 * s
+    const L = 32 * s
+    const W = 10 * s
     const sweep = 44 + t * 10
     parts.push(oliveLeaf(p.x, p.y, p.a - sweep, L, W, color, veinCol))
     parts.push(oliveLeaf(p.x, p.y, p.a + sweep, L, W, color, veinCol))
   })
   // Terminal leaf at the tip.
   const tip = quadAt(1, P0, P1, P2)
-  parts.push(oliveLeaf(tip.x, tip.y, tip.a + 4, 19, 6, color, veinCol))
+  parts.push(oliveLeaf(tip.x, tip.y, tip.a + 4, 20, 6.5, color, veinCol))
 
-  // A few olives hanging off short stalks.
-  ;[0.22, 0.4, 0.58].forEach((t, i) => {
+  // A cluster of olives hanging off short stalks.
+  ;[0.18, 0.32, 0.46, 0.6, 0.72].forEach((t, i) => {
     const p = quadAt(t, P0, P1, P2)
     const dir = i % 2 === 0 ? 1 : -1
     const rad = ((p.a + 90 * dir) * Math.PI) / 180
