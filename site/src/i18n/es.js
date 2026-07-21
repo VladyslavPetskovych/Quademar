@@ -23,7 +23,7 @@ export default {
     titleMoments: 'Momentos — Hotel Guardamar',
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
-      'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 12:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
+      'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 11:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
     titleMenu: 'Menú del día — Hotel Guardamar',
     descriptionMenu:
       'El menú del día del Hotel Guardamar, Guardamar del Segura — un menú cerrado de tres platos con entrante para compartir, principal y postre, bebida incluida, en la Costa Blanca.',
@@ -332,7 +332,7 @@ export default {
       'Estas normas nos ayudan a cuidar de cada huésped y a mantener el Hotel Guardamar como el tranquilo refugio mediterráneo que vino a buscar. Al confirmar su reserva acepta las indicaciones siguientes. Nuestra recepción está disponible las 24 horas para cualquier consulta no recogida aquí.',
     facts: {
       checkIn: { label: 'Entrada', value: 'desde 15:00' },
-      checkOut: { label: 'Salida', value: 'hasta 12:00' },
+      checkOut: { label: 'Salida', value: 'hasta 11:00' },
       quiet: { label: 'Horas de silencio', value: '23:00 – 08:00' },
       reception: { label: 'Recepción', value: '24 horas' },
     },
@@ -340,7 +340,7 @@ export default {
       checkInOut: {
         title: 'Entrada y salida',
         items: [
-          'La entrada es a partir de las 15:00 y la salida hasta las 12:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener coste.',
+          'La entrada es a partir de las 15:00 y la salida hasta las 11:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener coste.',
           'Se requiere un documento de identidad o pasaporte válido de cada huésped a la llegada, conforme a la legislación española.',
           'Para registrarse es necesario ser mayor de 18 años. Los menores deben ir acompañados de un adulto.',
           'La consigna de equipaje en recepción está disponible antes de la entrada y después de la salida sin coste.',
@@ -470,7 +470,7 @@ export default {
       checkInOut: {
         title: 'Entrada y salida',
         body: [
-          'La entrada está disponible a partir de las 15:00 y la salida es hasta las 12:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener un coste adicional.',
+          'La entrada está disponible a partir de las 15:00 y la salida es hasta las 11:00. La entrada anticipada y la salida tardía están sujetas a disponibilidad y pueden tener un coste adicional.',
           'Para más detalles sobre su estancia, consulte también nuestras Normas del hotel.',
         ],
       },
