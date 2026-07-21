@@ -278,6 +278,46 @@ export default {
       'Los tratamientos, rituales y horarios aparecerán aquí muy pronto. Esperamos darle la bienvenida.',
   },
 
+  restaurant: {
+    breadcrumb: 'Restaurante y bar',
+    logoAlt: 'Restaurante Aristo',
+    eyebrow: 'Gastronomía en Hotel Guardamar',
+    title: 'Restaurante y bar Aristo',
+    intro:
+      'En el corazón del Hotel Guardamar, Aristo reúne un comedor refinado, una terraza abierta al jardín y un bar sin prisas: un lugar para compartir los sabores del Mediterráneo, desde el primer café de la mañana hasta la última copa de la noche.',
+
+    restaurantTag: 'El restaurante',
+    restaurantTitle: 'Restaurante Aristo',
+    restaurantBody1:
+      'Pensado para los verdaderos gourmets, Aristo celebra una cocina auténtica y generosa que fusiona las tradiciones españolas con los productos de la Costa Blanca. Entre la elegancia serena del comedor y la terraza inmersa en los jardines, cada mesa invita a detenerse y saborear el momento.',
+    restaurantBody2:
+      'Nuestra cocina sigue las estaciones: un menú del día que cambia con el mercado, junto a los clásicos a la carta y una cuidada selección de vinos locales y españoles. El desayuno se sirve cada mañana para los huéspedes del hotel.',
+    restaurantImageAlt: 'Elegante comedor de Aristo con lámparas de araña, columnas y mesas preparadas',
+    restaurantInsetAlt: 'Cuatro amigos brindando con vino tinto en una mesa preparada del comedor de Aristo',
+    menuCta: 'Ver el menú de hoy',
+
+    barTag: 'El bar',
+    barTitle: 'Terraza y bar',
+    barBody1:
+      'Cuando la luz se suaviza, el bar se convierte en el corazón social del hotel. Acomódese en la terraza para disfrutar de un cóctel de autor, una copa de cava frío o un vermut de la Costa Blanca, con bocados ligeros a lo largo del día.',
+    barBody2:
+      'En noches seleccionadas, la música en directo recorre los jardines: una forma elegante y relajada de terminar el día bajo el cielo mediterráneo.',
+    barImageAlt: 'El bar Aristo con barra dorada, sillones de terciopelo verde y lámpara de vidriera',
+    barInsetAlt: 'Plato de pulpo a la brasa con tomates cherry, brócoli y puré de zanahoria en Aristo',
+
+    hoursEyebrow: 'Planifique su visita',
+    hoursTitle: 'Horario y reservas',
+    facts: {
+      breakfast: { label: 'Desayuno', value: 'A diario · 08:00 – 11:00' },
+      restaurant: { label: 'Restaurante', value: 'Cena · 13:00 – 17:00' },
+      bar: { label: 'Bar y terraza', value: 'A diario · 12:00 – 00:00' },
+      reservations: { label: 'Reservas', value: 'Recepción · 24 horas' },
+    },
+    reserveBody:
+      'Recomendamos reservar mesa para la cena, especialmente en temporada alta. Nuestro equipo de recepción estará encantado de gestionar su reserva y cualquier petición especial.',
+    reserveCta: 'Reservar por teléfono',
+  },
+
   moments: {
     eyebrow: 'Pensado para su estancia',
     titleInHeart: 'Momentos en el corazón de {{name}}',

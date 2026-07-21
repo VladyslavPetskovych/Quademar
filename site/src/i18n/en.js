@@ -278,6 +278,46 @@ export default {
     spaBody: 'Treatments, rituals, and opening hours will appear here soon. We look forward to welcoming you.',
   },
 
+  restaurant: {
+    breadcrumb: 'Restaurant & Bar',
+    logoAlt: 'Aristo Restaurant',
+    eyebrow: 'Dining at Hotel Guardamar',
+    title: 'Aristo Restaurant & Bar',
+    intro:
+      'At the heart of Hotel Guardamar, Aristo brings together a refined dining room, an open garden terrace, and an unhurried bar — a place to gather over Mediterranean flavours, from the first coffee of the morning to the last drink of the evening.',
+
+    restaurantTag: 'The Restaurant',
+    restaurantTitle: 'Aristo Restaurant',
+    restaurantBody1:
+      'Designed for true gourmets, Aristo celebrates authentic and generous cuisine that blends Spanish traditions with Costa Blanca ingredients. Between the understated elegance of the dining room and the terrace immersed in the gardens, every table invites you to slow down and savour the moment.',
+    restaurantBody2:
+      'Our kitchen follows the seasons: a daily menu that changes with the market, alongside à la carte classics and a considered list of local and Spanish wines. Breakfast is served each morning for house guests.',
+    restaurantImageAlt: 'Elegant Aristo dining room with chandeliers, columns, and set tables',
+    restaurantInsetAlt: 'Four friends toasting with red wine at a set table in the Aristo dining room',
+    menuCta: "See today's menu",
+
+    barTag: 'The Bar',
+    barTitle: 'Terrace & Bar',
+    barBody1:
+      'As the light softens, the bar becomes the social heart of the hotel. Settle onto the terrace for a signature cocktail, a glass of chilled cava, or a Costa Blanca vermouth, with light bites served throughout the day.',
+    barBody2:
+      'On selected evenings, live music drifts through the gardens — an easy, elegant way to close the day beneath the Mediterranean sky.',
+    barImageAlt: 'The Aristo bar with a golden counter, green velvet armchairs, and a stained-glass chandelier',
+    barInsetAlt: 'Plated grilled octopus with cherry tomatoes, broccolini, and carrot purée at Aristo',
+
+    hoursEyebrow: 'Plan your visit',
+    hoursTitle: 'Hours & reservations',
+    facts: {
+      breakfast: { label: 'Breakfast', value: 'Daily · 08:00 – 11:00' },
+      restaurant: { label: 'Restaurant', value: 'Dinner · 13:00 – 17:00' },
+      bar: { label: 'Bar & terrace', value: 'Daily · 12:00 – 00:00' },
+      reservations: { label: 'Reservations', value: 'Reception · 24 hours' },
+    },
+    reserveBody:
+      'Tables for dinner are recommended, especially in high season. Our reception team is glad to arrange your reservation and any special request.',
+    reserveCta: 'Reserve by phone',
+  },
+
   moments: {
     eyebrow: 'Curated for your stay',
     titleInHeart: 'Moments in the Heart of {{name}}',
