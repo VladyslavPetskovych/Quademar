@@ -23,6 +23,7 @@ export default function MainLayout() {
     }
   }, [location.pathname, navigate])
 
+
   useEffect(() => {
     if (!isHome) {
       setIsOverVideo(false)
@@ -40,7 +41,6 @@ export default function MainLayout() {
     if (!isHome) setIsOverVideo(false)
   }, [isHome])
 
-  // Scroll to top on route change
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [location.pathname])

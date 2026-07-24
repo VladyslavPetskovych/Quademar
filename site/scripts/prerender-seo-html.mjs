@@ -102,6 +102,17 @@ const suitesHtml = patchHtml(baseHtml, {
 
 writeRouteHtml('suites-rooms', suitesHtml)
 
+// Guardamar destination guide (linked from Moments → Costa Blanca).
+writeRouteHtml(
+  'moments/guardamar',
+  patchHtml(baseHtml, {
+    title: en.seo.titleGuardamar,
+    description: en.seo.descriptionGuardamar,
+    keywords: en.seo.keywordsGuardamar,
+    canonical: `${origin}/moments/guardamar`,
+  }),
+)
+
 for (const slug of SUITE_ROOM_SLUGS) {
   const copy = ROOM_SEO_META[slug]?.en
   if (!copy) continue

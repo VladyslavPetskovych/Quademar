@@ -21,6 +21,11 @@ export default {
     titleRestaurant: 'Restaurante y bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Momentos — Hotel Guardamar',
+    titleGuardamar: 'Guardamar del Segura — guía del destino | Hotel Guardamar',
+    descriptionGuardamar:
+      'Descubra Guardamar del Segura, Costa Blanca — la Pinada y su bosque dunar, 11 km de playas con Bandera Azul, la desembocadura del río Segura, gastronomía del langostino y la ñora, y su legado arqueológico. A 25 km del aeropuerto de Alicante.',
+    keywordsGuardamar:
+      'Guardamar del Segura, qué ver en Guardamar, playas Guardamar, Pinada de Guardamar, Costa Blanca, langostino de Guardamar, Castillo de Guardamar, La Fonteta, río Segura, turismo Alicante',
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
       'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 11:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
@@ -96,6 +101,13 @@ export default {
     bodySuffix: '.',
     thanks: 'Gracias por tu paciencia.',
     cta: 'Entendido',
+    close: 'Cerrar',
+  },
+  openingParty: {
+    badge: 'Noche de Jazz',
+    ariaOpen: 'Detalles de la Noche de Jazz',
+    imageAlt: 'Noche de Jazz en el Hotel Guardamar — 1 de agosto',
+    cta: 'Noche de Jazz',
     close: 'Cerrar',
   },
 
@@ -347,6 +359,7 @@ export default {
     costaLead:
       'Una nueva historia se despliega en la costa de la Costa Blanca. Desde las dunas doradas y los pinares de Guardamar hasta los pueblos encalados y las calas escondidas, aquí el legado español se encuentra con el azul infinito del Mediterráneo. Déjese guiar por excursiones sin prisas, sabor local y el ritmo suave de la costa — las primeras páginas de un capítulo que deseamos compartir.',
     costaFeaturedAlt: 'Playa de arena y orilla mediterránea cerca de Guardamar',
+    costaGuardamarCta: 'Descubra Guardamar del Segura',
     costaCard1Tag: 'Naturaleza',
     costaCard1Title: 'Pinares y parque',
     costaCard1Desc:

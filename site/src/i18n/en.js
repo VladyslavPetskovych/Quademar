@@ -21,6 +21,11 @@ export default {
     titleRestaurant: 'Restaurant & Bar — Hotel Guardamar',
     titleSpa: 'Spa — Hotel Guardamar',
     titleMoments: 'Moments — Hotel Guardamar',
+    titleGuardamar: 'Guardamar del Segura — destination guide | Hotel Guardamar',
+    descriptionGuardamar:
+      'Discover Guardamar del Segura, Costa Blanca — the Pinada dune forest, 11 km of Blue Flag beaches, the mouth of the Segura river, prawn-and-ñora gastronomy, and its archaeological legacy. Just 25 km from Alicante airport.',
+    keywordsGuardamar:
+      'Guardamar del Segura, things to do in Guardamar, Guardamar beaches, Guardamar pine forest, Costa Blanca, Guardamar prawn, Guardamar castle, La Fonteta, Segura river, Alicante tourism',
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
       'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
@@ -96,6 +101,13 @@ export default {
     bodySuffix: '.',
     thanks: 'Thank you for your patience.',
     cta: 'Understood',
+    close: 'Close',
+  },
+  openingParty: {
+    badge: 'Jazz Night',
+    ariaOpen: 'Jazz Night details',
+    imageAlt: 'Jazz Night at Hotel Guardamar — 1 August',
+    cta: 'Jazz Night',
     close: 'Close',
   },
 
@@ -347,6 +359,7 @@ export default {
     costaLead:
       'A new story is unfolding on the coast of Costa Blanca. From Guardamar’s golden dunes and pine forests to whitewashed villages and hidden coves, this is where Spanish heritage meets the endless blue of the Mediterranean. Let us guide you through unhurried days out, local flavour, and the gentle rhythm of the coast — the opening pages of a chapter we can’t wait to share.',
     costaFeaturedAlt: 'Sandy beach and Mediterranean shoreline near Guardamar',
+    costaGuardamarCta: 'Discover Guardamar del Segura',
     costaCard1Tag: 'Nature',
     costaCard1Title: 'Pine forest & park',
     costaCard1Desc:

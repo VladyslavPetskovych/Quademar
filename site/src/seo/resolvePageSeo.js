@@ -55,6 +55,10 @@ export function resolvePageSeo(pathname, locale, t) {
   } else if (path === '/spa') {
     title = t('seo.titleSpa')
     description = t('seo.descriptionSpa')
+  } else if (path === '/moments/guardamar') {
+    title = t('seo.titleGuardamar')
+    description = t('seo.descriptionGuardamar')
+    keywords = t('seo.keywordsGuardamar')
   } else if (path === '/moments') {
     title = t('seo.titleMoments')
     description = t('seo.descriptionMoments')

@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import { useSearchParams } from 'react-router-dom'
+import { Link, useSearchParams } from 'react-router-dom'
 import beachImage from '../assets/home/beach.webp'
 import beach3Image from '../assets/home/beach3.webp'
 import plantImage from '../assets/home/plant.webp'
@@ -100,7 +100,7 @@ function MomentCard({ image, imageAlt, tag, title, description, footnote, index 
   )
 }
 
-function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote }) {
+function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote, ctaHref, ctaLabel }) {
   return (
     <motion.div
       key={tabId}
@@ -138,6 +138,17 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassNam
             {lead}
           </p>
           <div className="mx-auto mt-8 hidden h-px w-16 bg-[#171412]/15 lg:mx-0 lg:block" aria-hidden="true" />
+          {ctaHref && (
+            <div className="mt-7 flex justify-center lg:mt-8 lg:justify-start">
+              <Link
+                to={ctaHref}
+                className="group inline-flex items-center gap-2 font-sans text-[12px] font-medium uppercase tracking-[0.16em] text-[#0a3f35] transition-colors hover:text-[#6e361b]"
+              >
+                {ctaLabel}
+                <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+              </Link>
+            </div>
+          )}
         </motion.div>
       </motion.div>
 
@@ -261,6 +272,8 @@ export default function MomentsPage() {
                 cards={costaCards}
                 tf={tf}
                 cardFootnote={tf('moments.panelNote')}
+                ctaHref="/moments/guardamar"
+                ctaLabel={tf('moments.costaGuardamarCta')}
               />
             )}
           </AnimatePresence>

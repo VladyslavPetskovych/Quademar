@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import beachImage from '../../assets/home/beach.webp'
 import plantImage from '../../assets/home/plant.webp'
 import newStory2Image from '../../assets/home/newStory2.webp'
 import newStory3Image from '../../assets/home/newStory3.webp'
 import CircleArrowButton from '../ui/CircleArrowButton'
+import { useComingSoonModal } from '../../context/ComingSoonModalContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
 import { HOME_SCROLL_EASE, HOME_SECTION_VIEWPORT } from './homeMotion'
 
 export default function HomeIntroSection() {
   const { t, tf } = useLanguage()
+  const { openComingSoonModal } = useComingSoonModal()
   const slides = [
     { src: newStory2Image, alt: t('home.intro.newStory2Alt') },
     { src: beachImage, alt: t('home.intro.beachAlt') },
@@ -159,9 +160,9 @@ export default function HomeIntroSection() {
               custom={0.36}
               viewport={{ once: true, amount: 0.7 }}
             >
-              <Link to="/moments?tab=costa-blanca" className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}>
+              <button type="button" onClick={openComingSoonModal} className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}>
                 {t('home.intro.readMore')}
-              </Link>
+              </button>
             </motion.div>
           </motion.div>
         </div>

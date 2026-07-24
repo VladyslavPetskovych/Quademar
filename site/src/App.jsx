@@ -10,6 +10,7 @@ const SuitesRoomsPage = lazy(() => import('./pages/SuitesRoomsPage'))
 const RestaurantBarPage = lazy(() => import('./pages/RestaurantBarPage'))
 const SpaPage = lazy(() => import('./pages/SpaPage'))
 const MomentsPage = lazy(() => import('./pages/MomentsPage'))
+const GuardamarPage = lazy(() => import('./pages/GuardamarPage'))
 const ContactsPage = lazy(() => import('./pages/ContactsPage'))
 const RoomDetailPage = lazy(() => import('./pages/RoomDetailPage'))
 const RulesPage = lazy(() => import('./pages/RulesPage'))
@@ -32,6 +33,7 @@ export default function App() {
                 <Route path="restaurant-bar" element={<RestaurantBarPage />} />
                 <Route path="spa" element={<SpaPage />} />
                 <Route path="moments" element={<MomentsPage />} />
+                <Route path="moments/guardamar" element={<GuardamarPage />} />
                 <Route path="rules" element={<RulesPage />} />
                 <Route path="menu" element={<MenuPage />} />
                 <Route path="terms" element={<TermsPage />} />

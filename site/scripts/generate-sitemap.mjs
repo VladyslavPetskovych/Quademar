@@ -24,6 +24,7 @@ const FULL_PATHS = [
   '/restaurant-bar',
   '/spa',
   '/moments',
+  '/moments/guardamar',
   '/rules',
   '/terms',
   '/privacy',
@@ -33,7 +34,7 @@ const LANDING_PATHS = FULL_PATHS.filter(
   (path) =>
     path === '/' ||
     path === '/contacts' ||
-    path === '/moments' ||
+    path.startsWith('/moments') ||
     path === '/rules' ||
     path === '/terms' ||
     path === '/privacy' ||

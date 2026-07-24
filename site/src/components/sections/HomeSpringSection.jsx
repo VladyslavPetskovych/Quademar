@@ -1,16 +1,17 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import spring1Image from '../../assets/home/spring1.webp'
 import spring2Image from '../../assets/home/spring2.webp'
 import spring3Image from '../../assets/home/spring3.webp'
 import CircleArrowButton from '../ui/CircleArrowButton'
+import { useComingSoonModal } from '../../context/ComingSoonModalContext'
 import { useLanguage } from '../../i18n/LanguageContext'
 import { HOME_PRIMARY_CTA_CLASS } from './homeSectionCta'
 import { HOME_SCROLL_EASE, HOME_SECTION_VIEWPORT } from './homeMotion'
 
 export default function HomeSpringSection() {
   const { t, tf } = useLanguage()
+  const { openComingSoonModal } = useComingSoonModal()
   const slides = [
     { src: spring3Image, alt: t('home.spring.spring3Alt') },
     { src: spring1Image, alt: t('home.spring.spring1Alt') },
@@ -91,9 +92,9 @@ export default function HomeSpringSection() {
             custom={0.48}
             viewport={{ once: true, amount: 0.7 }}
           >
-            <Link to="/moments" className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}>
+            <button type="button" onClick={openComingSoonModal} className={`mt-8 ${HOME_PRIMARY_CTA_CLASS}`}>
               {t('home.spring.readMore')}
-            </Link>
+            </button>
           </motion.div>
         </motion.div>
 

@@ -7,6 +7,7 @@ import HomeSpringSection from '../components/sections/HomeSpringSection'
 import HomeJardinSection from '../components/sections/HomeJardinSection'
 import HomeDiscoverySection from '../components/sections/HomeDiscoverySection'
 import HomeResidenceSection from '../components/sections/HomeResidenceSection'
+import OpeningPartyButton from '../components/OpeningPartyButton'
 
 export default function HomePage() {
   const reduceMotion = useReducedMotion()
@@ -26,6 +27,7 @@ export default function HomePage() {
       <HomeJardinSection />
       <HomeDiscoverySection />
       <HomeResidenceSection />
+      <OpeningPartyButton />
     </>
   )
 
