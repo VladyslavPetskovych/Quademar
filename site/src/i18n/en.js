@@ -103,13 +103,6 @@ export default {
     cta: 'Understood',
     close: 'Close',
   },
-  openingParty: {
-    badge: 'Jazz Night',
-    ariaOpen: 'Jazz Night details',
-    imageAlt: 'Jazz Night at Hotel Guardamar — 1 August',
-    cta: 'Jazz Night',
-    close: 'Close',
-  },
 
   roomsCommon: {
     detailsHeading: 'Details',

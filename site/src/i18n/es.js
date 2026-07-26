@@ -103,13 +103,6 @@ export default {
     cta: 'Entendido',
     close: 'Cerrar',
   },
-  openingParty: {
-    badge: 'Noche de Jazz',
-    ariaOpen: 'Detalles de la Noche de Jazz',
-    imageAlt: 'Noche de Jazz en el Hotel Guardamar — 1 de agosto',
-    cta: 'Noche de Jazz',
-    close: 'Cerrar',
-  },
 
   roomsCommon: {
     detailsHeading: 'Detalles',
