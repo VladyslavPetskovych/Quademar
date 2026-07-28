@@ -104,6 +104,16 @@ export default {
     close: 'Cerrar',
   },
 
+  /** Invitación a la gran apertura — botón flotante de la home y su modal con el cartel. */
+  opening: {
+    badge: 'Apertura · 1 ago',
+    badgeAria: 'Gran Apertura, 1 de agosto — ver la invitación',
+    title: 'Gran Apertura — Hotel Guardamar',
+    alt:
+      'Cartel de la Gran Apertura del Hotel Guardamar: 1 de agosto de 2026 desde las 18:00, con prosecco, buffet y fiesta cóctel de 18:00 a 20:00, música en vivo hasta las 23:00 y en presencia del Alcalde de Guardamar del Segura. Entrada libre. Puerto Rico 11, Guardamar del Segura, Alicante.',
+    close: 'Cerrar',
+  },
+
   roomsCommon: {
     detailsHeading: 'Detalles',
     detailsForRoom: 'Detalles — {{room}}',

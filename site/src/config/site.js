@@ -12,10 +12,10 @@
 export const LANDING_ONLY_NAV = true
 
 /** Exact paths allowed in landing mode (no trailing slash). */
-const LANDING_ALLOWED = new Set(['/', '/contacts', '/rules', '/menu', '/terms', '/privacy', '/suites-rooms', '/restaurant-bar'])
+const LANDING_ALLOWED = new Set(['/', '/contacts', '/rules', '/menu', '/terms', '/privacy', '/suites-rooms', '/restaurant-bar', '/moments'])
 
 /** Nav link ids that stay real links in landing mode (matches `NAV_LINKS` ids). */
-export const LANDING_UNLOCKED_NAV_IDS = new Set(['about', 'contacts', 'rules', 'terms', 'privacy', 'suites-rooms', 'restaurant-bar'])
+export const LANDING_UNLOCKED_NAV_IDS = new Set(['about', 'contacts', 'rules', 'terms', 'privacy', 'suites-rooms', 'restaurant-bar', 'moments'])
 
 /** Whether `pathname` may render (otherwise caller should redirect to `/`). */
 export function isPathAllowedInLandingMode(pathname) {
@@ -23,6 +23,7 @@ export function isPathAllowedInLandingMode(pathname) {
   const p = pathname.replace(/\/+$/, '') || '/'
   if (LANDING_ALLOWED.has(p)) return true
   if (p.startsWith('/suites-rooms/')) return true
+  if (p.startsWith('/moments/')) return true
   return false
 }
 

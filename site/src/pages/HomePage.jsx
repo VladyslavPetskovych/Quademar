@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import { useReducedMotion } from 'framer-motion'
 import { Lenis } from 'lenis/react'
+import OpeningInvitation from '../components/OpeningInvitation'
 import HomeHero from '../components/sections/HomeHero'
 import HomeIntroSection from '../components/sections/HomeIntroSection'
 import HomeSpringSection from '../components/sections/HomeSpringSection'
@@ -30,12 +31,20 @@ export default function HomePage() {
   )
 
   if (reduceMotion) {
-    return sections
+    return (
+      <>
+        {sections}
+        <OpeningInvitation />
+      </>
+    )
   }
 
   return (
-    <Lenis root options={lenisOptions} autoRaf>
-      {sections}
-    </Lenis>
+    <>
+      <Lenis root options={lenisOptions} autoRaf>
+        {sections}
+      </Lenis>
+      <OpeningInvitation />
+    </>
   )
 }

@@ -4,8 +4,6 @@ import boardwalkDunes from '../assets/moments/guardamarPhotos/boardwalk-dunes.we
 import townSkyline from '../assets/moments/guardamarPhotos/town-skyline.webp'
 import pinadaSea from '../assets/moments/guardamarPhotos/pinada-sea.webp'
 import lighthouseJetty from '../assets/moments/guardamarPhotos/lighthouse-jetty.webp'
-import langostinoNyora from '../assets/moments/guardamarPhotos/langostino-nyora.webp'
-import laFonteta from '../assets/moments/guardamarPhotos/la-fonteta.webp'
 import castillo from '../assets/moments/guardamarPhotos/castillo.webp'
 import ducksVideo from '../assets/moments/guardamarPhotos/reina-sofia-ducks.mp4'
 import motherDuck from '../assets/moments/guardamarPhotos/reina-sofia-mother-duck.webp'
@@ -84,28 +82,6 @@ const GUIDE = {
         ],
       },
       {
-        key: 'gastronomia',
-        kicker: 'Gastronomía',
-        title: 'Gastronomía de Guardamar',
-        image: langostinoNyora,
-        imageSide: 'left',
-        imageAlt: 'Langostinos de Guardamar con ñoras secas y un fondo de salsa en un plato',
-        paragraphs: [
-          'Producto fresco y de proximidad: el langostino de Guardamar, el arroz a banda, el caldero y la ñora. Su gran cita es la Setmana Gastronòmica de la Nyora i el Llagostí, cada junio desde 2005.',
-        ],
-      },
-      {
-        key: 'arqueologia',
-        kicker: 'Historia',
-        title: 'La Fonteta y la Rábita Califal',
-        image: laFonteta,
-        imageSide: 'right',
-        imageAlt: 'Restos arqueológicos de La Fonteta sobre la arena junto al litoral de Guardamar',
-        paragraphs: [
-          'Fenicios y andalusíes dejaron su huella: el yacimiento de La Fonteta y la Rábita Califal, un enclave islámico junto al litoral, revelan la importancia estratégica de Guardamar a lo largo de los siglos.',
-        ],
-      },
-      {
         key: 'castillo',
         kicker: 'Patrimonio',
         title: 'El Castillo de Guardamar',
@@ -139,22 +115,55 @@ const GUIDE = {
       photo2Alt: 'Patitos recién nacidos nadando juntos en el lago del parque',
       mapLabel: 'Ver en el mapa',
     },
-    doing: {
-      kicker: 'Planes',
-      title: 'Qué hacer en Guardamar',
+    wellbeing: {
+      kicker: 'Bienestar',
+      title: 'Un clima que sienta bien',
       intro:
-        'Guardamar ofrece propuestas para todo tipo de viajeros, desde el turismo activo hasta las escapadas familiares o las estancias para relajarse. Playa y naturaleza pueden combinarse en el mismo día.',
-      activities: [
-        'Senderismo por la pinada',
-        'Rutas en bicicleta',
-        'Actividades acuáticas',
-        'Paseos a caballo',
-        'Excursiones guiadas',
-        'Puerto deportivo Marina de las Dunas',
+        'Guardamar es conocido por la suavidad de su clima y por el aire de su bosque dunar. Sol durante casi todo el año, temperaturas templadas y una brisa marina constante crean unas condiciones ideales para descansar, respirar y moverse al aire libre.',
+      cards: [
+        {
+          key: 'sun',
+          title: 'Más de 300 días de sol',
+          text: 'Luz natural durante casi todo el año, también en los meses de invierno.',
+        },
+        {
+          key: 'climate',
+          title: 'Clima suave todo el año',
+          text: 'Inviernos templados y veranos que la brisa del Mediterráneo hace llevaderos.',
+        },
+        {
+          key: 'air',
+          title: 'Aire de pinada y mar',
+          text: '800 hectáreas de pinar junto al mar: aire limpio y salino a pocos pasos del hotel.',
+        },
+        {
+          key: 'sea',
+          title: 'Baños de mar limpio',
+          text: 'Playas con Bandera Azul y agua vigilada para nadar de primavera a otoño.',
+        },
+        {
+          key: 'nature',
+          title: 'Naturaleza protegida',
+          text: 'Cerca del 80 % del término está protegido: poco ruido, poco tráfico y mucho verde.',
+        },
+        {
+          key: 'active',
+          title: 'Vida activa sin esfuerzo',
+          text: 'Paseos llanos junto a la orilla y senderos entre pinos para caminar cada día.',
+        },
       ],
-      agendaTitle: 'Agenda cultural',
-      agenda:
-        'Guardamar mantiene vivo su vínculo con el Mediterráneo a través de una amplia agenda cultural: cine, teatro, música en vivo, exposiciones de arte, literatura y actividades infantiles forman parte de un programa que se renueva cada mes.',
+      restKicker: 'Descanso',
+      restTitle: 'Por qué se descansa mejor aquí',
+      rest:
+        'La combinación de mar, pinada y clima estable convierte a Guardamar en un destino elegido durante todo el año para bajar el ritmo y recuperar energía. Caminar por la orilla al amanecer, respirar entre los pinos y dormir con la brisa del Mediterráneo forman parte de la estancia.',
+      restTags: [
+        'Aire limpio',
+        'Brisa marina',
+        'Sol de invierno',
+        'Paseos sin desnivel',
+        'Entorno tranquilo',
+        'Ritmo pausado',
+      ],
     },
     ctaTitle: 'Su base para descubrir Guardamar',
     ctaBody:
@@ -214,28 +223,6 @@ const GUIDE = {
         ],
       },
       {
-        key: 'gastronomia',
-        kicker: 'Gastronomy',
-        title: 'The gastronomy of Guardamar',
-        image: langostinoNyora,
-        imageSide: 'left',
-        imageAlt: 'Guardamar prawns with dried ñora peppers and a rich sauce on a plate',
-        paragraphs: [
-          'Fresh, local produce: the Guardamar prawn, arroz a banda, caldero, and the ñora pepper. Its big date is the Setmana Gastronòmica de la Nyora i el Llagostí, held every June since 2005.',
-        ],
-      },
-      {
-        key: 'arqueologia',
-        kicker: 'History',
-        title: 'La Fonteta and the Caliphal Rábita',
-        image: laFonteta,
-        imageSide: 'right',
-        imageAlt: 'Archaeological remains of La Fonteta on the sand beside the Guardamar coastline',
-        paragraphs: [
-          'Phoenicians and Andalusis left their mark: the La Fonteta site and the Caliphal Rábita, an Islamic enclave by the shore, reveal Guardamar’s strategic role across the centuries.',
-        ],
-      },
-      {
         key: 'castillo',
         kicker: 'Heritage',
         title: 'The Castle of Guardamar',
@@ -269,22 +256,55 @@ const GUIDE = {
       photo2Alt: 'Newly hatched ducklings swimming together on the park lake',
       mapLabel: 'View on the map',
     },
-    doing: {
-      kicker: 'Things to do',
-      title: 'What to do in Guardamar',
+    wellbeing: {
+      kicker: 'Wellbeing',
+      title: 'A climate that does you good',
       intro:
-        'Guardamar has something for every kind of traveller, from active tourism to family getaways and restful stays. Beach and nature can easily be combined in a single day.',
-      activities: [
-        'Hiking through the pinada',
-        'Cycling routes',
-        'Water activities',
-        'Horse riding',
-        'Guided excursions',
-        'Marina de las Dunas yacht harbour',
+        'Guardamar is known for the gentleness of its climate and for the air of its dune forest. Sun almost all year, mild temperatures, and a steady sea breeze make it an easy place to rest, breathe, and spend time outdoors.',
+      cards: [
+        {
+          key: 'sun',
+          title: 'Over 300 days of sun',
+          text: 'Natural light for most of the year, the winter months included.',
+        },
+        {
+          key: 'climate',
+          title: 'Mild the whole year',
+          text: 'Gentle winters and summers kept comfortable by the Mediterranean breeze.',
+        },
+        {
+          key: 'air',
+          title: 'Pine and sea air',
+          text: '800 hectares of pine forest beside the sea — clean, salt-touched air steps from the hotel.',
+        },
+        {
+          key: 'sea',
+          title: 'Clean sea bathing',
+          text: 'Blue Flag beaches with monitored water for swimming from spring through autumn.',
+        },
+        {
+          key: 'nature',
+          title: 'Protected nature',
+          text: 'Close to 80% of the municipality is protected — little noise, little traffic, plenty of green.',
+        },
+        {
+          key: 'active',
+          title: 'Easy active living',
+          text: 'Level walks along the shore and trails among the pines for moving every day.',
+        },
       ],
-      agendaTitle: 'Cultural calendar',
-      agenda:
-        'Guardamar keeps its bond with the Mediterranean alive through a full cultural calendar: cinema, theatre, live music, art exhibitions, literature, and children’s activities are all part of a programme that refreshes every month.',
+      restKicker: 'Rest',
+      restTitle: 'Why you rest better here',
+      rest:
+        'The mix of sea, pine forest, and steady climate makes Guardamar a year-round place to slow down and recover. Walking the shore at sunrise, breathing among the pines, and sleeping with the Mediterranean breeze all become part of the stay.',
+      restTags: [
+        'Clean air',
+        'Sea breeze',
+        'Winter sun',
+        'Level walks',
+        'Quiet surroundings',
+        'Unhurried pace',
+      ],
     },
     ctaTitle: 'Your base for discovering Guardamar',
     ctaBody:
@@ -446,6 +466,156 @@ function PinIcon() {
       <path d="M12 21s-6-5.686-6-10a6 6 0 0 1 12 0c0 4.314-6 10-6 10Z" />
       <circle cx="12" cy="11" r="2" />
     </svg>
+  )
+}
+
+/** Shared stroke setup for the wellbeing glyphs. */
+function WellbeingIcon({ children, className = 'h-5.5 w-5.5' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {children}
+    </svg>
+  )
+}
+
+/** A leaf — used for the badge and the watermark of the rest panel. */
+function LeafIcon({ className }) {
+  return (
+    <WellbeingIcon className={className}>
+      <path d="M11 20.5A7.5 7.5 0 0 1 9.8 5.9C15.6 4.8 17 4.3 19 2c1 2 2 4.2 2 8 0 5.8-4.5 10.5-10 10.5z" />
+      <path d="M2.5 21.5c0-3.2 1.9-5.6 5.2-6.3 2.5-.5 5-2 6-3.2" />
+    </WellbeingIcon>
+  )
+}
+
+/** Keyed by GUIDE[locale].wellbeing.cards[].key so both locales share one glyph. */
+const WELLBEING_ICONS = {
+  sun: (
+    <WellbeingIcon>
+      <circle cx="12" cy="12" r="4.2" />
+      <path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9" />
+    </WellbeingIcon>
+  ),
+  climate: (
+    <WellbeingIcon>
+      <path d="M14 14.4V5.5a2 2 0 1 0-4 0v8.9a4.2 4.2 0 1 0 4 0z" />
+      <path d="M12 9.5v5.4" />
+    </WellbeingIcon>
+  ),
+  air: (
+    <WellbeingIcon>
+      <path d="M3 8.5h9.5a3 3 0 1 0-3-3" />
+      <path d="M3 12.5h13a3 3 0 1 1-3 3" />
+      <path d="M3 16.5h6.5" />
+    </WellbeingIcon>
+  ),
+  sea: (
+    <WellbeingIcon>
+      <path d="M2 8.5Q4.5 5.9 7 8.5T12 8.5T17 8.5T22 8.5" />
+      <path d="M2 13Q4.5 10.4 7 13T12 13T17 13T22 13" />
+      <path d="M2 17.5Q4.5 14.9 7 17.5T12 17.5T17 17.5T22 17.5" />
+    </WellbeingIcon>
+  ),
+  nature: (
+    <WellbeingIcon>
+      <path d="M12 2.5 7.6 9.5h2.6L5.5 16.5h13L13.8 9.5h2.6z" />
+      <path d="M12 16.5V21.5" />
+    </WellbeingIcon>
+  ),
+  active: (
+    <WellbeingIcon>
+      <path d="M12 20.5S3.6 14.9 3.6 9.4a4.7 4.7 0 0 1 8.4-2.9 4.7 4.7 0 0 1 8.4 2.9c0 5.5-8.4 11.1-8.4 11.1z" />
+      <path d="M5.4 11.6h3l1.4-2.4 2.2 4.6 1.5-2.2h3.1" />
+    </WellbeingIcon>
+  ),
+}
+
+/** Climate and living conditions — six condition cards plus the "why you rest better" panel. */
+function Wellbeing({ wellbeing }) {
+  return (
+    <section className="mx-auto mt-16 max-w-[1080px] md:mt-24">
+      <motion.div className="mx-auto max-w-[720px] text-center" {...reveal}>
+        <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#6e361b]">
+          {wellbeing.kicker}
+        </p>
+        <h2 className="mt-4 font-cormorant text-[30px] font-normal leading-[1.1] text-[#171412] md:text-[38px]">
+          {wellbeing.title}
+        </h2>
+        <div className="mx-auto mt-5 h-px w-16 bg-[#171412]/15" aria-hidden="true" />
+        <p className="mt-5 font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
+          {wellbeing.intro}
+        </p>
+      </motion.div>
+
+      <motion.ul
+        className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.07 } } }}
+      >
+        {wellbeing.cards.map((card) => (
+          <motion.li
+            key={card.key}
+            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0 } }}
+            transition={{ duration: 0.5, ease: easeSmooth }}
+            className="group rounded-xl border border-[#171412]/10 bg-white/55 px-6 py-6 transition duration-300 hover:-translate-y-0.75 hover:border-[#0a3f35]/25 hover:bg-white hover:shadow-[0_22px_48px_-30px_rgba(10,63,53,0.6)]"
+          >
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#0a3f35]/[0.07] text-[#0a3f35] transition-colors duration-300 group-hover:bg-[#0a3f35] group-hover:text-white">
+              {WELLBEING_ICONS[card.key]}
+            </span>
+            <h3 className="mt-5 font-cormorant text-[21px] font-normal leading-tight text-[#171412] md:text-[22px]">
+              {card.title}
+            </h3>
+            <p className="mt-2 font-sans text-[14px] font-[250] leading-relaxed text-[#57524e]">
+              {card.text}
+            </p>
+          </motion.li>
+        ))}
+      </motion.ul>
+
+      <motion.div
+        className="relative mt-12 overflow-hidden rounded-2xl border border-[#0a3f35]/12 bg-linear-to-br from-[#0a3f35]/[0.07] via-transparent to-[#6e361b]/5 px-6 py-9 md:px-10 md:py-11"
+        {...reveal}
+      >
+        <LeafIcon className="pointer-events-none absolute -right-6 -top-6 h-40 w-40 text-[#0a3f35] opacity-[0.05] md:h-48 md:w-48" />
+        <div className="relative flex flex-col gap-7 md:flex-row md:items-start md:gap-10">
+          <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-[#0a3f35] text-white shadow-[0_16px_34px_-16px_rgba(10,63,53,0.8)]">
+            <LeafIcon className="h-7 w-7" />
+          </span>
+          <div className="max-w-[760px]">
+            <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#6e361b]">
+              {wellbeing.restKicker}
+            </p>
+            <h3 className="mt-3 font-cormorant text-[24px] font-normal leading-tight text-[#171412] md:text-[28px]">
+              {wellbeing.restTitle}
+            </h3>
+            <p className="mt-4 font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">
+              {wellbeing.rest}
+            </p>
+            <ul className="mt-6 flex flex-wrap gap-2.5">
+              {wellbeing.restTags.map((tag) => (
+                <li
+                  key={tag}
+                  className="rounded-full border border-[#0a3f35]/18 bg-white/60 px-4 py-1.5 font-sans text-[12px] font-[300] tracking-[0.04em] text-[#0a3f35]"
+                >
+                  {tag}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+    </section>
   )
 }
 
@@ -640,38 +810,7 @@ export default function GuardamarPage() {
           ))}
         </div>
 
-        <motion.article className="mx-auto mt-16 max-w-[900px] md:mt-24" {...reveal}>
-          <div className="text-center">
-            <p className="font-sans text-[11px] font-medium uppercase tracking-[0.22em] text-[#6e361b]">
-              {c.doing.kicker}
-            </p>
-            <h2 className="mt-4 font-cormorant text-[30px] font-normal leading-[1.1] text-[#171412] md:text-[38px]">
-              {c.doing.title}
-            </h2>
-            <p className="mx-auto mt-5 max-w-[680px] font-sans text-[16px] font-[250] leading-relaxed text-[#57524e]">
-              {c.doing.intro}
-            </p>
-          </div>
-          <ul className="mx-auto mt-8 grid max-w-[720px] gap-x-8 gap-y-3 sm:grid-cols-2">
-            {c.doing.activities.map((a) => (
-              <li
-                key={a}
-                className="flex items-center gap-3 border-b border-[#171412]/10 pb-3 font-sans text-[15px] font-[250] text-[#3f3a35]"
-              >
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#6e361b]" aria-hidden="true" />
-                {a}
-              </li>
-            ))}
-          </ul>
-          <div className="mx-auto mt-10 max-w-[680px] rounded-sm bg-[#0a3f35]/[0.04] p-6 text-center md:p-8">
-            <h3 className="font-cormorant text-[22px] font-normal text-[#171412] md:text-[24px]">
-              {c.doing.agendaTitle}
-            </h3>
-            <p className="mt-3 font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">
-              {c.doing.agenda}
-            </p>
-          </div>
-        </motion.article>
+        <Wellbeing wellbeing={c.wellbeing} />
 
         <motion.div
           className="relative mt-16 overflow-hidden rounded-sm bg-[#0a3f35] px-6 py-12 text-center md:mt-24 md:px-12 md:py-16"

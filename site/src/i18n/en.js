@@ -104,6 +104,16 @@ export default {
     close: 'Close',
   },
 
+  /** Grand opening invitation — floating home-page button and its poster modal. */
+  opening: {
+    badge: 'Opening · 1 Aug',
+    badgeAria: 'Grand Opening, 1 August — view the invitation',
+    title: 'Grand Opening — Hotel Guardamar',
+    alt:
+      'Grand Opening poster of Hotel Guardamar: 1 August 2026 from 18:00, with prosecco, buffet, and cocktail party from 18:00 to 20:00, live music until 23:00, in the presence of the Mayor of Guardamar del Segura. Free entry. Puerto Rico 11, Guardamar del Segura, Alicante.',
+    close: 'Close',
+  },
+
   roomsCommon: {
     detailsHeading: 'Details',
     detailsForRoom: 'Details — {{room}}',
