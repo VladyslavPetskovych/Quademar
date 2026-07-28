@@ -308,7 +308,7 @@ export default {
     restaurantBody2:
       'Nuestra cocina sigue las estaciones: un menú del día que cambia con el mercado, junto a los clásicos a la carta y una cuidada selección de vinos locales y españoles. El desayuno se sirve cada mañana para los huéspedes del hotel.',
     restaurantImageAlt: 'Elegante comedor de Aristo con lámparas de araña, columnas y mesas preparadas',
-    restaurantInsetAlt: 'Cuatro amigos brindando con vino tinto en una mesa preparada del comedor de Aristo',
+    restaurantInsetAlt: 'Amigos brindando con vino tinto sobre platos servidos en una mesa del comedor de Aristo',
     menuCta: 'Ver el menú de hoy',
 
     barTag: 'El bar',
@@ -324,8 +324,8 @@ export default {
     hoursTitle: 'Horario y reservas',
     facts: {
       breakfast: { label: 'Desayuno', value: 'A diario · 08:00 – 11:00' },
-      restaurant: { label: 'Restaurante', value: 'Cena · 13:00 – 17:00' },
-      bar: { label: 'Bar y terraza', value: 'A diario · 12:00 – 00:00' },
+      restaurant: { label: 'Restaurante', value: 'Cena · 14:00 – 17:00' },
+      bar: { label: 'Bar y terraza', value: 'A diario · 8:00 – 00:00' },
       reservations: { label: 'Reservas', value: 'Recepción · 24 horas' },
     },
     reserveBody:

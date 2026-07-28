@@ -308,7 +308,7 @@ export default {
     restaurantBody2:
       'Our kitchen follows the seasons: a daily menu that changes with the market, alongside à la carte classics and a considered list of local and Spanish wines. Breakfast is served each morning for house guests.',
     restaurantImageAlt: 'Elegant Aristo dining room with chandeliers, columns, and set tables',
-    restaurantInsetAlt: 'Four friends toasting with red wine at a set table in the Aristo dining room',
+    restaurantInsetAlt: 'Friends toasting with red wine over plated dishes at a set table in the Aristo dining room',
     menuCta: "See today's menu",
 
     barTag: 'The Bar',
@@ -324,8 +324,8 @@ export default {
     hoursTitle: 'Hours & reservations',
     facts: {
       breakfast: { label: 'Breakfast', value: 'Daily · 08:00 – 11:00' },
-      restaurant: { label: 'Restaurant', value: 'Dinner · 13:00 – 17:00' },
-      bar: { label: 'Bar & terrace', value: 'Daily · 12:00 – 00:00' },
+      restaurant: { label: 'Restaurant', value: 'Dinner · 14:00 – 17:00' },
+      bar: { label: 'Bar & terrace', value: 'Daily · 8:00 – 00:00' },
       reservations: { label: 'Reservations', value: 'Reception · 24 hours' },
     },
     reserveBody:

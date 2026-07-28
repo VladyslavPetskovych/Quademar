@@ -21,49 +21,35 @@ const fadeUp = {
 
 const FACT_IDS = ['breakfast', 'restaurant', 'bar', 'reservations']
 
-/** Image pair (main + overlapping inset) used by both feature blocks. */
-function FeatureImages({
-  mainSrc,
-  mainAlt,
-  insetSrc,
-  insetAlt,
-  reverse,
-  mainAspect = 'aspect-[4/5] sm:aspect-[5/6]',
-  insetWidth = 'w-[45%]',
-}) {
+/**
+ * Diptych: two equal panels side by side, same height, thin gutter — no overlap and
+ * no offsets. Panels are 3:4, which is also how `restaurant-1/2.webp` are exported,
+ * so those two render with no crop at all. The second photo is mirrored to sit next
+ * to the copy in both the normal and reversed block.
+ */
+function FeatureImages({ mainSrc, mainAlt, secondSrc, secondAlt, reverse, panelAspect = 'aspect-[3/4]' }) {
+  const panelClass = 'overflow-hidden rounded-sm bg-[#171412]/5 shadow-[0_28px_70px_-40px_rgba(23,20,18,0.55)]'
+  const imgClass = `${panelAspect} w-full object-cover`
+
   return (
-    <div className="relative">
+    <div className="grid grid-cols-2 gap-3 sm:gap-4">
       <motion.div
-        className="overflow-hidden rounded-sm bg-[#171412]/5 shadow-[0_28px_70px_-40px_rgba(23,20,18,0.55)]"
-        initial={{ opacity: 0, scale: 0.98 }}
-        whileInView={{ opacity: 1, scale: 1 }}
+        className={`${panelClass} ${reverse ? 'order-2' : 'order-1'}`}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: easeSmooth }}
       >
-        <img
-          src={mainSrc}
-          alt={mainAlt}
-          loading="lazy"
-          decoding="async"
-          className={`${mainAspect} w-full object-cover`}
-        />
+        <img src={mainSrc} alt={mainAlt} loading="lazy" decoding="async" className={imgClass} />
       </motion.div>
       <motion.div
-        className={`absolute -bottom-8 hidden ${insetWidth} overflow-hidden rounded-sm border-4 border-[#f3eee6] shadow-[0_20px_50px_-28px_rgba(23,20,18,0.6)] sm:block ${
-          reverse ? '-left-6' : '-right-6'
-        }`}
-        initial={{ opacity: 0, y: 24 }}
+        className={`${panelClass} ${reverse ? 'order-1' : 'order-2'}`}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, delay: 0.16, ease: easeSmooth }}
+        transition={{ duration: 0.7, delay: 0.12, ease: easeSmooth }}
       >
-        <img
-          src={insetSrc}
-          alt={insetAlt}
-          loading="lazy"
-          decoding="async"
-          className="aspect-[4/3] w-full object-cover"
-        />
+        <img src={secondSrc} alt={secondAlt} loading="lazy" decoding="async" className={imgClass} />
       </motion.div>
     </div>
   )
@@ -176,9 +162,8 @@ export default function RestaurantBarPage() {
             imageProps={{
               mainSrc: restaurant1,
               mainAlt: t('restaurant.restaurantImageAlt'),
-              insetSrc: restaurant2,
-              insetAlt: t('restaurant.restaurantInsetAlt'),
-              mainAspect: 'aspect-[4/5] sm:aspect-[4/5]',
+              secondSrc: restaurant2,
+              secondAlt: t('restaurant.restaurantInsetAlt'),
             }}
             action={
               <Link
@@ -202,10 +187,8 @@ export default function RestaurantBarPage() {
             imageProps={{
               mainSrc: bar1,
               mainAlt: t('restaurant.barImageAlt'),
-              insetSrc: bar2,
-              insetAlt: t('restaurant.barInsetAlt'),
-              mainAspect: 'aspect-[4/5] sm:aspect-[8/9]',
-              insetWidth: 'w-[52%]',
+              secondSrc: bar2,
+              secondAlt: t('restaurant.barInsetAlt'),
             }}
           />
         </div>
