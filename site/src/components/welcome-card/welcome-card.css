@@ -1,0 +1,510 @@
+/**
+ * Welcome-card styles, ported verbatim from `guardamar-welcome-card-v2.html`.
+ * Everything is scoped under `.wc` so the card's plain-CSS rules never leak into
+ * the Tailwind side of the site. Sizes stay in mm/px exactly as in the source —
+ * `.wc-wrap` is zoomed down on narrow screens so a 148mm sheet still fits a phone
+ * without reflowing (proportions stay identical).
+ */
+.wc {
+  --bg: #faf3e8;
+  --card: #ffffff;
+  --gold: #b5673b;
+  --goldb: #8a4a2e;
+  --white: #26332f;
+  --mute: #7c8a83;
+  --div: rgba(38, 51, 47, 0.12);
+  --bd: rgba(181, 103, 59, 0.28);
+
+  min-height: 100vh;
+  background: #2f4a45;
+  font-family: 'Jost', Arial, 'Helvetica Neue', sans-serif;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+.wc *,
+.wc *::before,
+.wc *::after {
+  box-sizing: border-box;
+}
+
+.wc .wc-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 26px 16px;
+  zoom: var(--wc-scale, 1);
+}
+.wc .sheet {
+  width: 148mm;
+  height: 210mm;
+  background: var(--bg);
+  color: var(--white);
+  padding: 7mm 7mm 6mm;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+.wc .sheet .foot {
+  padding-top: 10px;
+}
+.wc .sheet.p1 {
+  justify-content: flex-start;
+  gap: 11px;
+}
+
+/* Bilingual secondary text (Spanish) */
+.wc .es {
+  color: var(--mute);
+  font-style: italic;
+}
+.wc .ct .es,
+.wc .bt .es {
+  font-style: normal;
+  color: var(--gold);
+  opacity: 0.75;
+  font-weight: 400;
+}
+
+/* Header */
+.wc .hd {
+  text-align: center;
+  padding: 0 0 8px;
+}
+.wc .logo-mark {
+  display: block;
+  margin: 0 auto 6px;
+  width: 108px;
+  height: 56px;
+}
+.wc .logo {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--goldb);
+  font-weight: 700;
+  letter-spacing: 3px;
+  font-size: 29px;
+  line-height: 1;
+  margin: 1px 0;
+}
+.wc .sub {
+  color: var(--gold);
+  letter-spacing: 6px;
+  font-size: 11.5px;
+  margin: 5px 0 0;
+  padding-left: 6px;
+}
+.wc .hd-rule {
+  width: 36px;
+  height: 1px;
+  background: rgba(181, 103, 59, 0.45);
+  margin: 10px auto 0;
+}
+
+/* Layout */
+.wc .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 7px;
+  margin-top: 5px;
+}
+.wc .row.two {
+  grid-template-columns: 1fr 1fr;
+}
+.wc .card {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.wc .map-card {
+  margin-top: 5px;
+}
+.wc .ct {
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-size: 10.5px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+.wc .ic {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(181, 103, 59, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  flex: 0 0 26px;
+}
+.wc .ic svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Telephony */
+.wc .tel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+.wc .num {
+  font-size: 17px;
+  color: var(--white);
+  line-height: 1;
+}
+.wc .lbl {
+  font-size: 10px;
+  color: var(--mute);
+  line-height: 1.25;
+}
+.wc .note {
+  font-size: 9.5px;
+  color: var(--mute);
+  line-height: 1.4;
+  margin-top: 6px;
+}
+.wc .tel-sep {
+  border-top: 1px solid var(--div);
+  margin-top: 8px;
+  padding-top: 6px;
+}
+.wc .tel-sep .subct {
+  color: var(--gold);
+  letter-spacing: 1px;
+  font-size: 9.5px;
+  font-weight: 500;
+  margin: 0 0 2px;
+}
+.wc .tel-pair {
+  display: flex;
+  gap: 14px;
+}
+.wc .tel-pair .tel {
+  margin: 4px 0 2px;
+}
+.wc .tel-pair .ic {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+.wc .tel-pair .ic svg {
+  width: 12px;
+  height: 12px;
+}
+.wc .tel-pair .num {
+  font-size: 16px;
+}
+
+/* Hours */
+.wc .hrow {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4.5px 0;
+  border-bottom: 1px solid var(--div);
+  font-size: 10.5px;
+}
+.wc .hrow:last-of-type {
+  border-bottom: none;
+}
+.wc .hrow svg {
+  width: 14px;
+  height: 13px;
+  color: var(--gold);
+  flex: 0 0 15px;
+}
+.wc .hrow .nm {
+  flex: 1;
+  color: var(--white);
+  line-height: 1.2;
+}
+.wc .hrow .nm .es {
+  display: block;
+  font-size: 8.8px;
+}
+.wc .hrow .tm {
+  color: var(--white);
+  opacity: 0.9;
+  white-space: nowrap;
+}
+.wc .qh {
+  font-style: italic;
+  color: var(--gold);
+  font-size: 9.2px;
+  margin-top: 5px;
+  line-height: 1.35;
+}
+
+/* Map */
+.wc .map {
+  height: 110px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background: #e6d9c8;
+}
+.wc .map.wide {
+  height: 112px;
+}
+.wc .map.big {
+  height: 340px;
+}
+.wc .map .mapbg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+.wc .cap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 6px;
+}
+.wc .cap .txt {
+  flex: 1;
+  font-size: 9.5px;
+  color: var(--mute);
+  line-height: 1.35;
+}
+.wc .qr {
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  border-radius: 4px;
+  object-fit: contain;
+  background: #fff;
+  padding: 2px;
+  border: 1px solid var(--bd);
+}
+.wc .qr.big {
+  width: 62px;
+  height: 62px;
+  flex: 0 0 62px;
+}
+.wc .hosp {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid var(--div);
+}
+.wc .hosp-ic {
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
+}
+.wc .hosp-txt {
+  font-size: 9.8px;
+  color: var(--white);
+  line-height: 1.4;
+  opacity: 0.9;
+}
+.wc .hosp-txt b {
+  color: var(--goldb);
+}
+
+/* Full-width band */
+.wc .band {
+  background: var(--card);
+  border: 1px solid var(--bd);
+  border-radius: 6px;
+  padding: 7px 12px;
+  margin-top: 5px;
+}
+.wc .bt {
+  color: var(--gold);
+  text-align: center;
+  letter-spacing: 1.2px;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 0 0 6px;
+}
+
+/* Wi-Fi band */
+.wc .wifi-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr 1.15fr;
+  gap: 12px;
+  align-items: center;
+}
+.wc .wifi-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.wc .wifi-item .ic {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+.wc .wifi-item .ic svg {
+  width: 12px;
+  height: 12px;
+}
+.wc .k {
+  font-size: 9px;
+  color: var(--mute);
+  letter-spacing: 0.3px;
+  line-height: 1.25;
+}
+.wc .v {
+  font-size: 11.5px;
+  color: var(--white);
+  line-height: 1.15;
+  font-weight: 500;
+}
+.wc .v.sm {
+  font-size: 10.5px;
+}
+
+/* Legal */
+.wc .legal-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 7px;
+}
+.wc .li {
+  text-align: center;
+}
+.wc .li .lic {
+  color: var(--gold);
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+.wc .li .lic svg {
+  width: 20px;
+  height: 20px;
+}
+.wc .li .lih {
+  color: var(--gold);
+  font-size: 8.6px;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  line-height: 1.25;
+}
+.wc .li .lid {
+  color: var(--mute);
+  font-size: 7.8px;
+  line-height: 1.3;
+}
+.wc .li .lid .es {
+  display: block;
+  margin-top: 2px;
+}
+.wc .emer {
+  text-align: center;
+  font-size: 9.8px;
+  color: var(--white);
+  margin-top: 8px;
+  line-height: 1.4;
+}
+.wc .emer b {
+  color: var(--gold);
+}
+.wc .emer .es {
+  display: block;
+  font-size: 9px;
+}
+
+/* Contact */
+.wc .ci {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 4px 0;
+  font-size: 10px;
+  color: var(--white);
+  line-height: 1.3;
+}
+.wc .ci svg {
+  color: var(--gold);
+  width: 13px;
+  height: 13px;
+  flex: 0 0 13px;
+  margin-top: 1px;
+}
+
+/* Comfort */
+.wc .comfort {
+  text-align: center;
+}
+.wc .comfort .cline {
+  width: 42px;
+  height: 1px;
+  background: rgba(181, 103, 59, 0.45);
+  margin: 0 auto 5px;
+}
+.wc .comfort p {
+  font-size: 9.6px;
+  color: var(--white);
+  line-height: 1.35;
+  margin: 3px 0;
+  opacity: 0.92;
+}
+.wc .comfort p.es {
+  opacity: 1;
+}
+.wc .comfort .enjoy {
+  color: var(--gold);
+  letter-spacing: 1px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 5px;
+  line-height: 1.4;
+}
+.wc .comfort .enjoy .es {
+  display: block;
+  font-size: 9.5px;
+  letter-spacing: 0.5px;
+}
+
+.wc .foot {
+  text-align: center;
+  color: var(--gold);
+  letter-spacing: 1.2px;
+  font-size: 9.8px;
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.wc .foot .es {
+  display: block;
+  font-size: 8.8px;
+  letter-spacing: 0.8px;
+  opacity: 0.8;
+}
+
+@page {
+  size: A5 portrait;
+  margin: 0;
+}
+@media print {
+  .wc {
+    background: #fff;
+    min-height: 0;
+  }
+  .wc .wc-wrap {
+    padding: 0;
+    gap: 0;
+    zoom: 1;
+  }
+  .wc .sheet {
+    box-shadow: none;
+    width: 148mm;
+    height: 210mm;
+  }
+}

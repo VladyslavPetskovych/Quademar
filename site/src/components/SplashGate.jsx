@@ -4,6 +4,10 @@ import { useLanguage } from '../i18n/LanguageContext'
 const MIN_SPLASH_MS = 1000
 const EXIT_MS = 550
 
+/** Standalone card routes (/info1, /info2) render bare — the green splash would cover them. */
+const BARE_ROUTE = /^\/info[12]\/?$/
+const isBareRoute = () => typeof window !== 'undefined' && BARE_ROUTE.test(window.location.pathname)
+
 function SplashCircularLoader() {
   return (
     <div
@@ -38,7 +42,7 @@ function SplashCircularLoader() {
  * on a green gradient only — no flat bitmap background.
  */
 export default function SplashGate({ children }) {
-  const [phase, setPhase] = useState('splash') // splash | exit | done
+  const [phase, setPhase] = useState(() => (isBareRoute() ? 'done' : 'splash')) // splash | exit | done
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -51,6 +55,7 @@ export default function SplashGate({ children }) {
   }, [phase])
 
   useEffect(() => {
+    if (isBareRoute()) return
     let cancelled = false
 
     const waitMin = () =>

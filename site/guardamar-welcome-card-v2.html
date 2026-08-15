@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guardamar Hotel &amp; Spa — Welcome Card (V2 · Coastal)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAF3E8; --card:#FFFFFF; --gold:#B5673B; --goldb:#8A4A2E;
+    --white:#26332F; --mute:#7C8A83; --div:rgba(38,51,47,.12); --bd:rgba(181,103,59,.28);
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:#2F4A45;font-family:'Jost',Arial,'Helvetica Neue',sans-serif;
+       -webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .wrap{display:flex;flex-direction:column;align-items:center;gap:24px;padding:26px 16px;}
+  .sheet{width:148mm;height:210mm;background:var(--bg);color:var(--white);
+         padding:7mm 7mm 6mm;box-shadow:0 10px 40px rgba(0,0,0,.35);
+         display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;}
+  .sheet .foot{padding-top:10px;}
+  .sheet.p1{justify-content:flex-start;gap:11px;}
+
+  .print-btn{position:fixed;top:16px;right:16px;z-index:10;background:var(--gold);color:#FFF7EE;
+             border:none;border-radius:6px;padding:10px 18px;font-family:'Jost',sans-serif;
+             font-size:15px;font-weight:600;letter-spacing:.5px;cursor:pointer;
+             box-shadow:0 4px 14px rgba(0,0,0,.25);}
+  .print-btn:hover{background:var(--goldb);}
+
+  .version-tag{position:fixed;top:16px;left:16px;z-index:10;background:rgba(255,255,255,.92);color:var(--gold);
+               border:1px solid var(--bd);border-radius:20px;padding:7px 16px;font-family:'Jost',sans-serif;
+               font-size:12px;font-weight:600;letter-spacing:.5px;}
+
+  /* Bilingual secondary text (Spanish) */
+  .es{color:var(--mute);font-style:italic;}
+  .ct .es,.bt .es{font-style:normal;color:var(--gold);opacity:.75;font-weight:400;}
+
+  /* Header */
+  .hd{text-align:center;padding:0 0 8px;}
+  .logo-mark{display:block;margin:0 auto 6px;width:108px;height:56px;}
+  .logo{font-family:'Playfair Display',Georgia,serif;color:var(--goldb);font-weight:700;letter-spacing:3px;
+        font-size:29px;line-height:1;margin:1px 0;}
+  .sub{color:var(--gold);letter-spacing:6px;font-size:11.5px;margin:5px 0 0;padding-left:6px;}
+  .hd-rule{width:36px;height:1px;background:rgba(181,103,59,.45);margin:10px auto 0;}
+
+  /* Layout */
+  .row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:7px;margin-top:5px;}
+  .row.two{grid-template-columns:1fr 1fr;}
+  .card{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:8px;
+        display:flex;flex-direction:column;justify-content:space-between;}
+  .map-card{margin-top:5px;}
+  .ct{color:var(--gold);text-align:center;letter-spacing:1.2px;font-size:10.5px;font-weight:500;margin:0 0 6px;}
+
+  .ic{width:26px;height:26px;border-radius:50%;border:1px solid rgba(181,103,59,.75);
+      display:flex;align-items:center;justify-content:center;color:var(--gold);flex:0 0 26px;}
+  .ic svg{width:13px;height:13px;}
+
+  /* Telephony */
+  .tel{display:flex;align-items:center;gap:8px;margin:5px 0;}
+  .num{font-size:17px;color:var(--white);line-height:1;}
+  .lbl{font-size:10px;color:var(--mute);line-height:1.25;}
+  .note{font-size:9.5px;color:var(--mute);line-height:1.4;margin-top:6px;}
+  .tel-sep{border-top:1px solid var(--div);margin-top:8px;padding-top:6px;}
+  .tel-sep .subct{color:var(--gold);letter-spacing:1px;font-size:9.5px;font-weight:500;margin:0 0 2px;}
+  .tel-pair{display:flex;gap:14px;}
+  .tel-pair .tel{margin:4px 0 2px;}
+  .tel-pair .ic{width:24px;height:24px;flex:0 0 24px;}
+  .tel-pair .ic svg{width:12px;height:12px;}
+  .tel-pair .num{font-size:16px;}
+
+  /* Hours */
+  .hrow{display:flex;align-items:center;gap:7px;padding:4.5px 0;border-bottom:1px solid var(--div);font-size:10.5px;}
+  .hrow:last-of-type{border-bottom:none;}
+  .hrow svg{width:14px;height:13px;color:var(--gold);flex:0 0 15px;}
+  .hrow .nm{flex:1;color:var(--white);line-height:1.2;}
+  .hrow .nm .es{display:block;font-size:8.8px;}
+  .hrow .tm{color:var(--white);opacity:.9;white-space:nowrap;}
+  .qh{font-style:italic;color:var(--gold);font-size:9.2px;margin-top:5px;line-height:1.35;}
+
+  /* Map */
+  .map{height:110px;border-radius:6px;overflow:hidden;position:relative;background:#E6D9C8;}
+  .map.wide{height:112px;}
+  .map.big{height:340px;}
+  .map .mapbg{width:100%;height:100%;display:block;object-fit:cover;}
+  .cap{display:flex;gap:8px;align-items:center;margin-top:6px;}
+  .cap .txt{flex:1;font-size:9.5px;color:var(--mute);line-height:1.35;}
+  .qr{width:52px;height:52px;flex:0 0 52px;border-radius:4px;object-fit:contain;background:#fff;padding:2px;
+      border:1px solid var(--bd);}
+  .qr.big{width:62px;height:62px;flex:0 0 62px;}
+  .hosp{display:flex;align-items:center;gap:9px;margin-top:6px;padding-top:6px;border-top:1px solid var(--div);}
+  .hosp-ic{width:22px;height:22px;flex:0 0 22px;}
+  .hosp-txt{font-size:9.8px;color:var(--white);line-height:1.4;opacity:.9;}
+  .hosp-txt b{color:var(--goldb);}
+
+  /* Full-width band */
+  .band{background:var(--card);border:1px solid var(--bd);border-radius:6px;padding:7px 12px;margin-top:5px;}
+  .bt{color:var(--gold);text-align:center;letter-spacing:1.2px;font-size:11px;font-weight:500;margin:0 0 6px;}
+
+  /* Wi-Fi band */
+  .wifi-grid{display:grid;grid-template-columns:1fr 1.05fr 1.15fr;gap:12px;align-items:center;}
+  .wifi-item{display:flex;gap:8px;align-items:center;}
+  .wifi-item .ic{width:24px;height:24px;flex:0 0 24px;}
+  .wifi-item .ic svg{width:12px;height:12px;}
+  .k{font-size:9px;color:var(--mute);letter-spacing:.3px;line-height:1.25;}
+  .v{font-size:11.5px;color:var(--white);line-height:1.15;font-weight:500;}
+  .v.sm{font-size:10.5px;}
+
+  /* Legal */
+  .legal-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:7px;}
+  .li{text-align:center;}
+  .li .lic{color:var(--gold);height:22px;display:flex;align-items:center;justify-content:center;margin-bottom:4px;}
+  .li .lic svg{width:20px;height:20px;}
+  .li .lih{color:var(--gold);font-size:8.6px;letter-spacing:.3px;font-weight:500;margin-bottom:2px;line-height:1.25;}
+  .li .lid{color:var(--mute);font-size:7.8px;line-height:1.3;}
+  .li .lid .es{display:block;margin-top:2px;}
+  .emer{text-align:center;font-size:9.8px;color:var(--white);margin-top:8px;line-height:1.4;}
+  .emer b{color:var(--gold);}
+  .emer .es{display:block;font-size:9px;}
+
+  /* Contact */
+  .ci{display:flex;align-items:flex-start;gap:8px;margin:4px 0;font-size:10px;color:var(--white);line-height:1.3;}
+  .ci svg{color:var(--gold);width:13px;height:13px;flex:0 0 13px;margin-top:1px;}
+
+  /* Services */
+  .svc{display:flex;align-items:center;gap:8px;margin:4px 0;font-size:10px;color:var(--white);line-height:1.2;}
+  .svc svg{color:var(--gold);width:14px;height:14px;flex:0 0 14px;}
+  .svc .es{display:block;font-size:8.6px;}
+  .svc-note{font-style:italic;color:var(--mute);font-size:8.8px;margin-top:4px;line-height:1.3;}
+
+  /* Comfort */
+  .comfort{text-align:center;}
+  .comfort .cline{width:42px;height:1px;background:rgba(181,103,59,.45);margin:0 auto 5px;}
+  .comfort p{font-size:9.6px;color:var(--white);line-height:1.35;margin:3px 0;opacity:.92;}
+  .comfort p.es{opacity:1;}
+  .comfort .enjoy{color:var(--gold);letter-spacing:1px;font-size:11px;font-weight:500;margin-top:5px;line-height:1.4;}
+  .comfort .enjoy .es{display:block;font-size:9.5px;letter-spacing:.5px;}
+
+  .foot{text-align:center;color:var(--gold);letter-spacing:1.2px;font-size:9.8px;margin-top:6px;line-height:1.5;}
+  .foot .es{display:block;font-size:8.8px;letter-spacing:.8px;opacity:.8;}
+
+  @page{size:A5 portrait;margin:0;}
+  @media print{
+    body{background:#fff;}
+    .wrap{padding:0;gap:0;}
+    .sheet{box-shadow:none;width:148mm;height:210mm;page-break-after:always;}
+    .sheet:last-child{page-break-after:auto;}
+    .print-btn{display:none;}
+    .version-tag{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="version-tag">Version 2 — Coastal · EN/ES</div>
+<button class="print-btn" id="printBtn" onclick="printCard()">Print / Save as PDF</button>
+<div class="wrap">
+  <div class="sheet p1">
+
+    <!-- HEADER -->
+    <div class="hd">
+      <svg class="logo-mark" viewBox="0 0 204 105" xmlns="http://www.w3.org/2000/svg">
+        <path d="M103.951 52.3399C87.7447 52.3399 71.5384 52.3399 55.3346 52.3399C55.2051 52.3399 55.073 52.3217 54.946 52.3399C54.3682 52.4203 54.2231 52.1558 54.218 51.6008C54.1687 46.8755 54.5703 42.2151 55.7311 37.6091C57.796 29.4164 61.7265 22.2611 67.411 16.0472C71.3855 11.7057 76.0155 8.20977 81.2311 5.50221C85.7419 3.16033 90.5066 1.5109 95.5227 0.699147C103.169 -0.537927 110.737 -0.161877 118.193 2.05552C125.886 4.34294 132.609 8.2772 138.416 13.8012C143.623 18.7573 147.499 24.6185 150.197 31.2603C152.832 37.7491 153.928 44.5232 153.764 51.5152C153.746 52.3088 153.741 52.3165 152.829 52.3165C137.833 52.3191 122.834 52.3217 107.837 52.3243C106.542 52.3243 105.249 52.3243 103.954 52.3243V52.3347L103.951 52.3399Z" fill="#B5673B"/>
+        <path d="M204 82.5691C202.629 83.4094 201.277 84.2808 199.886 85.0848C195.478 87.6315 190.786 89.5247 185.946 91.0575C180.075 92.917 174.07 94.1644 167.981 95.0669C160.464 96.1795 152.909 96.5426 145.328 96.2599C138.011 95.9876 130.767 95.0877 123.588 93.5965C116.463 92.1156 109.615 89.7893 102.909 87.0221C96.1341 84.2263 89.4236 81.2724 82.6146 78.5622C77.8913 76.682 73.08 75.004 68.2556 73.3987C61.7628 71.2383 55.1325 69.5785 48.4117 68.2844C43.4707 67.3326 38.4935 66.7128 33.4723 66.3938C27.4536 66.0099 21.4426 66.08 15.4368 66.5935C13.1827 66.7854 10.9337 67.0759 8.68482 67.317C8.47495 67.3404 8.26249 67.3456 8.0034 67.2496C8.12776 67.1718 8.24177 67.0733 8.3739 67.0162C13.5713 64.7443 18.9708 63.1468 24.5439 62.0886C32.5888 60.5611 40.6958 60.2291 48.834 60.8568C52.1348 61.1109 55.4201 61.6919 58.6899 62.2494C63.5868 63.0871 68.3489 64.4876 73.0618 66.0437C78.451 67.8228 83.695 69.9753 88.8354 72.3769C96.002 75.7276 103.145 79.138 110.633 81.7366C115.931 83.578 121.318 85.1159 126.78 86.4022C131.379 87.4863 136.009 88.3914 140.688 89.0424C145.95 89.7763 151.241 90.129 156.55 90.2768C161.776 90.4221 166.991 90.2431 172.191 89.7218C178.01 89.1383 183.775 88.2099 189.465 86.8327C194.206 85.6838 198.841 84.19 203.425 82.5302C203.58 82.4731 203.741 82.4317 203.899 82.3824C203.933 82.4446 203.966 82.5069 204 82.5665V82.5691Z" fill="#B5673B"/>
+        <path d="M135.576 65.6624C142.535 66.469 152.751 67.509 152.56 67.5712C151.334 67.9758 150.109 68.3985 148.855 68.6812C143.253 69.9468 131.687 70.7248 124.769 70.6444C97.3752 70.328 90.7735 67.1796 90.7735 67.1796C91.2606 66.9254 91.815 66.7724 92.3566 66.6531C96.0434 65.8465 99.7304 65.0478 103.425 64.2723C104.436 64.0597 105.464 63.9378 106.5 63.6836C106.249 63.6603 106 63.6214 105.749 63.6162C102.148 63.5617 98.5463 63.4813 94.9423 63.4684C89.5609 63.4476 84.1873 63.2713 78.9251 62.0705C74.4299 61.0435 69.9838 59.7908 65.5196 58.6368C65.3823 58.6005 65.2528 58.533 65.1336 58.3307C65.3538 58.3307 65.574 58.3256 65.7943 58.3307C71.3156 58.4552 76.8368 58.5953 82.3581 58.6964C86.1772 58.7664 89.9936 58.7846 93.8127 58.8131C108.138 58.9143 122.466 59.0387 136.791 59.0906C143.11 59.114 149.432 58.9195 155.754 58.9376C161.708 58.9558 167.652 59.2566 173.569 59.9931C178.609 60.6182 183.573 61.5907 188.441 63.043C192.232 64.1738 195.911 65.5768 199.375 67.5115C199.632 67.6542 199.878 67.8176 200.129 67.9732C179.153 63.5877 158.081 61.9771 136.778 64.2516C134.926 64.4487 133.086 64.7806 131.241 65.053C131.247 65.1437 131.252 65.2345 131.257 65.3253C131.257 65.3253 134.501 65.5353 135.576 65.6598V65.6624Z" fill="#B5673B"/>
+        <path d="M0 76.8972C1.48461 76.5549 2.95885 76.1607 4.45641 75.8754C12.8433 74.2882 21.326 73.8707 29.8346 73.9122C35.8638 73.9407 41.8514 74.532 47.7613 75.7691C51.3446 76.5186 54.946 77.2162 58.493 78.1161C65.1621 79.8097 71.6783 81.9985 78.0779 84.5375C84.7677 87.1932 91.4808 89.7996 98.2069 92.3645C100.863 93.3786 103.583 94.2189 106.275 95.1395C106.405 95.1836 106.529 95.2459 106.646 95.417C106.469 95.4404 106.293 95.4767 106.114 95.4819C100.458 95.5882 94.8102 95.4222 89.1878 94.7765C83.138 94.084 77.1762 92.8625 71.2793 91.3687C63.509 89.4002 55.7596 87.341 48.0282 85.217C42.8541 83.7958 37.7551 82.0997 32.5784 80.6888C26.5182 79.0394 20.3674 77.8309 14.0921 77.2862C10.2316 76.9517 6.38148 76.9647 2.52098 77.1332C1.68929 77.1695 0.8576 77.1384 0.0259094 77.1384C0.0181366 77.0554 0.00777281 76.9724 0 76.892V76.8972Z" fill="#B5673B"/>
+        <path d="M131.69 100.539C129.557 101.2 127.443 101.934 125.287 102.505C119.362 104.077 113.309 104.74 107.19 104.948C99.3624 105.215 91.644 104.45 84.0111 102.736C79.9382 101.823 76.0026 100.498 72.2302 98.7055C71.9996 98.5966 71.7741 98.4773 71.5565 98.2854C91.4886 101.875 111.545 101.413 131.627 100.251C131.648 100.347 131.669 100.443 131.69 100.539Z" fill="#B5673B"/>
+        <path d="M193.123 74.2623C189.672 75.2893 186.252 76.4278 182.762 77.3226C173.165 79.7863 163.346 80.9041 153.407 81.3476C140.696 81.9156 128.137 80.9482 115.703 78.5726C109.068 77.3044 102.648 75.4242 96.4813 72.8437C96.1056 72.6855 95.7377 72.5143 95.3776 72.2342C127.834 77.128 160.415 76.0025 193.02 73.837C193.056 73.9796 193.09 74.1196 193.126 74.2623H193.123Z" fill="#B5673B"/>
+      </svg>
+      <div class="logo">GUARDAMAR</div>
+      <div class="sub">HOTEL &amp; SPA</div>
+      <div class="hd-rule"></div>
+    </div>
+
+    <!-- TELEPHONY / HOURS -->
+    <div class="row two">
+      <div class="card">
+        <div class="ct">TELEPHONY <span class="es">· TELEFONÍA</span></div>
+        <div class="tel">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.34 1.83.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="num">100</div><div class="lbl">Reception <span class="es">· Recepción</span></div></div>
+        </div>
+        <div class="tel">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.34 1.83.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div><div class="num">500</div><div class="lbl">Bar</div></div>
+        </div>
+        <div class="note">Dial the number from your room phone. <span class="es">Marque el número desde el teléfono de su habitación.</span></div>
+        <div class="tel-sep">
+          <div class="subct">EMERGENCY NUMBERS <span class="es" style="font-style:normal;opacity:.75;font-weight:400;">· EMERGENCIAS</span></div>
+          <div class="tel-pair">
+            <div class="tel">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.5 8.5-8 11-4.5-2.5-8-6-8-11V5z"/></svg></div>
+              <div><div class="num">112</div><div class="lbl">Police <span class="es">· Policía</span></div></div>
+            </div>
+            <div class="tel">
+              <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/></svg></div>
+              <div><div class="num">061</div><div class="lbl">Ambulance <span class="es">· Ambulancia</span></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="ct">HOURS &amp; SERVICES <span class="es">· HORARIOS</span></div>
+        <div class="hrow"><svg viewBox="0 0 28 22" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="5" r="2.6" fill="currentColor" stroke="none"/><path d="M3 11l6-3 5 3 4-2 4 2.5"/><path d="M2 17q3-2.5 5.5 0t5.5 0 5.5 0 5.5 0"/></svg><span class="nm">Swimming Pool <span class="es">Piscina</span></span><span class="tm">9:00 – 21:00</span></div>
+        <div class="hrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 3v6a3 3 0 0 0 6 0V3"/><path d="M7 9v12"/><path d="M18 3c-2 0-3 2.4-3 5.4S16 13 18 13"/><path d="M18 3v18"/></svg><span class="nm">Restaurant <span class="es">Restaurante</span></span><span class="tm">14:00 – 17:00</span></div>
+        <div class="hrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h14l-7 8z"/><path d="M12 12v8"/><path d="M8 20h8"/><path d="M7.6 7h8.8"/></svg><span class="nm">Bar</span><span class="tm">8:00 – 00:00</span></div>
+        <div class="hrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 0 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg><span class="nm">Breakfast <span class="es">Desayuno</span></span><span class="tm">8:00 – 11:00</span></div>
+        <div class="qh">Please respect quiet hours from 22:00 to 8:00.<br>Respete el horario de silencio de 22:00 a 8:00.</div>
+      </div>
+    </div>
+
+    <!-- WI-FI & GUEST INFO BAND -->
+    <div class="band">
+      <div class="bt">WI-FI &amp; GUEST INFORMATION <span class="es">· INFORMACIÓN PARA HUÉSPEDES</span></div>
+      <div class="wifi-grid">
+        <div class="wifi-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.4a10 10 0 0 1 14 0"/><path d="M8.5 15.9a5 5 0 0 1 7 0"/><circle cx="12" cy="19.4" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+          <div>
+            <div class="k">Wi-Fi Network <span class="es">· Red</span></div><div class="v">Hotel-guest</div>
+            <div class="k" style="margin-top:4px;">Password <span class="es">· Contraseña</span></div><div class="v">12341234</div>
+          </div>
+        </div>
+        <div class="wifi-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></div>
+          <div><div class="k">Check&#8209;in / Check&#8209;out <span class="es">· Entrada / Salida</span></div><div class="v sm">15:00 – 11:00</div></div>
+        </div>
+        <div class="wifi-item">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 18h17"/><path d="M5 18a7 7 0 0 1 14 0"/><path d="M12 6.2V4.4"/><circle cx="12" cy="3.4" r="1.1" fill="currentColor" stroke="none"/></svg></div>
+          <div><div class="k">24-Hour Reception <span class="es">· Recepción 24 h</span></div><div class="v sm">Front desk &amp; concierge <span class="es" style="font-weight:400;">· Conserjería</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LEGAL & SAFETY -->
+    <div class="band">
+      <div class="bt">LEGAL &amp; SAFETY INFORMATION <span class="es">· INFORMACIÓN LEGAL Y DE SEGURIDAD</span></div>
+      <div class="legal-grid">
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><line x1="7" y1="7" x2="25" y2="25"/><rect x="8" y="18" width="12" height="4" rx="1"/><path d="M23 15v3M26 15v3"/></svg></div>
+          <div class="lih">NO SMOKING<br>NO FUMAR</div>
+          <div class="lid">Smoking is not allowed in indoor areas.<span class="es">No está permitido fumar en el interior.</span></div>
+        </div>
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="11" y="11" width="10" height="15" rx="3"/><path d="M13 11V9a3 3 0 0 1 6 0v2"/><path d="M19 7h4M23 7v3l-3 1.5"/></svg></div>
+          <div class="lih">FIRE SAFETY<br>INCENDIOS</div>
+          <div class="lid">In case of fire, use the nearest exit.<span class="es">En caso de incendio, use la salida más cercana.</span></div>
+        </div>
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><path d="M16 10v12M10 16h12"/></svg></div>
+          <div class="lih">HEALTH &amp; SAFETY<br>SALUD</div>
+          <div class="lid">Inform reception of any health conditions.<span class="es">Informe en recepción de cualquier problema de salud.</span></div>
+        </div>
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="9" width="24" height="15" rx="3"/><line x1="4" y1="14" x2="28" y2="14"/><line x1="8" y1="20" x2="15" y2="20"/></svg></div>
+          <div class="lih">VALUABLES<br>OBJETOS DE VALOR</div>
+          <div class="lid">Use the in-room safe — ask reception for the key.<span class="es">Utilice la caja fuerte; pida la llave en recepción.</span></div>
+        </div>
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h4l6-5v18l-6-5H6z"/><line x1="21" y1="12" x2="27" y2="20"/><line x1="27" y1="12" x2="21" y2="20"/></svg></div>
+          <div class="lih">QUIET HOURS<br>SILENCIO</div>
+          <div class="lid">Please keep noise to a minimum.<span class="es">Mantenga el ruido al mínimo.</span></div>
+        </div>
+        <div class="li">
+          <div class="lic"><svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="22" height="7" rx="2.5"/><rect x="5" y="17" width="22" height="7" rx="2.5"/><path d="M11 8v7"/><path d="M11 17v7"/></svg></div>
+          <div class="lih">TOWELS<br>TOALLAS</div>
+          <div class="lid">Room towels are not for the beach or pool — reception provides pool towels.<span class="es">Las toallas de la habitación no son para la playa ni la piscina; en recepción le darán toallas de piscina.</span></div>
+        </div>
+      </div>
+      <div class="emer">In case of emergency, dial <b>100</b> (Reception) or <b>112</b>.<span class="es">En caso de emergencia, marque <b>100</b> (Recepción) o <b>112</b>.</span></div>
+    </div>
+
+  </div>
+
+  <div class="sheet">
+
+    <!-- NAVIGATION MAP (full width, enlarged) -->
+    <div class="card map-card" style="margin-top:0;">
+      <div class="ct">NAVIGATION MAP <span class="es">· MAPA DE NAVEGACIÓN</span></div>
+      <div class="map wide big">
+        <img class="mapbg" src="map-screenshot.png" alt="Map showing Hotel Guardamar & Spa location and nearby points of interest">
+      </div>
+      <div class="cap">
+        <div class="txt">Scan the QR code to view the hotel map and find your way around easily. <span class="es">Escanee el código QR para ver el mapa del hotel y orientarse fácilmente.</span></div>
+        <img class="qr big" src="qr-code.png" alt="QR code linking to the hotel navigation map">
+      </div>
+      <div class="hosp">
+        <svg class="hosp-ic" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="12" cy="12" r="11" fill="#E14B4B"/>
+          <path d="M12 6.5v11M6.5 12h11" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+        </svg>
+        <div class="hosp-txt"><b>Hospital</b> — nearest medical facility in case of emergency · Tel. <b>+34 965 290 285</b><br><span class="es">Centro médico más cercano en caso de emergencia · Tel. +34 965 290 285</span></div>
+      </div>
+    </div>
+
+    <!-- ROW 3: CONTACT / COMFORT -->
+    <div class="row two">
+      <div class="card">
+        <div class="ct">CONTACT US <span class="es">· CONTACTO</span></div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.2 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.98.36 1.92.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.89.34 1.83.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+34 965 729 650</div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.5 7-12a7 7 0 0 0-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>Puerto Rico, 11 · 03140 Guardamar del Segura, Alicante, España</div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>info@hotelguardamar.com</div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><ellipse cx="12" cy="12" rx="4" ry="9"/></svg>guardamarhotelspa.com</div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>@hotelguardamar</div>
+      </div>
+
+      <div class="card comfort">
+        <div class="ct">YOUR COMFORT, OUR PRIORITY</div>
+        <div class="cline"></div>
+        <p>Our team is here to make your stay exceptional. If there is anything you need, please don't hesitate to contact us.</p>
+        <p class="es">Nuestro equipo está aquí para hacer que su estancia sea excepcional. Si necesita algo, no dude en contactarnos.</p>
+        <div class="enjoy">ENJOY YOUR STAY!<span class="es">¡DISFRUTE DE SU ESTANCIA!</span></div>
+      </div>
+    </div>
+
+    <div class="foot">THANK YOU FOR CHOOSING GUARDAMAR HOTEL &amp; SPA<span class="es">GRACIAS POR ELEGIR GUARDAMAR HOTEL &amp; SPA</span></div>
+
+  </div>
+</div>
+<script>
+  function printCard(){
+    if(document.fonts && document.fonts.ready){
+      document.fonts.ready.then(function(){ window.print(); });
+    } else {
+      window.print();
+    }
+  }
+  if(document.fonts && document.fonts.status !== 'loaded'){
+    var btn = document.getElementById('printBtn');
+    btn.textContent = 'Loading fonts…';
+    btn.disabled = true;
+    document.fonts.ready.then(function(){
+      btn.textContent = 'Print / Save as PDF';
+      btn.disabled = false;
+    });
+  }
+</script>
+</body>
+</html>

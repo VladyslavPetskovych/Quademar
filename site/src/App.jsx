@@ -18,6 +18,9 @@ const MenuPage = lazy(() => import('./pages/MenuPage'))
 const TermsPage = lazy(() => import('./pages/TermsPage'))
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage'))
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
+// Standalone printable welcome-card sheets — no site chrome, so they sit outside MainLayout.
+const InfoPage1 = lazy(() => import('./pages/InfoPage1'))
+const InfoPage2 = lazy(() => import('./pages/InfoPage2'))
 
 export default function App() {
   return (
@@ -40,6 +43,8 @@ export default function App() {
                 <Route path="privacy" element={<PrivacyPage />} />
                 <Route path="contacts" element={<ContactsPage />} />
               </Route>
+              <Route path="/info1" element={<InfoPage1 />} />
+              <Route path="/info2" element={<InfoPage2 />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
