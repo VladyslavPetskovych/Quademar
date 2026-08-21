@@ -4,8 +4,9 @@ import './welcome-card.css'
 const FONTS_HREF =
   'https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap'
 
-/** A5 sheet width (148mm) in CSS px, plus the 2×16px wrap padding. */
-const SHEET_WIDTH_PX = (148 * 96) / 25.4 + 32
+/** The A5 sheet (148×210mm) in CSS px — the size every rule in welcome-card.css is drawn against. */
+const SHEET_WIDTH_PX = (148 * 96) / 25.4
+const SHEET_HEIGHT_PX = (210 * 96) / 25.4
 
 /** Load Jost + Playfair Display once, only on the routes that use the card. */
 function useCardFonts() {
@@ -23,12 +24,24 @@ function useCardFonts() {
   }, [])
 }
 
-/** Shrink the fixed-mm sheet to fit narrow viewports without reflowing it. */
+/**
+ * Scale the fixed-mm sheet to the largest size that still fits the viewport whole, growing it
+ * past 1:1 on big screens as readily as it shrinks it on phones. Uniform, so the card keeps the
+ * exact proportions of the print original — one axis fills the viewport and the other is padded
+ * by the stage, which is why the stage is painted in the card's own cream rather than a
+ * contrasting colour: the padding reads as part of the sheet instead of a border around it.
+ */
+const fitScale = () =>
+  typeof window === 'undefined'
+    ? 1
+    : Math.min(window.innerWidth / SHEET_WIDTH_PX, window.innerHeight / SHEET_HEIGHT_PX)
+
 function useFitScale() {
-  const [scale, setScale] = useState(1)
+  // Seeded rather than defaulted to 1, so the card never paints at the wrong size first.
+  const [scale, setScale] = useState(fitScale)
 
   useEffect(() => {
-    const fit = () => setScale(Math.min(1, window.innerWidth / SHEET_WIDTH_PX))
+    const fit = () => setScale(fitScale)
     fit()
     window.addEventListener('resize', fit)
     return () => window.removeEventListener('resize', fit)

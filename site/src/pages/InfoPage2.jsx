@@ -1,6 +1,10 @@
 import WelcomeCardFrame from '../components/welcome-card/WelcomeCardFrame'
 import { PhoneIcon } from '../components/welcome-card/icons'
 
+/** Google Maps place embed for the hotel, as supplied by Maps' own "Share → Embed" panel. */
+const MAP_EMBED_SRC =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.1836827200996!2d-0.6506599660299663!3d38.083347012621005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd63ac42ae68e605%3A0xbacb47f962402f3a!2sHotel%20Guardamar!5e0!3m2!1sen!2ses!4v1787316032013!5m2!1sen!2ses'
+
 /** Welcome card, sheet 2 — navigation map, contact details and closing note. */
 export default function InfoPage2() {
   return (
@@ -11,10 +15,18 @@ export default function InfoPage2() {
           <div className="ct">
             NAVIGATION MAP <span className="es">· MAPA DE NAVEGACIÓN</span>
           </div>
-          {/* Both images live in public/info/ and come from the same Google My Maps map
-              (mid=1zKS2C3To6urz8aS3TIymkL7tl8jgYhs): the still is that map's thumbnail render,
-              the QR encodes its public viewer URL. */}
+          {/* Live Google Maps embed of the hotel, with the My Maps still behind it as the print
+              fallback — iframes print blank. The QR below points at the separate My Maps map,
+              which carries the custom points of interest this place pin does not. */}
           <div className="map wide big">
+            <iframe
+              className="mapembed"
+              src={MAP_EMBED_SRC}
+              title="Map of Hotel Guardamar & Spa"
+              loading="lazy"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
             <img
               className="mapbg"
               src="/info/map-screenshot.png"
