@@ -77,8 +77,10 @@
 .wc .logo-mark {
   display: block;
   margin: 0 auto 6px;
-  width: 108px;
-  height: 56px;
+  /* Reduced from the source card's 108×56; the 204:105 viewBox ratio is kept so the wave
+     mark is scaled rather than squashed. */
+  width: 84px;
+  height: 43px;
 }
 .wc .logo {
   font-family: 'Playfair Display', Georgia, serif;
