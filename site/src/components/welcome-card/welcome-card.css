@@ -72,38 +72,38 @@
 /* Header */
 .wc .hd {
   text-align: center;
-  padding: 0 0 8px;
+  /* Tighter than the source card throughout this block: the mark is smaller and the gaps
+     between mark, wordmark, subtitle and rule are pulled in, so the header takes noticeably
+     less of the sheet without any of its type shrinking. */
+  padding: 0 0 3px;
 }
 .wc .logo-mark {
   display: block;
-  margin: 0 auto 6px;
-  /* Narrower and deliberately flatter than the source card's 108×56: the box is shorter than
-     the 204:105 viewBox, and the SVG drops preserveAspectRatio so the mark squashes into it —
-     lifting the wave lines at its foot — rather than shrinking and centring. */
+  margin: 0 auto 2px;
   width: 84px;
-  height: 34px;
+  height: 43px;
 }
 .wc .logo {
   font-family: 'Playfair Display', Georgia, serif;
   color: var(--goldb);
   font-weight: 700;
-  letter-spacing: 3px;
-  font-size: 29px;
+  letter-spacing: 2.6px;
+  font-size: 25px;
   line-height: 1;
-  margin: 1px 0;
+  margin: 0;
 }
 .wc .sub {
   color: var(--gold);
-  letter-spacing: 6px;
-  font-size: 11.5px;
-  margin: 5px 0 0;
-  padding-left: 6px;
+  letter-spacing: 5.2px;
+  font-size: 10px;
+  margin: 2px 0 0;
+  padding-left: 5.2px;
 }
 .wc .hd-rule {
   width: 36px;
   height: 1px;
   background: rgba(181, 103, 59, 0.45);
-  margin: 10px auto 0;
+  margin: 5px auto 0;
 }
 
 /* Layout */
