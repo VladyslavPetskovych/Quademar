@@ -53,7 +53,33 @@
 }
 .wc .sheet.p1 {
   justify-content: flex-start;
-  gap: 11px;
+  gap: 5px;
+}
+
+/*
+ * Sheet 1 only: tighten the vertical rhythm so the content stands roughly 8% shorter. Every
+ * saving comes out of gaps, vertical padding and vertical margins — no type size, icon
+ * dimension or horizontal metric changes, so nothing is scaled or squashed. Scoped to .p1
+ * because sheet 2 is not crowded and keeps the source cards spacing.
+ */
+.wc .sheet.p1 > .row,
+.wc .sheet.p1 > .band {
+  margin-top: 0;
+}
+.wc .sheet.p1 .card {
+  padding: 6px 8px;
+}
+.wc .sheet.p1 .band {
+  padding: 5px 12px;
+}
+.wc .sheet.p1 .tel {
+  margin: 3px 0;
+}
+.wc .sheet.p1 .hrow {
+  padding: 3px 0;
+}
+.wc .sheet.p1 .emer {
+  margin-top: 5px;
 }
 
 /* Bilingual secondary text (Spanish) */
