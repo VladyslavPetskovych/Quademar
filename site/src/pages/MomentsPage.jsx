@@ -100,7 +100,29 @@ function MomentCard({ image, imageAlt, tag, title, description, footnote, index 
   )
 }
 
-function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote, ctaHref, ctaLabel }) {
+function EvChargingNote({ tf }) {
+  return (
+    <motion.aside
+      className="mt-12 flex flex-col items-center gap-5 rounded-sm border border-[#171412]/10 bg-[#faf6ef]/80 px-6 py-7 text-center sm:flex-row sm:gap-6 sm:px-8 sm:text-left lg:mt-16"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.4, ease: easeSmooth }}
+    >
+      <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#0a3f35] text-white" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z" />
+        </svg>
+      </span>
+      <div className="flex-1">
+        <p className="font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-[#6e361b]">{tf('moments.evChargingTag')}</p>
+        <h3 className="mt-1.5 font-cormorant text-[24px] font-normal leading-[1.15] text-[#171412]">{tf('moments.evChargingTitle')}</h3>
+        <p className="mt-2 font-sans text-[15px] font-[250] leading-relaxed text-[#57524e]">{tf('moments.evChargingDesc')}</p>
+      </div>
+    </motion.aside>
+  )
+}
+
+function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote, ctaHref, ctaLabel, children }) {
   return (
     <motion.div
       key={tabId}
@@ -170,6 +192,8 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassNam
           />
         ))}
       </motion.div>
+
+      {children}
     </motion.div>
   )
 }
@@ -261,7 +285,9 @@ export default function MomentsPage() {
                 cards={offersCards}
                 tf={tf}
                 cardFootnote={tf('moments.panelNote')}
-              />
+              >
+                <EvChargingNote tf={tf} />
+              </MomentsPanel>
             ) : (
               <MomentsPanel
                 tabId={TAB.costaBlanca}

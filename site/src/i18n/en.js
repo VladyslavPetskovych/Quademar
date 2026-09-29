@@ -358,6 +358,10 @@ export default {
     offersCard3Title: 'Romance at Guardamar',
     offersCard3Desc: 'Flowers, tasting menu, and private terrace setup — an intimate evening above the Mediterranean.',
     offersCard3Alt: 'Couple toasting with white wine at an outdoor table by the fountain',
+    evChargingTag: 'Additional service',
+    evChargingTitle: 'Electric vehicle charging',
+    evChargingDesc:
+      'Travelling by electric car? You can charge your vehicle at the hotel for an additional fee — just ask at reception.',
     costaTitle: 'Costa Blanca',
     costaLead:
       'A new story is unfolding on the coast of Costa Blanca. From Guardamar’s golden dunes and pine forests to whitewashed villages and hidden coves, this is where Spanish heritage meets the endless blue of the Mediterranean. Let us guide you through unhurried days out, local flavour, and the gentle rhythm of the coast — the opening pages of a chapter we can’t wait to share.',

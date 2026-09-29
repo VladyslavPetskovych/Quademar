@@ -358,6 +358,10 @@ export default {
     offersCard3Title: 'Romance en Guardamar',
     offersCard3Desc: 'Flores, menú degustación y preparación en terraza privada — una velada íntima sobre el Mediterráneo.',
     offersCard3Alt: 'Pareja brindando con vino blanco en una mesa al aire libre junto a la fuente',
+    evChargingTag: 'Servicio adicional',
+    evChargingTitle: 'Carga de vehículos eléctricos',
+    evChargingDesc:
+      '¿Viaja en coche eléctrico? Puede cargar su vehículo en el hotel con un suplemento — solo tiene que solicitarlo en recepción.',
     costaTitle: 'Costa Blanca',
     costaLead:
       'Una nueva historia se despliega en la costa de la Costa Blanca. Desde las dunas doradas y los pinares de Guardamar hasta los pueblos encalados y las calas escondidas, aquí el legado español se encuentra con el azul infinito del Mediterráneo. Déjese guiar por excursiones sin prisas, sabor local y el ritmo suave de la costa — las primeras páginas de un capítulo que deseamos compartir.',
