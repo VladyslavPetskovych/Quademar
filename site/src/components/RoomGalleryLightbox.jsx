@@ -6,6 +6,8 @@ import { blurBackgroundStyle } from './sections/roomImageStyles'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
 const fadeTransition = { duration: 0.5, ease: easeSmooth }
+/** Lightbox figure is capped at min(1200px, 96vw). */
+const LIGHTBOX_SIZES = '(min-width: 1250px) 1200px, 96vw'
 
 function ChevronLeft({ className }) {
   return (
@@ -109,6 +111,11 @@ export default function RoomGalleryLightbox({
       const src = images[i]?.src
       if (!src) return
       const img = new Image()
+      const meta = suiteMeta(src)
+      if (meta?.srcSet) {
+        img.sizes = LIGHTBOX_SIZES
+        img.srcset = meta.srcSet
+      }
       img.src = src
     }
     preload((safeIndex + 1) % total)
@@ -177,6 +184,8 @@ export default function RoomGalleryLightbox({
                     <motion.img
                       key={`${imageKeyPrefix}-${safeIndex}`}
                       src={slide.src}
+                      srcSet={slideMeta?.srcSet}
+                      sizes={LIGHTBOX_SIZES}
                       alt={slide.alt ?? title}
                       className="absolute left-1/2 top-1/2 max-h-full max-w-full -translate-x-1/2 -translate-y-1/2 object-contain"
                       initial={{ opacity: 0 }}

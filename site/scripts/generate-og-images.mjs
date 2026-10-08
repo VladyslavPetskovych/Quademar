@@ -25,10 +25,10 @@ const OG_HEIGHT = 630
 /** Representative source photo per room (relative to `src/assets/suites`). */
 const ROOM_SOURCES = {
   presidential: 'presidential/501A0809.JPG',
-  family: 'family/bedroom-wide-orange-headboard.webp',
-  junior: 'junior-partial-view/501A0604.JPG',
-  'standard-view-double': 'standard-view-double/bedroom-wide-sea-view-red-bed.jpg',
-  'standard-partial-double': 'standard-view-double/bedroom-centered-twin-pendants.jpg',
+  family: 'family/501A0720.JPG',
+  junior: 'junior/501A0604.JPG',
+  'standard-view-double': 'standard-view-double/501A0670.JPG',
+  'standard-partial-double': 'standard-partial-double/501A0534.JPG',
 }
 
 /** Hero image for the `/suites-rooms` listing card. */

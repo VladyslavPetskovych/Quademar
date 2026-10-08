@@ -163,6 +163,8 @@ export default function RoomCategorySection({
             >
               <motion.img
                 src={primaryImage.src}
+                srcSet={primaryMeta?.srcSet}
+                sizes="(min-width: 1024px) 673px, 100vw"
                 alt={primaryImage.alt ?? title}
                 width={primaryMeta?.width}
                 height={primaryMeta?.height}

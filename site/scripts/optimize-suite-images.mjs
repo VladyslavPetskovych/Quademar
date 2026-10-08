@@ -10,7 +10,11 @@
  * more than ~1100 CSS px (~2200 device px on a 2× display), so the discarded pixels
  * were never drawn. A 4284×5712 / ~5 MB JPEG becomes a ~2200px / ~0.4 MB WebP.
  *
- * Output: `src/generated/suiteImages.js` — `{ '<room>/<file>': { src, width, height, placeholder } }`.
+ * Smaller widths (`<file>-960.webp`, `<file>-1600.webp`) are emitted alongside for
+ * `srcset`, so phones and the 673px listing cards don't download the full 2200px file.
+ *
+ * Output: `src/generated/suiteImages.js` —
+ * `{ '<room>/<file>': { src, srcSet, width, height, placeholder } }`.
  *
  *   node scripts/optimize-suite-images.mjs
  */
@@ -30,6 +34,8 @@ const manifestPath = join(siteRoot, 'src/generated/suiteImages.js')
 const MAX_EDGE = 2200
 const WEBP_QUALITY = 82
 const PLACEHOLDER_EDGE = 24
+/** Extra `srcset` widths below the full-size file (skipped when the image is narrower). */
+const SRCSET_WIDTHS = [960, 1600]
 
 const IMG_RE = /\.(jpe?g|png|webp)$/i
 
@@ -77,9 +83,26 @@ for (const file of files) {
     .toBuffer()
 
   const hash = createHash('sha1').update(optimized.data).digest('hex').slice(0, 8)
+  const fullSrc = `/suites/${toUrlPath(relWebp)}?v=${hash}`
+  const srcSet = []
+
+  for (const w of SRCSET_WIDTHS) {
+    if (w >= optimized.info.width) continue
+    const variant = await sharp(file)
+      .rotate()
+      .resize({ width: w })
+      .webp({ quality: WEBP_QUALITY, effort: 6 })
+      .toBuffer()
+    const relVariant = relWebp.replace(/\.webp$/, `-${w}.webp`)
+    await writeFile(join(outDir, relVariant.split('/').join(sep)), variant)
+    srcSet.push(`/suites/${toUrlPath(relVariant)}?v=${hash} ${w}w`)
+    bytesOut += variant.length
+  }
+  srcSet.push(`${fullSrc} ${optimized.info.width}w`)
 
   manifest[relKey] = {
-    src: `/suites/${toUrlPath(relWebp)}?v=${hash}`,
+    src: fullSrc,
+    srcSet: srcSet.join(', '),
     width: optimized.info.width,
     height: optimized.info.height,
     placeholder: `data:image/webp;base64,${placeholder.toString('base64')}`,

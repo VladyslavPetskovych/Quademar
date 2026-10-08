@@ -1,71 +1,7 @@
 import { suiteSrc } from './src/lib/suiteImages.js'
 
-// Optimized display-sized WebP URLs (see scripts/optimize-suite-images.mjs). The full-
-// resolution originals stay on disk under src/assets/suites/ but are never shipped.
-const presidentialPhoto1 = suiteSrc('presidential/501A0809.JPG')
-const presidentialPhoto2 = suiteSrc('presidential/501A0823.JPG')
-const presidentialPhoto3 = suiteSrc('presidential/501A0827.JPG')
-const presidentialPhoto4 = suiteSrc('presidential/501A0830.JPG')
-const presidentialPhoto5 = suiteSrc('presidential/501A0833.JPG')
-const presidentialPhoto6 = suiteSrc('presidential/501A0836.JPG')
-const presidentialPhoto7 = suiteSrc('presidential/501A0840.JPG')
-const presidentialPhoto8 = suiteSrc('presidential/501A0842.JPG')
-const presidentialPhoto9 = suiteSrc('presidential/501A0844.JPG')
-const presidentialPhoto10 = suiteSrc('presidential/501A0845.JPG')
-const presidentialPhoto11 = suiteSrc('presidential/501A0848.JPG')
-const presidentialPhoto12 = suiteSrc('presidential/501A0849.JPG')
-const presidentialPhoto13 = suiteSrc('presidential/501A0764.JPG')
-const presidentialPhoto14 = suiteSrc('presidential/501A0772.JPG')
-const presidentialPhoto15 = suiteSrc('presidential/501A0773.JPG')
-const presidentialPhoto16 = suiteSrc('presidential/501A0776.JPG')
-const presidentialPhoto17 = suiteSrc('presidential/501A0779.JPG')
-const presidentialPhoto18 = suiteSrc('presidential/501A0782.JPG')
-const presidentialPhoto19 = suiteSrc('presidential/501A0785.JPG')
-const presidentialPhoto20 = suiteSrc('presidential/501A0797.JPG')
-const presidentialPhoto21 = suiteSrc('presidential/501A0801.JPG')
-const presidentialPhoto22 = suiteSrc('presidential/501A0808.JPG')
-const familyBedroomWide = suiteSrc('family/bedroom-wide-orange-headboard.webp')
-const familyBedroomCentered = suiteSrc('family/bedroom-centered-branded-bed.webp')
-const familyBedNightstandRoses = suiteSrc('family/bed-nightstand-white-roses.webp')
-const familyBedGreenPillows = suiteSrc('family/bed-green-pillows-detail.webp')
-const familyBedCaneNightstand = suiteSrc('family/bed-cane-nightstand-detail.webp')
-const familyBedGreenBrandedPillow = suiteSrc('family/bed-green-branded-pillow.webp')
-const familyBedLinenDetail = suiteSrc('family/bed-guardamar-linen-detail.webp')
-const familyBedroomTvVanity = suiteSrc('family/bedroom-tv-vanity-corner.webp')
-const familyBalconySeaView = suiteSrc('family/balcony-chairs-sea-view.webp')
-const familyBathroomShower = suiteSrc('family/bathroom-shower-terracotta.webp')
-const familyBathroomMirror = suiteSrc('family/bathroom-vanity-mirror.webp')
-const familyBathroomSink = suiteSrc('family/bathroom-sink-detail.webp')
-const familyBathroomAmenities = suiteSrc('family/bathroom-lalique-amenities.webp')
-const familyBathroomTowel = suiteSrc('family/bathroom-branded-towel.webp')
-const familyBathroomBathrobes = suiteSrc('family/bathroom-branded-bathrobes.webp')
-const juniorPhoto1 = suiteSrc('junior-partial-view/501A0604.JPG')
-const juniorPhoto2 = suiteSrc('junior-partial-view/501A0601.JPG')
-const juniorPhoto3 = suiteSrc('junior-partial-view/501A0609R.JPG')
-const juniorPhoto4 = suiteSrc('junior-partial-view/501A0613.JPG')
-const juniorPhoto5 = suiteSrc('junior-partial-view/501A0618.JPG')
-const juniorPhoto6 = suiteSrc('junior-partial-view/501A0655.JPG')
-const juniorPhoto7 = suiteSrc('junior-partial-view/501A0654.JPG')
-const juniorPhoto8 = suiteSrc('junior-partial-view/501A0631.JPG')
-const juniorPhoto9 = suiteSrc('junior-partial-view/501A0633.JPG')
-const juniorPhoto10 = suiteSrc('junior-partial-view/501A0634.JPG')
-const juniorPhoto11 = suiteSrc('junior-partial-view/501A0632.JPG')
-const juniorPhoto12 = suiteSrc('junior-partial-view/501A0623R.JPG')
-const juniorPhoto13 = suiteSrc('junior-partial-view/501A0630.JPG')
-const juniorPhoto14 = suiteSrc('junior-partial-view/501A0650.JPG')
-const juniorPhoto15 = suiteSrc('junior-partial-view/501A0653.JPG')
-const juniorPhoto16 = suiteSrc('junior-partial-view/501A0646.JPG')
-const juniorPhoto17 = suiteSrc('junior-partial-view/501A0647.JPG')
-const standardViewPhoto1 = suiteSrc('standard-view-double/bedroom-wide-yellow-bed.jpg')
-const standardViewPhoto2 = suiteSrc('standard-view-double/bedroom-yellow-bed-tv-wardrobe.jpg')
-const standardViewPhoto3 = suiteSrc('standard-view-double/bedroom-centered-twin-pendants.jpg')
-const standardViewPhoto4 = suiteSrc('standard-view-double/bedroom-desk-dressing-corner.jpg')
-const standardViewPhoto5 = suiteSrc('standard-view-double/branded-towel-detail.jpg')
-const standardViewPhoto6 = suiteSrc('standard-view-double/bathroom-green-tiles-shower.jpg')
-const standardViewSeaWide = suiteSrc('standard-view-double/bedroom-wide-sea-view-red-bed.jpg')
-const standardViewBedFoot = suiteSrc('standard-view-double/bed-foot-branded-linen.jpg')
-const standardViewRosesDetail = suiteSrc('standard-view-double/bed-roses-green-pillow-detail.jpg')
-const standardViewGreenPillows = suiteSrc('standard-view-double/green-branded-pillows-detail.jpg')
+// `suiteSrc()` maps a source photo to its optimized display-sized WebP (see
+// scripts/optimize-suite-images.mjs). The originals under src/assets/suites/ are never shipped.
 
 /**
  * Suite / room listings in page order. Alternating layout: `reverse: false` = photo left,
@@ -78,91 +14,91 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: presidentialPhoto1,
+        src: suiteSrc('presidential/501A0809.JPG'),
         alt: 'Presidential Suite bedroom with terracotta velvet bed, tropical palm mural, twin rattan pendants and green Guardamar runner',
       },
       {
-        src: presidentialPhoto2,
-        alt: 'Presidential Suite bedroom from the side with cream louvered wardrobe, palm-print walls and terracotta bed',
-      },
-      {
-        src: presidentialPhoto3,
-        alt: 'Presidential Suite dressing corridor with louvered wardrobe, round rope mirror, red pouf and Buddha figure',
-      },
-      {
-        src: presidentialPhoto4,
-        alt: 'Presidential Suite terracotta headboard within the plaster arch with green velvet pillows and teal runner',
-      },
-      {
-        src: presidentialPhoto5,
+        src: suiteSrc('presidential/501A0833.JPG'),
         alt: 'Presidential Suite double bed centred beneath the arched alcove with twin rattan pendants and palm mural',
       },
       {
-        src: presidentialPhoto6,
-        alt: 'Presidential Suite wide view with white louvered wardrobe, terracotta bed and gold Guardamar branded runner',
+        src: suiteSrc('presidential/501A0836.JPG'),
+        alt: 'Presidential Suite wide view with white louvered wardrobe, terracotta bed and Guardamar branded runner',
       },
       {
-        src: presidentialPhoto7,
+        src: suiteSrc('presidential/501A0823.JPG'),
+        alt: 'Presidential Suite bedroom from the side with cream louvered wardrobe, palm-print walls and terracotta bed',
+      },
+      {
+        src: suiteSrc('presidential/501A0830.JPG'),
+        alt: 'Presidential Suite terracotta headboard within the plaster arch with green velvet pillows and woven pendant',
+      },
+      {
+        src: suiteSrc('presidential/501A0797.JPG'),
+        alt: 'Presidential Suite lounge with green velvet sofa bed, patterned rug and French doors to the terrace',
+      },
+      {
+        src: suiteSrc('presidential/501A0840.JPG'),
         alt: 'Presidential Suite bedside detail with woven rattan pendant, cane nightstand and green Guardamar pillow',
       },
       {
-        src: presidentialPhoto8,
-        alt: 'Presidential Suite round rope mirror reflecting the rattan pendants above a wooden console with Buddha figure',
-      },
-      {
-        src: presidentialPhoto9,
+        src: suiteSrc('presidential/501A0844.JPG'),
         alt: 'Presidential Suite warm detail of the woven rattan pendant light beside the terracotta bed',
       },
       {
-        src: presidentialPhoto10,
+        src: suiteSrc('presidential/501A0845.JPG'),
         alt: 'Gold Guardamar Hotel & Spa logo embroidered on the Presidential Suite white bed linen',
       },
       {
-        src: presidentialPhoto11,
-        alt: 'Etched Guardamar Hotel & Spa glass panel with the spa bathtub beyond in the Presidential Suite',
+        src: suiteSrc('presidential/501A0827.JPG'),
+        alt: 'Presidential Suite dressing corridor with louvered wardrobe, round mirror, vanity and red pouf',
       },
       {
-        src: presidentialPhoto12,
+        src: suiteSrc('presidential/501A0842.JPG'),
+        alt: 'Presidential Suite round rope mirror above a wooden vanity with Buddha figure and palm mural',
+      },
+      {
+        src: suiteSrc('presidential/501A0849.JPG'),
         alt: 'Presidential Suite private hydromassage bathtub filled with water against a pebble-stone wall',
       },
       {
-        src: presidentialPhoto13,
+        src: suiteSrc('presidential/501A0848.JPG'),
+        alt: 'Etched Guardamar Hotel & Spa glass panel beside the Presidential Suite hydromassage bathtub',
+      },
+      {
+        src: suiteSrc('presidential/501A0764.JPG'),
         alt: 'Presidential Suite bathroom double vanity with two backlit round mirrors, green fluted tiles and twin vessel sinks',
       },
       {
-        src: presidentialPhoto14,
-        alt: 'Presidential Suite bathroom with freestanding bathtub, walnut wall and black rain shower behind glass',
+        src: suiteSrc('presidential/501A0785.JPG'),
+        alt: 'Presidential Suite bathroom with vessel sinks, backlit round mirror, green tiles and wall-hung toilet',
       },
       {
-        src: presidentialPhoto15,
-        alt: 'Presidential Suite bathroom wide view with freestanding bathtub, walk-in shower and heated towel rail',
+        src: suiteSrc('presidential/501A0773.JPG'),
+        alt: 'Presidential Suite freestanding bathtub against the walnut-panelled wall with black fixtures',
       },
       {
-        src: presidentialPhoto16,
-        alt: 'Presidential Suite freestanding bathtub centred against the walnut wall with black fixtures',
+        src: suiteSrc('presidential/501A0772.JPG'),
+        alt: 'Presidential Suite bathroom with freestanding bathtub, walnut wall and black rain shower',
       },
       {
-        src: presidentialPhoto17,
-        alt: 'Guardamar branded bathrobe hanging beside the Presidential Suite freestanding bathtub and walnut wall',
+        src: suiteSrc('presidential/501A0776.JPG'),
+        alt: 'Presidential Suite freestanding bathtub beside the glass walk-in shower and heated towel rail',
       },
       {
-        src: presidentialPhoto18,
-        alt: 'Presidential Suite bathroom with wall-hung toilet, walk-in shower and freestanding bathtub in a walnut niche',
+        src: suiteSrc('presidential/501A0779.JPG'),
+        alt: 'Guardamar branded bathrobe hanging beside the Presidential Suite freestanding bathtub',
       },
       {
-        src: presidentialPhoto19,
-        alt: 'Presidential Suite freestanding bathtub against the walnut wall with premium Lalique amenities',
+        src: suiteSrc('presidential/501A0782.JPG'),
+        alt: 'Presidential Suite bathroom with wall-hung toilet, walk-in shower and freestanding bathtub',
       },
       {
-        src: presidentialPhoto20,
-        alt: 'Presidential Suite bathroom with twin vessel sinks, backlit round mirror, green tiles and wall-hung toilet',
-      },
-      {
-        src: presidentialPhoto21,
+        src: suiteSrc('presidential/501A0801.JPG'),
         alt: 'Presidential Suite entrance hall with mirrored wardrobe and room 401 sign opening to the lounge',
       },
       {
-        src: presidentialPhoto22,
+        src: suiteSrc('presidential/501A0808.JPG'),
         alt: 'Presidential Suite entrance hall with warm lighting, mirrored wall and room 401 sign',
       },
     ],
@@ -235,64 +171,108 @@ export const ROOM_CATEGORIES = [
     reverse: true,
     images: [
       {
-        src: familyBedroomWide,
-        alt: 'Family Suite bedroom with terracotta tufted headboard, green accent linens, sofa bed and balcony',
+        src: suiteSrc('family/501A0720.JPG'),
+        alt: 'Family Suite bedroom with terracotta channel-tufted bed, green Guardamar runner, sofa bed and balcony doors',
       },
       {
-        src: familyBedroomCentered,
-        alt: 'Family Suite double bed with Guardamar branding, green pillows, framed art and louvered wardrobe',
+        src: suiteSrc('family/501A0715.JPG'),
+        alt: 'Family Suite double bed with green pillows, white louvered wardrobe and woven pendant light',
       },
       {
-        src: familyBedNightstandRoses,
-        alt: 'Family Suite bedside with terracotta headboard, cane-front nightstand and white roses',
+        src: suiteSrc('family/501A0656.JPG'),
+        alt: 'Green velvet Guardamar Hotel & Spa pillows on the Family Suite bed',
       },
       {
-        src: familyBedGreenPillows,
-        alt: 'Family Suite bed detail with green velvet Guardamar pillows, armchair and rattan pendant light',
+        src: suiteSrc('family/501A0762.JPG'),
+        alt: 'Family Suite sofa bed seen from the double bed with green Guardamar runner',
       },
       {
-        src: familyBedCaneNightstand,
-        alt: 'Family Suite bed corner with embroidered Guardamar pillow and cane-front rattan nightstand',
+        src: suiteSrc('family/501A0710.JPG'),
+        alt: 'Family Suite sofa bed with desk corner, orange pouf and full-length curtains',
       },
       {
-        src: familyBedGreenBrandedPillow,
-        alt: 'Family Suite bedding close-up with green Guardamar Hotel & Spa embroidered accent pillow and runner',
+        src: suiteSrc('family/501A0736.JPG'),
+        alt: 'Family Suite louvered wardrobe and round console with fresh roses beside the bed',
       },
       {
-        src: familyBedLinenDetail,
-        alt: 'Close-up of Guardamar Hotel & Spa logo on the Family Suite white bed linen',
+        src: suiteSrc('family/501A0759.JPG'),
+        alt: 'Family Suite open wardrobe with folded towels, spare linen and hangers',
       },
       {
-        src: familyBedroomTvVanity,
-        alt: 'Family Suite with wall-mounted flat-screen TV, vanity desk corner and orange pouf',
+        src: suiteSrc('family/501A0760.JPG'),
+        alt: 'Family Suite entrance with white louvered wardrobe, roses and candles on the console',
       },
       {
-        src: familyBalconySeaView,
-        alt: 'Family Suite private balcony with woven chairs, table and Mediterranean sea view',
+        src: suiteSrc('family/501A0718.JPG'),
+        alt: 'Family Suite bedroom with terracotta bed, warm pendant light and window with sheer curtains',
       },
       {
-        src: familyBathroomShower,
-        alt: 'Family Suite bathroom with glass corner shower, terracotta wall, round mirror and vessel sink',
+        src: suiteSrc('family/501A0701.JPG'),
+        alt: 'Family Suite wide view with wall-mounted TV, double bed, sofa bed and balcony',
       },
       {
-        src: familyBathroomMirror,
-        alt: 'Family Suite bathroom vanity with backlit round mirror, vessel sink and terracotta accent wall',
+        src: suiteSrc('family/501A0634.JPG'),
+        alt: 'Family Suite private balcony with woven chairs and Mediterranean sea view',
       },
       {
-        src: familyBathroomSink,
-        alt: 'Family Suite bathroom detail with white vessel sink, tall black faucet and terracotta tiles',
+        src: suiteSrc('family/501A0739.JPG'),
+        alt: 'Family Suite balcony overlooking the rooftops of Guardamar and the sea',
       },
       {
-        src: familyBathroomAmenities,
-        alt: 'Premium Lalique bath amenities on the terracotta tiled wall of the Family Suite bathroom',
+        src: suiteSrc('family/501A0744.JPG'),
+        alt: 'Family Suite balcony with bistro table, woven chairs and glass doors',
       },
       {
-        src: familyBathroomTowel,
-        alt: 'Folded Guardamar Hotel & Spa branded towel beside the Family Suite vessel sink',
+        src: suiteSrc('family/501A0728.JPG'),
+        alt: 'Family Suite bathroom with terracotta wall, round mirror, vessel sink, glass shower and wall-hung toilet',
       },
       {
-        src: familyBathroomBathrobes,
-        alt: 'Two Guardamar Hotel & Spa branded bathrobes hanging in the Family Suite bathroom',
+        src: suiteSrc('family/501A0732.JPG'),
+        alt: 'Family Suite bathroom vanity with backlit round mirror, vessel sink and terracotta wall',
+      },
+      {
+        src: suiteSrc('family/501A0754.JPG'),
+        alt: 'Family Suite vanity with hairdryer, magnifying mirror and Guardamar towel beside the sink',
+      },
+      {
+        src: suiteSrc('family/501A0748.JPG'),
+        alt: 'Family Suite vessel sink with tall black faucet, Lalique soap and amenities basket',
+      },
+      {
+        src: suiteSrc('family/501A0751.JPG'),
+        alt: 'Close-up of the Family Suite vessel sink and Lalique amenities against terracotta tiles',
+      },
+      {
+        src: suiteSrc('family/501A0750.JPG'),
+        alt: 'Family Suite backlit mirror above the vanity with Lalique soap and amenities basket',
+      },
+      {
+        src: suiteSrc('family/501A0747.JPG'),
+        alt: 'Folded Guardamar branded towels and hairdryer on the Family Suite vanity',
+      },
+      {
+        src: suiteSrc('family/501A0745.JPG'),
+        alt: 'Family Suite walk-in shower with terracotta tiles, black thermostat and Lalique amenities',
+      },
+      {
+        src: suiteSrc('family/501A0753.JPG'),
+        alt: 'Black shower fixtures and Lalique dispensers on the terracotta tiles of the Family Suite shower',
+      },
+      {
+        src: suiteSrc('family/501A0752.JPG'),
+        alt: 'Family Suite black rain shower head under warm LED ceiling lighting',
+      },
+      {
+        src: suiteSrc('family/501A0735.JPG'),
+        alt: 'Family Suite bathroom with heated towel rail and two Guardamar bathrobes',
+      },
+      {
+        src: suiteSrc('family/501A0746.JPG'),
+        alt: 'Guardamar Hotel & Spa branded bathrobe hanging beside the heated towel rail in the Family Suite',
+      },
+      {
+        src: suiteSrc('family/501A0694.JPG'),
+        alt: 'Family Suite vessel sink with folded Guardamar towels beneath a backlit mirror and green tiles',
       },
     ],
     title: 'Family Suite',
@@ -363,72 +343,60 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: juniorPhoto1,
-        alt: 'Junior Suite bedroom with terracotta channel-tufted double and twin beds, green Guardamar runner, arched alcove and balcony window',
+        src: suiteSrc('junior/501A0604.JPG'),
+        alt: 'Junior Suite bedroom with terracotta channel-tufted double and single beds, green Guardamar runner, arched alcove and balcony window',
       },
       {
-        src: juniorPhoto2,
+        src: suiteSrc('junior/501A0601.JPG'),
         alt: 'Junior Suite bedroom with terracotta beds, green accent pillows, wall-mounted TV and arched headboard niche',
       },
       {
-        src: juniorPhoto3,
-        alt: 'Junior Suite beds centred beneath the arched alcove with gold Guardamar branded runner and green pillows',
+        src: suiteSrc('junior/501A0609R.JPG'),
+        alt: 'Junior Suite beds beneath the arched alcove with branded bathrobe, gold Guardamar logo and green pillows',
       },
       {
-        src: juniorPhoto4,
+        src: suiteSrc('junior/501A0613.JPG'),
         alt: 'Junior Suite seen from the entrance with terracotta beds, louvered wardrobe and wall-mounted TV',
       },
       {
-        src: juniorPhoto5,
+        src: suiteSrc('junior/501A0618.JPG'),
         alt: 'Junior Suite wooden desk and dressing corner with kettle, orange pouf and wall-mounted TV',
       },
       {
-        src: juniorPhoto6,
-        alt: 'Junior Suite nightstand detail with kettle and a warm woven pendant light beside the walnut wall',
+        src: suiteSrc('junior/501A0655.JPG'),
+        alt: 'Junior Suite tea station with kettle and a warm woven pendant light beside the walnut wall',
       },
       {
-        src: juniorPhoto7,
-        alt: 'Guardamar Hotel & Spa branded bathrobe laid on the Junior Suite bed with green runner',
+        src: suiteSrc('junior/501A0631.JPG'),
+        alt: 'Junior Suite balcony with a wide Mediterranean sea view over the beach and Guardamar',
       },
       {
-        src: juniorPhoto8,
-        alt: 'Junior Suite private balcony with Mediterranean sea and rooftop views over Guardamar',
+        src: suiteSrc('junior/501A0597.JPG'),
+        alt: 'Junior Suite balcony with woven chairs, sliding glass doors and sea view over the town',
       },
       {
-        src: juniorPhoto9,
-        alt: 'Junior Suite balcony with woven chairs and a wide Mediterranean sea view over the beach',
-      },
-      {
-        src: juniorPhoto10,
-        alt: 'Junior Suite balcony with woven chairs, side table and Mediterranean sea view',
-      },
-      {
-        src: juniorPhoto11,
-        alt: 'Junior Suite balcony with woven chairs beside the sheer-curtained French doors',
-      },
-      {
-        src: juniorPhoto12,
+        src: suiteSrc('junior/501A0623R.JPG'),
         alt: 'Junior Suite bathroom with copper-toned tiles, backlit round mirror, vessel sink, glass shower and wall-hung toilet',
       },
       {
-        src: juniorPhoto13,
+        src: suiteSrc('junior/501A0630.JPG'),
         alt: 'Junior Suite bathroom with walk-in glass shower, copper tiles, backlit round mirror and vessel sink vanity',
       },
       {
-        src: juniorPhoto14,
+        src: suiteSrc('junior/501A0653.JPG'),
+        alt: 'Junior Suite backlit round mirror reflecting the bathroom beside the copper-tiled shower',
+      },
+      {
+        src: suiteSrc('junior/501A0650.JPG'),
         alt: 'Close-up of the Junior Suite white vessel sink with a tall matte-black faucet and folded branded towels',
       },
       {
-        src: juniorPhoto15,
-        alt: 'Junior Suite backlit round mirror reflecting the copper-tiled walk-in shower',
+        src: suiteSrc('junior/501A0646.JPG'),
+        alt: 'Junior Suite walk-in shower detail with copper tiles, black fixtures and premium Lalique amenities',
       },
       {
-        src: juniorPhoto16,
-        alt: 'Junior Suite walk-in shower detail with copper tiles, black rain fixtures and premium Lalique amenities',
-      },
-      {
-        src: juniorPhoto17,
-        alt: 'Junior Suite bathroom with wall-hung toilet, black fixtures and glass shower partition',
+        src: suiteSrc('junior/501A0647.JPG'),
+        alt: 'Junior Suite bathroom with wall-hung toilet, black fixtures and heated towel rail',
       },
     ],
     title: 'Junior Suite',
@@ -499,44 +467,92 @@ export const ROOM_CATEGORIES = [
     reverse: true,
     images: [
       {
-        src: standardViewSeaWide,
-        alt: 'Standard room with view bedroom with terracotta upholstered bed, green Guardamar runner and pillows, twin woven pendants and a balcony with Mediterranean sea view',
+        src: suiteSrc('standard-view-double/501A0670.JPG'),
+        alt: 'Standard room with view bedroom with terracotta bed, green Guardamar pillows, woven pendants and balcony doors to the sea',
       },
       {
-        src: standardViewBedFoot,
-        alt: 'Standard room with view double bed from the foot with gold Guardamar Hotel & Spa branded linen, green runner and green accent pillows',
+        src: suiteSrc('standard-view-double/501A0678.JPG'),
+        alt: 'Standard room with view double bed from the foot with gold Guardamar logo, green runner and roses on the nightstand',
       },
       {
-        src: standardViewRosesDetail,
-        alt: 'Standard room with view bedside detail with fresh pink roses, terracotta headboard, green Guardamar pillow and woven pendant light',
+        src: suiteSrc('standard-view-double/501A0661.JPG'),
+        alt: 'Standard room with view bed beneath the plaster arch beside an open louvered wardrobe',
       },
       {
-        src: standardViewGreenPillows,
-        alt: 'Two green Guardamar Hotel & Spa embroidered accent pillows on the Standard room with view bed',
+        src: suiteSrc('standard-view-double/501A0677.JPG'),
+        alt: 'Green velvet Guardamar Hotel & Spa pillows on the Standard room with view bed',
       },
       {
-        src: standardViewPhoto2,
-        alt: 'Standard room with view bedroom with mustard-yellow bed, green accent pillow, wall-mounted TV and white louvered wardrobe',
+        src: suiteSrc('standard-view-double/501A0675.JPG'),
+        alt: 'Standard room with view bedside with fresh roses, terracotta headboard and woven pendant light',
       },
       {
-        src: standardViewPhoto1,
-        alt: 'Standard room with view bedroom with mustard-yellow upholstered bed, green Guardamar runner, wall-mounted TV and balcony window',
+        src: suiteSrc('standard-view-double/501A0573.JPG'),
+        alt: 'Green Guardamar pillow on the Standard room with view bed beneath a woven pendant light',
       },
       {
-        src: standardViewPhoto3,
-        alt: 'Standard room with view double bed with mustard-yellow base, green Guardamar pillows and twin woven rattan pendant lights',
+        src: suiteSrc('standard-view-double/501A0654.JPG'),
+        alt: 'Guardamar Hotel & Spa branded bathrobe laid on the Standard room with view bed',
       },
       {
-        src: standardViewPhoto4,
-        alt: 'Standard room with view dressing desk with mirror, fresh roses, yellow velvet pouf and rattan pendant beside the bed',
+        src: suiteSrc('standard-view-double/501A0633.JPG'),
+        alt: 'Standard room with view balcony with a wide Mediterranean sea view over the beach',
       },
       {
-        src: standardViewPhoto5,
-        alt: 'Folded Guardamar Hotel & Spa branded towels against the green-tiled wall of the Standard room with view bathroom',
+        src: suiteSrc('standard-view-double/501A0679.JPG'),
+        alt: 'Sea view over the Guardamar rooftops from the Standard room with view balcony',
       },
       {
-        src: standardViewPhoto6,
-        alt: 'Standard room with view bathroom with walk-in glass shower, backlit green tiles, round mirror and vessel sink',
+        src: suiteSrc('standard-view-double/501A0680.JPG'),
+        alt: 'Standard room with view balcony with bistro table, chair and Mediterranean sea view',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0567.JPG'),
+        alt: 'Standard room with view balcony with the sea between neighbouring buildings',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0571.JPG'),
+        alt: 'Standard room with view balcony with woven chair and a glimpse of the sea',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0569.JPG'),
+        alt: 'Standard room with view balcony with woven chairs overlooking the hotel terraces',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0570.JPG'),
+        alt: 'Standard room with view balcony overlooking the town and palm trees',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0596.JPG'),
+        alt: 'Standard room with view open wardrobe with bathrobe, hangers, spare linen and in-room safe',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0595.JPG'),
+        alt: 'In-room safe inside the louvered wardrobe of the Standard room with view',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0689.JPG'),
+        alt: 'Standard room with view bathroom with green bamboo tiles, backlit round mirror, vessel sink and rain shower',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0692.JPG'),
+        alt: 'Standard room with view bathroom vanity with backlit round mirror and green tiles seen from the bedroom',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0587.JPG'),
+        alt: 'Standard room with view vessel sink with black faucet and Lalique soap against backlit green tiles',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0593.JPG'),
+        alt: 'Folded Guardamar branded towels and hairdryer beside the vessel sink in the Standard room with view',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0586.JPG'),
+        alt: 'Rolled Guardamar towel in a woven basket against the green tiles of the Standard room with view bathroom',
+      },
+      {
+        src: suiteSrc('standard-view-double/501A0681.JPG'),
+        alt: 'Standard room with view bathroom with heated towel rail, Guardamar bathrobe and magnifying mirror',
       },
     ],
     title: 'Standard room with view',
@@ -608,28 +624,80 @@ export const ROOM_CATEGORIES = [
     reverse: false,
     images: [
       {
-        src: standardViewPhoto3,
-        alt: 'Standard room partial view double bed with mustard-yellow base, green Guardamar pillows and twin woven rattan pendant lights',
+        src: suiteSrc('standard-partial-double/501A0534.JPG'),
+        alt: 'Standard room partial view with two terracotta twin beds, green Guardamar runners, woven pendants and window',
       },
       {
-        src: standardViewPhoto4,
-        alt: 'Standard room partial view dressing desk with mirror, fresh roses, yellow velvet pouf and rattan pendant beside the bed',
+        src: suiteSrc('standard-partial-double/501A0547.JPG'),
+        alt: 'Standard room partial view twin beds with green Guardamar pillows, roses and full-length curtains',
       },
       {
-        src: standardViewPhoto2,
-        alt: 'Standard room partial view bedroom with mustard-yellow bed, green accent pillow, wall-mounted TV and white louvered wardrobe',
+        src: suiteSrc('standard-partial-double/501A0537.JPG'),
+        alt: 'Standard room partial view desk with LED mirror, kettle, orange pouf and twin beds',
       },
       {
-        src: standardViewPhoto1,
-        alt: 'Standard room partial view bedroom with mustard-yellow upholstered bed, green Guardamar runner, wall-mounted TV and window',
+        src: suiteSrc('standard-partial-double/501A0577.JPG'),
+        alt: 'Standard room partial view twin beds side by side under tasselled woven pendants',
       },
       {
-        src: standardViewPhoto6,
-        alt: 'Standard room partial view bathroom with walk-in glass shower, backlit green tiles, round mirror and vessel sink',
+        src: suiteSrc('standard-partial-double/501A0538.JPG'),
+        alt: 'Standard room partial view twin beds with wall-mounted TV and white louvered wardrobe',
       },
       {
-        src: standardViewPhoto5,
-        alt: 'Folded Guardamar Hotel & Spa branded towels against the green-tiled wall of the Standard room partial view bathroom',
+        src: suiteSrc('standard-partial-double/501A0594.JPG'),
+        alt: 'Standard room partial view bedside with roses, terracotta headboards and woven pendant light',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0584.JPG'),
+        alt: 'Standard room partial view twin beds with green Guardamar pillows and fresh roses on the nightstand',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0574.JPG'),
+        alt: 'Green velvet Guardamar Hotel & Spa pillow on the Standard room partial view bed',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0575.JPG'),
+        alt: 'Standard room partial view single bed with terracotta headboard, green pillow and woven pendant',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0576.JPG'),
+        alt: 'Standard room partial view bed with green Guardamar pillow beneath a tasselled pendant light',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0632.JPG'),
+        alt: 'Standard room partial view private balcony with two woven chairs beside the glass doors',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0554.JPG'),
+        alt: 'Standard room partial view bathroom seen from the bedroom with green tiles and glass shower',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0555.JPG'),
+        alt: 'Standard room partial view bathroom with backlit round mirror, vessel sink and green-tiled glass shower',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0561.JPG'),
+        alt: 'Standard room partial view vanity with backlit round mirror, vessel sink and green-tiled rain shower',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0565o.JPG'),
+        alt: 'Standard room partial view bathroom vanity with backlit mirror, hairdryer and folded towels',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0560.JPG'),
+        alt: 'Standard room partial view bathroom with wall-hung toilet and green-tiled glass shower',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0588.JPG'),
+        alt: 'Magnifying mirror and hairdryer beside the backlit mirror and green tiles in the Standard room partial view bathroom',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0589.JPG'),
+        alt: 'Standard room partial view bathroom wall with magnifying mirror, hairdryer and green tiles',
+      },
+      {
+        src: suiteSrc('standard-partial-double/501A0592.JPG'),
+        alt: 'Standard room partial view rain shower with green bamboo tiles and Lalique amenities',
       },
     ],
     title: 'Standard room partial view',

@@ -13,6 +13,8 @@ import { BOOKING_URL } from '../config/site'
 import { getRoomBySlug } from '../../rooms'
 
 const easeSmooth = [0.4, 0, 0.2, 1]
+/** Rendered width of the main gallery slide (1092px frame on desktop). */
+const SLIDE_SIZES = '(min-width: 1140px) 1092px, 100vw'
 
 function ChevronLeft({ className, strokeWidth = 1.4 }) {
   return (
@@ -71,6 +73,11 @@ export default function RoomDetailPage() {
       const src = images[index]?.src
       if (!src) return
       const img = new Image()
+      const meta = suiteMeta(src)
+      if (meta?.srcSet) {
+        img.sizes = SLIDE_SIZES
+        img.srcset = meta.srcSet
+      }
       img.src = src
     }
     preload((safeIndex + 1) % total)
@@ -106,9 +113,12 @@ export default function RoomDetailPage() {
       >
         <motion.img
           src={heroImage.src}
+          srcSet={heroMeta?.srcSet}
+          sizes="100vw"
           alt={heroImage.alt ?? localizedRoom.title}
           width={heroMeta?.width}
           height={heroMeta?.height}
+          fetchpriority="high"
           decoding="async"
           className={roomHeroImageClass}
           initial={{ opacity: 0 }}
@@ -180,6 +190,8 @@ export default function RoomDetailPage() {
                       <motion.img
                         key={`${roomSlug}-${safeIndex}`}
                         src={slide.src}
+                        srcSet={slideMeta?.srcSet}
+                        sizes={SLIDE_SIZES}
                         alt={slide.alt ?? localizedRoom.title}
                         width={slideMeta?.width}
                         height={slideMeta?.height}
