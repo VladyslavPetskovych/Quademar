@@ -409,13 +409,13 @@ export const ROOM_CATEGORIES = [
       { label: '20 m²', icon: 'size' },
     ],
     description:
-      'Spacious and elegantly designed for up to 3 guests, featuring one double bed along with an elegant convertible armchair bed. With its larger layout, natural Mediterranean textures, and relaxing atmosphere, the suite offers the perfect balance of comfort and style.',
+      'Spacious and elegantly designed for up to 3 guests, featuring one double bed for two guests along with a smaller single bed for one guest. With its larger layout, natural Mediterranean textures, and relaxing atmosphere, the suite offers the perfect balance of comfort and style.',
     ctaLabel: 'View Room',
     ctaTo: '/suites-rooms/junior',
     classNames: {},
     galleryNarrative: {
       body:
-        'Spacious and elegantly designed for up to 3 guests, featuring one double bed along with an elegant convertible armchair bed. With its larger layout, natural Mediterranean textures, and relaxing atmosphere, the suite offers the perfect balance of comfort and style.',
+        'Spacious and elegantly designed for up to 3 guests, featuring one double bed for two guests along with a smaller single bed for one guest. With its larger layout, natural Mediterranean textures, and relaxing atmosphere, the suite offers the perfect balance of comfort and style.',
     },
     detailSection: {
       headline: 'Elegant junior comfort',
@@ -425,7 +425,7 @@ export const ROOM_CATEGORIES = [
         {
           label: 'Beds',
           icon: 'bed',
-          text: 'Double bed and convertible armchair bed',
+          text: 'Double bed for 2 and a smaller single bed for 1',
         },
         {
           label: 'Size',

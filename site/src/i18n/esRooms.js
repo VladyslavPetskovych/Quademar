@@ -157,18 +157,18 @@ export const roomsEs = {
       { label: '20 m²', icon: 'size' },
     ],
     description:
-      'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con cama doble y elegante butaca convertible en cama. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
+      'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con una cama doble para dos personas y una cama individual más pequeña para una persona. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
     ctaLabel: 'Ver habitación',
     galleryNarrative: {
       body:
-        'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con cama doble y elegante butaca convertible en cama. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
+        'Suite amplia y elegantemente diseñada para hasta 3 huéspedes, con una cama doble para dos personas y una cama individual más pequeña para una persona. Con un diseño más generoso, texturas mediterráneas naturales y ambiente relajante, ofrece el equilibrio perfecto entre confort y estilo.',
     },
     detailSection: {
       headline: 'Confort junior con elegancia',
       intro:
         'Los huéspedes pueden disfrutar de balcón privado, amenities Lalique premium, albornoces y zapatillas de la casa, minibar, estación de té y caja fuerte en la habitación. También incluye acceso a la piscina climatizada y al restaurante del hotel con desayunos y almuerzos refinados.',
       left: [
-        { label: 'Camas', icon: 'bed', text: 'Cama doble y butaca convertible' },
+        { label: 'Camas', icon: 'bed', text: 'Cama doble para 2 y cama individual más pequeña para 1' },
         { label: 'Superficie', icon: 'size', text: '20 m²' },
         { label: 'Vista', icon: 'view', text: 'Balcón privado' },
       ],

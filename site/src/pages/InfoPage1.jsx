@@ -141,7 +141,7 @@ export default function InfoPage1() {
               <span className="nm">
                 Restaurant <span className="es">Restaurante</span>
               </span>
-              <span className="tm">14:00 – 17:00</span>
+              <span className="tm">14:00 – 16:00</span>
             </div>
             <div className="hrow">
               <svg

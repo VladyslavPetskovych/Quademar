@@ -92,7 +92,7 @@ export const ROOM_SEO_META = {
     view: 'Partial sea view',
     beds: [
       { type: 'Double bed', count: 1 },
-      { type: 'Convertible armchair bed', count: 1 },
+      { type: 'Single bed', count: 1 },
     ],
     amenities: [
       'Private balcony with partial sea view',
