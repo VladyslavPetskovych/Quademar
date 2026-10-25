@@ -5,6 +5,7 @@ import beach3Image from '../assets/home/beach3.webp'
 import plantImage from '../assets/home/plant.webp'
 import toursImage from '../assets/home/residence/tours.webp'
 import earlySummerImage from '../assets/moments/early-summer.webp'
+import golfImage from '../assets/moments/golf/golfer-bag-sunlight.webp'
 import offersEventsImage from '../assets/moments/offers-events.webp'
 import romanceImage from '../assets/moments/romance.webp'
 import weekendEscapeImage from '../assets/moments/weekend-escape.webp'
@@ -100,6 +101,47 @@ function MomentCard({ image, imageAlt, tag, title, description, footnote, index 
   )
 }
 
+/** Live offer with its own page — highlighted above the "coming soon" offer cards. */
+function GolfOffer({ tf }) {
+  return (
+    <motion.article
+      className="mt-12 lg:mt-16"
+      initial={{ opacity: 0, y: 16 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: 0.2, ease: easeSmooth }}
+    >
+      <Link
+        to="/moments/golf"
+        className="group grid overflow-hidden rounded-sm bg-[#0a3f35] shadow-[0_28px_70px_-42px_rgba(10,63,53,0.7)] md:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)]"
+      >
+        <div className="relative overflow-hidden">
+          <img
+            src={golfImage}
+            alt={tf('moments.golfAlt')}
+            loading="lazy"
+            decoding="async"
+            className="aspect-[16/10] h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] md:aspect-auto md:min-h-[340px]"
+          />
+          <span className="absolute left-4 top-4 rounded-full bg-[#0a3f35]/85 px-4 py-1.5 font-sans text-[10px] font-medium uppercase tracking-[0.18em] text-white backdrop-blur-sm">
+            {tf('moments.golfTag')}
+          </span>
+        </div>
+        <div className="flex flex-col justify-center px-6 py-9 text-center md:px-10 md:py-12 md:text-left">
+          <h3 className="font-cormorant text-[28px] font-normal leading-[1.1] text-white md:text-[34px]">
+            {tf('moments.golfTitle')}
+          </h3>
+          <div className="mx-auto mt-5 h-px w-12 bg-white/30 md:mx-0" aria-hidden="true" />
+          <p className="mt-5 font-sans text-[15px] font-[250] leading-relaxed text-white/80">{tf('moments.golfDesc')}</p>
+          <span className="mt-7 inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium uppercase tracking-[0.16em] text-[#f3eee6] md:justify-start">
+            {tf('moments.golfCta')}
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+          </span>
+        </div>
+      </Link>
+    </motion.article>
+  )
+}
+
 function EvChargingNote({ tf }) {
   return (
     <motion.aside
@@ -122,7 +164,7 @@ function EvChargingNote({ tf }) {
   )
 }
 
-function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, cards, tf, cardFootnote, ctaHref, ctaLabel, children }) {
+function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassName = '', title, lead, highlight, cards, tf, cardFootnote, ctaHref, ctaLabel, children }) {
   return (
     <motion.div
       key={tabId}
@@ -173,6 +215,8 @@ function MomentsPanel({ tabId, featuredImage, featuredAlt, featuredImageClassNam
           )}
         </motion.div>
       </motion.div>
+
+      {highlight}
 
       <motion.div
         className="mt-12 grid gap-10 sm:grid-cols-2 lg:mt-16 lg:grid-cols-3 lg:gap-8"
@@ -282,6 +326,7 @@ export default function MomentsPage() {
                 featuredImageClassName="lg:max-h-[420px]"
                 title={tf('moments.offersTitle')}
                 lead={tf('moments.offersLead')}
+                highlight={<GolfOffer tf={tf} />}
                 cards={offersCards}
                 tf={tf}
                 cardFootnote={tf('moments.panelNote')}

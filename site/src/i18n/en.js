@@ -26,6 +26,11 @@ export default {
       'Discover Guardamar del Segura, Costa Blanca — the Pinada dune forest, 11 km of Blue Flag beaches, the mouth of the Segura river, prawn-and-ñora gastronomy, and its archaeological legacy. Just 25 km from Alicante airport.',
     keywordsGuardamar:
       'Guardamar del Segura, things to do in Guardamar, Guardamar beaches, Guardamar pine forest, Costa Blanca, Guardamar prawn, Guardamar castle, La Fonteta, Segura river, Alicante tourism',
+    titleGolf: 'Golf escape on the Costa Blanca — Hotel Guardamar',
+    descriptionGolf:
+      'Golf breaks on the Costa Blanca from Hotel Guardamar — a renovated seaside hotel near the best courses, with tailored packages of stay, breakfast, green fees, and transfers.',
+    keywordsGolf:
+      'golf Costa Blanca, golf holiday Alicante, golf hotel Guardamar, golf break Spain, green fees Costa Blanca, golf package Guardamar del Segura',
     titleRules: 'Hotel Rules — Hotel Guardamar',
     descriptionRules:
       'Hotel rules at Hotel Guardamar, Guardamar del Segura — check-in from 15:00 and check-out until 11:00, booking and cancellation, quiet hours, balcony smoking and guest conduct on the Costa Blanca.',
@@ -358,6 +363,12 @@ export default {
     offersCard3Title: 'Romance at Guardamar',
     offersCard3Desc: 'Flowers, tasting menu, and private terrace setup — an intimate evening above the Mediterranean.',
     offersCard3Alt: 'Couple toasting with white wine at an outdoor table by the fountain',
+    golfTag: 'Golf',
+    golfTitle: 'Your golf escape on the Costa Blanca',
+    golfDesc:
+      'A renovated hotel by the sea, close to the finest courses on the Costa Blanca — with tailored packages of stay, breakfast, green fees, and transfers, plus pool, spa, and Mediterranean cuisine after your round.',
+    golfCta: 'Discover the golf escape',
+    golfAlt: 'Golf bag with clubs in warm evening light while a player lines up a shot on the fairway',
     evChargingTag: 'Additional service',
     evChargingTitle: 'Electric vehicle charging',
     evChargingDesc:

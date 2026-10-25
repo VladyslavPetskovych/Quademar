@@ -26,6 +26,11 @@ export default {
       'Descubra Guardamar del Segura, Costa Blanca — la Pinada y su bosque dunar, 11 km de playas con Bandera Azul, la desembocadura del río Segura, gastronomía del langostino y la ñora, y su legado arqueológico. A 25 km del aeropuerto de Alicante.',
     keywordsGuardamar:
       'Guardamar del Segura, qué ver en Guardamar, playas Guardamar, Pinada de Guardamar, Costa Blanca, langostino de Guardamar, Castillo de Guardamar, La Fonteta, río Segura, turismo Alicante',
+    titleGolf: 'Escapada de golf en la Costa Blanca — Hotel Guardamar',
+    descriptionGolf:
+      'Escapadas de golf en la Costa Blanca con Hotel Guardamar — un hotel renovado junto al mar, cerca de los mejores campos, con alojamiento, desayuno, green fees y transfers a medida.',
+    keywordsGolf:
+      'golf Costa Blanca, escapada de golf Alicante, hotel golf Guardamar, vacaciones de golf, green fees Costa Blanca, paquete golf Guardamar del Segura',
     titleRules: 'Normas del hotel — Hotel Guardamar',
     descriptionRules:
       'Normas del Hotel Guardamar, Guardamar del Segura — entrada desde las 15:00 y salida hasta las 11:00, reservas y cancelación, horas de silencio, tabaco en el balcón y normas de convivencia en la Costa Blanca.',
@@ -358,6 +363,12 @@ export default {
     offersCard3Title: 'Romance en Guardamar',
     offersCard3Desc: 'Flores, menú degustación y preparación en terraza privada — una velada íntima sobre el Mediterráneo.',
     offersCard3Alt: 'Pareja brindando con vino blanco en una mesa al aire libre junto a la fuente',
+    golfTag: 'Golf',
+    golfTitle: 'Tu escapada de golf en la Costa Blanca',
+    golfDesc:
+      'Un hotel renovado junto al mar, cerca de los mejores campos de la Costa Blanca — con propuestas a medida de alojamiento, desayuno, green fees y transfers, y piscina, SPA y gastronomía después de cada partido.',
+    golfCta: 'Descubra la escapada de golf',
+    golfAlt: 'Bolsa con palos de golf a la luz cálida del atardecer mientras un jugador prepara su golpe',
     evChargingTag: 'Servicio adicional',
     evChargingTitle: 'Carga de vehículos eléctricos',
     evChargingDesc:

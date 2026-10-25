@@ -100,6 +100,17 @@ export const MAILERLITE = {
   formAction: 'https://assets.mailerlite.com/jsonp/2462522/forms/190970030208321271/subscribe',
 }
 
+/**
+ * Golf escape enquiry form (`/moments/golf`). The site is static, so submissions go through
+ * FormSubmit's AJAX endpoint, which emails each one to `email`. The very first submission sends
+ * an activation link to that inbox — it must be confirmed once before enquiries are delivered.
+ * After activating, FormSubmit offers a random alias you can paste here instead of the address.
+ */
+export const GOLF_ENQUIRY = {
+  email: 'hola@guardamarhotelspa.com',
+  endpoint: 'https://formsubmit.co/ajax/hola@guardamarhotelspa.com',
+}
+
 /** Hotel Guardamar — official contact. */
 export const CONTACT = {
   hotelName: 'Hotel Guardamar',

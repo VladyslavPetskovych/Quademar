@@ -113,6 +113,17 @@ writeRouteHtml(
   }),
 )
 
+// Golf escape offer (linked from Moments → Offers and events).
+writeRouteHtml(
+  'moments/golf',
+  patchHtml(baseHtml, {
+    title: en.seo.titleGolf,
+    description: en.seo.descriptionGolf,
+    keywords: en.seo.keywordsGolf,
+    canonical: `${origin}/moments/golf`,
+  }),
+)
+
 for (const slug of SUITE_ROOM_SLUGS) {
   const copy = ROOM_SEO_META[slug]?.en
   if (!copy) continue

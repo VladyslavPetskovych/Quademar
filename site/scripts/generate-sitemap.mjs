@@ -25,6 +25,7 @@ const FULL_PATHS = [
   '/spa',
   '/moments',
   '/moments/guardamar',
+  '/moments/golf',
   '/rules',
   '/terms',
   '/privacy',
