@@ -1,5 +1,6 @@
 import { getRoomBySlug } from '../../rooms'
 import { localizeRoom } from '../i18n/localizeRoom'
+import { GOLF_OG_IMAGE_PATH } from '../config/site'
 import { getRoomSeoCopy, roomOgImagePath, SUITES_OG_IMAGE_PATH } from './roomMeta'
 
 const META_DESC_MAX = 158
@@ -63,6 +64,7 @@ export function resolvePageSeo(pathname, locale, t) {
     title = t('seo.titleGolf')
     description = t('seo.descriptionGolf')
     keywords = t('seo.keywordsGolf')
+    ogImagePath = GOLF_OG_IMAGE_PATH
   } else if (path === '/moments') {
     title = t('seo.titleMoments')
     description = t('seo.descriptionMoments')

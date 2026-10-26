@@ -1,7 +1,8 @@
 /**
- * Generates stable 1200×630 social/OG images for the suites listing and each room
- * into `public/og/`, so crawlers and link previews get a unique, cacheable image per
- * room page (the SPA + prerender reference these via `roomOgImagePath` / `SUITES_OG_IMAGE_PATH`).
+ * Generates stable 1200×630 social/OG images for the suites listing, each room, and the golf
+ * escape page into `public/og/`, so crawlers and link previews get a unique, cacheable image per
+ * page (the SPA + prerender reference these via `roomOgImagePath` / `SUITES_OG_IMAGE_PATH` /
+ * `GOLF_OG_IMAGE_PATH`).
  *
  *   node scripts/generate-og-images.mjs
  *
@@ -9,7 +10,7 @@
  * Dimensions must match `SEO_OG_IMAGE` (1200×630) declared in `src/config/site.js`.
  */
 import { mkdirSync } from 'node:fs'
-import { dirname, join } from 'node:path'
+import { dirname, join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import sharp from 'sharp'
 
@@ -34,8 +35,11 @@ const ROOM_SOURCES = {
 /** Hero image for the `/suites-rooms` listing card. */
 const SUITES_SOURCE = 'presidential/501A0809.JPG'
 
+/** Hero image for `/moments/golf` (absolute — lives outside `src/assets/suites`). */
+const GOLF_SOURCE = join(siteRoot, 'src/assets/moments/golf/course-sunset.webp')
+
 async function writeOg(sourceRel, outPath) {
-  const input = join(assetsDir, sourceRel)
+  const input = resolve(assetsDir, sourceRel)
   await sharp(input)
     .rotate()
     .resize(OG_WIDTH, OG_HEIGHT, { fit: 'cover', position: 'centre' })
@@ -46,6 +50,7 @@ async function writeOg(sourceRel, outPath) {
 mkdirSync(roomsOutDir, { recursive: true })
 
 await writeOg(SUITES_SOURCE, join(outDir, 'suites-rooms.jpg'))
+await writeOg(GOLF_SOURCE, join(outDir, 'golf.jpg'))
 
 let count = 0
 for (const [slug, sourceRel] of Object.entries(ROOM_SOURCES)) {
@@ -53,4 +58,4 @@ for (const [slug, sourceRel] of Object.entries(ROOM_SOURCES)) {
   count += 1
 }
 
-console.log(`Generated OG images: 1 listing + ${count} rooms → public/og (${OG_WIDTH}×${OG_HEIGHT})`)
+console.log(`Generated OG images: 1 listing + ${count} rooms + golf → public/og (${OG_WIDTH}×${OG_HEIGHT})`)

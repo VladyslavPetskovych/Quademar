@@ -163,7 +163,39 @@ export function buildSuitesListingJsonLd({ origin, locale = 'en' }) {
   }
 }
 
-/** JSON-LD graph(s) for the current SPA route (suites listing or room detail). */
+/** BreadcrumbList + WebPage for the golf escape page (Home › Moments › Golf). */
+function buildGolfJsonLd({ origin, locale, title, description, ogImageUrl }) {
+  const url = `${origin}/moments/golf`
+  const es = locale === 'es'
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${url}#breadcrumb`,
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: es ? 'Inicio' : 'Home', item: `${origin}/` },
+          { '@type': 'ListItem', position: 2, name: es ? 'Momentos' : 'Moments', item: `${origin}/moments` },
+          { '@type': 'ListItem', position: 3, name: 'Golf', item: url },
+        ],
+      },
+      {
+        '@type': 'WebPage',
+        '@id': `${url}#webpage`,
+        url,
+        name: title,
+        description,
+        inLanguage: es ? 'es' : 'en',
+        isPartOf: { '@id': `${origin}/#website` },
+        about: hotelRef(origin),
+        breadcrumb: { '@id': `${url}#breadcrumb` },
+        primaryImageOfPage: ogImageUrl ? { '@type': 'ImageObject', url: ogImageUrl } : undefined,
+      },
+    ],
+  }
+}
+
+/** JSON-LD graph(s) for the current SPA route (suites listing, room detail, or golf). */
 export function buildRouteJsonLd({ origin, pathname, locale, title, description, ogImageUrl }) {
   const path = pathname.replace(/\/+$/, '') || '/'
 
@@ -184,6 +216,10 @@ export function buildRouteJsonLd({ origin, pathname, locale, title, description,
         },
       ],
     }
+  }
+
+  if (path === '/moments/golf') {
+    return buildGolfJsonLd({ origin, locale, title, description, ogImageUrl })
   }
 
   if (path.startsWith('/suites-rooms/')) {

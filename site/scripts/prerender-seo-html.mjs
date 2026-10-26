@@ -6,7 +6,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadEnv } from 'vite'
-import { SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+import { GOLF_OG_IMAGE_PATH, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
 import en from '../src/i18n/en.js'
 import {
   ROOM_SEO_META,
@@ -125,6 +125,7 @@ writeRouteHtml(
 )
 
 // Golf escape offer (linked from Moments → Offers and events).
+const golfOgImage = `${origin}${GOLF_OG_IMAGE_PATH}`
 writeRouteHtml(
   'moments/golf',
   patchHtml(baseHtml, {
@@ -132,6 +133,16 @@ writeRouteHtml(
     description: en.seo.descriptionGolf,
     keywords: en.seo.keywordsGolf,
     canonical: `${origin}/moments/golf`,
+    ogImage: golfOgImage,
+    ogImageAlt: en.seo.titleGolf,
+    jsonLd: buildRouteJsonLd({
+      origin,
+      pathname: '/moments/golf',
+      locale: 'en',
+      title: en.seo.titleGolf,
+      description: en.seo.descriptionGolf,
+      ogImageUrl: golfOgImage,
+    }),
   }),
 )
 
