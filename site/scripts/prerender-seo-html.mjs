@@ -113,6 +113,17 @@ writeRouteHtml(
   }),
 )
 
+// Moments hub. Must exist whenever a `moments/*` sub-route is prerendered below: those create
+// `dist/moments/`, and without an index.html there nginx answers `/moments` with 403.
+writeRouteHtml(
+  'moments',
+  patchHtml(baseHtml, {
+    title: en.seo.titleMoments,
+    description: en.seo.descriptionMoments,
+    canonical: `${origin}/moments`,
+  }),
+)
+
 // Golf escape offer (linked from Moments → Offers and events).
 writeRouteHtml(
   'moments/golf',
