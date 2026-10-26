@@ -174,6 +174,7 @@ export default {
     aboutLink: 'ABOUT US',
     momentsSubmenu: 'Moments submenu',
     offersEvents: 'Offers and events',
+    golf: 'Golf',
     costaBlanca: 'Costa Blanca',
     legalTerms: 'Terms & Conditions',
     legalPrivacy: 'Privacy Policy',

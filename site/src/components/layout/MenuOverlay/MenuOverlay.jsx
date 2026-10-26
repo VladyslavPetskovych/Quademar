@@ -178,8 +178,9 @@ export default function MenuOverlay({ isOpen, onClose }) {
                 const locked = navLocked(link.id)
                 if (link.id === 'moments') {
                   const momentsItems = [
-                    { key: 'offers', label: t('menu.offersEvents') },
-                    { key: 'costa', label: t('menu.costaBlanca') },
+                    { key: 'offers', label: t('menu.offersEvents'), to: '/moments' },
+                    { key: 'golf', label: t('menu.golf'), to: '/moments/golf' },
+                    { key: 'costa', label: t('menu.costaBlanca'), to: '/moments?tab=costa-blanca' },
                   ]
                   return momentsItems.map((item, j) => (
                     <li
@@ -194,7 +195,7 @@ export default function MenuOverlay({ isOpen, onClose }) {
                           {item.label}
                         </button>
                       ) : (
-                        <Link to="/moments" onClick={handleLinkClick} className={primaryClass}>
+                        <Link to={item.to} onClick={handleLinkClick} className={primaryClass}>
                           {item.label}
                         </Link>
                       )}
