@@ -330,7 +330,7 @@ export default {
     hoursTitle: 'Hours & reservations',
     facts: {
       breakfast: { label: 'Breakfast', value: 'Daily · 08:00 – 11:00' },
-      restaurant: { label: 'Restaurant', value: 'Dinner · 14:00 – 16:00' },
+      restaurant: { label: 'Restaurant', value: 'Lunch · 14:00 – 16:00' },
       bar: { label: 'Bar & terrace', value: 'Daily · 8:00 – 00:00' },
       reservations: { label: 'Reservations', value: 'Reception · 24 hours' },
     },
