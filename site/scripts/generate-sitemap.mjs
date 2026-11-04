@@ -2,7 +2,7 @@ import { writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadEnv } from 'vite'
-import { LANDING_ONLY_NAV, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+import { isPathAllowedInLandingMode, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = join(__dirname, '..')
@@ -11,7 +11,7 @@ const publicDir = join(siteRoot, 'public')
 const env = loadEnv('production', siteRoot, '')
 const origin = (env.VITE_SITE_ORIGIN || SITE_ORIGIN_DEFAULT).replace(/\/+$/, '')
 
-/** All public SPA routes (used when `LANDING_ONLY_NAV` is false). */
+/** All public SPA routes; filtered below by landing mode. */
 const FULL_PATHS = [
   '/',
   '/contacts',
@@ -22,6 +22,7 @@ const FULL_PATHS = [
   '/suites-rooms/standard-view-double',
   '/suites-rooms/standard-partial-double',
   '/restaurant-bar',
+  '/menu',
   '/spa',
   '/moments',
   '/moments/guardamar',
@@ -31,18 +32,9 @@ const FULL_PATHS = [
   '/privacy',
 ]
 
-const LANDING_PATHS = FULL_PATHS.filter(
-  (path) =>
-    path === '/' ||
-    path === '/contacts' ||
-    path.startsWith('/moments') ||
-    path === '/rules' ||
-    path === '/terms' ||
-    path === '/privacy' ||
-    path.startsWith('/suites-rooms'),
-)
-
-const paths = LANDING_ONLY_NAV ? LANDING_PATHS : FULL_PATHS
+// Same check the router uses, so the sitemap lists exactly the pages that render
+// (pages locked in landing mode redirect to `/` and are left out).
+const paths = FULL_PATHS.filter(isPathAllowedInLandingMode)
 const lastmod = new Date().toISOString().slice(0, 10)
 
 function priority(path) {
@@ -82,5 +74,5 @@ ${body}
 
 writeFileSync(join(publicDir, 'sitemap.xml'), xml)
 console.log(
-  `Wrote public/sitemap.xml (${paths.length} URLs, LANDING_ONLY_NAV=${LANDING_ONLY_NAV}, origin=${origin})`,
+  `Wrote public/sitemap.xml (${paths.length} URLs, origin=${origin})`,
 )
