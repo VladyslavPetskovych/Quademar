@@ -190,6 +190,25 @@ function buildGolfJsonLd({ origin, locale, title, description, ogImageUrl }) {
         about: hotelRef(origin),
         breadcrumb: { '@id': `${url}#breadcrumb` },
         primaryImageOfPage: ogImageUrl ? { '@type': 'ImageObject', url: ogImageUrl } : undefined,
+        mainEntity: { '@id': `${url}#offer` },
+      },
+      {
+        // Tailored package with no fixed price — priced per enquiry through the page's form.
+        '@type': 'Offer',
+        '@id': `${url}#offer`,
+        name: title.split(' — ')[0],
+        description,
+        url,
+        image: ogImageUrl,
+        seller: hotelRef(origin),
+        availability: 'https://schema.org/InStock',
+        itemOffered: {
+          '@type': 'Service',
+          name: es ? 'Escapada de golf' : 'Golf break package',
+          serviceType: 'Golf holiday',
+          provider: hotelRef(origin),
+          areaServed: 'Costa Blanca, Alicante, Spain',
+        },
       },
     ],
   }

@@ -123,6 +123,8 @@ export const CONTACT = {
   email: 'info@hotelguardamar.com',
   emailHref: 'mailto:info@hotelguardamar.com',
   instagramHref: 'https://www.instagram.com/hotelguardamar/',
+  /** Facebook page URL. Empty hides the Facebook icons (footer + menu) and its JSON-LD `sameAs`. */
+  facebookHref: '',
   /** Google Maps — embed (iframe) and the shareable place link for "Get directions". */
   mapEmbedSrc:
     'https://www.google.com/maps?q=Hotel%20Guardamar%2C%20Calle%20Puerto%20Rico%2011%2C%2003140%20Guardamar%20del%20Segura%2C%20Alicante%2C%20Espa%C3%B1a&output=embed',

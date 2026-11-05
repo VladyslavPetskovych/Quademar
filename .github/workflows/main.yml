@@ -102,3 +102,14 @@ jobs:
       - name: Remove SSH key
         if: always()
         run: rm -rf ~/.ssh
+
+      # Ask Bing (used by ChatGPT search) and other IndexNow engines to recrawl the deployed pages.
+      # Best-effort: a failed ping never fails the deploy.
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: site/scripts/indexnow.mjs
+          sparse-checkout-cone-mode: false
+
+      - name: Notify search engines (IndexNow)
+        continue-on-error: true
+        run: node site/scripts/indexnow.mjs

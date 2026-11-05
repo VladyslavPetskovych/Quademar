@@ -2,7 +2,8 @@ import { writeFileSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { loadEnv } from 'vite'
-import { isPathAllowedInLandingMode, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+import { SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+import { PUBLIC_ROUTES } from '../src/seo/publicRoutes.js'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = join(__dirname, '..')
@@ -11,30 +12,8 @@ const publicDir = join(siteRoot, 'public')
 const env = loadEnv('production', siteRoot, '')
 const origin = (env.VITE_SITE_ORIGIN || SITE_ORIGIN_DEFAULT).replace(/\/+$/, '')
 
-/** All public SPA routes; filtered below by landing mode. */
-const FULL_PATHS = [
-  '/',
-  '/contacts',
-  '/suites-rooms',
-  '/suites-rooms/presidential',
-  '/suites-rooms/family',
-  '/suites-rooms/junior',
-  '/suites-rooms/standard-view-double',
-  '/suites-rooms/standard-partial-double',
-  '/restaurant-bar',
-  '/menu',
-  '/spa',
-  '/moments',
-  '/moments/guardamar',
-  '/moments/golf',
-  '/rules',
-  '/terms',
-  '/privacy',
-]
-
-// Same check the router uses, so the sitemap lists exactly the pages that render
-// (pages locked in landing mode redirect to `/` and are left out).
-const paths = FULL_PATHS.filter(isPathAllowedInLandingMode)
+// Shared with the prerender; pages locked in landing mode are already left out.
+const paths = PUBLIC_ROUTES
 const lastmod = new Date().toISOString().slice(0, 10)
 
 function priority(path) {

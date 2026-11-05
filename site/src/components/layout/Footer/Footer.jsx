@@ -75,11 +75,19 @@ export default function Footer() {
         <div className="flex items-start justify-between gap-6">
           <img src={logoVertical} alt={t('footer.logoAlt')} className="w-[124px] md:w-[132px]" />
           <div className="hidden items-center gap-4 lg:flex">
-            <a href="/" aria-label={t('footer.facebook')} className="text-white/95 hover:text-white">
-              <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                <path d="M13.5 21v-7h2.4l.6-3h-3V9.4c0-.9.3-1.5 1.6-1.5h1.5V5.2c-.3 0-1.2-.1-2.4-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.4v7h3.1Z" />
-              </svg>
-            </a>
+            {CONTACT.facebookHref && (
+              <a
+                href={CONTACT.facebookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t('footer.facebook')}
+                className="text-white/95 hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                  <path d="M13.5 21v-7h2.4l.6-3h-3V9.4c0-.9.3-1.5 1.6-1.5h1.5V5.2c-.3 0-1.2-.1-2.4-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.4v7h3.1Z" />
+                </svg>
+              </a>
+            )}
             <a
               href={CONTACT.instagramHref}
               target="_blank"
@@ -123,11 +131,19 @@ export default function Footer() {
             </div>
 
             <div className="mt-8 flex items-center gap-4 lg:hidden">
-              <a href="/" aria-label={t('footer.facebook')} className="text-white/95 hover:text-white">
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
-                  <path d="M13.5 21v-7h2.4l.6-3h-3V9.4c0-.9.3-1.5 1.6-1.5h1.5V5.2c-.3 0-1.2-.1-2.4-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.4v7h3.1Z" />
-                </svg>
-              </a>
+              {CONTACT.facebookHref && (
+                <a
+                  href={CONTACT.facebookHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t('footer.facebook')}
+                  className="text-white/95 hover:text-white"
+                >
+                  <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor">
+                    <path d="M13.5 21v-7h2.4l.6-3h-3V9.4c0-.9.3-1.5 1.6-1.5h1.5V5.2c-.3 0-1.2-.1-2.4-.1-2.3 0-3.9 1.4-3.9 4v2H8v3h2.4v7h3.1Z" />
+                  </svg>
+                </a>
+              )}
               <a
                 href={CONTACT.instagramHref}
                 target="_blank"

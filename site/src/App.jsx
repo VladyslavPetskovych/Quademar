@@ -23,11 +23,15 @@ const NotFoundPage = lazy(() => import('./pages/NotFoundPage'))
 const InfoPage1 = lazy(() => import('./pages/InfoPage1'))
 const InfoPage2 = lazy(() => import('./pages/InfoPage2'))
 
-export default function App() {
+/**
+ * `Router` is BrowserRouter in the browser; the build-time prerender (src/entry-server.jsx)
+ * passes StaticRouter with `routerProps={{ location }}` to render a given URL to HTML.
+ */
+export default function App({ Router = BrowserRouter, routerProps }) {
   return (
     <LanguageProvider>
       <SplashGate>
-        <BrowserRouter>
+        <Router {...routerProps}>
           <Suspense fallback={null}>
             <Routes>
               <Route path="/" element={<MainLayout />}>
@@ -50,7 +54,7 @@ export default function App() {
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
-        </BrowserRouter>
+        </Router>
       </SplashGate>
     </LanguageProvider>
   )

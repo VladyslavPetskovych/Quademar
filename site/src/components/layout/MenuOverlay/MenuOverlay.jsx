@@ -280,15 +280,17 @@ export default function MenuOverlay({ isOpen, onClose }) {
             >
               <InstagramIcon className="h-5 w-5" />
             </a>
-            <a
-              href="https://www.facebook.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:opacity-70"
-              aria-label={t('footer.facebook')}
-            >
-              <FacebookIcon className="h-5 w-5" />
-            </a>
+            {CONTACT.facebookHref && (
+              <a
+                href={CONTACT.facebookHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:opacity-70"
+                aria-label={t('footer.facebook')}
+              >
+                <FacebookIcon className="h-5 w-5" />
+              </a>
+            )}
           </div>
 
           {/* Contact block */}

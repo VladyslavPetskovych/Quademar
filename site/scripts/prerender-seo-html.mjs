@@ -1,20 +1,19 @@
 /**
- * Writes route-specific `index.html` files under `dist/` so crawlers and link previews
- * receive unique title, description, canonical, social image, and JSON-LD before the SPA hydrates.
+ * Writes an `index.html` under `dist/` for every public route, with that page's real content
+ * rendered into `<div id="root">` plus its own title, description, canonical, social image, and
+ * JSON-LD. Crawlers and AI assistants that don't run JavaScript read the page as visitors see it.
+ *
+ * Renders with the SSR bundle from `vite build --ssr src/entry-server.jsx --outDir dist-ssr`
+ * (see `npm run build`); head values come from the same `resolvePageSeo` the app uses.
  */
 import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, join } from 'node:path'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
 import { loadEnv } from 'vite'
-import { GOLF_OG_IMAGE_PATH, SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
-import en from '../src/i18n/en.js'
-import {
-  ROOM_SEO_META,
-  roomOgImagePath,
-  SUITE_ROOM_SLUGS,
-  SUITES_OG_IMAGE_PATH,
-} from '../src/seo/roomMeta.js'
-import { buildRouteJsonLd } from '../src/seo/structuredDataRoutes.js'
+import { SITE_ORIGIN_DEFAULT } from '../src/config/site.js'
+
+// Production React: no dev-only warnings, faster render.
+process.env.NODE_ENV = 'production'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const siteRoot = join(__dirname, '..')
@@ -79,99 +78,20 @@ function writeRouteHtml(relativeDir, html) {
   writeFileSync(join(dir, 'index.html'), html, 'utf8')
 }
 
+const { renderPage, pageHead, PUBLIC_ROUTES } = await import(
+  pathToFileURL(join(siteRoot, 'dist-ssr/entry-server.js')).href
+)
+
+const ROOT_EMPTY = '<div id="root"></div>'
 const baseHtml = readFileSync(join(distDir, 'index.html'), 'utf8')
+if (!baseHtml.includes(ROOT_EMPTY)) throw new Error(`dist/index.html has no ${ROOT_EMPTY}`)
 
-const suitesCanonical = `${origin}/suites-rooms`
-const suitesOgImage = `${origin}${SUITES_OG_IMAGE_PATH}`
-const suitesHtml = patchHtml(baseHtml, {
-  title: en.seo.titleSuites,
-  description: en.seo.descriptionSuites,
-  keywords: en.seo.keywordsSuites,
-  canonical: suitesCanonical,
-  ogImage: suitesOgImage,
-  ogImageAlt: en.seo.titleSuites,
-  jsonLd: buildRouteJsonLd({
-    origin,
-    pathname: '/suites-rooms',
-    locale: 'en',
-    title: en.seo.titleSuites,
-    description: en.seo.descriptionSuites,
-    ogImageUrl: suitesOgImage,
-  }),
-})
-
-writeRouteHtml('suites-rooms', suitesHtml)
-
-// Guardamar destination guide (linked from Moments → Costa Blanca).
-writeRouteHtml(
-  'moments/guardamar',
-  patchHtml(baseHtml, {
-    title: en.seo.titleGuardamar,
-    description: en.seo.descriptionGuardamar,
-    keywords: en.seo.keywordsGuardamar,
-    canonical: `${origin}/moments/guardamar`,
-  }),
-)
-
-// Moments hub. Must exist whenever a `moments/*` sub-route is prerendered below: those create
-// `dist/moments/`, and without an index.html there nginx answers `/moments` with 403.
-writeRouteHtml(
-  'moments',
-  patchHtml(baseHtml, {
-    title: en.seo.titleMoments,
-    description: en.seo.descriptionMoments,
-    canonical: `${origin}/moments`,
-  }),
-)
-
-// Golf escape offer (linked from Moments → Offers and events).
-const golfOgImage = `${origin}${GOLF_OG_IMAGE_PATH}`
-writeRouteHtml(
-  'moments/golf',
-  patchHtml(baseHtml, {
-    title: en.seo.titleGolf,
-    description: en.seo.descriptionGolf,
-    keywords: en.seo.keywordsGolf,
-    canonical: `${origin}/moments/golf`,
-    ogImage: golfOgImage,
-    ogImageAlt: en.seo.titleGolf,
-    jsonLd: buildRouteJsonLd({
-      origin,
-      pathname: '/moments/golf',
-      locale: 'en',
-      title: en.seo.titleGolf,
-      description: en.seo.descriptionGolf,
-      ogImageUrl: golfOgImage,
-    }),
-  }),
-)
-
-for (const slug of SUITE_ROOM_SLUGS) {
-  const copy = ROOM_SEO_META[slug]?.en
-  if (!copy) continue
-  const path = `/suites-rooms/${slug}`
-  const canonical = `${origin}${path}`
-  const ogImage = `${origin}${roomOgImagePath(slug)}`
-  const jsonLd = buildRouteJsonLd({
-    origin,
-    pathname: path,
-    locale: 'en',
-    title: copy.title,
-    description: copy.description,
-    ogImageUrl: ogImage,
-  })
-
-  writeRouteHtml(`suites-rooms/${slug}`, patchHtml(baseHtml, {
-    title: copy.title,
-    description: copy.description,
-    keywords: copy.keywords,
-    canonical,
-    ogImage,
-    ogImageAlt: copy.title,
-    jsonLd,
-  }))
+// Every public route gets its own file — including `/moments`: its sub-routes create
+// `dist/moments/`, and without an index.html there nginx would answer `/moments` with 403.
+for (const path of PUBLIC_ROUTES) {
+  const body = await renderPage(path)
+  const html = patchHtml(baseHtml, pageHead(path, origin)).replace(ROOT_EMPTY, `<div id="root">${body}</div>`)
+  writeRouteHtml(path === '/' ? '' : path.slice(1), html)
 }
 
-console.log(
-  `Prerendered SEO HTML for /suites-rooms and ${SUITE_ROOM_SLUGS.length} room pages (origin=${origin})`,
-)
+console.log(`Prerendered ${PUBLIC_ROUTES.length} routes with content and SEO head (origin=${origin})`)
