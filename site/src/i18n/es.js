@@ -119,6 +119,16 @@ export default {
     close: 'Cerrar',
   },
 
+  /** Nochevieja 2026 — botón flotante de la home y su cartel con el menú. */
+  nochevieja: {
+    badge: 'Nochevieja · 31 dic',
+    badgeAria: 'Cena de gala de Nochevieja 2026, 31 de diciembre — ver el menú',
+    title: 'Nochevieja 2026 — Hotel Guardamar',
+    alt:
+      'Menú de Nochevieja 2026 del Hotel Guardamar, 31 de diciembre. Aperitivo: brioche de mantequilla con caviar de esturión. Entrantes: marisco premium variado hervido en agua de mar (quisquilla de Santa Pola, langostino de Guardamar, gamba roja de Dénia); pastel de salmón y espárrago con boletus y flores; crema de calabaza con crujiente de carrillera y mousse de parmesano; croqueta de jamón ibérico con loncha. Platos principales a elegir: solomillo Wellington con salsa de Oporto y foie y patatitas Rioja braseadas, o atún rojo sobre braseado de verduritas. Postre: chocolate y oro. Dulces de Navidad: dulces tradicionales, cava, sidra y café. Fin de fiesta y gala con música DJ hasta las 3:00 am. Programa de entretenimiento con ambiente navideño, música y regalos. Precio: 110 € por persona. Restaurante Aristo.',
+    close: 'Cerrar',
+  },
+
   roomsCommon: {
     detailsHeading: 'Detalles',
     detailsForRoom: 'Detalles — {{room}}',

@@ -119,6 +119,16 @@ export default {
     close: 'Close',
   },
 
+  /** Nochevieja 2026 — floating home-page badge and its menu-poster modal. */
+  nochevieja: {
+    badge: "New Year's Eve · 31 Dec",
+    badgeAria: "New Year's Eve 2026 gala dinner, 31 December — view the menu",
+    title: "New Year's Eve 2026 — Hotel Guardamar",
+    alt:
+      "Hotel Guardamar New Year's Eve 2026 menu, 31 December. Aperitif: butter brioche with sturgeon caviar. Starters: premium seafood boiled in seawater (Santa Pola shrimp, Guardamar prawn, Dénia red prawn); salmon and asparagus terrine with boletus and flowers; pumpkin cream with crispy beef cheek and Parmesan mousse; Iberian ham croquette. Main course to choose: Beef Wellington with Port and foie sauce and braised Rioja potatoes, or bluefin tuna on braised baby vegetables. Dessert: chocolate and gold. Christmas sweets, cava, cider and coffee. After-party and gala with DJ music until 3:00 am. Entertainment programme with a festive atmosphere, music and gifts. Price: 110 € per person. Aristo Restaurant.",
+    close: 'Close',
+  },
+
   roomsCommon: {
     detailsHeading: 'Details',
     detailsForRoom: 'Details — {{room}}',
