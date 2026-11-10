@@ -114,6 +114,15 @@ export const GOLF_ENQUIRY = {
   endpoint: 'https://formsubmit.co/ajax/hola@guardamarhotelspa.com',
 }
 
+/**
+ * Nochevieja 2026 reservation requests (poster modal on the home page). Same FormSubmit setup as
+ * GOLF_ENQUIRY, but a different inbox — so it needs its own one-time activation click.
+ */
+export const NOCHEVIEJA_RESERVATION = {
+  email: 'info@hotelguardamar.com',
+  endpoint: 'https://formsubmit.co/ajax/info@hotelguardamar.com',
+}
+
 /** Hotel Guardamar — official contact. */
 export const CONTACT = {
   hotelName: 'Hotel Guardamar',
