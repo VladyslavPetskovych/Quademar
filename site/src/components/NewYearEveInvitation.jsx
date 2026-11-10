@@ -284,6 +284,7 @@ function ReservationForm({ onBack, onDone }) {
         body: JSON.stringify({
           _subject: `Reserva Nochevieja 2026 — ${cleanName}`,
           _template: 'table',
+          _cc: NOCHEVIEJA_RESERVATION.cc,
           Nombre: cleanName,
           Teléfono: cleanPhone,
           Evento: 'Nochevieja 2026 · Restaurante Aristo · 31/12/2026',

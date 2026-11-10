@@ -116,11 +116,14 @@ export const GOLF_ENQUIRY = {
 
 /**
  * Nochevieja 2026 reservation requests (poster modal on the home page). Same FormSubmit setup as
- * GOLF_ENQUIRY, but a different inbox — so it needs its own one-time activation click.
+ * GOLF_ENQUIRY. Requests go to the Gmail inbox (activated there, since Microsoft 365 quarantines
+ * FormSubmit's activation mail) with a copy to the hotel. `email` is the public fallback address
+ * shown to guests when sending fails — keep it the hotel's, not the personal inbox.
  */
 export const NOCHEVIEJA_RESERVATION = {
   email: 'info@hotelguardamar.com',
-  endpoint: 'https://formsubmit.co/ajax/info@hotelguardamar.com',
+  cc: 'info@hotelguardamar.com',
+  endpoint: 'https://formsubmit.co/ajax/peckovychv@gmail.com',
 }
 
 /** Hotel Guardamar — official contact. */
