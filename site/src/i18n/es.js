@@ -125,11 +125,19 @@ export default {
     badgeAria: 'Cena de gala de Nochevieja 2026, 31 de diciembre — ver el menú',
     title: 'Nochevieja 2026 — Hotel Guardamar',
     alt:
-      'Menú de Nochevieja 2026 del Hotel Guardamar, 31 de diciembre. Aperitivo: brioche de mantequilla con caviar de esturión. Entrantes: marisco premium variado hervido en agua de mar (quisquilla de Santa Pola, langostino de Guardamar, gamba roja de Dénia); pastel de salmón y espárrago con boletus y flores; crema de calabaza con crujiente de carrillera y mousse de parmesano; croqueta de jamón ibérico con loncha. Platos principales a elegir: solomillo Wellington con salsa de Oporto y foie y patatitas Rioja braseadas, o atún rojo sobre braseado de verduritas. Postre: chocolate y oro. Dulces de Navidad: dulces tradicionales, cava, sidra y café. Fin de fiesta y gala con música DJ hasta las 3:00 am. Programa de entretenimiento con ambiente navideño, música y regalos. Precio: 110 € por persona. Restaurante Aristo.',
+      'Menú de Nochevieja 2026 del Hotel Guardamar, 31 de diciembre a las 20:00 h. Aperitivo: brioche de mantequilla con caviar de esturión. Entrantes: marisco premium variado hervido en agua de mar (quisquilla de Santa Pola, langostino de Guardamar, gamba roja de Dénia); pastel de salmón y espárrago con boletus y flores; crema de calabaza con crujiente de carrillera y mousse de parmesano; croqueta de jamón ibérico con loncha. Platos principales a elegir: solomillo Wellington con salsa de Oporto y foie y patatitas Rioja braseadas, o atún rojo sobre braseado de verduritas. Postre: chocolate y oro. Dulces de Navidad: dulces tradicionales, cava, sidra y café. Fin de fiesta y gala con música DJ hasta las 3:00 am. Programa de entretenimiento con ambiente navideño, música y regalos. Precio: 110 € por persona. Reservas: +34 965 72 96 50. Restaurante Aristo.',
+    navidadAlt:
+      'Menú de Navidad del Hotel Guardamar, Restaurante Aristo, 25 de diciembre, comida. Aperitivo: quisquilla de Santa Pola hervida en agua de mar. Entrantes: jamón ibérico y queso manchego D.O.; ensaladilla con tortitas canarias; caldo tradicional con pelota; gamba al ajillo sobre guacamole y chips vegetales con lima. Principal a elegir: arroz de marisco, pierna de cordero rellena, al horno, con salsa de ciruelas, o bacalao confitado sobre crema de ajo negro y salsa de piquillos ahumados. Postre: tiramisú navideño y dulces tradicionales de Navidad. Bebidas incluidas: cava, sidra y café. Precio por persona: 40 €.',
+    anoNuevoAlt:
+      'Menú de Año Nuevo 2027 del Hotel Guardamar, Restaurante Aristo, 1 de enero a las 14:00 h, comida. Aperitivos: jamón y queso; tosta de sardina ahumada y tapenade. Entrantes: tomate con salazones y ventresca; caldo tradicional con pelota; delicia de queso y dátil crujiente con confitura de tomate. Principales a elegir: arroz de atún, gambas y alcachofa; carrillera confitada; o salmón asado con flor de pistacho y verduritas. Postre: tarta de piña crumble y helado de coco. Dulces de Navidad, cava, sidra y café. Precio por persona: 40 €. Reservas: +34 965 72 96 50.',
+    prev: 'Anterior',
+    next: 'Siguiente',
     close: 'Cerrar',
     reserve: 'Reservar',
     formTitle: 'Reserve su mesa',
     formLead: 'Déjenos su nombre y teléfono y le llamaremos para confirmar su reserva de Nochevieja.',
+    formLeadNavidad: 'Déjenos su nombre y teléfono y le llamaremos para confirmar su reserva para la comida de Navidad.',
+    formLeadAnoNuevo: 'Déjenos su nombre y teléfono y le llamaremos para confirmar su reserva para la comida de Año Nuevo.',
     name: 'Nombre',
     phone: 'Teléfono',
     consent: 'Acepto el tratamiento de mis datos para gestionar esta solicitud, según la',

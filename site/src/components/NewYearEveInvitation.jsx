@@ -4,16 +4,84 @@ import { createPortal } from 'react-dom'
 import { Link } from 'react-router-dom'
 import { NOCHEVIEJA_RESERVATION } from '../config/site'
 import nocheviejaPoster from '../assets/nochevieja/nochevieja-2026-poster.webp'
+import navidadPoster from '../assets/nochevieja/navidad-2026-poster.webp'
+import anoNuevoPoster from '../assets/nochevieja/ano-nuevo-2027-poster.webp'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const easeOut = [0.22, 1, 0.36, 1]
 
-/** Poster pixel size — keeps the frame hugging the image at every viewport. */
+/**
+ * Slide frame size — the tallest poster's ratio. Shorter posters (Año Nuevo is 3:4)
+ * sit centred inside it at their own ratio, so the Reserve button never jumps.
+ */
 const POSTER_W = 1024
 const POSTER_H = 1535
 
-/** Vertical space kept under the poster for the Reserve button (button + gap + breathing room). */
-const RESERVE_ROOM = '6rem'
+/** Vertical space kept under the poster for the dots + Reserve button (and breathing room). */
+const RESERVE_ROOM = '7.75rem'
+
+/** Swipe distance (px) or flick speed (px/s) that turns the slide. */
+const SWIPE_DISTANCE = 60
+const SWIPE_VELOCITY = 400
+
+/**
+ * Slides of the poster modal, left to right in date order. Each one drops out after
+ * `endsAt` (local time). `event` is what the reservation e-mail says the request is for.
+ */
+const SLIDES = [
+  {
+    key: 'navidad',
+    src: navidadPoster,
+    width: 1024,
+    height: 1534,
+    altKey: 'nochevieja.navidadAlt',
+    leadKey: 'nochevieja.formLeadNavidad',
+    event: 'Comida de Navidad · Restaurante Aristo · 25/12/2026',
+    subject: 'Reserva Comida de Navidad 2026',
+    endsAt: new Date(2026, 11, 26, 0, 0, 0),
+  },
+  {
+    key: 'nochevieja',
+    src: nocheviejaPoster,
+    width: 1024,
+    height: 1535,
+    altKey: 'nochevieja.alt',
+    leadKey: 'nochevieja.formLead',
+    event: 'Nochevieja 2026 · Restaurante Aristo · 31/12/2026',
+    subject: 'Reserva Nochevieja 2026',
+    endsAt: new Date(2027, 0, 1, 3, 0, 0),
+  },
+  {
+    key: 'ano-nuevo',
+    src: anoNuevoPoster,
+    width: 1024,
+    height: 1362,
+    altKey: 'nochevieja.anoNuevoAlt',
+    leadKey: 'nochevieja.formLeadAnoNuevo',
+    event: 'Comida de Año Nuevo · Restaurante Aristo · 01/01/2027',
+    subject: 'Reserva Comida de Año Nuevo 2027',
+    endsAt: new Date(2027, 0, 2, 0, 0, 0),
+  },
+]
+
+/** The badge and auto-open stop once the last event on the slides is over. */
+const EVENT_ENDS_AT = new Date(Math.max(...SLIDES.map((s) => s.endsAt.getTime())))
+
+const liveSlides = () => SLIDES.filter((s) => Date.now() < s.endsAt.getTime())
+
+function Chevron({ className, dir }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+      <path strokeLinecap="round" strokeLinejoin="round" d={dir === 'left' ? 'M15 18 9 12l6-6' : 'm9 18 6-6-6-6'} />
+    </svg>
+  )
+}
+
+const slideVariants = {
+  enter: (dir) => ({ opacity: 0, x: dir > 0 ? 80 : -80 }),
+  center: { opacity: 1, x: 0 },
+  exit: (dir) => ({ opacity: 0, x: dir > 0 ? -80 : 80 }),
+}
 
 /** Loose phone check: +, digits, spaces, dots, dashes, brackets — and 6–15 actual digits. */
 const PHONE_RE = /^\+?[\d\s().-]+$/
@@ -22,11 +90,12 @@ const isPhone = (v) => {
   return PHONE_RE.test(v) && digits >= 6 && digits <= 15
 }
 
-/** The badge and auto-open stop once the party is over (local time, 1 Jan 2027 03:00). */
-const EVENT_ENDS_AT = new Date(2027, 0, 1, 3, 0, 0)
-
-/** Open the poster by itself once per browser session, after the splash has cleared. */
+/**
+ * Open the poster by itself at most once per browser session, after the splash has cleared —
+ * and only in AUTO_OPEN_CHANCE of sessions (0.5 = every other visitor, 1 = always).
+ */
 const AUTO_OPEN = true
+const AUTO_OPEN_CHANCE = 0.5
 const AUTO_OPEN_DELAY_MS = 2600
 const AUTO_OPEN_SESSION_KEY = 'guardamar.nochevieja2026.seen'
 
@@ -38,10 +107,12 @@ function CloseIcon({ className }) {
   )
 }
 
-/** Warm the poster so the modal opens on an already-decoded image. */
+/** Warm the posters so the modal (and the next slide) open on already-decoded images. */
 function prefetchPoster() {
-  const img = new Image()
-  img.src = nocheviejaPoster
+  for (const s of SLIDES) {
+    const img = new Image()
+    img.src = s.src
+  }
 }
 
 /** Floating home-page badge that opens the Nochevieja 2026 menu poster. */
@@ -60,8 +131,14 @@ export default function NewYearEveInvitation() {
     if (!live || !AUTO_OPEN) return
     try {
       if (sessionStorage.getItem(AUTO_OPEN_SESSION_KEY)) return
+      // Roll once per session; a losing roll is remembered too, so the home page doesn't re-roll.
+      if (Math.random() >= AUTO_OPEN_CHANCE) {
+        sessionStorage.setItem(AUTO_OPEN_SESSION_KEY, 'skipped')
+        return
+      }
     } catch {
-      /* storage blocked — fall through and just open once */
+      /* storage blocked — just roll for this page view */
+      if (Math.random() >= AUTO_OPEN_CHANCE) return
     }
 
     let timer
@@ -120,24 +197,41 @@ function NewYearEvePosterModal({ open, onClose }) {
   const closeRef = useRef(null)
   const [portalRoot, setPortalRoot] = useState(null)
   const [view, setView] = useState('poster')
+  const [slides, setSlides] = useState(SLIDES)
+  // [index, direction] — direction tells the slide which side to enter from.
+  const [[index, dir], setSlide] = useState([0, 0])
+  const slide = slides[Math.min(index, slides.length - 1)]
+  const many = slides.length > 1
+
+  const go = useCallback(
+    (step) => setSlide(([i]) => [(i + step + slides.length) % slides.length, step]),
+    [slides.length],
+  )
 
   useEffect(() => {
     setPortalRoot(document.body)
   }, [])
 
-  // Every opening starts on the poster, not on last time's form.
+  // Every opening starts on the first poster, not on last time's form.
   useEffect(() => {
-    if (open) setView('poster')
+    if (!open) return
+    setView('poster')
+    // Open on the Nochevieja poster (Navidad sits to its left); once it is over, on the first live one.
+    const live = liveSlides()
+    setSlides(live)
+    setSlide([Math.max(0, live.findIndex((s) => s.key === 'nochevieja')), 0])
   }, [open])
 
   useEffect(() => {
     if (!open) return
     const onKey = (e) => {
       if (e.key === 'Escape') onClose()
+      else if (view === 'poster' && many && e.key === 'ArrowRight') go(1)
+      else if (view === 'poster' && many && e.key === 'ArrowLeft') go(-1)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-  }, [open, onClose])
+  }, [open, onClose, view, many, go])
 
   useEffect(() => {
     if (!open) return
@@ -188,18 +282,85 @@ function NewYearEvePosterModal({ open, onClose }) {
                   transition={{ duration: 0.42, ease: easeOut }}
                   className="flex flex-col items-center gap-3"
                 >
-                  {/* The poster fills the height left over by the button; on narrow phones width is the limit. */}
-                  <img
-                    src={nocheviejaPoster}
-                    alt={t('nochevieja.alt')}
-                    width={POSTER_W}
-                    height={POSTER_H}
-                    decoding="async"
-                    style={{
-                      width: `min(calc(100vw - 2rem), calc((var(--app-vh, 1vh) * 100 - ${RESERVE_ROOM}) * ${POSTER_W} / ${POSTER_H}))`,
-                    }}
-                    className="pointer-events-auto h-auto object-contain shadow-[0_30px_90px_rgba(0,0,0,0.5)]"
-                  />
+                  <div className="relative flex items-center">
+                    {many && (
+                      <button
+                        type="button"
+                        onClick={() => go(-1)}
+                        aria-label={t('nochevieja.prev')}
+                        className="pointer-events-auto absolute -left-16 hidden h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-[#0c1f1c]/45 text-white backdrop-blur-md transition-colors hover:bg-[#0c1f1c]/65 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:flex"
+                      >
+                        <Chevron dir="left" className="h-5 w-5" />
+                      </button>
+                    )}
+
+                    {/* The poster fills the height left over by the button; on narrow phones width is the limit. */}
+                    <div
+                      className="relative overflow-hidden"
+                      style={{
+                        width: `min(calc(100vw - 2rem), calc((var(--app-vh, 1vh) * 100 - ${RESERVE_ROOM}) * ${POSTER_W} / ${POSTER_H}))`,
+                        aspectRatio: `${POSTER_W} / ${POSTER_H}`,
+                      }}
+                    >
+                      <AnimatePresence initial={false} custom={dir}>
+                        <motion.img
+                          key={slide.key}
+                          src={slide.src}
+                          alt={t(slide.altKey)}
+                          width={slide.width}
+                          height={slide.height}
+                          decoding="async"
+                          draggable={false}
+                          custom={dir}
+                          variants={slideVariants}
+                          initial="enter"
+                          animate="center"
+                          exit="exit"
+                          transition={{ duration: 0.35, ease: easeOut }}
+                          drag={many ? 'x' : false}
+                          dragConstraints={{ left: 0, right: 0 }}
+                          dragElastic={0.6}
+                          onDragEnd={(_, { offset, velocity }) => {
+                            if (offset.x < -SWIPE_DISTANCE || velocity.x < -SWIPE_VELOCITY) go(1)
+                            else if (offset.x > SWIPE_DISTANCE || velocity.x > SWIPE_VELOCITY) go(-1)
+                          }}
+                          style={{ touchAction: 'pan-y', aspectRatio: `${slide.width} / ${slide.height}` }}
+                          className={`pointer-events-auto absolute inset-0 m-auto h-auto max-h-full w-full select-none shadow-[0_30px_90px_rgba(0,0,0,0.5)] ${many ? 'cursor-grab active:cursor-grabbing' : ''}`}
+                        />
+                      </AnimatePresence>
+                    </div>
+
+                    {many && (
+                      <button
+                        type="button"
+                        onClick={() => go(1)}
+                        aria-label={t('nochevieja.next')}
+                        className="pointer-events-auto absolute -right-16 hidden h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-[#0c1f1c]/45 text-white backdrop-blur-md transition-colors hover:bg-[#0c1f1c]/65 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 md:flex"
+                      >
+                        <Chevron dir="right" className="h-5 w-5" />
+                      </button>
+                    )}
+                  </div>
+
+                  {many && (
+                    <div className="pointer-events-auto flex items-center gap-1">
+                      {slides.map((s, i) => (
+                        <button
+                          key={s.key}
+                          type="button"
+                          onClick={() => setSlide(([cur]) => [i, i > cur ? 1 : -1])}
+                          aria-label={`${i + 1} / ${slides.length}`}
+                          aria-current={s.key === slide.key ? 'true' : undefined}
+                          className="flex h-6 w-6 items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+                        >
+                          <span
+                            className={`block h-2 rounded-full transition-all ${s.key === slide.key ? 'w-5 bg-[#e0b872]' : 'w-2 bg-white/45'}`}
+                          />
+                        </button>
+                      ))}
+                    </div>
+                  )}
+
                   <button
                     type="button"
                     onClick={() => setView('form')}
@@ -217,7 +378,7 @@ function NewYearEvePosterModal({ open, onClose }) {
                   transition={{ duration: 0.36, ease: easeOut }}
                   className="pointer-events-auto max-h-[calc(var(--app-vh,1vh)*100-2rem)] w-full max-w-[440px] overflow-y-auto border border-[#e0b872]/35 bg-[#0c2a24] px-6 py-8 text-white shadow-[0_30px_90px_rgba(0,0,0,0.5)] sm:px-9 sm:py-10"
                 >
-                  <ReservationForm onBack={() => setView('poster')} onDone={onClose} />
+                  <ReservationForm slide={slide} onBack={() => setView('poster')} onDone={onClose} />
                 </motion.div>
               )}
             </AnimatePresence>
@@ -244,7 +405,7 @@ const inputClass =
 const labelClass = 'font-sans text-[11px] font-medium uppercase tracking-[0.16em] text-white/65'
 
 /** Name + phone request, emailed to the hotel through FormSubmit (see NOCHEVIEJA_RESERVATION). */
-function ReservationForm({ onBack, onDone }) {
+function ReservationForm({ slide, onBack, onDone }) {
   const { t, locale } = useLanguage()
   const [name, setName] = useState('')
   const [phone, setPhone] = useState('')
@@ -282,12 +443,12 @@ function ReservationForm({ onBack, onDone }) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          _subject: `Reserva Nochevieja 2026 — ${cleanName}`,
+          _subject: `${slide.subject} — ${cleanName}`,
           _template: 'table',
           _cc: NOCHEVIEJA_RESERVATION.cc,
           Nombre: cleanName,
           Teléfono: cleanPhone,
-          Evento: 'Nochevieja 2026 · Restaurante Aristo · 31/12/2026',
+          Evento: slide.event,
           Idioma: locale === 'es' ? 'Español' : 'English',
         }),
       })
@@ -326,7 +487,7 @@ function ReservationForm({ onBack, onDone }) {
         ← {t('nochevieja.back')}
       </button>
       <h2 className="mt-5 font-cormorant text-[32px] font-normal leading-tight text-white">{t('nochevieja.formTitle')}</h2>
-      <p className="mt-3 font-sans text-[14px] font-light leading-relaxed text-white/70">{t('nochevieja.formLead')}</p>
+      <p className="mt-3 font-sans text-[14px] font-light leading-relaxed text-white/70">{t(slide.leadKey)}</p>
 
       <div className="mt-7 space-y-6">
         <div>

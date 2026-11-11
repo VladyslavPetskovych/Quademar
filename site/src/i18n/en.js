@@ -125,11 +125,19 @@ export default {
     badgeAria: "New Year's Eve 2026 gala dinner, 31 December — view the menu",
     title: "New Year's Eve 2026 — Hotel Guardamar",
     alt:
-      "Hotel Guardamar New Year's Eve 2026 menu, 31 December. Aperitif: butter brioche with sturgeon caviar. Starters: premium seafood boiled in seawater (Santa Pola shrimp, Guardamar prawn, Dénia red prawn); salmon and asparagus terrine with boletus and flowers; pumpkin cream with crispy beef cheek and Parmesan mousse; Iberian ham croquette. Main course to choose: Beef Wellington with Port and foie sauce and braised Rioja potatoes, or bluefin tuna on braised baby vegetables. Dessert: chocolate and gold. Christmas sweets, cava, cider and coffee. After-party and gala with DJ music until 3:00 am. Entertainment programme with a festive atmosphere, music and gifts. Price: 110 € per person. Aristo Restaurant.",
+      "Hotel Guardamar New Year's Eve 2026 menu, 31 December at 20:00. Aperitif: butter brioche with sturgeon caviar. Starters: premium seafood boiled in seawater (Santa Pola shrimp, Guardamar prawn, Dénia red prawn); salmon and asparagus terrine with boletus and flowers; pumpkin cream with crispy beef cheek and Parmesan mousse; Iberian ham croquette. Main course to choose: Beef Wellington with Port and foie sauce and braised Rioja potatoes, or bluefin tuna on braised baby vegetables. Dessert: chocolate and gold. Christmas sweets, cava, cider and coffee. After-party and gala with DJ music until 3:00 am. Entertainment programme with a festive atmosphere, music and gifts. Price: 110 € per person. Reservations: +34 965 72 96 50. Aristo Restaurant.",
+    navidadAlt:
+      'Hotel Guardamar Christmas menu, Aristo Restaurant, 25 December, lunch. Aperitif: Santa Pola shrimp boiled in seawater. Starters: Iberian ham and Manchego D.O. cheese; Russian salad with Canarian flatbreads; traditional broth with meatball; garlic prawns on guacamole with vegetable chips and lime. Main course to choose: seafood rice, oven-roasted stuffed leg of lamb with plum sauce, or confit cod on black garlic cream with smoked piquillo pepper sauce. Dessert: Christmas tiramisu and traditional Christmas sweets. Drinks included: cava, cider and coffee. Price per person: 40 €.',
+    anoNuevoAlt:
+      "Hotel Guardamar New Year's Day 2027 menu, Aristo Restaurant, 1 January at 2:00 pm, lunch. Appetisers: ham and cheese; smoked sardine toast with tapenade. Starters: tomato with salted fish and tuna belly; traditional broth with meatball; crispy cheese and date bite with tomato jam. Main course to choose: tuna, prawn and artichoke rice; confit beef cheek; or roast salmon with pistachio and baby vegetables. Dessert: pineapple crumble tart with coconut ice cream. Christmas sweets, cava, cider and coffee. Price per person: 40 €. Reservations: +34 965 72 96 50.",
+    prev: 'Previous',
+    next: 'Next',
     close: 'Close',
     reserve: 'Reserve',
     formTitle: 'Reserve your table',
     formLead: 'Leave your name and phone number and we will call you to confirm your New Year’s Eve reservation.',
+    formLeadNavidad: 'Leave your name and phone number and we will call you to confirm your Christmas Day lunch reservation.',
+    formLeadAnoNuevo: "Leave your name and phone number and we will call you to confirm your New Year's Day lunch reservation.",
     name: 'Name',
     phone: 'Phone number',
     consent: 'I agree to the processing of my details to handle this request, as described in the',
